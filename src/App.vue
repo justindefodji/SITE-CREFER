@@ -1,7 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white">
+    <InfosBar />
     <Navigation />
-    <main class="flex-1">
+    <main class="flex-1 pt-32">
       <router-view />
     </main>
     <Footer />
@@ -11,12 +12,14 @@
 <script>
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
+import InfosBar from './components/InfosBar.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    Footer
+    Footer,
+    InfosBar
   }
 }
 </script>
