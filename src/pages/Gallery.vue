@@ -1,18 +1,40 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Hero Section -->
-    <section class="relative h-96 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 text-white flex items-center overflow-hidden">
-      <!-- Background Overlay -->
-      <div class="absolute inset-0 bg-black/40 z-10"></div>
-      
-      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20">
-        <div>
-          <h2 class="text-5xl lg:text-6xl font-bold mb-4">
-            <span class="text-orange-400">GALERIE/</span>
-          </h2>
-          <p class="text-xl lg:text-2xl font-semibold">
-            Lorem ipsum dolor sit amet consectetur.
-          </p>
+    <!-- Hero Section with configurable background image (maquette) -->
+    <section
+      class="relative min-h-[420px] md:min-h-[520px] lg:min-h-[640px] text-white flex items-center overflow-hidden bg-cover bg-right"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+    >
+      <!-- Dark overlay for contrast -->
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+      <!-- Bottom gradient to match maquette darker base -->
+      <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 to-transparent z-15"></div>
+
+      <div class="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-20 relative z-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left content: aligned left with roomy padding -->
+          <div class="py-8 lg:py-12 pr-8 lg:pr-0">
+            <div class="max-w-2xl pl-0 md:pl-6 lg:pl-12">
+              <div class="text-left">
+                <div class="text-orange-400 text-xl md:text-2xl font-semibold mb-4">GALERIE/</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">GALERIE DES PROJETS & FORMATIONS</h1>
+
+                <div class="space-y-6 mb-8">
+                  <p class="text-lg md:text-xl lg:text-2xl font-semibold tracking-tight">Découvrez nos installations, nos étudiants et nos ateliers pratiques</p>
+                </div>
+
+                <router-link
+                  to="/contact"
+                  class="inline-block mt-2 px-10 md:px-12 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg"
+                >
+                  Demander une visite
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column left empty so background image shows through (responsive) -->
+          <div class="hidden lg:block"></div>
         </div>
       </div>
     </section>
@@ -95,6 +117,7 @@ import { ref, computed } from 'vue'
 export default {
   name: 'Gallery',
   setup() {
+    const backgroundImageUrl = ref('https://via.placeholder.com/1920x1080?text=Galerie+Background')
     const selectedCategory = ref('Tous')
     const categories = ['Tous', 'Formation', 'Étudiants', 'Installations', 'Pratique', 'Projets']
     
@@ -175,6 +198,7 @@ export default {
       selectedCategory,
       categories,
       filteredItems
+      ,backgroundImageUrl
     }
   }
 }

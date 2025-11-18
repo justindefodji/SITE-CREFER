@@ -1,48 +1,41 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Hero Section with Background -->
-    <section class="relative h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 text-white flex items-center overflow-hidden">
-      <!-- Background Overlay -->
-      <div class="absolute inset-0 bg-black/50 z-10"></div>
-      
-      <!-- Background Image Effect -->
-      <div class="absolute inset-0 opacity-30 z-0">
-        <div class="w-full h-full bg-gradient-to-br from-blue-900 to-gray-900"></div>
-      </div>
+    <!-- Hero Section with configurable background image (maquette) -->
+    <section
+      class="relative min-h-[420px] md:min-h-[520px] lg:min-h-[640px] text-white flex items-center overflow-hidden bg-cover bg-right"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+    >
+      <!-- Dark overlay for contrast -->
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+      <!-- Bottom gradient to match maquette darker base -->
+      <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 to-transparent z-15"></div>
 
-      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20">
+      <div class="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-20 relative z-20">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Left Content -->
-          <div>
-            <h2 class="text-5xl lg:text-6xl font-bold mb-6">
-              <span class="text-orange-400">ADMISSION/</span>
-            </h2>
-            <p class="text-2xl lg:text-3xl font-semibold mb-8">
-              RENTRÉE ACADÉMIQUE 2025-2026
-            </p>
-            <p class="text-3xl lg:text-4xl font-bold mb-6">
-              CAP & BT : <span class="text-orange-400">15 SEPTEMBRE 2025</span>
-            </p>
-            <p class="text-3xl lg:text-4xl font-bold mb-8">
-              MODULAIRE : <span class="text-orange-400">13 OCTOBRE 2025</span>
-            </p>
-            <router-link
-              to="/contact"
-              class="inline-block px-8 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg"
-            >
-              Nous Contacter
-            </router-link>
-          </div>
+          <!-- Left content: aligned left with roomy padding -->
+          <div class="py-8 lg:py-12 pr-8 lg:pr-0">
+            <div class="max-w-2xl pl-0 md:pl-6 lg:pl-12">
+              <div class="text-left">
+                <div class="text-orange-400 text-xl md:text-2xl font-semibold mb-4">ADMISSION/</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">RENTRÉE ACADÉMIQUE 2025-2026</h1>
 
-          <!-- Right Image Placeholder -->
-          <div class="hidden lg:flex justify-center">
-            <div class="w-full max-w-md h-96 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg shadow-2xl flex items-center justify-center">
-              <div class="text-center text-white">
-                <div class="text-7xl mb-4">👷</div>
-                <p class="text-2xl font-bold">Expert en Énergie</p>
+                <div class="space-y-6 mb-8">
+                  <p class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">CAP & BT : <span class="text-orange-400">15 SEPTEMBRE 2025</span></p>
+                  <p class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">MODULAIRE : <span class="text-orange-400">13 OCTOBRE 2025</span></p>
+                </div>
+
+                <router-link
+                  to="/contact"
+                  class="inline-block mt-2 px-10 md:px-12 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg"
+                >
+                  Nous contacter
+                </router-link>
               </div>
             </div>
           </div>
+
+          <!-- Right column left empty so background image shows the crew on the right (responsive) -->
+          <div class="hidden lg:block"></div>
         </div>
       </div>
     </section>
@@ -257,9 +250,14 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
   name: 'Admissions',
   setup() {
+    // URL d'arrière-plan par défaut (modifiable)
+    const backgroundImageUrl = ref('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')
+
     const downloadFile = (filename) => {
       console.log(`Téléchargement de: ${filename}`)
       // Simulation du téléchargement
@@ -273,7 +271,8 @@ export default {
     }
 
     return {
-      downloadFile
+      downloadFile,
+      backgroundImageUrl
     }
   }
 }

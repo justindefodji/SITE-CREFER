@@ -1,15 +1,20 @@
 <template>
   <div class="min-h-screen">
-    <!-- Hero Section with Blue Background -->
-    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-500 min-h-screen flex items-center">
-      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
+    <!-- Hero Section with configurable background image -->
+    <section
+      class="relative min-h-screen text-white flex items-center overflow-hidden bg-cover bg-center"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+    >
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-0 relative z-20">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div class="text-white">
             <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 leading-tight">
               FORMER AUJOURD'HUI<br />LES EXPERTS EN<br /><span class="text-orange-400">ÉNERGIE DE DEMAIN</span>
             </h1>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
               <router-link
                 to="/admissions"
@@ -33,10 +38,10 @@
             </div>
           </div>
 
-          <!-- Right Image (Placeholder) -->
+          <!-- Right Image (kept as decorative on top of background) -->
           <div class="hidden lg:flex items-center justify-center">
             <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-30 rounded-2xl"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-20 rounded-2xl"></div>
               <img 
                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%23E5E7EB' width='400' height='500'/%3E%3Ctext x='200' y='250' font-size='24' fill='%236B7280' text-anchor='middle' font-family='Arial'%3EImage des experts%3C/text%3E%3C/svg%3E"
                 alt="Experts en énergie"
@@ -511,7 +516,13 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  setup() {
+    const backgroundImageUrl = ref('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80')
+    return { backgroundImageUrl }
+  }
 }
 </script>

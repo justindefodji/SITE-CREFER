@@ -1,15 +1,48 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Header Section with Background Image -->
-    <section class="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 text-white py-20 px-4 sm:px-6 lg:px-8">
-      <div class="absolute inset-0 bg-black/40 z-10"></div>
-      <div class="max-w-7xl mx-auto relative z-20">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-orange-400">À PROPOS</h2>
-        <p class="text-xl text-gray-100 max-w-2xl">
-          CREFER, Première académie régionale axée sur les métiers d'énergies avec son siège à Lomé-TOGO.
-        </p>
+    <!-- Hero Section with configurable background image -->
+    <section
+      class="relative min-h-[420px] md:min-h-[520px] lg:min-h-[640px] text-white flex items-center overflow-hidden bg-cover bg-right"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+    >
+      <!-- Dark overlay for contrast -->
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+      <!-- Bottom gradient to match maquette darker base -->
+      <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 to-transparent z-15"></div>
+
+      <div class="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-20 relative z-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left content: aligned left with roomy padding -->
+          <div class="py-8 lg:py-12 pr-8 lg:pr-0">
+            <div class="max-w-2xl pl-0 md:pl-6 lg:pl-12">
+              <div class="text-left">
+                <div class="text-orange-400 text-xl md:text-2xl font-semibold mb-4">À PROPOS/</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">CREFER, PREMIÈRE ACADÉMIE RÉGIONALE</h1>
+
+                <div class="space-y-6 mb-8">
+                  <p class="text-lg md:text-xl lg:text-2xl font-semibold tracking-tight">AXÉE SUR LES MÉTIERS D'<span class="text-orange-400">ÉNERGIES</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-semibold tracking-tight">AVEC SON SIÈGE À <span class="text-orange-400">LOMÉ-TOGO</span></p>
+                </div>
+
+                <router-link
+                  to="/admissions"
+                  class="inline-block mt-2 px-10 md:px-12 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg"
+                >
+                  Découvrir nos formations
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column left empty so background image shows through (responsive) -->
+          <div class="hidden lg:block"></div>
+        </div>
       </div>
     </section>
+
+    <!-- Programmes d'Études Section (moved to follow Nos Valeurs Fondamentales) -->
+
+    <!-- Programmes d'Études Section (moved to follow Nos Valeurs Fondamentales) -->
 
     <!-- Notre Histoire Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -41,6 +74,8 @@
         </div>
       </div>
     </section>
+
+    <!-- (Programmes d'Études Section moved below) -->
 
     <!-- Notre Vision & Mission Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -152,6 +187,8 @@
       </div>
     </section>
 
+    <!-- (Programmes d'Études Section moved below) -->
+
     <!-- Nos Valeurs Fondamentales Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div class="max-w-7xl mx-auto">
@@ -197,6 +234,78 @@
       </div>
     </section>
 
+    <!-- Programmes d'Études Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-orange-400 mb-12 text-center">PROGRAMMES D'ÉTUDES</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1: Formation Modulaire - Électricité Bâtiment -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center relative">
+              <img 
+                src="https://via.placeholder.com/400x300?text=Électricité+Bâtiment" 
+                alt="Formation Modulaire - Électricité Bâtiment"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-sm">C</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Devenez expert en électricité bâtiment</h3>
+              <p class="text-gray-600">
+                Installation, maintenance et sécurisation des réseaux électriques pour les habitations, les commerces et les sites industriels.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Formation Modulaire - Efficacité Énergétique -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center relative">
+              <img 
+                src="https://via.placeholder.com/400x300?text=Efficacité+Énergétique" 
+                alt="Formation Modulaire - Efficacité Énergétique"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-sm">C</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Efficacité énergétique</h3>
+              <p class="text-gray-600">
+                Optimisation de la consommation d'énergie afin de réduire les coûts et l'empreinte carbone, grâce à des équipements performants et une meilleure gestion des usages.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Formation Modulaire - Expert Solaire -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center relative">
+              <img 
+                src="https://via.placeholder.com/400x300?text=Expert+Solaire" 
+                alt="Formation Modulaire - Expert Solaire"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-sm">C</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Devenez expert solaire</h3>
+              <p class="text-gray-600">
+                Production d'électricité à partir de la lumière du soleil via des panneaux solaires, pour des solutions autonomes ou connectées au réseau.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-blue-900 text-white">
       <div class="max-w-4xl mx-auto text-center">
@@ -225,6 +334,13 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  data() {
+    return {
+      // Image de fond du hero section
+      // Remplacez par le chemin de votre image
+      backgroundImageUrl: 'https://via.placeholder.com/1920x1080?text=CREFER+Background'
+    }
+  }
 }
 </script>
