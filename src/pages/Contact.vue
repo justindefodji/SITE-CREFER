@@ -3,7 +3,7 @@
     <!-- Header Section -->
     <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
       <div class="max-w-7xl mx-auto">
-        <h1 class="text-4xl lg:text-5xl font-bold text-orange-400 mb-4">CONTACTEZ-NOUS VIA CE FORMALAIRE/</h1>
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
         <p class="text-lg text-gray-600">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
       </div>
     </section>
@@ -114,13 +114,13 @@
     <!-- Info Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Autres moyens de nous contacter</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Autres moyens de nous contacter</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Adresse -->
           <div class="bg-white rounded-lg shadow p-8">
             <div class="text-4xl mb-4">📍</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Adresse</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Adresse</h3>
             <p class="text-gray-600 text-sm leading-relaxed">
               Lomé-TOGO,<br />
               Siège Social situé à Lomé-TOGO quartier Totsi<br />
@@ -132,7 +132,7 @@
           <!-- Email -->
           <div class="bg-white rounded-lg shadow p-8">
             <div class="text-4xl mb-4">📧</div>
-            <h3 class="text-xl font-bold text-gray-909 mb-3">Email</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Email</h3>
             <p class="text-gray-600 text-sm">
               <a href="mailto:contact@crefer.tech" class="text-orange-400 hover:text-orange-500 font-semibold">
                 contact@crefer.tech
@@ -143,7 +143,7 @@
           <!-- Téléphone -->
           <div class="bg-white rounded-lg shadow p-8">
             <div class="text-4xl mb-4">📞</div>
-            <h3 class="text-xl font-bold text-gray-909 mb-3">Téléphone</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Téléphone</h3>
             <p class="text-gray-600 text-sm space-y-2">
               <div>
                 <a href="tel:+22891204373" class="text-orange-400 hover:text-orange-500 font-semibold">
@@ -164,7 +164,7 @@
     <!-- Map Section (Placeholder) -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Localisation</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Localisation</h2>
         <div class="w-full h-96 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg shadow-lg flex items-center justify-center">
           <div class="text-center text-gray-600">
             <div class="text-6xl mb-4">🗺️</div>

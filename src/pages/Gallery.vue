@@ -10,24 +10,27 @@
       <!-- Bottom gradient to match maquette darker base -->
       <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 to-transparent z-15"></div>
 
-      <div class="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-20 relative z-20">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20 py-20 animate-fade-in-up">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left content: aligned left with roomy padding -->
-          <div class="py-8 lg:py-12 pr-8 lg:pr-0">
-            <div class="max-w-2xl pl-0 md:pl-6 lg:pl-12">
+          <div class="flex flex-col justify-center">
+            <div class="max-w-3xl">
               <div class="text-left">
-                <div class="text-orange-400 text-xl md:text-2xl font-semibold mb-4">GALERIE/</div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">GALERIE DES PROJETS & FORMATIONS</h1>
+                <div class="text-orange-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">Galerie</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">GALERIE DES PROJETS & FORMATIONS</h1>
 
-                <div class="space-y-6 mb-8">
-                  <p class="text-lg md:text-xl lg:text-2xl font-semibold tracking-tight">Découvrez nos installations, nos étudiants et nos ateliers pratiques</p>
+                <div class="space-y-3 mb-8 animate-fade-in-up delay-300">
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">Découvrez nos installations, nos étudiants et nos ateliers pratiques</p>
                 </div>
 
                 <router-link
                   to="/contact"
-                  class="inline-block mt-2 px-10 md:px-12 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg"
+                  class="inline-flex items-center gap-2 px-8 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
                   Demander une visite
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
                 </router-link>
               </div>
             </div>
@@ -40,18 +43,18 @@
     </section>
 
     <!-- Gallery Grid Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 animate-fade-in-up delay-100">
       <div class="max-w-7xl mx-auto">
         <!-- Filter Tabs -->
-        <div class="flex justify-center gap-4 mb-12 flex-wrap">
+        <div class="flex justify-center gap-4 mb-12 flex-wrap animate-fade-in-up delay-200">
           <button
             v-for="category in categories"
             :key="category"
             @click="selectedCategory = category"
             :class="[
-              'px-6 py-2 rounded-full font-semibold transition-colors',
+              'px-6 py-2 rounded-full font-semibold transition-colors transform hover:scale-105 hover:shadow-lg',
               selectedCategory === category
-                ? 'bg-orange-400 text-white'
+                ? 'bg-orange-400 text-white shadow-lg'
                 : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-orange-400'
             ]"
           >
@@ -60,21 +63,25 @@
         </div>
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up delay-300">
           <div
-            v-for="item in filteredItems"
+            v-for="(item, index) in filteredItems"
             :key="item.id"
-            class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+            :class="`group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer animate-fade-in-up`"
+            :style="{ animationDelay: `${(index % 3) * 100}ms` }"
           >
             <!-- Image -->
-            <div class="w-full h-64 bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
-              {{ item.icon }}
+            <div class="w-full h-64 overflow-hidden">
+              <picture class="w-full h-full block">
+                <source type="image/webp" :srcset="getWebpSrcset(item.image)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
+                <img :src="item.image" alt="" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" />
+              </picture>
             </div>
 
             <!-- Overlay on Hover -->
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
-              <div class="w-full p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h3 class="font-bold text-lg">{{ item.title }}</h3>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end">
+              <div class="w-full p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="font-bold text-lg" style="font-family: 'Montserrat', sans-serif;">{{ item.title }}</h3>
                 <p class="text-sm opacity-90">{{ item.description }}</p>
               </div>
             </div>
@@ -89,21 +96,27 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white animate-fade-in-up">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Galerie Complète</h2>
-        <p class="text-lg text-gray-600 mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Galerie Complète</h2>
+        <p class="text-lg text-gray-600 mb-8 animate-fade-in-up delay-100">
           Découvrez nos installations, nos formations et nos étudiants en action
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-bold">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
+          <button class="inline-flex items-center gap-2 px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1">
             Charger plus de photos
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+            </svg>
           </button>
           <router-link
             to="/contact"
-            class="px-8 py-3 border-2 border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition-colors font-bold"
+            class="inline-flex items-center gap-2 px-8 py-3 border-2 border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1"
           >
             Demander une visite
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
           </router-link>
         </div>
       </div>
@@ -117,74 +130,20 @@ import { ref, computed } from 'vue'
 export default {
   name: 'Gallery',
   setup() {
-    const backgroundImageUrl = ref('https://via.placeholder.com/1920x1080?text=Galerie+Background')
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4869.jpg', import.meta.url).href)
     const selectedCategory = ref('Tous')
     const categories = ['Tous', 'Formation', 'Étudiants', 'Installations', 'Pratique', 'Projets']
     
     const galleryItems = [
-      { 
-        id: 1, 
-        title: 'Travaux Pratiques', 
-        description: 'Électricité en atelier',
-        category: 'Pratique', 
-        icon: '🔧' 
-      },
-      { 
-        id: 2, 
-        title: 'Formation', 
-        description: 'Cours avec instructeurs',
-        category: 'Formation', 
-        icon: '👨‍🏫' 
-      },
-      { 
-        id: 3, 
-        title: 'Étudiants', 
-        description: 'Groupe de formation',
-        category: 'Étudiants', 
-        icon: '👥' 
-      },
-      { 
-        id: 4, 
-        title: 'Électricité', 
-        description: 'Travaux pratiques',
-        category: 'Pratique', 
-        icon: '⚡' 
-      },
-      { 
-        id: 5, 
-        title: 'Experts', 
-        description: 'Formateurs qualifiés',
-        category: 'Formation', 
-        icon: '👨‍💼' 
-      },
-      { 
-        id: 6, 
-        title: 'Projet Solaire', 
-        description: 'Installation panneaux',
-        category: 'Installations', 
-        icon: '☀️' 
-      },
-      { 
-        id: 7, 
-        title: 'Équipe', 
-        description: 'Sur chantier',
-        category: 'Étudiants', 
-        icon: '👷' 
-      },
-      { 
-        id: 8, 
-        title: 'Installation', 
-        description: 'Système photovoltaïque',
-        category: 'Installations', 
-        icon: '🔩' 
-      },
-      { 
-        id: 9, 
-        title: 'Projet', 
-        description: 'Travail en équipe',
-        category: 'Projets', 
-        icon: '🛠️' 
-      },
+      { id: 1, title: 'Travaux Pratiques', description: 'Électricité en atelier', category: 'Pratique', image: new URL('../assets/images/_DSC4853.jpg', import.meta.url).href },
+      { id: 2, title: 'Formation', description: 'Cours avec instructeurs', category: 'Formation', image: new URL('../assets/images/_DSC4854.jpg', import.meta.url).href },
+      { id: 3, title: 'Étudiants', description: 'Groupe de formation', category: 'Étudiants', image: new URL('../assets/images/_DSC4855.jpg', import.meta.url).href },
+      { id: 4, title: 'Électricité', description: 'Travaux pratiques', category: 'Pratique', image: new URL('../assets/images/_DSC4856.jpg', import.meta.url).href },
+      { id: 5, title: 'Experts', description: 'Formateurs qualifiés', category: 'Formation', image: new URL('../assets/images/_DSC4857.jpg', import.meta.url).href },
+      { id: 6, title: 'Projet Solaire', description: 'Installation panneaux', category: 'Installations', image: new URL('../assets/images/_DSC4858.jpg', import.meta.url).href },
+      { id: 7, title: 'Équipe', description: 'Sur chantier', category: 'Étudiants', image: new URL('../assets/images/_DSC4859.jpg', import.meta.url).href },
+      { id: 8, title: 'Installation', description: 'Système photovoltaïque', category: 'Installations', image: new URL('../assets/images/_DSC4860.jpg', import.meta.url).href },
+      { id: 9, title: 'Projet', description: 'Travail en équipe', category: 'Projets', image: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href },
     ]
 
     const filteredItems = computed(() => {
@@ -194,11 +153,18 @@ export default {
       return galleryItems.filter(item => item.category === selectedCategory.value)
     })
 
+    function getWebpSrcset(original) {
+      if (!original) return '';
+      const base = original.replace(/\.jpg$/i, '').replace(/\.jpeg$/i, '');
+      return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`;
+    }
+
     return {
       selectedCategory,
       categories,
-      filteredItems
-      ,backgroundImageUrl
+      filteredItems,
+      backgroundImageUrl,
+      getWebpSrcset
     }
   }
 }

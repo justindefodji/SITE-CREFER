@@ -3,7 +3,7 @@
     <!-- Header Section -->
     <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
       <div class="max-w-7xl mx-auto">
-        <h1 class="text-4xl lg:text-5xl font-bold text-orange-400 mb-4">NOTRE ACTUALITÉS/</h1>
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS ACTUALITÉS</h1>
         <p class="text-lg text-gray-600">Découvrez les dernières actualités et projets de CREFER</p>
       </div>
     </section>
@@ -27,7 +27,7 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-gray-500 font-semibold mb-2">26 SET 2025</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
                 Électricité bâtiment et industrielle
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
@@ -61,7 +61,7 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-gray-500 font-semibold mb-2">26 SET 2025</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
                 Électricité bâtiment et industrielle
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
@@ -95,7 +95,7 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-gray-500 font-semibold mb-2">20 SET 2025</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
                 Efficacité énergétique et énergie solaire
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
@@ -129,7 +129,7 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-gray-500 font-semibold mb-2">15 SET 2025</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
                 Les innovations en énergies renouvelables
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
@@ -158,7 +158,7 @@
     <!-- Newsletter Section -->
     <section class="bg-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">Restez Informé</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Restez Informé</h2>
         <p class="text-lg text-blue-100 mb-8">
           Inscrivez-vous à notre newsletter pour recevoir les dernières actualités
         </p>
