@@ -268,20 +268,20 @@
     </section>
 
     <!-- CTA Section -->
-    <section v-scroll-animate class="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-20 px-4 sm:px-6 lg:px-8">
+    <section v-scroll-animate class="relative bg-gradient-to-r from-yellow-600 to-white py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div class="animate-fade-in-up">
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-in-left drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
               PRÊT À NOUS REJOINDRE ?
             </h2>
-            <p class="text-lg text-indigo-100 mb-8 animate-fade-in-up delay-200">
+            <p class="text-lg text-gray-800 mb-8 animate-fade-in-up delay-200 drop-shadow-md">
               Faites un pas de plus vers votre carrière dans l'énergie solaire et l'électricité ! Découvrez nos programmes et postulez dès aujourd'hui.
             </p>
             <router-link
               to="/contact"
-              class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-all duration-300 font-bold text-lg transform hover:-translate-y-1 animate-fade-in-up delay-300 hover:scale-105"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white rounded-lg hover:shadow-lg transition-all duration-300 font-bold text-lg transform hover:-translate-y-1 animate-fade-in-up delay-300 hover:scale-105 drop-shadow-lg"
             >
               <span>Inscrivez-vous</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
