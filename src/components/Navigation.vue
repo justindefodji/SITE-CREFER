@@ -11,7 +11,7 @@
             <img 
               :src="logoUrl" 
               alt="CREFER Logo" 
-              class="h-14 w-auto group-hover:scale-110 transition-all duration-300"
+              class="h-10 w-auto group-hover:scale-110 transition-all duration-300"
             />
           </div>
         </router-link>
