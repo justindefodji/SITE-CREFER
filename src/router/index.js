@@ -53,9 +53,23 @@ const router = createRouter({
   }
 })
 
-router.afterEach(() => {
-  // Assure que la page remonte en haut après chaque navigation
+router.afterEach((to) => {
+  // Remonte en haut de la page
   window.scrollTo(0, 0)
+  
+  // Met à jour le titre de la page
+  const pageNames = {
+    Home: 'Accueil',
+    About: 'À Propos',
+    Admissions: 'Admissions',
+    Gallery: 'Galerie',
+    Articles: 'Actualités',
+    Contact: 'Contact',
+    NotFound: 'Page non trouvée'
+  }
+  
+  const pageName = pageNames[to.name] || to.name
+  document.title = `CREFER - ${pageName}`
 })
 
 export default router
