@@ -118,8 +118,13 @@
         
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Adresse -->
-          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
-            <div class="text-4xl mb-4">📍</div>
+          <div class="bg-white rounded-lg shadow p-8 hover:shadow-lg transition-shadow" v-scroll-animate>
+            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Adresse</h3>
             <p class="text-gray-600 text-sm leading-relaxed">
               Lomé-TOGO,<br />
@@ -130,28 +135,36 @@
           </div>
 
           <!-- Email -->
-          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
-            <div class="text-4xl mb-4">📧</div>
+          <div class="bg-white rounded-lg shadow p-8 hover:shadow-lg transition-shadow" v-scroll-animate>
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Email</h3>
             <p class="text-gray-600 text-sm">
-              <a href="mailto:contact@crefer.tech" class="text-orange-400 hover:text-orange-500 font-semibold">
+              <a href="mailto:contact@crefer.tech" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
                 contact@crefer.tech
               </a>
             </p>
           </div>
 
           <!-- Téléphone -->
-          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
-            <div class="text-4xl mb-4">📞</div>
+          <div class="bg-white rounded-lg shadow p-8 hover:shadow-lg transition-shadow" v-scroll-animate>
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+              </svg>
+            </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Téléphone</h3>
             <p class="text-gray-600 text-sm space-y-2">
               <div>
-                <a href="tel:+22891204373" class="text-orange-400 hover:text-orange-500 font-semibold">
+                <a href="tel:+22891204373" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
                   (+228) 91 20 43 73
                 </a>
               </div>
               <div>
-                <a href="tel:+22892531455" class="text-orange-400 hover:text-orange-500 font-semibold">
+                <a href="tel:+22892531455" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
                   (+228) 92 53 14 55
                 </a>
               </div>
@@ -165,11 +178,26 @@
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-rose-50" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Localisation</h2>
-        <div class="w-full h-96 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg shadow-lg flex items-center justify-center">
-          <div class="text-center text-gray-600">
-            <div class="text-6xl mb-4">🗺️</div>
-            <p class="text-lg font-semibold">Carte interactive - Lomé, TOGO</p>
-          </div>
+        <div class="w-full h-96 rounded-lg shadow-lg overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.2441234567894!2d1.1030607!3d6.1883976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1021590e04739e1f%3A0xeb6875f1fa1aca85!2sLom%C3%A9!5e0!3m2!1sfr!2stg!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="mt-6 text-center">
+          <a 
+            href="https://www.google.com/maps/dir//Lom%C3%A9/@6.1883976,1.1030607,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021590e04739e1f:0xeb6875f1fa1aca85!2m2!1d1.1854728!2d6.1884066?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-semibold"
+          >
+            Ouvrir dans Google Maps
+          </a>
         </div>
       </div>
     </section>
