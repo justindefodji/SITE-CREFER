@@ -45,7 +45,7 @@
     <!-- Programmes d'Études Section (moved to follow Nos Valeurs Fondamentales) -->
 
     <!-- Notre Histoire Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-cyan-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
@@ -80,7 +80,7 @@
     <!-- (Programmes d'Études Section moved below) -->
 
     <!-- Notre Vision & Mission Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-gray-100" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Vision -->
@@ -129,7 +129,7 @@
     </section>
 
     <!-- Notre Méthode Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MÉTHODE</h2>
         
@@ -204,7 +204,7 @@
     <!-- (Programmes d'Études Section moved below) -->
 
     <!-- Nos Valeurs Fondamentales Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS VALEURS FONDAMENTALES</h2>
         <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-100">
@@ -213,7 +213,7 @@
 
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Excellence -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-200 transform hover:scale-105">
+          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-200 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
               <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -226,7 +226,7 @@
           </div>
 
           <!-- Innovation -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-300 transform hover:scale-105">
+          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-300 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
               <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
@@ -239,7 +239,7 @@
           </div>
 
           <!-- Durabilité -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-400 transform hover:scale-105">
+          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-400 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
               <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -255,13 +255,13 @@
     </section>
 
     <!-- Programmes d'Études Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-rose-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">PROGRAMMES D'ÉTUDES</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Card 1: Formation Modulaire - Électricité Bâtiment -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
             <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center relative">
               <picture class="w-full h-full block">
                 <source type="image/webp" :srcset="webpSrcset(elecImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
@@ -281,7 +281,7 @@
           </div>
 
           <!-- Card 2: Formation Modulaire - Efficacité Énergétique -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
             <div class="h-48 bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center relative">
               <picture class="w-full h-full block">
                 <source type="image/webp" :srcset="webpSrcset(efficaciteImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
@@ -301,7 +301,7 @@
           </div>
 
           <!-- Card 3: Formation Modulaire - Expert Solaire -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
             <div class="h-48 bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center relative">
               <picture class="w-full h-full block">
                 <source type="image/webp" :srcset="webpSrcset(expertImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
@@ -324,16 +324,16 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-blue-900 text-white animate-fade-in-up" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-fade-in-up" v-scroll-animate>
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif;">Prêt à rejoindre CREFER ?</h2>
-        <p class="text-lg text-blue-100 mb-8 animate-fade-in-up delay-100">
+        <p class="text-lg text-indigo-100 mb-8 animate-fade-in-up delay-100">
           Découvrez nos programmes et devenez un expert en énergies renouvelables
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
           <router-link
             to="/admissions"
-            class="inline-flex items-center gap-2 px-8 py-3 bg-orange-400 text-blue-900 rounded-lg hover:bg-orange-300 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-colors font-bold transform hover:-translate-y-1 hover:scale-105"
           >
             Nos Admissions
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -342,7 +342,7 @@
           </router-link>
           <router-link
             to="/contact"
-            class="px-8 py-3 border-2 border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-blue-900 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1"
+            class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-indigo-600 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
           >
             Nous Contacter
           </router-link>

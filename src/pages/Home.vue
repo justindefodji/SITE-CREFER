@@ -4,6 +4,7 @@
     <section
       class="relative min-h-screen text-white flex items-center overflow-hidden bg-cover bg-center"
       :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+      v-scroll-animate
     >
       <div class="absolute inset-0 bg-black/55 z-10"></div>
 
@@ -67,27 +68,27 @@
     </section>
 
     <!-- Statistics & Gallery Section -->
-    <section class="section-spacing bg-gradient-to-b from-white via-blue-50 to-white" v-scroll-animate>
+    <section class="section-spacing bg-gradient-to-b from-blue-50 via-cyan-50 to-blue-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <!-- Statistics -->
         <div class="grid md:grid-cols-4 gap-8 mb-20">
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">560</div>
+            <div class="text-6xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ formesCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">Jeunes Formés</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-orange-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
-          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.2s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+20</div>
+          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.2s;" v-scroll-animate>
+            <div class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+{{ startupsCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">Start-ups créées</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
-          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.3s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">280</div>
+          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.3s;" v-scroll-animate>
+            <div class="text-6xl font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ emploiCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">En emploi</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-green-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
-          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.4s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">10</div>
+          <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.4s;" v-scroll-animate>
+            <div class="text-6xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ projetsCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">Projets financés</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
@@ -163,7 +164,7 @@
     </section>
 
     <!-- Our Story Section -->
-    <section class="section-spacing bg-white">
+    <section class="section-spacing bg-gray-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <!-- Left Image -->
@@ -218,7 +219,7 @@
     </section>
 
     <!-- Why Choose CREFER Section -->
-    <section class="section-spacing bg-gradient-to-b from-white to-gray-50">
+    <section class="section-spacing bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
           <!-- Left Content -->
@@ -246,7 +247,7 @@
           <!-- Right Cards Grid -->
           <div class="grid md:grid-cols-2 gap-6 animate-slide-in-right">
             <!-- Card 1 -->
-            <div class="card-modern p-8 group border-l-4 border-orange-400">
+            <div class="card-modern p-8 group border-l-4 border-orange-400" v-scroll-animate>
               <div class="mb-6 icon-wrapper bg-gradient-to-br from-orange-100 to-orange-50 group-hover:from-orange-200 group-hover:to-orange-100">
                 <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
@@ -257,7 +258,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="card-modern p-8 group border-l-4 border-blue-400">
+            <div class="card-modern p-8 group border-l-4 border-blue-400" v-scroll-animate>
               <div class="mb-6 icon-wrapper bg-gradient-to-br from-blue-100 to-blue-50 group-hover:from-blue-200 group-hover:to-blue-100">
                 <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -268,7 +269,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="card-modern p-8 group border-l-4 border-green-400">
+            <div class="card-modern p-8 group border-l-4 border-green-400" v-scroll-animate>
               <div class="mb-6 icon-wrapper bg-gradient-to-br from-green-100 to-green-50 group-hover:from-green-200 group-hover:to-green-100">
                 <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6" />
@@ -279,7 +280,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="card-modern p-8 group border-l-4 border-purple-400">
+            <div class="card-modern p-8 group border-l-4 border-purple-400" v-scroll-animate>
               <div class="mb-6 icon-wrapper bg-gradient-to-br from-purple-100 to-purple-50 group-hover:from-purple-200 group-hover:to-purple-100">
                 <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20H19a2 2 0 002-2v-2a2 2 0 00-2-2h-2.5a2 2 0 01-1-3.8A6 6 0 006 9" />
@@ -294,7 +295,7 @@
     </section>
 
     <!-- Programmes d'études Section -->
-    <section class="section-spacing bg-gradient-to-b from-white to-blue-50">
+    <section class="section-spacing bg-gradient-to-b from-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
           <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
@@ -407,7 +408,7 @@
     </section>
 
     <!-- Ils Nous Font Confiance Section -->
-    <section class="section-spacing bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section class="section-spacing bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
           <div class="inline-block mb-4 px-4 py-2 bg-green-100 rounded-full">
@@ -469,7 +470,7 @@
     </section> -->
 
     <!-- Section Actualités -->
-    <section class="section-spacing bg-gradient-to-br from-white via-orange-50 to-white">
+    <section class="section-spacing bg-gradient-to-br from-orange-50 via-rose-50 to-orange-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-8">
           <div class="animate-fade-in-up">
@@ -560,7 +561,7 @@
 
 
     <!-- Section Témoignages -->
-    <section class="section-spacing bg-gradient-to-b from-white to-orange-50">
+    <section class="section-spacing bg-gradient-to-b from-amber-50 to-yellow-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
           <div class="inline-block mb-4 px-4 py-2 bg-blue-100 rounded-full">
@@ -639,7 +640,7 @@
     </section>
 
     <!-- Section Prêt à nous rejoindre ? -->
-    <section class="section-spacing bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 relative overflow-hidden">
+    <section class="section-spacing bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 relative overflow-hidden" v-scroll-animate>
       <!-- Background decorative elements -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
       <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
@@ -699,7 +700,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="section-spacing bg-gradient-to-b from-gray-50 to-white">
+    <section class="section-spacing bg-gradient-to-b from-slate-100 to-gray-50" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
           <div class="inline-block mb-4 px-4 py-2 bg-purple-100 rounded-full">
@@ -783,7 +784,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="section-spacing bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden">
+    <section class="section-spacing bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden" v-scroll-animate>
       <!-- Decorative background -->
       <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -ml-48 -mt-48"></div>
       <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mb-48"></div>
@@ -821,7 +822,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 export default {
   name: 'Home',
@@ -829,7 +830,53 @@ export default {
     // Utilise une image locale placée dans `src/assets/images/_DSC4860.jpg`
     // Placez votre fichier `_DSC4860.jpg` dans `src/assets/images/` puis Vite résoudra le chemin.
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860.jpg', import.meta.url).href)
-    return { backgroundImageUrl }
+    
+    // Compteurs animés
+    const formesCount = ref(560)
+    const startupsCount = ref(20)
+    const emploiCount = ref(280)
+    const projetsCount = ref(10)
+    
+    onMounted(() => {
+      // Réinitialiser à 0 pour commencer l'animation
+      formesCount.value = 0
+      startupsCount.value = 0
+      emploiCount.value = 0
+      projetsCount.value = 0
+      
+      // Animation des compteurs simultanément avec durée augmentée
+      const startTime = Date.now()
+      const duration = 3500
+      
+      const animate = () => {
+        const elapsed = Date.now() - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        
+        formesCount.value = Math.floor(560 * progress)
+        startupsCount.value = Math.floor(20 * progress)
+        emploiCount.value = Math.floor(280 * progress)
+        projetsCount.value = Math.floor(10 * progress)
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          formesCount.value = 560
+          startupsCount.value = 20
+          emploiCount.value = 280
+          projetsCount.value = 10
+        }
+      }
+      
+      requestAnimationFrame(animate)
+    })
+    
+    return { 
+      backgroundImageUrl,
+      formesCount,
+      startupsCount,
+      emploiCount,
+      projetsCount
+    }
   }
 }
 </script>

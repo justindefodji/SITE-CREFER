@@ -1,84 +1,97 @@
 <template>
-  <nav class="bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-500 text-white fixed top-9 left-0 right-0 z-50 shadow-lg">
+  <nav class="fixed top-9 left-0 right-0 z-50 backdrop-blur-2xl bg-gradient-to-b from-black/70 via-black/50 to-transparent shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-24">
+      <div class="flex justify-between items-center h-20">
         <!-- Logo CREFER (Left) -->
         <router-link
           to="/"
-          class="flex-shrink-0 hover:opacity-80 transition-opacity"
+          class="flex-shrink-0 group transition-all duration-300"
         >
           <div class="flex items-center space-x-2">
-            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <span class="text-blue-900 font-bold text-2xl">⚡</span>
-            </div>
-            <div>
-              <div class="font-bold text-xl text-white">CREFER</div>
-              <div class="text-xs text-blue-100 leading-tight">Centre d'Excellence pour la Formation<br/>en Énergies Renouvelables</div>
-            </div>
+            <img 
+              :src="logoUrl" 
+              alt="CREFER Logo" 
+              class="h-14 w-auto group-hover:scale-110 transition-all duration-300"
+            />
           </div>
         </router-link>
 
         <!-- Desktop Navigation Links (Center) -->
-        <div class="hidden lg:flex items-center space-x-1">
+        <div class="hidden lg:flex items-center space-x-8">
           <router-link
             to="/"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             Accueil
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/' ? 'w-0' : ''"></span>
           </router-link>
           <router-link
             to="/admissions"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/admissions' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/admissions' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             Admissions
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/admissions' ? 'w-0' : ''"></span>
           </router-link>
           <router-link
             to="/about"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/about' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/about' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             À propos
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/about' ? 'w-0' : ''"></span>
           </router-link>
           <router-link
             to="/gallery"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/gallery' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/gallery' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             Galerie
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/gallery' ? 'w-0' : ''"></span>
           </router-link>
           <router-link
             to="/contact"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/contact' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/contact' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             Contact
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/contact' ? 'w-0' : ''"></span>
           </router-link>
           <router-link
             to="/articles"
-            class="px-4 py-2 rounded-t-lg transition-colors font-medium border-b-4"
-            :class="$route.path === '/articles' ? 'border-orange-400 bg-blue-800/50' : 'border-transparent hover:bg-blue-800/30'"
+            class="relative text-orange-400 font-medium text-sm transition-all duration-300 hover:text-orange-300 group px-3 py-1 rounded-lg bg-black/20"
+            :class="$route.path === '/articles' ? 'text-white bg-orange-500 font-semibold' : 'hover:bg-black/40'"
           >
             Actualités
+            <span class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300"
+                  :class="$route.path === '/articles' ? 'w-0' : ''"></span>
           </router-link>
         </div>
 
         <!-- CTA Button (Right) -->
         <div class="hidden lg:block">
-          <button class="px-8 py-3 bg-orange-400 text-blue-900 rounded-lg hover:bg-orange-300 transition-colors font-bold text-lg shadow-lg">
-            Inscrivez-vous
-          </button>
+          <router-link
+            to="/admissions"
+            class="px-6 py-2.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold text-sm"
+          >
+            Candidater
+          </router-link>
         </div>
 
         <!-- Mobile Menu Button -->
         <button
           @click="isOpen = !isOpen"
-          class="lg:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-blue-800/50 focus:outline-none transition-colors"
+          class="lg:hidden inline-flex items-center justify-center p-2.5 rounded-lg hover:bg-white/20 focus:outline-none transition-colors duration-300"
         >
           <svg
             v-if="!isOpen"
-            class="h-6 w-6"
+            class="h-6 w-6 text-white"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 24 24"
@@ -87,7 +100,7 @@
           </svg>
           <svg
             v-else
-            class="h-6 w-6"
+            class="h-6 w-6 text-white"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 24 24"
@@ -98,53 +111,65 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div v-if="isOpen" class="lg:hidden pb-4 space-y-2">
-        <router-link
-          to="/"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          Accueil
-        </router-link>
-        <router-link
-          to="/admissions"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          Admissions
-        </router-link>
-        <router-link
-          to="/about"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          À propos
-        </router-link>
-        <router-link
-          to="/gallery"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          Galerie
-        </router-link>
-        <router-link
-          to="/contact"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          Contact
-        </router-link>
-        <router-link
-          to="/articles"
-          class="block px-3 py-2 rounded-md hover:bg-blue-800/50 transition-colors font-medium"
-          @click="isOpen = false"
-        >
-          Actualités
-        </router-link>
-        <button class="w-full mt-4 px-6 py-2 bg-orange-400 text-blue-900 rounded-lg hover:bg-orange-300 transition-colors font-bold">
-          Inscrivez-vous
-        </button>
-      </div>
+      <transition name="menu">
+        <div v-if="isOpen" class="lg:hidden pb-4 space-y-1">
+          <router-link
+            to="/"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            Accueil
+          </router-link>
+          <router-link
+            to="/admissions"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/admissions' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            Admissions
+          </router-link>
+          <router-link
+            to="/about"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/about' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            À propos
+          </router-link>
+          <router-link
+            to="/gallery"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/gallery' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            Galerie
+          </router-link>
+          <router-link
+            to="/contact"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/contact' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            Contact
+          </router-link>
+          <router-link
+            to="/articles"
+            class="block px-4 py-3 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/articles' ? 'bg-orange-50 text-orange-500' : ''"
+            @click="isOpen = false"
+          >
+            Actualités
+          </router-link>
+          <router-link
+            to="/admissions"
+            class="block w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 font-semibold text-center text-sm"
+            @click="isOpen = false"
+          >
+            Candidater
+          </router-link>
+        </div>
+      </transition>
     </div>
   </nav>
 </template>
@@ -156,10 +181,29 @@ export default {
   name: 'Navigation',
   setup() {
     const isOpen = ref(false)
+    const logoUrl = new URL('../assets/images/crefer Logo2.png', import.meta.url).href
 
     return {
-      isOpen
+      isOpen,
+      logoUrl
     }
   }
 }
 </script>
+
+<style scoped>
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.3s ease;
+}
+
+.menu-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>

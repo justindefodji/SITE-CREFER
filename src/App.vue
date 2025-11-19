@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col bg-white">
     <InfosBar />
     <Navigation />
-    <main class="flex-1 pt-32">
+    <main class="flex-1 pt-16">
       <router-view :key="$route.fullPath" />
     </main>
     <Footer />
@@ -42,11 +42,14 @@ export default {
     const handleRouteChange = () => {
       // Réinitialiser les animations quand on change de route
       triggerAnimationReset()
-      // Scroller vers le haut de la page
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      // Scroller vers le haut de la page immédiatement
+      window.scrollTo(0, 0)
     }
 
     onMounted(() => {
+      // Remonte en haut au chargement initial
+      window.scrollTo(0, 0)
+      
       // Ajouter un listener pour les changements de route
       router.beforeEach((to, from, next) => {
         handleRouteChange()

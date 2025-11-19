@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-white">
     <!-- Header Section -->
-    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+    <section class="bg-gradient-to-b from-blue-50 to-cyan-50 py-12 px-4 sm:px-6 lg:px-8 border-b border-blue-200" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
         <p class="text-lg text-gray-600">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
@@ -9,7 +9,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-gray-100" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Form Left -->
@@ -112,13 +112,13 @@
     </section>
 
     <!-- Info Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Autres moyens de nous contacter</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Adresse -->
-          <div class="bg-white rounded-lg shadow p-8">
+          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
             <div class="text-4xl mb-4">📍</div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Adresse</h3>
             <p class="text-gray-600 text-sm leading-relaxed">
@@ -130,7 +130,7 @@
           </div>
 
           <!-- Email -->
-          <div class="bg-white rounded-lg shadow p-8">
+          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
             <div class="text-4xl mb-4">📧</div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Email</h3>
             <p class="text-gray-600 text-sm">
@@ -141,7 +141,7 @@
           </div>
 
           <!-- Téléphone -->
-          <div class="bg-white rounded-lg shadow p-8">
+          <div class="bg-white rounded-lg shadow p-8" v-scroll-animate>
             <div class="text-4xl mb-4">📞</div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Téléphone</h3>
             <p class="text-gray-600 text-sm space-y-2">
@@ -162,7 +162,7 @@
     </section>
 
     <!-- Map Section (Placeholder) -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-rose-50" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Localisation</h2>
         <div class="w-full h-96 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg shadow-lg flex items-center justify-center">

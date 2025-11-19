@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-white">
     <!-- Header Section -->
-    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+    <section class="bg-gradient-to-b from-blue-50 to-cyan-50 py-12 px-4 sm:px-6 lg:px-8 border-b border-blue-200" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS ACTUALITÉS</h1>
         <p class="text-lg text-gray-600">Découvrez les dernières actualités et projets de CREFER</p>
@@ -9,7 +9,7 @@
     </section>
 
     <!-- Articles Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="space-y-12">
           <!-- Article 1 -->
@@ -148,7 +148,7 @@
 
         <!-- Load More Button -->
         <div class="flex justify-center mt-16">
-          <button class="px-8 py-3 border-2 border-orange-400 text-orange-400 font-bold rounded-lg hover:bg-orange-400 hover:text-white transition-colors">
+          <button class="px-8 py-3 border-2 border-orange-400 text-orange-400 font-bold rounded-lg hover:bg-orange-400 hover:text-white transition-colors hover:shadow-lg transform hover:-translate-y-1">
             Charger plus d'articles
           </button>
         </div>
@@ -156,10 +156,10 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="bg-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16 px-4 sm:px-6 lg:px-8" v-scroll-animate>
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Restez Informé</h2>
-        <p class="text-lg text-blue-100 mb-8">
+        <p class="text-lg text-indigo-100 mb-8">
           Inscrivez-vous à notre newsletter pour recevoir les dernières actualités
         </p>
         <form @submit.prevent="subscribeNewsletter" class="flex gap-3 flex-col sm:flex-row max-w-md mx-auto">
@@ -172,7 +172,7 @@
           />
           <button
             type="submit"
-            class="px-8 py-3 bg-orange-400 text-blue-900 rounded-lg hover:bg-orange-300 transition-colors font-bold whitespace-nowrap"
+            class="px-8 py-3 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-colors font-bold whitespace-nowrap hover:scale-105 transform"
           >
             S'inscrire
           </button>

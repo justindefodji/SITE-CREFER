@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl w-full">
       <div class="bg-white rounded-lg shadow-2xl p-8 sm:p-12 text-center">
         <!-- Error Code -->
@@ -31,13 +31,13 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <router-link
             to="/"
-            class="px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-bold text-lg"
+            class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all font-bold text-lg transform hover:-translate-y-1 hover:scale-105"
           >
             Retour à l'accueil
           </router-link>
           <router-link
             to="/contact"
-            class="px-8 py-3 border-2 border-orange-400 text-orange-400 rounded-lg hover:bg-orange-50 transition-colors font-bold text-lg"
+            class="px-8 py-3 border-2 border-indigo-500 text-indigo-500 rounded-lg hover:bg-indigo-50 transition-colors font-bold text-lg transform hover:-translate-y-1"
           >
             Nous contacter
           </router-link>

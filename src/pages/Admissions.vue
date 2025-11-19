@@ -3,7 +3,7 @@
     <!-- Hero Section with configurable background image (maquette) -->
     <section
       class="relative min-h-[420px] md:min-h-[520px] lg:min-h-[640px] text-white flex items-center overflow-hidden bg-cover bg-right"
-      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})`, backgroundPosition: 'center 30%' }"
     >
       <!-- Dark overlay for contrast -->
       <div class="absolute inset-0 bg-black/55 z-10"></div>
@@ -41,7 +41,7 @@
     </section>
 
     <!-- Fiches et Documents Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-cyan-50" v-scroll-animate>
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Fiches d'Inscription & Documentation</h2>
 
@@ -185,7 +185,7 @@
 
     <!-- Conditions & Requirements Section -->
         <!-- Conditions d'Admission Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Conditions d'Admission</h2>
 
@@ -268,20 +268,20 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="relative bg-gradient-to-r from-blue-100 to-orange-50 py-20 px-4 sm:px-6 lg:px-8">
+    <section v-scroll-animate class="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div class="animate-fade-in-up">
-            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
               PRÊT À NOUS REJOINDRE ?
             </h2>
-            <p class="text-lg text-gray-700 mb-8 animate-fade-in-up delay-200">
+            <p class="text-lg text-indigo-100 mb-8 animate-fade-in-up delay-200">
               Faites un pas de plus vers votre carrière dans l'énergie solaire et l'électricité ! Découvrez nos programmes et postulez dès aujourd'hui.
             </p>
             <router-link
               to="/contact"
-              class="inline-flex items-center gap-2 px-8 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold text-lg hover:shadow-lg transform hover:-translate-y-1 animate-fade-in-up delay-300"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-all duration-300 font-bold text-lg transform hover:-translate-y-1 animate-fade-in-up delay-300 hover:scale-105"
             >
               <span>Inscrivez-vous</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -314,7 +314,7 @@ export default {
   name: 'Admissions',
   setup() {
     // URL d'arrière-plan par défaut (modifiable)
-    const backgroundImageUrl = ref('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916.jpg', import.meta.url).href)
 
     const downloadFile = (filename) => {
       console.log(`Téléchargement de: ${filename}`)

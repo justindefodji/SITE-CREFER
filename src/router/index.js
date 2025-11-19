@@ -46,7 +46,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Remonte toujours en haut de la page
+    return { top: 0 }
+  }
+})
+
+router.afterEach(() => {
+  // Assure que la page remonte en haut après chaque navigation
+  window.scrollTo(0, 0)
 })
 
 export default router
