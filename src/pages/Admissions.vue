@@ -2,8 +2,8 @@
   <div class="min-h-screen bg-white">
     <!-- Hero Section with configurable background image (maquette) -->
     <section
-      class="relative min-h-[420px] md:min-h-[520px] lg:min-h-[640px] text-white flex items-center overflow-hidden bg-cover bg-right"
-      :style="{ backgroundImage: `url(${backgroundImageUrl})`, backgroundPosition: 'center 30%' }"
+      class="relative min-h-screen text-white flex items-center overflow-hidden bg-cover bg-center"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
     >
       <!-- Dark overlay for contrast -->
       <div class="absolute inset-0 bg-black/55 z-10"></div>

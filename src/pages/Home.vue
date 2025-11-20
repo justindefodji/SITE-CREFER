@@ -690,8 +690,8 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <!-- Floating stats over image -->
               <div class="absolute bottom-6 left-6 card-modern p-4 max-w-xs">
-                <p class="text-white text-sm font-light mb-1">Taux de réussite</p>
-                <p class="text-white text-3xl font-bold">95%</p>
+                <p class="text-black/80 text-sm font-light mb-1">Taux de réussite</p>
+                <p class="text-black/80 text-3xl font-bold">95%</p>
               </div>
             </div>
           </div>
@@ -716,10 +716,10 @@
         
         <div class="grid md:grid-cols-3 gap-8 mb-16">
           <!-- Card 1 -->
-          <div class="card-modern rounded-2xl p-8 border-l-4 border-blue-500 animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="icon-wrapper w-16 h-16 mb-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
+          <div class="card-modern rounded-2xl p-8 border-l-4 border-blue-500 animate-fade-in-up hover:shadow-2xl transition-shadow" style="animation-delay: 0.1s;">
+            <div class="icon-wrapper w-20 h-20 mb-6 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-700 rounded-3xl flex items-center justify-center drop-shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Formation Qualifiante</h3>
@@ -728,10 +728,10 @@
             </p>
           </div>
           <!-- Card 2 -->
-          <div class="card-modern rounded-2xl p-8 border-l-4 border-orange-500 animate-fade-in-up" style="animation-delay: 0.2s;">
-            <div class="icon-wrapper w-16 h-16 mb-6 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div class="card-modern rounded-2xl p-8 border-l-4 border-orange-500 animate-fade-in-up hover:shadow-2xl transition-shadow" style="animation-delay: 0.2s;">
+            <div class="icon-wrapper w-20 h-20 mb-6 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-700 rounded-3xl flex items-center justify-center drop-shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Expertise Reconnue</h3>
@@ -740,10 +740,10 @@
             </p>
           </div>
           <!-- Card 3 -->
-          <div class="card-modern rounded-2xl p-8 border-l-4 border-green-500 animate-fade-in-up" style="animation-delay: 0.3s;">
-            <div class="icon-wrapper w-16 h-16 mb-6 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div class="card-modern rounded-2xl p-8 border-l-4 border-green-500 animate-fade-in-up hover:shadow-2xl transition-shadow" style="animation-delay: 0.3s;">
+            <div class="icon-wrapper w-20 h-20 mb-6 bg-gradient-to-br from-green-400 via-green-500 to-green-700 rounded-3xl flex items-center justify-center drop-shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Placement Assuré</h3>
@@ -977,7 +977,7 @@ export default {
   name: 'Home',
   setup() {
       // Image pour la section "Prêt à nous rejoindre ?"
-      const joinUsImage = ref(new URL('../assets/images/_DSC4898.jpg', import.meta.url).href)
+      const joinUsImage = ref(new URL('../assets/images/_DSC4676.jpg', import.meta.url).href)
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860.jpg', import.meta.url).href)

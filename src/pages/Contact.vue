@@ -1,10 +1,19 @@
 <template>
   <div class="min-h-screen bg-white">
     <!-- Header Section -->
-    <section class="bg-gradient-to-b from-blue-50 to-cyan-50 py-12 px-4 sm:px-6 lg:px-8 border-b border-blue-200" v-scroll-animate>
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
-        <p class="text-lg text-gray-600">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
+    <section
+      class="relative py-12 px-4 sm:px-6 lg:px-8 border-b overflow-hidden bg-cover bg-center"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
+      v-scroll-animate
+    >
+      <!-- Dark overlay for contrast -->
+      <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <!-- Gradient noir de bas vers le haut -->
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-15"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-20">
+        <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
+        <p class="text-lg text-blue-100">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
       </div>
     </section>
 
@@ -210,6 +219,9 @@ import { ref } from 'vue'
 export default {
   name: 'Contact',
   setup() {
+    // Image pour la section Header
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916.jpg', import.meta.url).href)
+    
     const form = ref({
       name: '',
       email: '',
@@ -231,7 +243,8 @@ export default {
     return {
       form,
       submitted,
-      handleSubmit
+      handleSubmit,
+      backgroundImageUrl
     }
   }
 }
