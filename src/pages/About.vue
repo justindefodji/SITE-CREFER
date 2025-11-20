@@ -255,70 +255,114 @@
     </section>
 
     <!-- Programmes d'Études Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-rose-50" v-scroll-animate>
+    <section class="section-spacing bg-gradient-to-b from-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">PROGRAMMES D'ÉTUDES</h2>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Card 1: Formation Modulaire - Électricité Bâtiment -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
-            <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center relative">
-              <picture class="w-full h-full block">
-                <source type="image/webp" :srcset="webpSrcset(elecImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
-                <img :src="elecImage" alt="Formation Modulaire - Électricité Bâtiment" loading="lazy" class="w-full h-full object-cover object-center" />
-              </picture>
-              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                <span class="text-white font-bold text-sm">C</span>
-              </div>
+        <div class="text-center mb-16 animate-fade-in-up">
+          <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
+            <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Formations disponibles</span>
+          </div>
+          <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
+            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">d'Excellence</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+            Découvrez nos formations modulaires conçues pour vous faire devenir un expert reconnu.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Card 1 -->
+          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-blue-300 to-blue-500">
+              <img 
+                :src="elecImage"
+                alt="Formation en électricité bâtiment"
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div class="p-6">
-              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Devenez expert en électricité bâtiment</h3>
-              <p class="text-gray-600">
-                Installation, maintenance et sécurisation des réseaux électriques pour les habitations, les commerces et les sites industriels.
-              </p>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">ÉLECTRICITÉ</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Expert en<br/>Électricité Bâtiment</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6">Installation, maintenance et sécurisation des réseaux électriques pour habitations et sites industriels.</p>
+              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
+                En savoir plus →
+              </button>
             </div>
           </div>
 
-          <!-- Card 2: Formation Modulaire - Efficacité Énergétique -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
-            <div class="h-48 bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center relative">
-              <picture class="w-full h-full block">
-                <source type="image/webp" :srcset="webpSrcset(efficaciteImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
-                <img :src="efficaciteImage" alt="Formation Modulaire - Efficacité Énergétique" loading="lazy" class="w-full h-full object-cover object-center" />
-              </picture>
-              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                <span class="text-white font-bold text-sm">C</span>
-              </div>
+          <!-- Card 2 -->
+          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-green-300 to-green-500">
+              <img 
+                :src="efficaciteImage"
+                alt="Formation en efficacité énergétique"
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div class="p-6">
-              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Efficacité énergétique</h3>
-              <p class="text-gray-600">
-                Optimisation de la consommation d'énergie afin de réduire les coûts et l'empreinte carbone, grâce à des équipements performants et une meilleure gestion des usages.
-              </p>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center text-white">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <span class="text-xs font-bold text-green-600 uppercase tracking-wider">EFFICACITÉ</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Efficacité<br/>Énergétique</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6">Optimisez la consommation énergétique et réduisez l'empreinte carbone avec les meilleures pratiques.</p>
+              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
+                En savoir plus →
+              </button>
             </div>
           </div>
 
-          <!-- Card 3: Formation Modulaire - Expert Solaire -->
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" v-scroll-animate>
-            <div class="h-48 bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center relative">
-              <picture class="w-full h-full block">
-                <source type="image/webp" :srcset="webpSrcset(expertImage)" sizes="(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px" />
-                <img :src="expertImage" alt="Formation Modulaire - Expert Solaire" loading="lazy" class="w-full h-full object-cover object-center" />
-              </picture>
-              <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                <span class="text-white font-bold text-sm">C</span>
-              </div>
+          <!-- Card 3 -->
+          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.3s;">
+            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-yellow-300 to-yellow-500">
+              <img 
+                :src="expertImage"
+                alt="Formation en énergie solaire"
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div class="p-6">
-              <p class="text-orange-400 font-bold mb-3">FORMATION MODULAIRE</p>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Devenez expert solaire</h3>
-              <p class="text-gray-600">
-                Production d'électricité à partir de la lumière du soleil via des panneaux solaires, pour des solutions autonomes ou connectées au réseau.
-              </p>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center text-white">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
+                  </svg>
+                </div>
+                <span class="text-xs font-bold text-yellow-600 uppercase tracking-wider">SOLAIRE</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Expert<br/>en Énergie Solaire</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6">Maîtrisez la production solaire et les solutions autonomes connectées au réseau.</p>
+              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
+                En savoir plus →
+              </button>
             </div>
           </div>
+        </div>
+        <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+          <router-link
+            to="/admissions"
+            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
+          >
+            Voir tous les programmes
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </router-link>
         </div>
       </div>
     </section>

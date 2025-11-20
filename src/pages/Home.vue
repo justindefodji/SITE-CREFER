@@ -28,13 +28,13 @@
                 to="/admissions"
                 class="btn-modern px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
               >
-                Candidater
+                Admission
               </router-link>
               <router-link
                 to="/articles"
                 class="btn-modern px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white/10 backdrop-blur font-bold text-lg text-center transition-all"
               >
-                Découvrir
+                Actualités
               </router-link>
             </div>
 
@@ -172,10 +172,10 @@
             <div class="relative">
               <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-blue-500 rounded-3xl opacity-10 blur-2xl"></div>
               <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 600'%3E%3Crect fill='%23E5E7EB' width='500' height='600'/%3E%3C/svg%3E"
+                :src="storyImageUrl"
                 alt="Notre Histoire CREFER"
                 loading="lazy"
-                class="w-4/5 rounded-3xl shadow-2xl relative z-10"
+                class="w-full rounded-3xl shadow-2xl relative z-10 object-cover"
               />
             </div>
           </div>
@@ -302,7 +302,7 @@
             <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Formations disponibles</span>
           </div>
           <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">d'Excellence</span>
+            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">d'Étude</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
             Découvrez nos formations modulaires conçues pour vous faire devenir un expert reconnu.
@@ -313,7 +313,7 @@
           <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="relative h-64 overflow-hidden bg-gradient-to-br from-blue-300 to-blue-500">
               <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23E5E7EB' width='600' height='400'/%3E%3C/svg%3E" 
+                :src="capImageUrl"
                 alt="Formation en électricité bâtiment"
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
@@ -341,7 +341,7 @@
           <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="relative h-64 overflow-hidden bg-gradient-to-br from-green-300 to-green-500">
               <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23E5E7EB' width='600' height='400'/%3E%3C/svg%3E" 
+                :src="efficaciteImageUrl"
                 alt="Formation en efficacité énergétique"
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
@@ -369,7 +369,7 @@
           <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="relative h-64 overflow-hidden bg-gradient-to-br from-yellow-300 to-yellow-500">
               <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23E5E7EB' width='600' height='400'/%3E%3C/svg%3E" 
+                :src="solaireImageUrl"
                 alt="Formation en énergie solaire"
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
@@ -424,36 +424,36 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <!-- Logo 1 -->
           <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.1s;">
-            <img src="https://via.placeholder.com/120x50?text=Partner1" alt="Partner 1" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img :src="partnerLogo1" alt="Partner 1" class="max-w-40 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
           <!-- Logo 2 -->
           <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.15s;">
-            <img src="https://via.placeholder.com/120x50?text=Partner2" alt="Partner 2" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img :src="partnerLogo2" alt="Partner 2" class="max-w-40 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
           <!-- Logo 3 -->
           <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.2s;">
-            <img src="https://via.placeholder.com/120x50?text=Partner3" alt="Partner 3" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img :src="partnerLogo3" alt="Partner 3" class="max-w-40 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
           <!-- Logo 4 -->
           <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.25s;">
-            <img src="https://via.placeholder.com/120x50?text=Partner4" alt="Partner 4" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            <img :src="partnerLogo4" alt="Partner 4" class="max-w-40 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
           <!-- Logo 5 -->
-          <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.3s;">
+          <!-- <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.3s;">
             <img src="https://via.placeholder.com/120x50?text=Partner5" alt="Partner 5" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-          </div>
+          </div> -->
           <!-- Logo 6 -->
-          <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.35s;">
+          <!-- <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.35s;">
             <img src="https://via.placeholder.com/120x50?text=Partner6" alt="Partner 6" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-          </div>
+          </div> -->
           <!-- Logo 7 -->
-          <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.4s;">
+          <!-- <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.4s;">
             <img src="https://via.placeholder.com/120x50?text=Partner7" alt="Partner 7" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-          </div>
+          </div> -->
           <!-- Logo 8 -->
-          <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.45s;">
+          <!-- <div class="card-modern rounded-2xl h-32 flex items-center justify-center animate-fade-in-up hover:shadow-lg" style="animation-delay: 0.45s;">
             <img src="https://via.placeholder.com/120x50?text=Partner8" alt="Partner 8" class="max-w-32 h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -492,7 +492,7 @@
           <!-- Article 1 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 overflow-hidden">
-              <img src="https://via.placeholder.com/400x300?text=News1" alt="Actualité 1" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="newsImage1" alt="Actualité 1" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 left-4 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">26 SET 2025</div>
             </div>
@@ -514,7 +514,7 @@
           <!-- Article 2 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
-              <img src="https://via.placeholder.com/400x300?text=News2" alt="Actualité 2" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="newsImage2" alt="Actualité 2" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 left-4 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">20 SET 2025</div>
             </div>
@@ -536,7 +536,7 @@
           <!-- Article 3 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
-              <img src="https://via.placeholder.com/400x300?text=News3" alt="Actualité 3" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="newsImage3" alt="Actualité 3" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 left-4 px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full">15 SET 2025</div>
             </div>
@@ -683,9 +683,9 @@
           <div class="animate-slide-in-right relative">
             <div class="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                alt="Installation panneau solaire"
-                class="w-full h-full object-cover object-center"
+                :src="joinUsImage"
+                alt="Étudiants CREFER devant panneau"
+                class="w-full h-70 object-cover object-[center_50%]"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <!-- Floating stats over image -->
@@ -802,8 +802,9 @@
           <!-- CAP Électricité d'Équipement -->
           <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-100 hover:border-blue-300 group animate-fade-in-up transition-all" style="animation-delay: 0.1s;">
             <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2V2a1 1 0 112 0v1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2v1a1 1 0 11-2 0v-1h-2v1a1 1 0 11-2 0v-1a2 2 0 01-2-2v-2h-1a1 1 0 110-2h1V9H3a1 1 0 110-2h1V5a2 2 0 012-2V2a1 1 0 010-2z" clip-rule="evenodd"/>
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <!-- Icône Électricité: éclair -->
+                <path d="M13 10V3L4 14h6l-1 7 9-11h-6z" />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3">CAP Électricité d'Équipement</h3>
@@ -841,8 +842,9 @@
           <!-- BT Électrotechnique -->
           <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-100 hover:border-orange-300 group animate-fade-in-up transition-all" style="animation-delay: 0.2s;">
             <div class="w-12 h-12 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10.5 1.5H3a1.5 1.5 0 00-1.5 1.5v14a1.5 1.5 0 001.5 1.5h14a1.5 1.5 0 001.5-1.5V8.5m-15-6h8m-8 3h8m-8 3h5"/>
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <!-- Icône Efficacité: histogramme -->
+                <path d="M2 11h4v7H2v-7zm6-4h4v11H8V7zm6-6h4v17h-4V1z" />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3">BT Électrotechnique</h3>
@@ -880,8 +882,19 @@
           <!-- Formation Modulaire -->
           <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-100 hover:border-green-300 group animate-fade-in-up transition-all" style="animation-delay: 0.3s;">
             <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10.5 1.5h-8a1 1 0 00-1 1v14a1 1 0 001 1h14a1 1 0 001-1v-8.5M4 6h10M4 9h10M4 12h5"/>
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8">
+                <!-- Icône Modulaire/Solaire: soleil stylisé -->
+                <circle cx="12" cy="12" r="3" stroke="currentColor" fill="currentColor" />
+                <g stroke="currentColor">
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="M2 12h2" />
+                  <path d="M20 12h2" />
+                  <path d="M4.2 4.2l1.4 1.4" />
+                  <path d="M18.4 18.4l1.4 1.4" />
+                  <path d="M4.2 19.8l1.4-1.4" />
+                  <path d="M18.4 5.6l1.4-1.4" />
+                </g>
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-3">Formation Modulaire</h3>
@@ -963,9 +976,24 @@ import { ref, onMounted } from 'vue'
 export default {
   name: 'Home',
   setup() {
-    // Utilise une image locale placée dans `src/assets/images/_DSC4860.jpg`
-    // Placez votre fichier `_DSC4860.jpg` dans `src/assets/images/` puis Vite résoudra le chemin.
+      // Image pour la section "Prêt à nous rejoindre ?"
+      const joinUsImage = ref(new URL('../assets/images/_DSC4898.jpg', import.meta.url).href)
+    // Utilise des images locales placées dans `src/assets/images/`.
+    // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860.jpg', import.meta.url).href)
+    const storyImageUrl = ref(new URL('../assets/images/_DSC3482.png', import.meta.url).href)
+    // Images pour les 3 cards "Programmes d'étude"
+    const capImageUrl = ref(new URL('../assets/images/_DSC4674.jpg', import.meta.url).href)
+    const efficaciteImageUrl = ref(new URL('../assets/images/_DSC4676.jpg', import.meta.url).href)
+    const solaireImageUrl = ref(new URL('../assets/images/_DSC4677.jpg', import.meta.url).href)
+    // Logos partenaires (placeholders SVG créés localement)
+    // Vous pouvez remplacer ces fichiers par vos images fournies ultérieurement.
+    // Utiliser les fichiers JPG fournis — placez vos fichiers dans `src/assets/images/` avec ces noms :
+    // partner-cerme.jpg, partner-ucrm.jpg, partner-compassion.jpg, partner-egent.jpg
+    const partnerLogo1 = ref(new URL('../assets/images/egent-logo.0384ff91.jpg', import.meta.url).href)
+    const partnerLogo2 = ref(new URL('../assets/images/part2.e6602420.png', import.meta.url).href)
+    const partnerLogo3 = ref(new URL('../assets/images/part3.fe0f87cf.jpg', import.meta.url).href)
+    const partnerLogo4 = ref(new URL('../assets/images/télécharger.jpg', import.meta.url).href)
     
     // Compteurs animés
     const formesCount = ref(560)
@@ -1006,12 +1034,29 @@ export default {
       requestAnimationFrame(animate)
     })
     
+    // Images pour la section Actualités (remplacées par les nouvelles images fournies)
+    const newsImage1 = ref(new URL('../assets/images/20220114_081950.jpg', import.meta.url).href)
+    const newsImage2 = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
+    const newsImage3 = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
+
     return { 
       backgroundImageUrl,
+      storyImageUrl,
+      capImageUrl,
+      efficaciteImageUrl,
+      solaireImageUrl,
+      partnerLogo1,
+      partnerLogo2,
+      partnerLogo3,
+      partnerLogo4,
       formesCount,
       startupsCount,
       emploiCount,
-      projetsCount
+      projetsCount,
+      newsImage1,
+      newsImage2,
+      newsImage3,
+      joinUsImage
     }
   }
 }

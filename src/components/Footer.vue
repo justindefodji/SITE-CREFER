@@ -16,7 +16,7 @@
             />
           </router-link>
           <p class="text-gray-600 text-sm leading-relaxed mb-6">
-            Centre d'Étude et de Formation en Énergies Renouvelables
+            Centre Regional d'Étude et de Formation en Énergies Renouvelables
           </p>
           
           <!-- Contact Info with Icons -->
