@@ -7,13 +7,13 @@
       v-scroll-animate
     >
       <!-- Dark overlay for contrast -->
-      <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
       <!-- Gradient noir de bas vers le haut -->
       <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-15"></div>
       
-      <div class="max-w-7xl mx-auto relative z-20">
-        <h1 class="text-3xl lg:text-4xl font-bold text-white mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
-        <p class="text-lg text-blue-100">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
+      <div class="max-w-7xl mx-auto relative z-20 pt-24">
+        <h1 class="text-3xl lg:text-5xl font-bold text-white mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CONTACTEZ-NOUS VIA CE FORMULAIRE</h1>
+        <p class="text-lg lg:text-xl text-blue-100">Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais</p>
       </div>
     </section>
 

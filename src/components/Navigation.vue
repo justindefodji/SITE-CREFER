@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-7 left-0 right-0 z-50 backdrop-blur-2xl bg-gradient-to-b from-black/70 via-black/50 to-transparent shadow-sm">
+  <nav class="fixed top-12 left-0 right-0 z-50 backdrop-blur-2xl bg-gradient-to-b from-black/70 via-black/50 to-transparent shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <!-- Logo CREFER (Left) -->

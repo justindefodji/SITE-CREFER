@@ -578,7 +578,7 @@
           <!-- Témoignage 1 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="flex gap-4 items-start mb-6">
-              <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-orange-400" />
+              <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-orange-400" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">ANA Stéphanie</h3>
                 <p class="text-sm text-orange-600 font-semibold">Experte Énergie Solaire</p>
@@ -598,7 +598,7 @@
           <!-- Témoignage 2 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="flex gap-4 items-start mb-6">
-              <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400" />
+              <img :src="testimonial2Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">Marie Laurent</h3>
                 <p class="text-sm text-blue-600 font-semibold">Ingénieure Électricité</p>
@@ -618,7 +618,7 @@
           <!-- Témoignage 3 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="flex gap-4 items-start mb-6">
-              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-green-400" />
+              <img :src="testimonial3Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-green-400" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">Kofi Mensah</h3>
                 <p class="text-sm text-green-600 font-semibold">Technicien Solaire</p>
@@ -1038,6 +1038,11 @@ export default {
     const newsImage1 = ref(new URL('../assets/images/20220114_081950.jpg', import.meta.url).href)
     const newsImage2 = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
     const newsImage3 = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
+    
+    // Images pour les cartes de témoignage
+    const testimonial1Image = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
+    const testimonial2Image = ref(new URL('../assets/images/IMG_3217.jpg', import.meta.url).href)
+    const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
 
     return { 
       backgroundImageUrl,
@@ -1056,7 +1061,10 @@ export default {
       newsImage1,
       newsImage2,
       newsImage3,
-      joinUsImage
+      joinUsImage,
+      testimonial1Image,
+      testimonial2Image,
+      testimonial3Image
     }
   }
 }
