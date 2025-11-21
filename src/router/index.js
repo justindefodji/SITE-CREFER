@@ -5,8 +5,6 @@ import Contact from '../pages/Contact.vue'
 import Admissions from '../pages/Admissions.vue'
 import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
-import Admin from '../pages/Admin.vue'
-import AdminLogin from '../pages/AdminLogin.vue'
 import { useAdminAuth } from '../composables/useAdminData'
 
 const routes = [
@@ -43,12 +41,12 @@ const routes = [
   {
     path: '/admin/login',
     name: 'AdminLogin',
-    component: AdminLogin
+    component: () => import('../pages/AdminLogin.vue')
   },
   {
     path: '/admin',
     name: 'Admin',
-    component: Admin,
+    component: () => import('../pages/Admin.vue'),
     meta: { requiresAuth: true }
   },
   {
