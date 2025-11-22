@@ -34,7 +34,7 @@
                   v-model="form.name"
                   type="text"
                   required
-                  class="w-full px-4 py-3 border-2 border-orange-300 rounded-lg focus:border-orange-400 focus:outline-none transition"
+                  class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg focus:border-yellow-400 focus:outline-none transition"
                   placeholder="Votre nom complet"
                 />
               </div>
@@ -49,7 +49,7 @@
                   v-model="form.email"
                   type="email"
                   required
-                  class="w-full px-4 py-3 border-2 border-orange-300 rounded-lg focus:border-orange-400 focus:outline-none transition"
+                  class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg focus:border-yellow-400 focus:outline-none transition"
                   placeholder="votre@email.com"
                 />
               </div>
@@ -63,7 +63,7 @@
                   id="phone"
                   v-model="form.phone"
                   type="tel"
-                  class="w-full px-4 py-3 border-2 border-orange-300 rounded-lg focus:border-orange-400 focus:outline-none transition"
+                  class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg focus:border-yellow-400 focus:outline-none transition"
                   placeholder="+228 XX XX XX XX"
                 />
               </div>
@@ -77,7 +77,7 @@
                   id="subject"
                   v-model="form.subject"
                   required
-                  class="w-full px-4 py-3 border-2 border-orange-300 rounded-lg focus:border-orange-400 focus:outline-none transition bg-white"
+                  class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg focus:border-yellow-400 focus:outline-none transition bg-white"
                 >
                   <option value="">Sélectionnez un sujet</option>
                   <option value="admission">Admission</option>
@@ -90,7 +90,7 @@
               <!-- Submit Button -->
               <button
                 type="submit"
-                class="w-full px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-bold text-lg mt-8"
+                class="w-full px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-colors font-bold text-lg mt-8"
               >
                 Envoyer le message
               </button>
@@ -112,7 +112,7 @@
               v-model="form.message"
               required
               rows="12"
-              class="w-full px-4 py-3 border-2 border-orange-300 rounded-lg focus:border-orange-400 focus:outline-none transition resize-none"
+              class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg focus:border-yellow-400 focus:outline-none transition resize-none"
               placeholder="Écrivez votre message ici..."
             ></textarea>
           </div>
@@ -128,8 +128,8 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Adresse -->
           <div class="bg-white rounded-lg shadow p-8 hover:shadow-lg transition-shadow" v-scroll-animate>
-            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
@@ -152,7 +152,7 @@
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Email</h3>
             <p class="text-gray-600 text-sm">
-              <a href="mailto:contact@crefer.tech" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
+              <a href="mailto:contact@crefer.tech" class="text-yellow-400 hover:text-yellow-500 font-semibold transition-colors">
                 contact@crefer.tech
               </a>
             </p>
@@ -168,12 +168,12 @@
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Téléphone</h3>
             <p class="text-gray-600 text-sm space-y-2">
               <div>
-                <a href="tel:+22891204373" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
+                <a href="tel:+22891204373" class="text-yellow-400 hover:text-yellow-500 font-semibold transition-colors">
                   (+228) 91 20 43 73
                 </a>
               </div>
               <div>
-                <a href="tel:+22892531455" class="text-orange-400 hover:text-orange-500 font-semibold transition-colors">
+                <a href="tel:+22892531455" class="text-yellow-400 hover:text-yellow-500 font-semibold transition-colors">
                   (+228) 92 53 14 55
                 </a>
               </div>
@@ -184,7 +184,7 @@
     </section>
 
     <!-- Map Section (Placeholder) -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-rose-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-rose-50" v-scroll-animate>
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Localisation</h2>
         <div class="w-full h-96 rounded-lg shadow-lg overflow-hidden">
@@ -203,7 +203,7 @@
             href="https://www.google.com/maps/dir//Lom%C3%A9/@6.1883976,1.1030607,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x1021590e04739e1f:0xeb6875f1fa1aca85!2m2!1d1.1854728!2d6.1884066?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors font-semibold"
+            class="inline-block px-8 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-colors font-semibold"
           >
             Ouvrir dans Google Maps
           </a>

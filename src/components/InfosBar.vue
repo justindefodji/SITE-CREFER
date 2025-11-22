@@ -5,22 +5,22 @@
       <div class="hidden sm:grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 text-[12px] sm:text-sm leading-snug text-gray-700 items-center">
         <div class="py-2 text-center md:text-left">
           <span class="font-bold text-gray-900">ANNÉE</span>
-          <span class="text-orange-500 font-bold ml-1">2025-2026</span>
+          <span class="text-yellow-500 font-bold ml-1">2025-2026</span>
         </div>
 
         <div class="py-2 text-center md:text-left">
           <span class="font-bold text-gray-900">RENTRÉE</span>
-          <span class="text-orange-500 font-bold ml-1">2025-2026</span>
+          <span class="text-yellow-500 font-bold ml-1">2025-2026</span>
         </div>
 
         <div class="py-2 text-center md:text-left">
           <span class="font-bold text-gray-900">CAP & BT:</span>
-          <span class="text-orange-500 font-bold ml-1">15 SEP</span>
+          <span class="text-yellow-500 font-bold ml-1">15 SEP</span>
         </div>
 
         <div class="py-2 text-center md:text-right">
           <span class="font-bold text-gray-900">MODULAIRE:</span>
-          <span class="text-orange-500 font-bold ml-1">13 OCT</span>
+          <span class="text-yellow-500 font-bold ml-1">13 OCT</span>
         </div>
       </div>
 
@@ -28,16 +28,16 @@
       <div class="sm:hidden">
         <div class="marquee-wrapper overflow-hidden">
           <div class="marquee-track text-gray-700 font-bold">
-            <span class="marquee-item">ANNÉE <span class="text-orange-500">2025-2026</span> • </span>
-            <span class="marquee-item">RENTRÉE <span class="text-orange-500">2025-2026</span> • </span>
-            <span class="marquee-item">CAP & BT: <span class="text-orange-500">15 SEP 2025</span> • </span>
-            <span class="marquee-item">MODULAIRE: <span class="text-orange-500">13 OCT</span></span>
+            <span class="marquee-item">ANNÉE <span class="text-yellow-500">2025-2026</span> • </span>
+            <span class="marquee-item">RENTRÉE <span class="text-yellow-500">2025-2026</span> • </span>
+            <span class="marquee-item">CAP & BT: <span class="text-yellow-500">15 SEP 2025</span> • </span>
+            <span class="marquee-item">MODULAIRE: <span class="text-yellow-500">13 OCT</span></span>
 
             <!-- répéter pour boucle fluide -->
-            <span class="marquee-item">&nbsp;&nbsp;ANNÉE <span class="text-orange-500">2025-2026</span> • </span>
-            <span class="marquee-item">RENTRÉE <span class="text-orange-500">2025-2026</span> • </span>
-            <span class="marquee-item">CAP & BT: <span class="text-orange-500">15 SEP 2025</span> • </span>
-            <span class="marquee-item">MODULAIRE: <span class="text-orange-500">13 OCT</span></span>
+            <span class="marquee-item">&nbsp;&nbsp;ANNÉE <span class="text-yellow-500">2025-2026</span> • </span>
+            <span class="marquee-item">RENTRÉE <span class="text-yellow-500">2025-2026</span> • </span>
+            <span class="marquee-item">CAP & BT: <span class="text-yellow-500">15 SEP 2025</span> • </span>
+            <span class="marquee-item">MODULAIRE: <span class="text-yellow-500">13 OCT</span></span>
             
           </div>
         </div>

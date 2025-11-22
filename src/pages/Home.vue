@@ -13,10 +13,10 @@
           <!-- Left Content -->
           <div class="text-white animate-fade-in-up">
             <div class="mb-6 inline-block animate-fade-in-up delay-100">
-              <span class="text-orange-300 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
+              <span class="text-yellow-300 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-              FORMER<br />LES EXPERTS EN<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-yellow-200">ÉNERGIE DE DEMAIN</span>
+              FORMER AUJOURD'HUI<br />LES EXPERTS EN<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-200">ÉNERGIE DE DEMAIN</span>
             </h1>
 
             <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed max-w-lg animate-fade-in-up delay-300" style="font-weight: 300; letter-spacing: 0.5px;">
@@ -26,7 +26,7 @@
             <div class="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up delay-400">
               <router-link
                 to="/admissions"
-                class="btn-modern px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
+                class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
               >
                 Admission
               </router-link>
@@ -41,19 +41,19 @@
             <!-- Info Pills -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm animate-fade-in-up delay-500">
               <div class="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-3 rounded-full">
-                <svg class="w-5 h-5 text-orange-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
                 <span class="text-white font-medium">Accrédité</span>
               </div>
               <div class="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-3 rounded-full">
-                <svg class="w-5 h-5 text-orange-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
                 <span class="text-white font-medium">Experts</span>
               </div>
               <div class="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-3 rounded-full">
-                <svg class="w-5 h-5 text-orange-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
                 <span class="text-white font-medium">Modernes</span>
@@ -73,9 +73,9 @@
         <!-- Statistics -->
         <div class="grid md:grid-cols-4 gap-8 mb-20">
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ formesCount }}</div>
+            <div class="text-6xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ formesCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">Jeunes Formés</p>
-            <div class="mt-3 h-1 w-12 bg-gradient-to-r from-orange-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="mt-3 h-1 w-12 bg-gradient-to-r from-yellow-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.2s;" v-scroll-animate>
             <div class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+{{ startupsCount }}</div>
@@ -118,15 +118,15 @@
 
           <!-- Info Box -->
           <div class="card-modern rounded-3xl p-10 animate-slide-in-right">
-            <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
-              <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Nouvelle session</span>
+            <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
+              <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Nouvelle session</span>
             </div>
             <h3 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1px;">
               FORMATIONS MODULAIRES
             </h3>
             <div class="space-y-6 mb-10">
               <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center text-white">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center text-white">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -148,13 +148,13 @@
                 </div>
               </div>
             </div>
-            <div class="bg-gradient-to-r from-orange-50 to-blue-50 rounded-2xl p-6 mb-8 border border-orange-200/50">
+            <div class="bg-gradient-to-r from-yellow-50 to-blue-50 rounded-2xl p-6 mb-8 border border-yellow-200/50">
               <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Reconnaissance</p>
               <p class="text-xl font-bold text-blue-900">🏆 Meilleur Acteur de Développement</p>
             </div>
             <router-link
               to="/admissions"
-              class="btn-modern block text-center w-full px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
+              class="btn-modern block text-center w-full px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
             >
               Candidater Maintenant
             </router-link>
@@ -170,7 +170,7 @@
           <!-- Left Image -->
           <div class="order-2 lg:order-1 animate-slide-in-left">
             <div class="relative">
-              <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-blue-500 rounded-3xl opacity-10 blur-2xl"></div>
+              <div class="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-3xl opacity-10 blur-2xl"></div>
               <img 
                 :src="storyImageUrl"
                 alt="Notre Histoire CREFER"
@@ -182,14 +182,14 @@
 
           <!-- Right Content -->
           <div class="order-1 lg:order-2 animate-slide-in-right">
-            <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
-              <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Notre Histoire</span>
+            <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
+              <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Notre Histoire</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Une <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Vision</span><br/>pour l'Afrique
+              Une <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">Vision</span><br/>pour l'Afrique
             </h2>
             
-            <p class="text-2xl lg:text-3xl font-bold text-orange-600 mb-6 leading-tight">
+            <p class="text-2xl lg:text-3xl font-bold text-yellow-600 mb-6 leading-tight">
               "Depuis 2019, formant les experts énergétiques africains."
             </p>
 
@@ -197,7 +197,7 @@
               <p class="text-lg text-gray-700 leading-relaxed font-light">
                 CREFER est née en 2019 d'une vision claire : former des jeunes Africains aux métiers des énergies renouvelables. Fondée par EGENT TOGO, leader en solutions solaires, notre académie répond au besoin urgent de techniciens qualifiés.
               </p>
-              <div class="pl-6 border-l-4 border-orange-400">
+              <div class="pl-6 border-l-4 border-yellow-400">
                 <p class="text-lg text-gray-700 leading-relaxed font-light">
                   Le manque de spécialistes en photovoltaïque a motivé notre création. Aujourd'hui, nous sommes la référence régionale, formant des leaders de l'énergie solaire et de l'électricité.
                 </p>
@@ -206,7 +206,7 @@
 
             <router-link
               to="/about"
-              class="btn-modern inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
+              class="btn-modern inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
             >
               Découvrir notre histoire
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -219,19 +219,19 @@
     </section>
 
     <!-- Why Choose CREFER Section -->
-    <section class="section-spacing bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
+    <section class="section-spacing bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
           <!-- Left Content -->
           <div class="animate-slide-in-left">
-            <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
-              <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Pourquoi CREFER</span>
+            <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
+              <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Pourquoi choisir CREFER?</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
               Choisir le Leader<br/>de la Formation
             </h2>
             <p class="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-              CREFER est reconnue pour offrir une formation de premier ordre combinant innovation technologique et expertise humaine dans le domaine des énergies renouvelables.
+              CREFER se consacre à offrir une formation de premeir ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissanceset des compétences nécessaires pour excller dans un secteur de l'énergie en constante évolution.
             </p>
             <router-link
               to="/about"
@@ -247,9 +247,9 @@
           <!-- Right Cards Grid -->
           <div class="grid md:grid-cols-2 gap-6 animate-slide-in-right">
             <!-- Card 1 -->
-            <div class="card-modern p-8 group border-l-4 border-orange-400" v-scroll-animate>
-              <div class="mb-6 icon-wrapper bg-gradient-to-br from-orange-100 to-orange-50 group-hover:from-orange-200 group-hover:to-orange-100">
-                <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card-modern p-8 group border-l-4 border-yellow-400" v-scroll-animate>
+              <div class="mb-6 icon-wrapper bg-gradient-to-br from-yellow-100 to-yellow-50 group-hover:from-yellow-200 group-hover:to-yellow-100">
+                <svg class="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
                 </svg>
               </div>
@@ -298,11 +298,11 @@
     <section class="section-spacing bg-gradient-to-b from-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
-          <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
-            <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Formations disponibles</span>
+          <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
+            <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Formations disponibles</span>
           </div>
           <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">d'Étude</span>
+            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">d'Excellence</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
             Découvrez nos formations modulaires conçues pour vous faire devenir un expert reconnu.
@@ -396,7 +396,7 @@
         <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
           <router-link
             to="/admissions"
-            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
+            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
           >
             Voir tous les programmes
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -470,7 +470,7 @@
     </section> -->
 
     <!-- Section Actualités -->
-    <section class="section-spacing bg-gradient-to-br from-orange-50 via-rose-50 to-orange-50" v-scroll-animate>
+    <section class="section-spacing bg-gradient-to-br from-yellow-50 via-rose-50 to-yellow-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-8">
           <div class="animate-fade-in-up">
@@ -478,10 +478,10 @@
               <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Dernières actualités</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Notre<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Actualités</span>
+              Notre<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Actualités</span>
             </h2>
           </div>
-          <a href="/articles" class="btn-modern px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-lg transition-all">
+          <a href="/articles" class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-lg transition-all">
             Voir plus
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -491,10 +491,10 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Article 1 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
               <img :src="newsImage1" alt="Actualité 1" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 left-4 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">26 SET 2025</div>
+              <div class="absolute top-4 left-4 px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full">26 SET 2025</div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
@@ -503,7 +503,7 @@
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                 Découvrez nos dernières innovations dans le domaine de l'électricité pour les bâtiments et applications industrielles.
               </p>
-              <a href="#" class="text-orange-500 font-bold text-sm hover:text-orange-600 flex items-center gap-2">
+              <a href="#" class="text-yellow-500 font-bold text-sm hover:text-yellow-600 flex items-center gap-2">
                 Lire plus
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
@@ -568,7 +568,7 @@
             <span class="text-sm font-bold text-blue-600 uppercase tracking-wide">Ils nous font confiance</span>
           </div>
           <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Témoignages de nos<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Anciens Étudiants</span>
+            Témoignages de nos<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">Anciens Étudiants</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
             Découvrez les success stories de nos étudiants qui ont transformé leur carrière chez CREFER.
@@ -578,10 +578,10 @@
           <!-- Témoignage 1 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="flex gap-4 items-start mb-6">
-              <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-orange-400" />
+              <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-yellow-400" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">ANA Stéphanie</h3>
-                <p class="text-sm text-orange-600 font-semibold">Experte Énergie Solaire</p>
+                <p class="text-sm text-yellow-600 font-semibold">Experte Énergie Solaire</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
@@ -653,7 +653,7 @@
               <span class="text-sm font-bold text-gray-900 uppercase tracking-wide">Ton Avenir Démarre Ici</span>
             </div>
             <h2 class="text-6xl lg:text-7xl font-bold text-gray-900 mb-8 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Prêt à nous<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-orange-700">Rejoindre ?</span>
+              Prêt à nous<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">Rejoindre ?</span>
             </h2>
             <p class="text-xl text-gray-800 mb-10 leading-relaxed font-light drop-shadow-md">
               Transforme ta carrière avec CREFER. Rejoins une communauté de plus de 5000 experts en énergies renouvelables qui façonnent l'avenir durable.
@@ -728,8 +728,8 @@
             </p>
           </div>
           <!-- Card 2 -->
-          <div class="card-modern rounded-2xl p-8 border-l-4 border-orange-500 animate-fade-in-up hover:shadow-2xl transition-shadow" style="animation-delay: 0.2s;">
-            <div class="icon-wrapper w-20 h-20 mb-6 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-700 rounded-3xl flex items-center justify-center drop-shadow-lg">
+          <div class="card-modern rounded-2xl p-8 border-l-4 border-yellow-500 animate-fade-in-up hover:shadow-2xl transition-shadow" style="animation-delay: 0.2s;">
+            <div class="icon-wrapper w-20 h-20 mb-6 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-700 rounded-3xl flex items-center justify-center drop-shadow-lg">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -762,7 +762,7 @@
             <p class="text-gray-600 font-semibold">Étudiants Formés</p>
           </div>
           <div class="card-modern rounded-2xl p-8 text-center">
-            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-2">
+            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500 mb-2">
               95%
             </div>
             <p class="text-gray-600 font-semibold">Taux de Réussite</p>
@@ -788,7 +788,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-16 animate-fade-in-up">
-          <span class="text-orange-500 text-sm font-semibold tracking-widest uppercase">Nos Programmes</span>
+          <span class="text-yellow-500 text-sm font-semibold tracking-widest uppercase">Nos Programmes</span>
           <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
             Programmes d'étude
           </h2>
@@ -840,8 +840,8 @@
           </div>
 
           <!-- BT Électrotechnique -->
-          <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-100 hover:border-orange-300 group animate-fade-in-up transition-all" style="animation-delay: 0.2s;">
-            <div class="w-12 h-12 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-100 hover:border-yellow-300 group animate-fade-in-up transition-all" style="animation-delay: 0.2s;">
+            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <!-- Icône Efficacité: histogramme -->
                 <path d="M2 11h4v7H2v-7zm6-4h4v11H8V7zm6-6h4v17h-4V1z" />
@@ -853,25 +853,25 @@
             </p>
             <ul class="space-y-3 mb-6">
               <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <span>Enseignement avancé</span>
               </li>
               <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <span>Projets de fin d'études</span>
               </li>
               <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <span>Reconnaissance nationale</span>
               </li>
             </ul>
-            <router-link to="/admissions" class="text-orange-600 font-semibold hover:text-orange-700 inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+            <router-link to="/admissions" class="text-yellow-600 font-semibold hover:text-yellow-700 inline-flex items-center gap-2 group-hover:gap-3 transition-all">
               En savoir plus
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -940,7 +940,7 @@
       
       <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
         <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-orange-700">L'Excellence</span>
+          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">L'Excellence</span>
         </h2>
         <p class="text-xl text-gray-800 mb-12 font-light drop-shadow-md">
           Les places pour les sessions 2025-2026 sont limitées. Inscris-toi maintenant et rejoins la révolution des énergies durables.

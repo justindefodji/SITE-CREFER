@@ -5,7 +5,6 @@ import Contact from '../pages/Contact.vue'
 import Admissions from '../pages/Admissions.vue'
 import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
-import { useAdminAuth } from '../composables/useAdminData'
 
 const routes = [
   {
@@ -39,17 +38,6 @@ const routes = [
     component: Contact
   },
   {
-    path: '/admin/login',
-    name: 'AdminLogin',
-    component: () => import('../pages/AdminLogin.vue')
-  },
-  {
-    path: '/admin',
-    name: 'Admin',
-    component: () => import('../pages/Admin.vue'),
-    meta: { requiresAuth: true }
-  },
-  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('../pages/NotFound.vue')
@@ -65,20 +53,6 @@ const router = createRouter({
   }
 })
 
-// Route guard pour l'authentification
-router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
-    const { isAuthenticated } = useAdminAuth()
-    if (!isAuthenticated.value) {
-      next('/admin/login')
-    } else {
-      next()
-    }
-  } else {
-    next()
-  }
-})
-
 router.afterEach((to) => {
   // Remonte en haut de la page
   window.scrollTo(0, 0)
@@ -91,8 +65,6 @@ router.afterEach((to) => {
     Gallery: 'Galerie',
     Articles: 'Actualités',
     Contact: 'Contact',
-    Admin: 'Espace Admin',
-    AdminLogin: 'Connexion Admin',
     NotFound: 'Page non trouvée'
   }
   

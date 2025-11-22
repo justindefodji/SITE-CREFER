@@ -16,17 +16,17 @@
           <div class="flex flex-col justify-center animate-fade-in-up">
             <div class="max-w-3xl">
               <div class="text-left mb-6 animate-fade-in-up delay-100">
-                <div class="text-orange-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">Admission 2025</div>
+                <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">Admission 2025</div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-300" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">RENTRÉE ACADÉMIQUE 2025-2026</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-400">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-orange-300">15 SEPTEMBRE 2025</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-orange-300">13 OCTOBRE 2025</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-yellow-300">15 SEPTEMBRE 2025</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-300">13 OCTOBRE 2025</span></p>
                 </div>
 
                 <router-link
                   to="/contact"
-                  class="inline-block px-10 md:px-12 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold text-lg animate-fade-in-up delay-500 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
+                  class="inline-block px-10 md:px-12 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold text-lg animate-fade-in-up delay-500 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
                   Nous contacter
                 </router-link>
@@ -49,8 +49,8 @@
           <!-- Fiche d'inscription modulaire -->
           <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up">
             <div class="flex items-center gap-4">
-              <div class="p-3 bg-orange-100 rounded-lg group-hover:bg-orange-200 transition-colors">
-                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
+                <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
               </div>
@@ -58,7 +58,7 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-modulaire.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-bt-cap.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,8 +99,8 @@
               <h3 class="text-lg font-semibold text-gray-900">Liste des outils de TP et pour le stage</h3>
             </div>
             <button
-              @click="downloadFile('liste-outils-tp-stage.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              @click="downloadFile('liste-outils-tp.pdf')"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-modulaire.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-cap.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-bt.pdf')"
-              class="px-6 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,7 +185,7 @@
 
     <!-- Conditions & Requirements Section -->
         <!-- Conditions d'Admission Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Conditions d'Admission</h2>
 
@@ -200,29 +200,29 @@
             </div>
             <ul class="space-y-4">
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Être titulaire d'un diplôme BAC ou équivalent</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Avoir une excellente motivation</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Bonnes connaissances scientifiques</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Entretien d'admission requis</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Frais de scolarité applicables</span>
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-blue-200">
               <p class="text-sm text-blue-900 font-semibold">
-                📅 Rentrée : <span class="text-orange-400">15 SEPTEMBRE 2025</span>
+                📅 Rentrée : <span class="text-yellow-400">15 SEPTEMBRE 2025</span>
               </p>
             </div>
           </div>
@@ -237,29 +237,29 @@
             </div>
             <ul class="space-y-4">
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Modules à la carte</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Flexible et adaptatif</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Pour professionnels en activité</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Certifications partielles possibles</span>
               </li>
               <li class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Tarifs réduits</span>
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-green-200">
               <p class="text-sm text-green-900 font-semibold">
-                📅 Rentrée : <span class="text-orange-400">13 OCTOBRE 2025</span>
+                📅 Rentrée : <span class="text-yellow-400">13 OCTOBRE 2025</span>
               </p>
             </div>
           </div>

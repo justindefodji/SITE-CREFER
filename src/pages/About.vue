@@ -16,17 +16,17 @@
           <div class="flex flex-col justify-center">
             <div class="max-w-3xl">
               <div class="text-left">
-                <div class="text-orange-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">À propos</div>
+                <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">À propos</div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CREFER, PREMIÈRE ACADÉMIE RÉGIONALE</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-300">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AXÉE SUR LES MÉTIERS D'<span class="text-orange-300">ÉNERGIES</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AVEC SON SIÈGE À <span class="text-orange-300">LOMÉ-TOGO</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AXÉE SUR LES MÉTIERS D'<span class="text-yellow-300">ÉNERGIES</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AVEC SON SIÈGE À <span class="text-yellow-300">LOMÉ-TOGO</span></p>
                 </div>
 
                 <router-link
                   to="/admissions"
-                  class="inline-block px-8 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
+                  class="inline-block px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
                   Découvrir nos formations
                 </router-link>
@@ -129,7 +129,7 @@
     </section>
 
     <!-- Notre Méthode Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MÉTHODE</h2>
         
@@ -144,19 +144,19 @@
             </p>
             <div class="space-y-3">
               <div class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Phase théorique avancée</span>
               </div>
               <div class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Travaux pratiques intensifs</span>
               </div>
               <div class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Stages en entreprise</span>
               </div>
               <div class="flex items-start">
-                <span class="text-orange-400 font-bold mr-3">✓</span>
+                <span class="text-yellow-400 font-bold mr-3">✓</span>
                 <span class="text-gray-700">Accompagnement entrepreneurial</span>
               </div>
             </div>
@@ -188,7 +188,7 @@
                 <p class="text-sm font-semibold">Stages</p>
               </div>
             </div>
-            <div class="bg-gradient-to-br from-orange-300 to-orange-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105">
+            <div class="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105">
               <div class="text-center">
                 <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -214,8 +214,8 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Excellence -->
           <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-200 transform hover:scale-105" v-scroll-animate>
-            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
-              <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
+              <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
@@ -227,8 +227,8 @@
 
           <!-- Innovation -->
           <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-300 transform hover:scale-105" v-scroll-animate>
-            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
-              <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
+              <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
               </svg>
             </div>
@@ -240,8 +240,8 @@
 
           <!-- Durabilité -->
           <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-400 transform hover:scale-105" v-scroll-animate>
-            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-orange-100 rounded-full group-hover:bg-orange-200">
-              <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+            <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
+              <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
@@ -258,11 +258,11 @@
     <section class="section-spacing bg-gradient-to-b from-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
-          <div class="inline-block mb-4 px-4 py-2 bg-orange-100 rounded-full">
-            <span class="text-sm font-bold text-orange-600 uppercase tracking-wide">Formations disponibles</span>
+          <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
+            <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Formations disponibles</span>
           </div>
           <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">d'Excellence</span>
+            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">d'Excellence</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
             Découvrez nos formations modulaires conçues pour vous faire devenir un expert reconnu.
@@ -356,7 +356,7 @@
         <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
           <router-link
             to="/admissions"
-            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
+            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
           >
             Voir tous les programmes
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

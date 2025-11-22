@@ -4,7 +4,7 @@
       <div class="bg-white rounded-lg shadow-2xl p-8 sm:p-12 text-center">
         <!-- Error Code -->
         <div class="mb-8">
-          <h1 class="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-4">
+          <h1 class="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent mb-4">
             404
           </h1>
           <div class="text-6xl mb-6">❌</div>
@@ -49,28 +49,28 @@
           <div class="flex flex-wrap justify-center gap-4">
             <router-link
               to="/"
-              class="text-orange-400 hover:text-orange-500 font-semibold text-sm"
+              class="text-yellow-400 hover:text-yellow-500 font-semibold text-sm"
             >
               Accueil
             </router-link>
             <span class="text-gray-400">•</span>
             <router-link
               to="/admissions"
-              class="text-orange-400 hover:text-orange-500 font-semibold text-sm"
+              class="text-yellow-400 hover:text-yellow-500 font-semibold text-sm"
             >
               Admissions
             </router-link>
             <span class="text-gray-400">•</span>
             <router-link
               to="/about"
-              class="text-orange-400 hover:text-orange-500 font-semibold text-sm"
+              class="text-yellow-400 hover:text-yellow-500 font-semibold text-sm"
             >
               À propos
             </router-link>
             <span class="text-gray-400">•</span>
             <router-link
               to="/gallery"
-              class="text-orange-400 hover:text-orange-500 font-semibold text-sm"
+              class="text-yellow-400 hover:text-yellow-500 font-semibold text-sm"
             >
               Galerie
             </router-link>
@@ -84,7 +84,7 @@
           Si le problème persiste, 
           <router-link
             to="/contact"
-            class="text-orange-400 hover:text-orange-500 font-semibold"
+            class="text-yellow-400 hover:text-yellow-500 font-semibold"
           >
             contactez-nous
           </router-link>

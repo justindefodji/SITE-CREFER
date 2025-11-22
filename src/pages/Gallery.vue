@@ -16,7 +16,7 @@
           <div class="flex flex-col justify-center">
             <div class="max-w-3xl">
               <div class="text-left">
-                <div class="text-orange-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">Galerie</div>
+                <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">Galerie</div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">GALERIE DES PROJETS & FORMATIONS</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-300">
@@ -25,7 +25,7 @@
 
                 <router-link
                   to="/contact"
-                  class="inline-flex items-center gap-2 px-8 py-4 bg-orange-400 text-gray-900 rounded-lg hover:bg-orange-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
+                  class="inline-flex items-center gap-2 px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
                   Demander une visite
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -54,8 +54,8 @@
             :class="[
               'px-6 py-2 rounded-full font-semibold transition-colors transform hover:scale-105 hover:shadow-lg',
               selectedCategory === category
-                ? 'bg-orange-400 text-white shadow-lg'
-                : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-orange-400'
+                ? 'bg-yellow-400 text-gray-900 shadow-lg'
+                : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-yellow-400'
             ]"
           >
             {{ category }}

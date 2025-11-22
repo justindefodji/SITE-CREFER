@@ -18,7 +18,7 @@
     </section>
 
     <!-- Articles Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-50 to-amber-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <div class="space-y-12">
           <!-- Article 1 -->
@@ -44,7 +44,7 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center px-6 py-3 bg-orange-400 text-white font-bold rounded-lg hover:bg-orange-500 transition-colors gap-2"
+                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
                 <span>Lire plus</span>
                 <span>→</span>
@@ -78,7 +78,7 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center px-6 py-3 bg-orange-400 text-white font-bold rounded-lg hover:bg-orange-500 transition-colors gap-2"
+                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
                 <span>Lire plus</span>
                 <span>→</span>
@@ -112,7 +112,7 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center px-6 py-3 bg-orange-400 text-white font-bold rounded-lg hover:bg-orange-500 transition-colors gap-2"
+                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
                 <span>Lire plus</span>
                 <span>→</span>
@@ -146,7 +146,7 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center px-6 py-3 bg-orange-400 text-white font-bold rounded-lg hover:bg-orange-500 transition-colors gap-2"
+                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
                 <span>Lire plus</span>
                 <span>→</span>
@@ -157,7 +157,7 @@
 
         <!-- Load More Button -->
         <div class="flex justify-center mt-16">
-          <button class="px-8 py-3 border-2 border-orange-400 text-orange-400 font-bold rounded-lg hover:bg-orange-400 hover:text-white transition-colors hover:shadow-lg transform hover:-translate-y-1">
+          <button class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 font-bold rounded-lg hover:bg-yellow-400 hover:text-white transition-colors hover:shadow-lg transform hover:-translate-y-1">
             Charger plus d'articles
           </button>
         </div>
