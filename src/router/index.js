@@ -5,6 +5,9 @@ import Contact from '../pages/Contact.vue'
 import Admissions from '../pages/Admissions.vue'
 import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
+import CapElectricite from '../pages/CapElectricite.vue'
+import FormationModulaire from '../pages/FormationModulaire.vue'
+import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
 
 const routes = [
   {
@@ -36,6 +39,21 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/cap-electricite',
+    name: 'CapElectricite',
+    component: CapElectricite
+  },
+  {
+    path: '/formation-modulaire',
+    name: 'FormationModulaire',
+    component: FormationModulaire
+  },
+  {
+    path: '/bt-electrotechnique',
+    name: 'BtElectrotechnique',
+    component: BtElectrotechnique
   },
   {
     path: '/:pathMatch(.*)*',

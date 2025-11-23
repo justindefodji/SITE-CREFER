@@ -21,7 +21,7 @@
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-400">
                   <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-yellow-300">15 SEPTEMBRE 2025</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-300">13 OCTOBRE 2025</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-300">13 AVRIL 2026</span></p>
                 </div>
 
                 <router-link
@@ -222,7 +222,7 @@
             </ul>
             <div class="mt-6 pt-6 border-t border-blue-200">
               <p class="text-sm text-blue-900 font-semibold">
-                📅 Rentrée : <span class="text-yellow-400">15 SEPTEMBRE 2025</span>
+                 Rentrée : <span class="text-yellow-400">15 SEPTEMBRE 2025</span>
               </p>
             </div>
           </div>
@@ -259,7 +259,7 @@
             </ul>
             <div class="mt-6 pt-6 border-t border-green-200">
               <p class="text-sm text-green-900 font-semibold">
-                📅 Rentrée : <span class="text-yellow-400">13 OCTOBRE 2025</span>
+                 Rentrée : <span class="text-yellow-400">13 OCTOBRE 2025</span>
               </p>
             </div>
           </div>

@@ -20,7 +20,7 @@
         <div class="hidden lg:flex items-center space-x-8">
           <router-link
             to="/"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             Accueil
@@ -29,7 +29,7 @@
           </router-link>
           <router-link
             to="/admissions"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/admissions' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             Admissions
@@ -38,7 +38,7 @@
           </router-link>
           <router-link
             to="/about"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/about' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             À propos
@@ -47,7 +47,7 @@
           </router-link>
           <router-link
             to="/gallery"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/gallery' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             Galerie
@@ -56,7 +56,7 @@
           </router-link>
           <router-link
             to="/contact"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/contact' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             Contact
@@ -65,7 +65,7 @@
           </router-link>
           <router-link
             to="/articles"
-            class="relative text-yellow-400 font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
+            class="relative text-white font-medium text-sm transition-all duration-300 hover:text-yellow-300 group px-3 py-1 rounded-lg bg-black/20"
             :class="$route.path === '/articles' ? 'text-white bg-yellow-500 font-semibold' : 'hover:bg-black/40'"
           >
             Actualités
@@ -77,7 +77,7 @@
         <!-- CTA Button (Right) -->
         <div class="hidden lg:block">
           <router-link
-            to="/admissions"
+            to="/contact"
             class="px-6 py-2.5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold text-sm"
           >
             Candidater
@@ -115,54 +115,54 @@
         <div v-if="isOpen" class="lg:hidden pb-4 space-y-1">
           <router-link
             to="/"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             Accueil
           </router-link>
           <router-link
             to="/admissions"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/admissions' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/admissions' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             Admissions
           </router-link>
           <router-link
             to="/about"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/about' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/about' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             À propos
           </router-link>
           <router-link
             to="/gallery"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/gallery' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/gallery' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             Galerie
           </router-link>
           <router-link
             to="/contact"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/contact' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/contact' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             Contact
           </router-link>
           <router-link
             to="/articles"
-            class="block px-4 py-3 rounded-lg hover:bg-yellow-50 text-gray-700 hover:text-yellow-500 transition-colors duration-300 font-medium text-sm"
-            :class="$route.path === '/articles' ? 'bg-yellow-50 text-yellow-500' : ''"
+            class="block px-4 py-3 rounded-lg hover:bg-black/40 text-white hover:text-yellow-300 transition-colors duration-300 font-medium text-sm"
+            :class="$route.path === '/articles' ? 'bg-yellow-500 text-white' : ''"
             @click="isOpen = false"
           >
             Actualités
           </router-link>
           <router-link
-            to="/admissions"
+            to="/contact"
             class="block w-full mt-4 px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 font-semibold text-center text-sm"
             @click="isOpen = false"
           >

@@ -177,7 +177,7 @@
                 <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.87 15.07L17.6 7.5s.11-.35.11-.54c0-.72-.6-1.32-1.33-1.32h-.35c-.28 0-.53.11-.82.38l-7.44 8.35c-.74.81-.74 2.04 0 2.89l7.44 8.35c.29.27.54.38.82.38h.35c.74 0 1.33-.6 1.33-1.33 0-.18-.05-.38-.15-.54l-4.73-7.62zM6.4 6.38C6.4 7.32 7.29 8 8.4 8H13.6V4H8.4C7.29 4 6.4 4.67 6.4 5.56V6.38z"/>
                 </svg>
-                <p class="text-sm font-semibold">Pratique</p>
+                <p class="text-sm font-semibold">Travaux pratique</p>
               </div>
             </div>
             <div class="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105">
@@ -250,6 +250,266 @@
               Nous sommes dédiés à la promotion de solutions énergétiques durables et respectueuses de l'environnement pour un avenir meilleur.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nos Deux Sites Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50" v-scroll-animate>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <span class="inline-block text-yellow-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-yellow-100 rounded-full mb-4">Nos Infrastructures</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
+            NOS DEUX SITES DE FORMATION
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            CREFER dispose de deux sites de formations distants de 800 mètres pour une meilleure accessibilité
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Site 1: Siège -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+              <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5.581m0 0H9m0 0h5.581M9 21m0 0H7a2 2 0 01-2-2m16 0a2 2 0 01-2 2m0 0H7a2 2 0 01-2-2m16 0V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
+              </svg>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Le Siège</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Situé près de la salle de réunion des témoins de Jéhovah à <strong>Totsi Gblenkome</strong>, le siège principal de CREFER accueille nos programmes de formation complets.
+              </p>
+              <div class="pt-4 border-t border-gray-200">
+                <p class="text-sm text-yellow-600 font-semibold">📍 Totsi Gblenkome, Lomé</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Site 2: Annexe -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="h-64 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+              <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">L'Annexe</h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Implantée au bord des pavés de Totsi, non loin de l'agence <strong>TogoCom</strong>, l'annexe offre des espaces supplémentaires pour nos programmes pratiques.
+              </p>
+              <div class="pt-4 border-t border-gray-200">
+                <p class="text-sm text-yellow-600 font-semibold">📍 Près de TogoCom, Totsi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Distance Information -->
+        <div class="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white text-center mb-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"/>
+            </svg>
+          </div>
+          <p class="text-2xl font-bold mb-2">Distance entre les deux sites</p>
+          <p class="text-3xl font-extrabold text-yellow-300">800 mètres</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formation Complète et Diversité Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-green-50" v-scroll-animate>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <span class="inline-block text-green-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-green-100 rounded-full mb-4">Approche Pédagogique</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
+            UNE FORMATION COMPLÈTE ET DIVERSIFIÉE
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Au-delà de la technique, nous formons des entrepreneurs et des leaders
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Formation Complète Card -->
+          <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all animate-fade-in-up overflow-hidden relative" style="animation-delay: 0.1s;">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-green-600"></div>
+            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Formation Complète</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Outre les cours techniques, nos étudiants bénéficient de sessions sur le <strong>leadership</strong> et la <strong>création d'entreprise</strong>.
+            </p>
+            <p class="text-gray-600 text-sm italic">
+              Cette approche holistique vise à former des professionnels compétents et entrepreneurs.
+            </p>
+            <div class="mt-6 pt-6 border-t border-green-100">
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Cours techniques avancés</li>
+                <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Formation en leadership</li>
+                <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Création d'entreprise</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Diversité des Énergies Card -->
+          <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all animate-fade-in-up overflow-hidden relative" style="animation-delay: 0.2s;">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+            <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Diversité Énergétique</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Nos cours couvrent diverses <strong>énergies renouvelables</strong>, y compris le <strong>biogaz</strong>, avec des expériences pratiques de cuisson.
+            </p>
+            <p class="text-gray-600 text-sm italic">
+              Expériences basées sur des déchets organiques et cas réels.
+            </p>
+            <div class="mt-6 pt-6 border-t border-yellow-100">
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Énergie solaire</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Biogaz</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Autres renouvelables</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Deux Rentrées Card -->
+          <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all animate-fade-in-up overflow-hidden relative" style="animation-delay: 0.3s;">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Deux Rentrées par an</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Nous offrons deux rentrées (<strong>Avril et Octobre</strong>) chaque année depuis plus de 5 ans.
+            </p>
+            <p class="text-gray-600 text-sm italic">
+              Une flexibilité accrue pour les étudiants avec diverses opportunités d'admission.
+            </p>
+            <div class="mt-6 pt-6 border-t border-blue-100">
+              <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="bg-blue-50 rounded-lg p-3">
+                  <p class="text-2xl font-bold text-blue-600">Avril</p>
+                  <p class="text-xs text-gray-600">Rentrée 1</p>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-3">
+                  <p class="text-2xl font-bold text-blue-600">Octobre</p>
+                  <p class="text-xs text-gray-600">Rentrée 2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distinctions et Collaborations Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-green-50 to-white" v-scroll-animate>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <span class="inline-block text-purple-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-purple-100 rounded-full mb-4">Reconnaissances</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
+            DISTINCTIONS ET COLLABORATIONS
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            CREFER est honoré d'avoir reçu plusieurs distinctions au Togo et à l'international
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Distinctions Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
+            <!-- Image Section -->
+            <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center relative overflow-hidden">
+              <svg class="w-32 h-32 text-white opacity-20 absolute" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <div class="relative z-10 text-center">
+                <div class="text-6xl mb-2">🏆</div>
+                <p class="text-white font-bold text-sm">Distinctions Honorifiques</p>
+              </div>
+            </div>
+            <!-- Content Section -->
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                Distinctions Honorifiques
+              </h3>
+              <div class="space-y-4">
+                <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                  <p class="font-bold text-gray-900 text-lg">Décembre 2020</p>
+                  <p class="text-gray-600 text-sm">Meilleur acteur de formation en énergie renouvelable</p>
+                </div>
+                <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                  <p class="font-bold text-gray-900 text-lg">Novembre 2023</p>
+                  <p class="text-gray-600 text-sm">Meilleur centre de formation en énergie renouvelable</p>
+                </div>
+                <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                  <p class="font-bold text-gray-900 text-lg">Décembre 2023</p>
+                  <p class="text-gray-600 text-sm">Meilleur acteur de l'éducation à Cotonou au Bénin</p>
+                </div>
+              </div>
+              <div class="mt-8 pt-8 border-t border-gray-200">
+                <p class="text-sm text-gray-600 flex items-center gap-2">
+                  <span class="text-lg">🤝</span>
+                  <strong>Membre actif de SAER-TOGO</strong>
+                </p>
+                <p class="text-xs text-gray-500 mt-2">Synergie des acteurs des énergies renouvelables au Togo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collaborations Card -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
+            <!-- Image Section -->
+            <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center relative overflow-hidden">
+              <svg class="w-32 h-32 text-white opacity-20 absolute" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.1 0-2.43 1.5-4.73 6-8.73 4.5 4-4.5 6.3-4.5 8.73 0 3.53 2.65 6.1 6 6.1z"/>
+              </svg>
+              <div class="relative z-10 text-center">
+                <div class="text-6xl mb-2">🎓</div>
+                <p class="text-white font-bold text-sm">Collaborations Académiques</p>
+              </div>
+            </div>
+            <!-- Content Section -->
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                Collaborations Académiques
+              </h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="font-bold text-gray-900 mb-2 text-lg">Commission Consultation Sectorielle (CCS)</p>
+                  <p class="text-gray-600 leading-relaxed text-sm">
+                    CREFER est fière d'être <strong>membre de la CCS du CERME</strong> de l'université de Lomé. Nous collaborons étroitement pour garantir des programmes de qualité et actualisés.
+                  </p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border border-purple-200">
+                  <p class="text-sm text-gray-700">
+                    <strong>Engagement académique :</strong> Nous organisons des activités pédagogiques stimulantes, y compris des sorties en entreprise pour une expérience pratique réelle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-12 text-white text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+          <h3 class="text-3xl font-bold mb-4">Rejoignez le CREFER</h3>
+          <p class="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
+            Pour une formation complète, pratique et diversifiée, préparant les étudiants à exceller dans les secteurs des énergies renouvelables et des technologies de surveillance.
+          </p>
+          <router-link to="/admissions" class="inline-block px-10 py-4 bg-yellow-400 text-purple-900 font-bold rounded-xl hover:bg-yellow-300 transition-all hover:shadow-lg">
+            Candidater maintenant
+          </router-link>
         </div>
       </div>
     </section>

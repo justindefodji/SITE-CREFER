@@ -16,7 +16,7 @@
               <span class="text-yellow-300 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-              FORMER AUJOURD'HUI<br />LES EXPERTS EN<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-200">ÉNERGIE DE DEMAIN</span>
+              L'ÉCOLE RÉGIONALE<br />AXÉE SUR <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-200">LES MÉTIERS DE L'ÉNERGIE</span>
             </h1>
 
             <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed max-w-lg animate-fade-in-up delay-300" style="font-weight: 300; letter-spacing: 0.5px;">
@@ -150,7 +150,7 @@
             </div>
             <div class="bg-gradient-to-r from-yellow-50 to-blue-50 rounded-2xl p-6 mb-8 border border-yellow-200/50">
               <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Reconnaissance</p>
-              <p class="text-xl font-bold text-blue-900">🏆 Meilleur Acteur de Développement</p>
+              <p class="text-xl font-bold text-blue-900">Meilleur Acteur de Développement</p>
             </div>
             <router-link
               to="/admissions"
@@ -218,6 +218,193 @@
       </div>
     </section>
 
+    <!-- Programmes d'études Section -->
+    <section class="section-spacing bg-gradient-to-b from-white via-gray-50 to-white" v-scroll-animate>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16 animate-fade-in-up">
+          <span class="inline-block text-yellow-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-yellow-100 rounded-full mb-4">Nos Programmes</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
+            Programmes d'études
+          </h2>
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
+          </div>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Découvrez notre offre de formation complète adaptée à vos ambitions professionnelles
+          </p>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- CAP Électricité d'Équipement -->
+          <div class="card-modern relative p-8 rounded-2xl bg-white border-2 border-blue-100 hover:border-blue-400 group animate-fade-in-up transition-all shadow-lg hover:shadow-2xl overflow-hidden" style="animation-delay: 0.1s;">
+            <!-- Gradient bar top -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-cyan-400"></div>
+            <!-- Badge -->
+            <div class="absolute top-4 right-4 px-3 py-1 bg-blue-100 rounded-full text-xs font-bold text-blue-700">Niveau 1</div>
+            
+            <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <!-- Icône Électricité: éclair -->
+                <path d="M13 10V3L4 14h6l-1 7 9-11h-6z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">CAP Électricité</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+              Maîtrisez les techniques essentielles de l'électricité et devenez un professionnel reconnu dans le domaine des équipements électriques.
+            </p>
+            <div class="space-y-2 mb-6 pb-6 border-b-2 border-blue-100">
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-blue-500 font-bold">⏱</span>
+                <span>Durée: 3 ans</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-blue-500 font-bold">📊</span>
+                <span>Diplôme d'État</span>
+              </div>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Formations pratiques intensives</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Matériel moderne et équipé</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Stages professionnels inclus</span>
+              </li>
+            </ul>
+            <router-link to="/cap-electricite" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
+              Découvrir le programme
+            </router-link>
+          </div>
+
+          <!-- BT Électrotechnique -->
+          <div class="card-modern relative p-8 rounded-2xl bg-white border-2 border-yellow-100 hover:border-yellow-400 group animate-fade-in-up transition-all shadow-lg hover:shadow-2xl overflow-hidden" style="animation-delay: 0.2s;">
+            <!-- Gradient bar top -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 to-amber-400"></div>
+            <!-- Badge -->
+            <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-100 rounded-full text-xs font-bold text-yellow-700">Niveau 2</div>
+            
+            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <!-- Icône Efficacité: histogramme -->
+                <path d="M2 11h4v7H2v-7zm6-4h4v11H8V7zm6-6h4v17h-4V1z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">BT Électrotechnique</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+              Accédez à une formation de haut niveau en électrotechnique avec approche théorique et pratique pour les futurs techniciens supérieurs.
+            </p>
+            <div class="space-y-2 mb-6 pb-6 border-b-2 border-yellow-100">
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-yellow-500 font-bold">⏱</span>
+                <span>Durée: 2-3 ans</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-yellow-500 font-bold">📊</span>
+                <span>Diplôme d'État</span>
+              </div>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Enseignement avancé</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Projets de fin d'études</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Reconnaissance nationale</span>
+              </li>
+            </ul>
+            <router-link to="/bt-electrotechnique" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
+              Découvrir le programme
+            </router-link>
+          </div>
+
+          <!-- Formation Modulaire -->
+          <div class="card-modern relative p-8 rounded-2xl bg-white border-2 border-green-100 hover:border-green-400 group animate-fade-in-up transition-all shadow-lg hover:shadow-2xl overflow-hidden" style="animation-delay: 0.3s;">
+            <!-- Gradient bar top -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-teal-400"></div>
+            <!-- Badge -->
+            <div class="absolute top-4 right-4 px-3 py-1 bg-green-100 rounded-full text-xs font-bold text-green-700">Flexible</div>
+            <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8">
+                <!-- Icône Modulaire/Solaire: soleil stylisé -->
+                <circle cx="12" cy="12" r="3" stroke="currentColor" fill="currentColor" />
+                <g stroke="currentColor">
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="M2 12h2" />
+                  <path d="M20 12h2" />
+                  <path d="M4.2 4.2l1.4 1.4" />
+                  <path d="M18.4 18.4l1.4 1.4" />
+                  <path d="M4.2 19.8l1.4-1.4" />
+                  <path d="M18.4 5.6l1.4-1.4" />
+                </g>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Formation Modulaire</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+              Flexibilité totale pour les professionnels en activité. Acquérez des compétences spécifiques à votre rythme.
+            </p>
+            <div class="space-y-2 mb-6 pb-6 border-b-2 border-green-100">
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-green-500 font-bold">⏱</span>
+                <span>Durée: 6-12 mois</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700 text-sm">
+                <span class="text-green-500 font-bold">📊</span>
+                <span>Certificat/Attestation</span>
+              </div>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Horaires flexibles</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Modules personnalisés</span>
+              </li>
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Certifications reconnues</span>
+              </li>
+            </ul>
+            <router-link to="/formation-modulaire" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
+              Découvrir les modules
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Choose CREFER Section -->
     <section class="section-spacing bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
@@ -265,7 +452,7 @@
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Experts Reconnus</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Apprenez des meilleurs spécialistes du secteur, passionnés par l'excellence éducative.</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Apprenez des meilleurs spécialistes du secteur, passionnés par L'excellence éducative.</p>
             </div>
 
             <!-- Card 3 -->
@@ -290,119 +477,6 @@
               <p class="text-gray-600 text-sm leading-relaxed">Contribuez à la transition énergétique mondiale et façonnez un avenir durable.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Programmes d'études Section -->
-    <section class="section-spacing bg-gradient-to-b from-blue-50 to-indigo-50" v-scroll-animate>
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full">
-            <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Formations disponibles</span>
-          </div>
-          <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Nos Programmes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">d'Excellence</span>
-          </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Découvrez nos formations modulaires conçues pour vous faire devenir un expert reconnu.
-          </p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <!-- Card 1 -->
-          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-blue-300 to-blue-500">
-              <img 
-                :src="capImageUrl"
-                alt="Formation en électricité bâtiment"
-                loading="lazy"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">ÉLECTRICITÉ</span>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Expert en<br/>Électricité Bâtiment</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6">Installation, maintenance et sécurisation des réseaux électriques pour habitations et sites industriels.</p>
-              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
-                En savoir plus →
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.2s;">
-            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-green-300 to-green-500">
-              <img 
-                :src="efficaciteImageUrl"
-                alt="Formation en efficacité énergétique"
-                loading="lazy"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center text-white">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <span class="text-xs font-bold text-green-600 uppercase tracking-wider">EFFICACITÉ</span>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Efficacité<br/>Énergétique</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6">Optimisez la consommation énergétique et réduisez l'empreinte carbone avec les meilleures pratiques.</p>
-              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
-                En savoir plus →
-              </button>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card-modern rounded-3xl overflow-hidden shadow-xl group animate-fade-in-up" style="animation-delay: 0.3s;">
-            <div class="relative h-64 overflow-hidden bg-gradient-to-br from-yellow-300 to-yellow-500">
-              <img 
-                :src="solaireImageUrl"
-                alt="Formation en énergie solaire"
-                loading="lazy"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center text-white">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
-                  </svg>
-                </div>
-                <span class="text-xs font-bold text-yellow-600 uppercase tracking-wider">SOLAIRE</span>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Expert<br/>en Énergie Solaire</h3>
-              <p class="text-gray-600 text-sm leading-relaxed mb-6">Maîtrisez la production solaire et les solutions autonomes connectées au réseau.</p>
-              <button class="btn-modern w-full px-4 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg">
-                En savoir plus →
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
-          <router-link
-            to="/admissions"
-            class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
-          >
-            Voir tous les programmes
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </router-link>
         </div>
       </div>
     </section>
@@ -481,12 +555,12 @@
               Notre<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Actualités</span>
             </h2>
           </div>
-          <a href="/articles" class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-lg transition-all">
+          <router-link to="/articles" class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-lg transition-all">
             Voir plus
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
+          </router-link>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Article 1 -->
@@ -783,154 +857,7 @@
       </div>
     </section>
 
-    <!-- Programmes d'études Section -->
-    <section class="section-spacing bg-white" v-scroll-animate>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-16 animate-fade-in-up">
-          <span class="text-yellow-500 text-sm font-semibold tracking-widest uppercase">Nos Programmes</span>
-          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
-            Programmes d'étude
-          </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Découvrez notre offre de formation complète adaptée à vos ambitions professionnelles
-          </p>
-        </div>
-
-        <!-- Programs Grid -->
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- CAP Électricité d'Équipement -->
-          <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-100 hover:border-blue-300 group animate-fade-in-up transition-all" style="animation-delay: 0.1s;">
-            <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <!-- Icône Électricité: éclair -->
-                <path d="M13 10V3L4 14h6l-1 7 9-11h-6z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">CAP Électricité d'Équipement</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Maîtrisez les techniques essentielles de l'électricité et devenez un professionnel reconnu dans le domaine des équipements électriques.
-            </p>
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Formation pratique intensives</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Matériel moderne et équipé</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Stage professionnel inclus</span>
-              </li>
-            </ul>
-            <router-link to="/admissions" class="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-              En savoir plus
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </router-link>
-          </div>
-
-          <!-- BT Électrotechnique -->
-          <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-100 hover:border-yellow-300 group animate-fade-in-up transition-all" style="animation-delay: 0.2s;">
-            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <!-- Icône Efficacité: histogramme -->
-                <path d="M2 11h4v7H2v-7zm6-4h4v11H8V7zm6-6h4v17h-4V1z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">BT Électrotechnique</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Accédez à une formation de haut niveau en électrotechnique avec une approche théorique et pratique pour les futurs ingénieurs.
-            </p>
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Enseignement avancé</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Projets de fin d'études</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Reconnaissance nationale</span>
-              </li>
-            </ul>
-            <router-link to="/admissions" class="text-yellow-600 font-semibold hover:text-yellow-700 inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-              En savoir plus
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </router-link>
-          </div>
-
-          <!-- Formation Modulaire -->
-          <div class="card-modern p-8 rounded-2xl bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-100 hover:border-green-300 group animate-fade-in-up transition-all" style="animation-delay: 0.3s;">
-            <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8">
-                <!-- Icône Modulaire/Solaire: soleil stylisé -->
-                <circle cx="12" cy="12" r="3" stroke="currentColor" fill="currentColor" />
-                <g stroke="currentColor">
-                  <path d="M12 2v2" />
-                  <path d="M12 20v2" />
-                  <path d="M2 12h2" />
-                  <path d="M20 12h2" />
-                  <path d="M4.2 4.2l1.4 1.4" />
-                  <path d="M18.4 18.4l1.4 1.4" />
-                  <path d="M4.2 19.8l1.4-1.4" />
-                  <path d="M18.4 5.6l1.4-1.4" />
-                </g>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Formation Modulaire</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Flexibilité totale pour les professionnels en activité. Acquérez des compétences spécifiques à votre rythme.
-            </p>
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Horaires flexibles</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Modules personnalisés</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-700">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span>Certifications reconnues</span>
-              </li>
-            </ul>
-            <router-link to="/admissions" class="text-green-600 font-semibold hover:text-green-700 inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-              En savoir plus
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- Call to Action -->
     <section class="section-spacing bg-gradient-to-r from-yellow-600 to-white relative overflow-hidden" v-scroll-animate>
@@ -940,7 +867,7 @@
       
       <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
         <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">L'Excellence</span>
+          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">L'excellence</span>
         </h2>
         <p class="text-xl text-gray-800 mb-12 font-light drop-shadow-md">
           Les places pour les sessions 2025-2026 sont limitées. Inscris-toi maintenant et rejoins la révolution des énergies durables.
