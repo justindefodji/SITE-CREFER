@@ -64,14 +64,11 @@
 
           <!-- Right Image Placeholder -->
           <div class="flex justify-center animate-fade-in-up delay-200">
-            <div class="w-full max-w-md bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg p-8 flex items-center justify-center h-96 hover:shadow-xl transition-shadow transform hover:scale-105">
-              <div class="text-center text-white">
-                <svg class="w-24 h-24 mx-auto mb-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-                </svg>
-                <p class="text-lg font-semibold">Histoire de CREFER</p>
-              </div>
-            </div>
+            <img 
+              :src="distinction3Image" 
+              alt="Histoire de CREFER" 
+              class="w-full max-w-md rounded-lg shadow-lg h-96 object-cover hover:shadow-xl transition-shadow transform hover:scale-105"
+            />
           </div>
         </div>
       </div>
@@ -108,22 +105,16 @@
 
         <!-- Vision & Mission Images -->
         <div class="grid lg:grid-cols-2 gap-8 mt-12">
-          <div class="bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-lg h-64 flex items-center justify-center text-white animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105">
-            <div class="text-center">
-              <svg class="w-20 h-20 mx-auto mb-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
-              </svg>
-              <p class="font-semibold">Jeunes formés en énergies</p>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-lg h-64 flex items-center justify-center text-white animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105">
-            <div class="text-center">
-              <svg class="w-20 h-20 mx-auto mb-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-              <p class="font-semibold">Experts en énergies renouvelables</p>
-            </div>
-          </div>
+          <img 
+            :src="mission1Image" 
+            alt="Vision CREFER" 
+            class="rounded-lg shadow-lg h-64 object-cover animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105 w-full"
+          />
+          <img 
+            :src="vision2Image" 
+            alt="Mission CREFER" 
+            class="rounded-lg shadow-lg h-64 object-cover animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105 w-full"
+          />
         </div>
       </div>
     </section>
@@ -164,38 +155,26 @@
 
           <!-- Right Images Placeholder -->
           <div class="grid grid-cols-2 gap-4">
-            <div class="bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up hover:shadow-xl transition-shadow transform hover:scale-105">
-              <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5 15h-2v-2h2v2zm0-4h-2V5h2v8z"/>
-                </svg>
-                <p class="text-sm font-semibold">Théorie</p>
-              </div>
-            </div>
-            <div class="bg-gradient-to-br from-green-300 to-green-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-100 hover:shadow-xl transition-shadow transform hover:scale-105">
-              <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.87 15.07L17.6 7.5s.11-.35.11-.54c0-.72-.6-1.32-1.33-1.32h-.35c-.28 0-.53.11-.82.38l-7.44 8.35c-.74.81-.74 2.04 0 2.89l7.44 8.35c.29.27.54.38.82.38h.35c.74 0 1.33-.6 1.33-1.33 0-.18-.05-.38-.15-.54l-4.73-7.62zM6.4 6.38C6.4 7.32 7.29 8 8.4 8H13.6V4H8.4C7.29 4 6.4 4.67 6.4 5.56V6.38z"/>
-                </svg>
-                <p class="text-sm font-semibold">Travaux pratique</p>
-              </div>
-            </div>
-            <div class="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105">
-              <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                </svg>
-                <p class="text-sm font-semibold">Stages</p>
-              </div>
-            </div>
-            <div class="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg shadow-lg h-40 flex items-center justify-center text-white animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105">
-              <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-2 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                <p class="text-sm font-semibold">Entrepreneuriat</p>
-              </div>
-            </div>
+            <img
+              :src="theoryImage"
+              alt="Théorie"
+              class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up hover:shadow-xl transition-shadow transform hover:scale-105"
+            />
+            <img
+              :src="practicalImage"
+              alt="Travaux pratique"
+              class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-100 hover:shadow-xl transition-shadow transform hover:scale-105"
+            />
+            <img
+              :src="stageImage"
+              alt="Stages"
+              class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105"
+            />
+            <img
+              :src="entrepreneurshipImage"
+              alt="Entrepreneuriat"
+              class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105"
+            />
           </div>
         </div>
       </div>
@@ -270,11 +249,11 @@
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- Site 1: Siège -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-              <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5.581m0 0H9m0 0h5.581M9 21m0 0H7a2 2 0 01-2-2m16 0a2 2 0 01-2 2m0 0H7a2 2 0 01-2-2m16 0V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
-              </svg>
-            </div>
+            <img 
+              :src="batiment1Image" 
+              alt="Siège CREFER à Totsi Gblenkome" 
+              class="w-full h-64 object-cover"
+            />
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">Le Siège</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
@@ -288,11 +267,11 @@
 
           <!-- Site 2: Annexe -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
-            <div class="h-64 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-              <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
-            </div>
+            <img 
+              :src="batiment2Image" 
+              alt="Annexe CREFER à Totsi" 
+              class="w-full h-64 object-cover"
+            />
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">L'Annexe</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
@@ -429,15 +408,11 @@
           <!-- Distinctions Card -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
             <!-- Image Section -->
-            <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center relative overflow-hidden">
-              <svg class="w-32 h-32 text-white opacity-20 absolute" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <div class="relative z-10 text-center">
-                <div class="text-6xl mb-2">🏆</div>
-                <p class="text-white font-bold text-sm">Distinctions Honorifiques</p>
-              </div>
-            </div>
+            <img
+              :src="distinction1Image"
+              alt="Distinctions Honorifiques"
+              class="w-full h-80 object-cover"
+            />
             <!-- Content Section -->
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">
@@ -470,15 +445,11 @@
           <!-- Collaborations Card -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
             <!-- Image Section -->
-            <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center relative overflow-hidden">
-              <svg class="w-32 h-32 text-white opacity-20 absolute" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.1 0-2.43 1.5-4.73 6-8.73 4.5 4-4.5 6.3-4.5 8.73 0 3.53 2.65 6.1 6 6.1z"/>
-              </svg>
-              <div class="relative z-10 text-center">
-                <div class="text-6xl mb-2">🎓</div>
-                <p class="text-white font-bold text-sm">Collaborations Académiques</p>
-              </div>
-            </div>
+            <img
+              :src="distinction2Image"
+              alt="Collaborations Académiques"
+              class="w-full h-80 object-cover"
+            />
             <!-- Content Section -->
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">
@@ -661,12 +632,23 @@ export default {
   name: 'About',
   data() {
     return {
-      // Image de fond du hero section (utilise une image locale .jpg)
+      // Image de fond du hero section
       backgroundImageUrl: new URL('../assets/images/_DSC4860.jpg', import.meta.url).href,
       // images des cartes programmess sorties du template
       elecImage: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href,
       efficaciteImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
-      expertImage: new URL('../assets/images/_DSC4865.jpg', import.meta.url).href
+      expertImage: new URL('../assets/images/_DSC4865.jpg', import.meta.url).href,
+      batiment1Image: new URL('../assets/images/batiment1.jpg', import.meta.url).href,
+      batiment2Image: new URL('../assets/images/batiment2.jpg', import.meta.url).href,
+      distinction3Image: new URL('../assets/images/distinction3.jpg', import.meta.url).href,
+      mission1Image: new URL('../assets/images/mission1.jpg', import.meta.url).href,
+      vision2Image: new URL('../assets/images/vision2.jpg', import.meta.url).href,
+      theoryImage: new URL('../assets/images/théorie.jpg', import.meta.url).href,
+      practicalImage: new URL('../assets/images/pratique.jpg', import.meta.url).href,
+      stageImage: new URL('../assets/images/stage.jpg', import.meta.url).href,
+      entrepreneurshipImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
+      distinction1Image: new URL('../assets/images/distinction1.jpg', import.meta.url).href,
+      distinction2Image: new URL('../assets/images/distinction2.jpg', import.meta.url).href
     }
   },
   methods: {

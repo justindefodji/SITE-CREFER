@@ -6,7 +6,7 @@
     <!-- Hero Banner with Image -->
     <div class="relative h-96 sm:h-[500px] w-full overflow-hidden">
       <img 
-        src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&h=500&fit=crop" 
+        :src="heroBannerImage"
         alt="CAP Électricité d'Équipement" 
         class="w-full h-full object-cover"
       />
@@ -64,7 +64,7 @@
           </div>
           <div class="rounded-xl overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" 
+              :src="qualificationImage"
               alt="Certification diplôme CAP" 
               class="w-full h-64 object-cover"
             />
@@ -77,7 +77,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
           <div class="rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
             <img 
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" 
+              :src="dureeImage"
               alt="Durée de formation 3 ans" 
               class="w-full h-64 object-cover"
             />
@@ -156,7 +156,7 @@
           </div>
           <div class="rounded-xl overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop" 
+              :src="objectifsImage"
               alt="Installation électrique" 
               class="w-full h-64 object-cover"
             />
@@ -169,7 +169,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
           <div class="rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
             <img 
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" 
+              :src="debouchesImage"
               alt="Débouchés professionnels" 
               class="w-full h-64 object-cover"
             />
@@ -229,11 +229,11 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Autres formations disponibles</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-            <div class="h-48 bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <img 
+              :src="btElectrotechniqueImage"
+              alt="BT Électrotechnique"
+              class="h-48 w-full object-cover"
+            />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">BT Électrotechnique</h3>
               <p class="text-gray-700 mb-4">
@@ -249,11 +249,11 @@
           </div>
 
           <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-            <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
+            <img 
+              :src="formationModulaireImage"
+              alt="Formation Modulaire"
+              class="h-48 w-full object-cover"
+            />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">Formation Modulaire</h3>
               <p class="text-gray-700 mb-4">
@@ -276,6 +276,17 @@
 <script>
 export default {
   name: 'CapElectricite',
+  data() {
+    return {
+      heroBannerImage: new URL('../assets/images/_DSC4865.jpg', import.meta.url).href,
+      qualificationImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
+      dureeImage: new URL('../assets/images/batiment2.jpg', import.meta.url).href,
+      objectifsImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
+      debouchesImage: new URL('../assets/images/distinction1.jpg', import.meta.url).href,
+      btElectrotechniqueImage: new URL('../assets/images/pratique.jpg', import.meta.url).href,
+      formationModulaireImage: new URL('../assets/images/mission1.jpg', import.meta.url).href
+    }
+  },
   head() {
     return {
       title: 'CAP Électricité d\'Équipement | CREFER',

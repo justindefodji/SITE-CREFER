@@ -6,7 +6,7 @@
     <!-- Hero Banner with Image -->
     <div class="relative h-96 sm:h-[500px] w-full overflow-hidden">
       <img 
-        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=500&fit=crop" 
+        :src="heroBannerImage"
         alt="Formations Modulaires" 
         class="w-full h-full object-cover"
       />
@@ -54,7 +54,7 @@
           </div>
           <div class="rounded-xl overflow-hidden shadow-lg mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800&h=400&fit=crop" 
+              :src="spvSectionImage"
               alt="Énergie solaire photovoltaïque" 
               class="w-full h-96 object-cover"
             />
@@ -159,7 +159,7 @@
           </div>
           <div class="rounded-xl overflow-hidden shadow-lg mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop" 
+              :src="sstSectionImage"
               alt="Systèmes de sécurité et télécommunications" 
               class="w-full h-96 object-cover"
             />
@@ -285,11 +285,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- CAP Électricité d'Équipement -->
           <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-            <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <img 
+              :src="capElectriciteImage"
+              alt="CAP Électricité d'Équipement"
+              class="h-48 w-full object-cover"
+            />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">CAP Électricité d'Équipement</h3>
               <p class="text-gray-700 mb-4">
@@ -306,11 +306,11 @@
 
           <!-- BT Électrotechnique -->
           <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-            <div class="h-48 bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center">
-              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
+            <img 
+              :src="btElectrotechniqueImage"
+              alt="BT Électrotechnique"
+              class="h-48 w-full object-cover"
+            />
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">BT Électrotechnique</h3>
               <p class="text-gray-700 mb-4">
@@ -333,6 +333,15 @@
 <script>
 export default {
   name: 'FormationModulaire',
+  data() {
+    return {
+      heroBannerImage: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href,
+      spvSectionImage: new URL('../assets/images/théorie.jpg', import.meta.url).href,
+      sstSectionImage: new URL('../assets/images/pratique.jpg', import.meta.url).href,
+      capElectriciteImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
+      btElectrotechniqueImage: new URL('../assets/images/distinction2.jpg', import.meta.url).href
+    }
+  },
   head() {
     return {
       title: 'Formations Modulaires | CREFER',
