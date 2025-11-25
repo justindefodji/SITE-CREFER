@@ -452,7 +452,7 @@
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">Experts Reconnus</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Apprenez des meilleurs spécialistes du secteur, passionnés par L'excellence éducative.</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Apprenez des meilleurs spécialistes du secteur, passionnés par l'excellence éducative.</p>
             </div>
 
             <!-- Card 3 -->
@@ -867,7 +867,7 @@
       
       <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
         <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">L'excellence</span>
+          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">l'excellence</span>
         </h2>
         <p class="text-xl text-gray-800 mb-12 font-light drop-shadow-md">
           Les places pour les sessions 2025-2026 sont limitées. Inscris-toi maintenant et rejoins la révolution des énergies durables.

@@ -11,11 +11,11 @@
       <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 to-transparent z-15"></div>
 
       <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20 py-20">
-        <div class="animate-fade-in-up">
+        <div>
           <div class="mb-6">
-            <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 hero-title" style="font-family: 'Montserrat', sans-serif;">Nos Formations</div>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight hero-title" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">TOUS NOS PROGRAMMES</h1>
-            <p class="text-lg md:text-xl text-blue-100 max-w-2xl hero-subtitle">
+            <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4" style="font-family: 'Montserrat', sans-serif;">Nos Formations</div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">TOUS NOS PROGRAMMES</h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl">
               Découvrez l'ensemble de nos formations complètes : théorie, travaux pratiques, stages et accompagnement entrepreneurial.
             </p>
           </div>
@@ -24,7 +24,7 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white" v-scroll-animate>
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white scroll-reveal">
       <div class="max-w-7xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-yellow-400">
           <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Notre Approche Pédagogique</h2>
@@ -36,12 +36,12 @@
     </section>
 
     <!-- Programs Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50 to-cyan-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50 to-cyan-50 scroll-reveal">
       <div class="max-w-7xl mx-auto">
         <!-- CAP Électricité Section -->
-        <div class="mb-16 animate-fade-in-up">
+        <div class="mb-16">
           <div class="flex items-center gap-4 mb-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center program-icon">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -58,12 +58,12 @@
               <img 
                 :src="capHeroImage"
                 alt="CAP Électricité"
-                class="w-full h-full object-cover program-image hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
 
             <!-- Description -->
-            <div class="flex flex-col justify-center description-text">
+            <div class="flex flex-col justify-center">
               <p class="text-gray-700 text-lg leading-relaxed mb-6">
                 Le CAP Électricité d'Équipement prépare les étudiants à maîtriser l'installation, la maintenance et la sécurisation des réseaux électriques pour le bâtiment et l'industrie.
               </p>
@@ -89,96 +89,96 @@
           <!-- Program Details -->
           <div class="grid md:grid-cols-4 gap-6">
             <!-- Théorie -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 detail-card">
-              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 program-icon">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">Théorie</h3>
               <ul class="space-y-2 text-gray-600 text-sm">
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-blue-500">→</span> Électricité générale
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-blue-500">→</span> Installation bâtiment
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-blue-500">→</span> Normes de sécurité
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-blue-500">→</span> Dépannage industriel
                 </li>
               </ul>
             </div>
 
             <!-- Travaux Pratiques -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 detail-card">
-              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 program-icon">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 4l6 6v10a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h8z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">Travaux Pratiques</h3>
               <ul class="space-y-2 text-gray-600 text-sm">
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-purple-500">→</span> Installations réelles
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-purple-500">→</span> Équipements modernes
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-purple-500">→</span> Soudure et câblage
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-purple-500">→</span> Mise en situation
                 </li>
               </ul>
             </div>
 
             <!-- Stages en Entreprise -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 detail-card">
-              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 program-icon">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">Stages en Entreprise</h3>
               <ul class="space-y-2 text-gray-600 text-sm">
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-green-500">→</span> Expérience réelle
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-green-500">→</span> Partenaires qualifiés
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-green-500">→</span> Encadrement professionnel
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-green-500">→</span> Réseautage secteur
                 </li>
               </ul>
             </div>
 
             <!-- Accompagnement -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 detail-card">
-              <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 program-icon">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
+              <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-gray-900 mb-2">Accompagnement</h3>
               <ul class="space-y-2 text-gray-600 text-sm">
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-yellow-500">→</span> Leadership
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-yellow-500">→</span> Entrepreneuriat
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-yellow-500">→</span> Projets personnels
                 </li>
-                <li class="flex items-center gap-2 list-item">
+                <li class="flex items-center gap-2">
                   <span class="text-yellow-500">→</span> Insertion pro
                 </li>
               </ul>
@@ -187,7 +187,7 @@
         </div>
 
         <!-- BT Électrotechnique Section -->
-        <div class="mb-16 animate-fade-in-up">
+        <div class="mb-16">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -237,7 +237,7 @@
           <!-- Program Details -->
           <div class="grid md:grid-cols-4 gap-6">
             <!-- Théorie -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/>
@@ -261,7 +261,7 @@
             </div>
 
             <!-- Travaux Pratiques -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-100">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 4l6 6v10a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h8z"/>
@@ -285,7 +285,7 @@
             </div>
 
             <!-- Stages en Entreprise -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-200">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
@@ -309,7 +309,7 @@
             </div>
 
             <!-- Accompagnement -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-300">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -335,7 +335,7 @@
         </div>
 
         <!-- Formations Modulaires Section -->
-        <div class="animate-fade-in-up">
+        <div>
           <div class="flex items-center gap-4 mb-8">
             <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
               <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -385,7 +385,7 @@
           <!-- Program Details -->
           <div class="grid md:grid-cols-4 gap-6 mb-12">
             <!-- Théorie -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/>
@@ -409,7 +409,7 @@
             </div>
 
             <!-- Travaux Pratiques -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-100">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 4l6 6v10a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h8z"/>
@@ -433,7 +433,7 @@
             </div>
 
             <!-- Stages Optionnels -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-200">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
@@ -457,7 +457,7 @@
             </div>
 
             <!-- Accompagnement -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 animate-fade-in-up delay-300">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105">
               <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
                 <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -485,7 +485,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-yellow-600 to-amber-600 text-white" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-yellow-600 to-amber-600 text-white">
       <div class="max-w-7xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold mb-6" style="font-family: 'Montserrat', sans-serif;">Trouvez le programme qui vous convient</h2>
         <p class="text-lg text-yellow-100 mb-8 max-w-2xl mx-auto">
@@ -527,6 +527,25 @@ export default {
       modulaireHeroImage: new URL('../assets/images/theorie.jpg', import.meta.url).href
     }
   },
+  mounted() {
+    this.handleScroll();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const elements = document.querySelectorAll('.scroll-reveal');
+      elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0;
+        if (isVisible) {
+          element.classList.add('revealed');
+        }
+      });
+    }
+  },
   head() {
     return {
       title: 'Tous nos Programmes | CREFER',
@@ -543,6 +562,17 @@ export default {
 </script>
 
 <style scoped>
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -708,10 +738,6 @@ export default {
 .cta-button:hover {
   transform: translateY(-4px) scale(1.05);
   animation: none;
-}
-
-* {
-  scroll-behavior: smooth;
 }
 
 a, button, [role="button"] {

@@ -4,7 +4,6 @@
     <section
       class="relative py-12 px-4 sm:px-6 lg:px-8 border-b overflow-hidden bg-cover bg-center"
       :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
-      v-scroll-animate
     >
       <!-- Dark overlay for contrast -->
       <div class="absolute inset-0 bg-black/55 z-10"></div>
@@ -18,35 +17,43 @@
     </section>
 
     <!-- Articles Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50">
       <div class="max-w-7xl mx-auto">
         <div class="space-y-12">
-          <!-- Article 1 -->
+          <!-- Article 1 - Soutenance Mémoire -->
           <article class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
             <!-- Image Left -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
+              <div class="rounded-lg overflow-hidden shadow-lg h-72 w-full bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
                 <div class="text-center text-white">
-                  <div class="text-6xl mb-2">👷</div>
-                  <p class="font-semibold">Formation Électricité</p>
+                  <div class="text-6xl mb-2">🎓</div>
+                  <p class="font-semibold">Soutenance Mémoire</p>
                 </div>
               </div>
             </div>
 
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
-              <p class="text-gray-500 font-semibold mb-2">26 SET 2025</p>
+              <p class="text-yellow-500 font-semibold mb-2">31 OCTOBRE 2025</p>
               <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Électricité bâtiment et industrielle
+                Soutenance de Mémoire - Promotion 12 SPV
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur. Pellentesque non vitae in nulla sit aliquam enim. Non volutpat tortor arcu tempus sem eget. Justo facilisi lorem gravida sed feugiat id.
+                Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion pour l'électricité et l'énergie solaire.
               </p>
+              <div class="flex items-center gap-2 text-gray-600 mb-4">
+                <span>📍</span>
+                <span>Annexe CREFER, au bord des pavés de Totsi</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-600 mb-6">
+                <span>🕐</span>
+                <span>08h00 - 12h00</span>
+              </div>
               <a
                 href="#"
                 class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
-                <span>Lire plus</span>
+                <span>En savoir plus</span>
                 <span>→</span>
               </a>
             </div>
@@ -55,32 +62,38 @@
           <!-- Divider -->
           <div class="my-8 border-t border-gray-200"></div>
 
-          <!-- Article 2 -->
+          <!-- Article 2 - 14ème Promotion Modulaire -->
           <article class="flex flex-col lg:flex-row-reverse gap-8 items-start lg:items-center">
             <!-- Image Right -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="bg-gradient-to-br from-blue-300 to-blue-500 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
+              <div class="rounded-lg overflow-hidden shadow-lg h-72 w-full bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center">
                 <div class="text-center text-white">
-                  <div class="text-6xl mb-2">⚡</div>
-                  <p class="font-semibold">Électricité BTP</p>
+                  <div class="text-6xl mb-2">🚀</div>
+                  <p class="font-semibold">14ème Promotion</p>
                 </div>
               </div>
             </div>
 
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
-              <p class="text-gray-500 font-semibold mb-2">26 SET 2025</p>
+              <p class="text-yellow-500 font-semibold mb-2">14 OCTOBRE 2025</p>
               <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Électricité bâtiment et industrielle
+                Lancement de la 14ème Promotion des Formations Modulaires
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur. Pellentesque non vitae in nulla sit aliquam enim. Non volutpat tortor arcu tempus sem eget. Justo facilisi lorem gravida sed feugiat id.
+                Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois en électricité, plomberie, énergie solaire et froid-climatisation. À travers cette nouvelle promotion, CREFER confirme son engagement à former des techniciens compétents, polyvalents et opérationnels, capables de répondre efficacement aux besoins croissants du marché Togolais et régional.
               </p>
+              <p class="text-gray-700 mb-6 leading-relaxed">
+                Avec un encadrement de qualité et une approche résolument pratique de l'apprentissage, CREFER s'impose aujourd'hui comme une véritable référence de la formation technique et professionnelle au Togo.
+              </p>
+              <div class="text-yellow-500 font-bold mb-6">
+                👏 Bienvenue aux nouveaux apprenants !
+              </div>
               <a
                 href="#"
                 class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
-                <span>Lire plus</span>
+                <span>En savoir plus</span>
                 <span>→</span>
               </a>
             </div>
@@ -89,32 +102,32 @@
           <!-- Divider -->
           <div class="my-8 border-t border-gray-200"></div>
 
-          <!-- Article 3 -->
-          <article class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
+          <!-- Article 3 - À venir -->
+          <article class="flex flex-col lg:flex-row gap-8 items-start lg:items-center opacity-50">
             <!-- Image Left -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="bg-gradient-to-br from-green-300 to-green-500 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
+              <div class="bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
                 <div class="text-center text-white">
-                  <div class="text-6xl mb-2">☀️</div>
-                  <p class="font-semibold">Énergie Solaire</p>
+                  <div class="text-6xl mb-2">📰</div>
+                  <p class="font-semibold">Prochaine actualité</p>
                 </div>
               </div>
             </div>
 
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
-              <p class="text-gray-500 font-semibold mb-2">20 SET 2025</p>
+              <p class="text-gray-500 font-semibold mb-2">À VENIR</p>
               <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Efficacité énergétique et énergie solaire
+                Prochaine actualité
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur. Pellentesque non vitae in nulla sit aliquam enim. Non volutpat tortor arcu tempus sem eget. Justo facilisi lorem gravida sed feugiat id.
+                Restez à l'écoute pour découvrir les prochaines actualités et événements de CREFER.
               </p>
               <a
                 href="#"
                 class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
-                <span>Lire plus</span>
+                <span>En savoir plus</span>
                 <span>→</span>
               </a>
             </div>
@@ -123,32 +136,32 @@
           <!-- Divider -->
           <div class="my-8 border-t border-gray-200"></div>
 
-          <!-- Article 4 -->
-          <article class="flex flex-col lg:flex-row-reverse gap-8 items-start lg:items-center">
+          <!-- Article 4 - À venir -->
+          <article class="flex flex-col lg:flex-row-reverse gap-8 items-start lg:items-center opacity-50">
             <!-- Image Right -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="bg-gradient-to-br from-purple-300 to-purple-500 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
+              <div class="bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg overflow-hidden shadow-lg h-72 flex items-center justify-center">
                 <div class="text-center text-white">
-                  <div class="text-6xl mb-2">💡</div>
-                  <p class="font-semibold">Innovation Énergétique</p>
+                  <div class="text-6xl mb-2">📰</div>
+                  <p class="font-semibold">Prochaine actualité</p>
                 </div>
               </div>
             </div>
 
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
-              <p class="text-gray-500 font-semibold mb-2">15 SET 2025</p>
+              <p class="text-gray-500 font-semibold mb-2">À VENIR</p>
               <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Les innovations en énergies renouvelables
+                Prochaine actualité
               </h2>
               <p class="text-gray-700 mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur. Pellentesque non vitae in nulla sit aliquam enim. Non volutpat tortor arcu tempus sem eget. Justo facilisi lorem gravida sed feugiat id.
+                Restez à l'écoute pour découvrir les prochaines actualités et événements de CREFER.
               </p>
               <a
                 href="#"
                 class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
               >
-                <span>Lire plus</span>
+                <span>En savoir plus</span>
                 <span>→</span>
               </a>
             </div>
@@ -165,7 +178,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16 px-4 sm:px-6 lg:px-8" v-scroll-animate>
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Restez Informé</h2>
         <p class="text-lg text-indigo-100 mb-8">
@@ -197,7 +210,7 @@ import { ref } from 'vue'
 export default {
   name: 'Articles',
   setup() {
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4765-1200.webp', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/stage.jpg', import.meta.url).href)
     const email = ref('')
 
     const subscribeNewsletter = () => {
