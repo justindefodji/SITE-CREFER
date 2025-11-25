@@ -10,7 +10,7 @@
 
         <div class="py-2 text-center">
           <span class="font-bold text-gray-900">CAP & BT</span>
-          <span class="text-yellow-500 font-bold ml-1">15 SEP</span>
+          <span class="text-yellow-500 font-bold ml-1">15 SEPTEMBRE</span>
         </div>
 
         <div class="py-2 text-center">
@@ -24,12 +24,12 @@
         <div class="marquee-wrapper overflow-hidden">
           <div class="marquee-track text-gray-700 font-bold">
             <span class="marquee-item">ANNÉE <span class="text-yellow-500">2025-2026</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEP</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEPTEMBRE</span> &nbsp; • &nbsp; </span>
             <span class="marquee-item">MODULAIRE <span class="text-yellow-500">13 AVRIL 2026</span></span>
 
             <!-- répéter pour boucle fluide -->
             <span class="marquee-item">&nbsp;&nbsp;ANNÉE <span class="text-yellow-500">2025-2026</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEP</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEPTEMBRE</span> &nbsp; • &nbsp; </span>
             <span class="marquee-item">MODULAIRE <span class="text-yellow-500">13 AVRIL 2026</span></span>
             
           </div>

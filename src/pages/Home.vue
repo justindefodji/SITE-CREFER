@@ -144,7 +144,7 @@
                 </div>
                 <div>
                   <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide">Démarrage</p>
-                  <p class="text-2xl font-bold text-gray-900">14 OCTOBRE</p>
+                  <p class="text-2xl font-bold text-gray-900">13 AVRIL</p>
                 </div>
               </div>
             </div>

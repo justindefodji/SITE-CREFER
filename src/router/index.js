@@ -8,6 +8,7 @@ import Articles from '../pages/Articles.vue'
 import CapElectricite from '../pages/CapElectricite.vue'
 import FormationModulaire from '../pages/FormationModulaire.vue'
 import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
+import Programmes from '../pages/Programmes.vue'
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/bt-electrotechnique',
     name: 'BtElectrotechnique',
     component: BtElectrotechnique
+  },
+  {
+    path: '/programmes',
+    name: 'Programmes',
+    component: Programmes
   },
   {
     path: '/:pathMatch(.*)*',

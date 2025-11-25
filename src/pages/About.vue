@@ -586,7 +586,7 @@
         </div>
         <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
           <router-link
-            to="/admissions"
+            to="/programmes"
             class="btn-modern inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-xl hover:shadow-2xl font-bold text-lg"
           >
             Voir tous les programmes
