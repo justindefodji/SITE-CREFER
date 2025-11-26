@@ -314,16 +314,31 @@ export default {
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916.jpg', import.meta.url).href)
     const ctaImageUrl = ref(new URL('../assets/images/distinction1.jpg', import.meta.url).href)
 
-    const downloadFile = (filename) => {
-      console.log(`Téléchargement de: ${filename}`)
-      // Simulation du téléchargement
-      const element = document.createElement('a')
-      element.setAttribute('href', '#')
-      element.setAttribute('download', filename)
-      element.style.display = 'none'
-      document.body.appendChild(element)
-      element.click()
-      document.body.removeChild(element)
+    const downloadFile = async (filename) => {
+      try {
+        // Construire le chemin en tenant compte de la base Vite
+        const basePath = import.meta.env.BASE_URL
+        const filePath = `${basePath}pdfs/${filename}`
+        
+        const response = await fetch(filePath)
+        
+        if (!response.ok) {
+          throw new Error(`Erreur lors du téléchargement: ${response.statusText}`)
+        }
+        
+        const blob = await response.blob()
+        const link = document.createElement('a')
+        link.href = URL.createObjectURL(blob)
+        link.download = filename
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(link.href)
+      } catch (error) {
+        console.error('Erreur:', error)
+        alert(`Impossible de télécharger ${filename}. Veuillez réessayer.`)
+      }
     }
 
     return {

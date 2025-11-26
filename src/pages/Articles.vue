@@ -210,7 +210,7 @@ import { ref } from 'vue'
 export default {
   name: 'Articles',
   setup() {
-    const backgroundImageUrl = ref(new URL('../assets/images/stage.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4895.jpg', import.meta.url).href)
     const email = ref('')
 
     const subscribeNewsletter = () => {

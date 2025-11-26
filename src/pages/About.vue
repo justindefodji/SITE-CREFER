@@ -434,10 +434,10 @@
               </div>
               <div class="mt-8 pt-8 border-t border-gray-200">
                 <p class="text-sm text-gray-600 flex items-center gap-2">
-                  <span class="text-lg">🤝</span>
+                  <span class="text-lg"></span>
                   <strong>Membre actif de SAER-TOGO</strong>
                 </p>
-                <p class="text-xs text-gray-500 mt-2">Synergie des acteurs des énergies renouvelables au Togo</p>
+                <p class="text-xs text-gray-500 mt-2">  Synergie des acteurs des énergies renouvelables au Togo</p>
               </div>
             </div>
           </div>
@@ -473,7 +473,7 @@
         </div>
 
         <!-- Call to Action -->
-        <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-12 text-white text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+        <!-- <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-12 text-white text-center animate-fade-in-up" style="animation-delay: 0.3s;">
           <h3 class="text-3xl font-bold mb-4">Rejoignez le CREFER</h3>
           <p class="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
             Pour une formation complète, pratique et diversifiée, préparant les étudiants à exceller dans les secteurs des énergies renouvelables et des technologies de surveillance.
@@ -481,7 +481,7 @@
           <router-link to="/admissions" class="inline-block px-10 py-4 bg-yellow-400 text-purple-900 font-bold rounded-xl hover:bg-yellow-300 transition-all hover:shadow-lg">
             Candidater maintenant
           </router-link>
-        </div>
+        </div> -->
       </div>
     </section>
 
