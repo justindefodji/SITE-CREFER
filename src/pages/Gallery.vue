@@ -181,26 +181,36 @@
 
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import backgroundImg from '../assets/images/_DSC4869-1200.jpg'
+import img1 from '../assets/images/_DSC4853-1200.jpg'
+import img2 from '../assets/images/_DSC4854-1200.jpg'
+import img3 from '../assets/images/_DSC4855-1200.jpg'
+import img4 from '../assets/images/_DSC4856-1200.jpg'
+import img5 from '../assets/images/_DSC4855-1200.jpg'
+import img6 from '../assets/images/_DSC4854-1200.jpg'
+import img7 from '../assets/images/_DSC4859-1200.jpg'
+import img8 from '../assets/images/_DSC4860-1200.jpg'
+import img9 from '../assets/images/_DSC4863-1200.jpg'
 
 export default {
   name: 'Gallery',
   setup() {
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4869-1200.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(backgroundImg)
     const selectedCategory = ref('Tous')
     const lightboxOpen = ref(false)
     const currentLightboxIndex = ref(0)
     const categories = ['Tous', 'Formation', 'Étudiants', 'Installations', 'Pratique', 'Projets']
     
     const galleryItems = [
-      { id: 1, title: 'Travaux Pratiques', description: 'Électricité en atelier', category: 'Pratique', image: new URL('../assets/images/_DSC4853-1200.jpg', import.meta.url).href },
-      { id: 2, title: 'Formation', description: 'Cours avec instructeurs', category: 'Formation', image: new URL('../assets/images/_DSC4854-1200.jpg', import.meta.url).href },
-      { id: 3, title: 'Étudiants', description: 'Groupe de formation', category: 'Étudiants', image: new URL('../assets/images/_DSC4855-1200.jpg', import.meta.url).href },
-      { id: 4, title: 'Électricité', description: 'Travaux pratiques', category: 'Pratique', image: new URL('../assets/images/_DSC4856-1200.jpg', import.meta.url).href },
-      { id: 5, title: 'Experts', description: 'Formateurs qualifiés', category: 'Formation', image: new URL('../assets/images/_DSC4855-1200.jpg', import.meta.url).href },
-      { id: 6, title: 'Projet Solaire', description: 'Installation panneaux', category: 'Installations', image: new URL('../assets/images/_DSC4854-1200.jpg', import.meta.url).href },
-      { id: 7, title: 'Équipe', description: 'Sur chantier', category: 'Étudiants', image: new URL('../assets/images/_DSC4859-1200.jpg', import.meta.url).href },
-      { id: 8, title: 'Installation', description: 'Système photovoltaïque', category: 'Installations', image: new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href },
-      { id: 9, title: 'Projet', description: 'Travail en équipe', category: 'Projets', image: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href },
+      { id: 1, title: 'Travaux Pratiques', description: 'Électricité en atelier', category: 'Pratique', image: img1 },
+      { id: 2, title: 'Formation', description: 'Cours avec instructeurs', category: 'Formation', image: img2 },
+      { id: 3, title: 'Étudiants', description: 'Groupe de formation', category: 'Étudiants', image: img3 },
+      { id: 4, title: 'Électricité', description: 'Travaux pratiques', category: 'Pratique', image: img4 },
+      { id: 5, title: 'Experts', description: 'Formateurs qualifiés', category: 'Formation', image: img5 },
+      { id: 6, title: 'Projet Solaire', description: 'Installation panneaux', category: 'Installations', image: img6 },
+      { id: 7, title: 'Équipe', description: 'Sur chantier', category: 'Étudiants', image: img7 },
+      { id: 8, title: 'Installation', description: 'Système photovoltaïque', category: 'Installations', image: img8 },
+      { id: 9, title: 'Projet', description: 'Travail en équipe', category: 'Projets', image: img9 },
     ]
 
     const filteredItems = computed(() => {
