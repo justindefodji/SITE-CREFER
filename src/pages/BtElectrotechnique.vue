@@ -297,13 +297,13 @@ export default {
   name: 'BtElectrotechnique',
   data() {
     return {
-      heroBannerImage: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href,
-      qualificationImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
-      dureeImage: new URL('../assets/images/batiment1.jpg', import.meta.url).href,
-      objectifsImage: new URL('../assets/images/batiment2.jpg', import.meta.url).href,
-      debouchesImage: new URL('../assets/images/vision2.jpg', import.meta.url).href,
-      capElectriciteImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
-      formationModulaireImage: new URL('../assets/images/mission1.jpg', import.meta.url).href
+      heroBannerImage: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href,
+      qualificationImage: new URL('../assets/images/_DSC4864-1200.jpg', import.meta.url).href,
+      dureeImage: new URL('../assets/images/batiment1-1200.jpg', import.meta.url).href,
+      objectifsImage: new URL('../assets/images/batiment2-1200.jpg', import.meta.url).href,
+      debouchesImage: new URL('../assets/images/vision2-1200.jpg', import.meta.url).href,
+      capElectriciteImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
+      formationModulaireImage: new URL('../assets/images/mission1-1200.jpg', import.meta.url).href
     }
   },
   head() {

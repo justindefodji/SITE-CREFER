@@ -311,8 +311,8 @@ export default {
   name: 'Admissions',
   setup() {
     // URL d'arrière-plan par défaut (modifiable)
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916.jpg', import.meta.url).href)
-    const ctaImageUrl = ref(new URL('../assets/images/distinction1.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
+    const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
 
     const downloadFile = async (filename) => {
       try {

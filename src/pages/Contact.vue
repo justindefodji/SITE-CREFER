@@ -220,7 +220,7 @@ export default {
   name: 'Contact',
   setup() {
     // Image pour la section Header
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
     
     const form = ref({
       name: '',

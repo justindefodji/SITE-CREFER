@@ -524,7 +524,7 @@ export default {
       backgroundImageUrl: new URL('../assets/images/_DSC4860.jpg', import.meta.url).href,
       capHeroImage: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href,
       btHeroImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
-      modulaireHeroImage: new URL('../assets/images/théorie.jpg', import.meta.url).href
+      modulaireHeroImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
     }
   },
   mounted() {

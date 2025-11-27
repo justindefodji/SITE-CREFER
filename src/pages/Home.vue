@@ -904,10 +904,10 @@ export default {
   name: 'Home',
   setup() {
       // Image pour la section "Prêt à nous rejoindre ?"
-      const joinUsImage = ref(new URL('../assets/images/_DSC4676.jpg', import.meta.url).href)
+      const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href)
     const storyImageUrl = ref(new URL('../assets/images/_DSC3482.png', import.meta.url).href)
     // Images pour les 3 cards "Programmes d'étude"
     const capImageUrl = ref(new URL('../assets/images/_DSC4674.jpg', import.meta.url).href)

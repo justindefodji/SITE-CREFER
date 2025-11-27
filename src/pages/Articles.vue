@@ -212,9 +212,9 @@ import { ref } from 'vue'
 export default {
   name: 'Articles',
   setup() {
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4895.jpg', import.meta.url).href)
-    const soutenanceImageUrl = ref(new URL('../assets/images/soutenance.jpg', import.meta.url).href)
-    const promotionImageUrl = ref(new URL('../assets/images/_DSC4888.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4895-1200.jpg', import.meta.url).href)
+    const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
+    const promotionImageUrl = ref(new URL('../assets/images/_DSC4888-1200.jpg', import.meta.url).href)
     const email = ref('')
 
     const subscribeNewsletter = () => {

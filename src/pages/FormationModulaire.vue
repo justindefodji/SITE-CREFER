@@ -335,11 +335,11 @@ export default {
   name: 'FormationModulaire',
   data() {
     return {
-      heroBannerImage: new URL('../assets/images/_DSC4863.jpg', import.meta.url).href,
-      spvSectionImage: new URL('../assets/images/théorie.jpg', import.meta.url).href,
-      sstSectionImage: new URL('../assets/images/pratique.jpg', import.meta.url).href,
-      capElectriciteImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
-      btElectrotechniqueImage: new URL('../assets/images/distinction2.jpg', import.meta.url).href
+      heroBannerImage: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href,
+      spvSectionImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href,
+      sstSectionImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
+      capElectriciteImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
+      btElectrotechniqueImage: new URL('../assets/images/distinction2-1200.jpg', import.meta.url).href
     }
   },
   head() {

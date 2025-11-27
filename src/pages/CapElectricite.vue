@@ -278,13 +278,13 @@ export default {
   name: 'CapElectricite',
   data() {
     return {
-      heroBannerImage: new URL('../assets/images/_DSC4865.jpg', import.meta.url).href,
-      qualificationImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
-      dureeImage: new URL('../assets/images/batiment2.jpg', import.meta.url).href,
-      objectifsImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
-      debouchesImage: new URL('../assets/images/distinction1.jpg', import.meta.url).href,
-      btElectrotechniqueImage: new URL('../assets/images/pratique.jpg', import.meta.url).href,
-      formationModulaireImage: new URL('../assets/images/mission1.jpg', import.meta.url).href
+      heroBannerImage: new URL('../assets/images/_DSC4865-1200.jpg', import.meta.url).href,
+      qualificationImage: new URL('../assets/images/_DSC4864-1200.jpg', import.meta.url).href,
+      dureeImage: new URL('../assets/images/batiment2-1200.jpg', import.meta.url).href,
+      objectifsImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
+      debouchesImage: new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href,
+      btElectrotechniqueImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
+      formationModulaireImage: new URL('../assets/images/mission1-1200.jpg', import.meta.url).href
     }
   },
   head() {
