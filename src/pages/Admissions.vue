@@ -47,7 +47,7 @@
 
         <div class="space-y-4">
           <!-- Fiche d'inscription modulaire -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
                 <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-modulaire.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@
           </div>
 
           <!-- Fiche d'inscription BT & CAP -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-100">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-100 gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
                 <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-bt-cap.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@
           </div>
 
           <!-- Liste des outils TP et stage -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-200">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-200 gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
                 <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +100,7 @@
             </div>
             <button
               @click="downloadFile('liste-outils-tp.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@
           </div>
 
           <!-- Fiche de renseignement modulaire -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-300">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-300 gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
                 <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-modulaire.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +131,7 @@
           </div>
 
           <!-- Fiche de renseignement CAP -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-400">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-400 gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-red-100 rounded-lg group-hover:bg-red-200 transition-colors">
                 <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-cap.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap"
             >
               <span>Télécharger</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
