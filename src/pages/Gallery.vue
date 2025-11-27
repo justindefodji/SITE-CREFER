@@ -225,10 +225,9 @@ export default {
     })
 
     function getWebpSrcset(original) {
-      if (!original) return '';
-      // Utilise uniquement la version 1200 en WebP
-      const base = original.replace(/-1200\.jpg$/i, '')
-      return `${base}-1200.webp`
+      // Pour maintenant, retourner une chaîne vide pour désactiver WebP
+      // Car les fichiers WebP ne sont pas générés avec les images importées
+      return ''
     }
 
     function openLightbox(index) {
