@@ -24,11 +24,12 @@
           <article class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
             <!-- Image Left -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="rounded-lg overflow-hidden shadow-lg h-72 w-full bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
-                <div class="text-center text-white">
-                  <div class="text-6xl mb-2">🎓</div>
-                  <p class="font-semibold">Soutenance Mémoire</p>
-                </div>
+              <div class="rounded-lg overflow-hidden shadow-lg w-full aspect-square">
+                <img 
+                  :src="soutenanceImageUrl" 
+                  alt="Soutenance Mémoire" 
+                  class="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -66,11 +67,12 @@
           <article class="flex flex-col lg:flex-row-reverse gap-8 items-start lg:items-center">
             <!-- Image Right -->
             <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="rounded-lg overflow-hidden shadow-lg h-72 w-full bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center">
-                <div class="text-center text-white">
-                  <div class="text-6xl mb-2">🚀</div>
-                  <p class="font-semibold">14ème Promotion</p>
-                </div>
+              <div class="rounded-lg overflow-hidden shadow-lg w-full aspect-square">
+                <img 
+                  :src="promotionImageUrl" 
+                  alt="14ème Promotion Modulaire" 
+                  class="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -169,11 +171,11 @@
         </div>
 
         <!-- Load More Button -->
-        <div class="flex justify-center mt-16">
+        <!-- <div class="flex justify-center mt-16">
           <button class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 font-bold rounded-lg hover:bg-yellow-400 hover:text-white transition-colors hover:shadow-lg transform hover:-translate-y-1">
             Charger plus d'articles
           </button>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -211,6 +213,8 @@ export default {
   name: 'Articles',
   setup() {
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4895.jpg', import.meta.url).href)
+    const soutenanceImageUrl = ref(new URL('../assets/images/soutenance.jpg', import.meta.url).href)
+    const promotionImageUrl = ref(new URL('../assets/images/_DSC4888.jpg', import.meta.url).href)
     const email = ref('')
 
     const subscribeNewsletter = () => {
@@ -222,7 +226,9 @@ export default {
     return {
       email,
       subscribeNewsletter,
-      backgroundImageUrl
+      backgroundImageUrl,
+      soutenanceImageUrl,
+      promotionImageUrl
     }
   }
 }

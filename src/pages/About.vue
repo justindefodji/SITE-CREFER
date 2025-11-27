@@ -649,6 +649,7 @@ export default {
       entrepreneurshipImage: new URL('../assets/images/entreprenariat.jpg', import.meta.url).href,
       distinction1Image: new URL('../assets/images/distinction1.jpg', import.meta.url).href,
       distinction2Image: new URL('../assets/images/distinction2.jpg', import.meta.url).href
+      
     }
   },
   methods: {

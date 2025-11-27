@@ -67,6 +67,7 @@
           <div
             v-for="(item, index) in filteredItems"
             :key="item.id"
+            @click="openLightbox(index)"
             :class="`group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer animate-fade-in-up`"
             :style="{ animationDelay: `${(index % 3) * 100}ms` }"
           >
@@ -94,6 +95,60 @@
         </div>
       </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <transition name="fade">
+      <div v-if="lightboxOpen" class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" @click.self="closeLightbox">
+        <!-- Close Button -->
+        <button
+          @click="closeLightbox"
+          class="absolute top-6 right-6 text-white hover:text-yellow-400 transition-colors z-60"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative max-w-5xl w-full h-5/6 flex flex-col justify-center">
+          <div class="relative w-full h-full flex items-center justify-center">
+            <picture class="w-full h-full flex items-center justify-center">
+              <source type="image/webp" :srcset="getWebpSrcset(currentLightboxItem.image)" sizes="(max-width: 768px) 100vw, 90vw" />
+              <img :src="currentLightboxItem.image" :alt="currentLightboxItem.title" class="w-full h-full object-contain rounded-lg" />
+            </picture>
+
+            <!-- Left Navigation Button - ON IMAGE -->
+            <button
+              @click="previousImage"
+              :disabled="currentLightboxIndex === 0"
+              class="absolute top-1/2 -translate-y-1/2 bg-yellow-400/60 hover:bg-yellow-500/80 disabled:bg-gray-500/40 disabled:cursor-not-allowed text-gray-900 p-3 sm:p-4 rounded-full transition-colors flex items-center justify-center z-20 hover:scale-110 transform left-2 sm:left-4 backdrop-blur-sm"
+            >
+              <svg class="w-6 sm:w-8 h-6 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+
+            <!-- Right Navigation Button - ON IMAGE -->
+            <button
+              @click="nextImage"
+              :disabled="currentLightboxIndex === filteredItems.length - 1"
+              class="absolute top-1/2 -translate-y-1/2 bg-yellow-400/60 hover:bg-yellow-500/80 disabled:bg-gray-500/40 disabled:cursor-not-allowed text-gray-900 p-3 sm:p-4 rounded-full transition-colors flex items-center justify-center z-20 hover:scale-110 transform right-2 sm:right-4 backdrop-blur-sm"
+            >
+              <svg class="w-6 sm:w-8 h-6 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Image Info -->
+          <div class="mt-6 text-white text-center">
+            <h3 class="text-2xl font-bold mb-2" style="font-family: 'Montserrat', sans-serif;">{{ currentLightboxItem.title }}</h3>
+            <p class="text-gray-300 mb-4">{{ currentLightboxItem.description }}</p>
+            <p class="text-gray-400 text-sm">{{ currentLightboxIndex + 1 }} / {{ filteredItems.length }}</p>
+          </div>
+        </div>
+      </div>
+    </transition>
 
     <!-- CTA Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-fade-in-up">
@@ -125,13 +180,15 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 export default {
   name: 'Gallery',
   setup() {
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4869.jpg', import.meta.url).href)
     const selectedCategory = ref('Tous')
+    const lightboxOpen = ref(false)
+    const currentLightboxIndex = ref(0)
     const categories = ['Tous', 'Formation', 'Étudiants', 'Installations', 'Pratique', 'Projets']
     
     const galleryItems = [
@@ -153,19 +210,90 @@ export default {
       return galleryItems.filter(item => item.category === selectedCategory.value)
     })
 
+    const currentLightboxItem = computed(() => {
+      return filteredItems.value[currentLightboxIndex.value]
+    })
+
     function getWebpSrcset(original) {
       if (!original) return '';
       const base = original.replace(/\.jpg$/i, '').replace(/\.jpeg$/i, '');
       return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`;
     }
 
+    function openLightbox(index) {
+      currentLightboxIndex.value = index
+      lightboxOpen.value = true
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeLightbox() {
+      lightboxOpen.value = false
+      document.body.style.overflow = 'auto'
+    }
+
+    function nextImage() {
+      if (currentLightboxIndex.value < filteredItems.value.length - 1) {
+        currentLightboxIndex.value++
+      }
+    }
+
+    function previousImage() {
+      if (currentLightboxIndex.value > 0) {
+        currentLightboxIndex.value--
+      }
+    }
+
+    function handleKeyboard(e) {
+      if (!lightboxOpen.value) return
+      
+      if (e.key === 'ArrowRight') {
+        nextImage()
+      } else if (e.key === 'ArrowLeft') {
+        previousImage()
+      } else if (e.key === 'Escape') {
+        closeLightbox()
+      }
+    }
+
+    onMounted(() => {
+      window.addEventListener('keydown', handleKeyboard)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('keydown', handleKeyboard)
+    })
+
     return {
       selectedCategory,
       categories,
       filteredItems,
       backgroundImageUrl,
-      getWebpSrcset
+      getWebpSrcset,
+      lightboxOpen,
+      currentLightboxIndex,
+      currentLightboxItem,
+      openLightbox,
+      closeLightbox,
+      nextImage,
+      previousImage
     }
   }
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>
