@@ -166,7 +166,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family: 'Montserrat', sans-serif;">Téléphone</h3>
-            <p class="text-gray-600 text-sm space-y-2">
+            <div class="text-gray-600 text-sm space-y-2">
               <div>
                 <a href="tel:+22891204373" class="text-yellow-400 hover:text-yellow-500 font-semibold transition-colors">
                   (+228) 91 20 43 73
@@ -177,7 +177,7 @@
                   (+228) 92 53 14 55
                 </a>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>

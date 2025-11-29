@@ -172,9 +172,9 @@
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="text-gray-600 text-sm">©2025 CREFER. Tous droits réservés.</p>
           <div class="flex gap-6 text-gray-600 text-sm">
-            <a href="#" class="hover:text-yellow-500 transition-colors">Politique de confidentialité</a>
+            <!-- <a href="#" class="hover:text-yellow-500 transition-colors">Politique de confidentialité</a>
             <a href="#" class="hover:text-yellow-500 transition-colors">Conditions d'utilisation</a>
-            <a href="#" class="hover:text-yellow-500 transition-colors">Plan du site</a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">Plan du site</a> -->
           </div>
         </div>
       </div>
