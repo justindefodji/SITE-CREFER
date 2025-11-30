@@ -98,20 +98,15 @@
         <div class="grid lg:grid-cols-2 gap-8">
           <!-- Video Section -->
           <div class="relative bg-white rounded-3xl overflow-hidden shadow-2xl card-modern group animate-scale-up">
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23E5E7EB' width='600' height='400'/%3E%3C/svg%3E"
-              alt="Galerie CREFER"
-              loading="lazy"
+            <video 
+              controls
+              preload="metadata"
               class="w-full h-96 object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center group-hover:from-black/60 transition-all duration-300 cursor-pointer">
-              <div class="w-24 h-24 bg-white/90 backdrop-blur rounded-full flex items-center justify-center transform group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-2xl">
-                <svg class="w-12 h-12 text-blue-900 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                </svg>
-              </div>
-            </div>
-            <div class="absolute top-6 right-6 bg-white/95 backdrop-blur px-6 py-3 rounded-full shadow-lg">
+            >
+              <source :src="videoUrl" type="video/mp4">
+              Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+            <div class="absolute top-6 right-6 bg-white/95 backdrop-blur px-6 py-3 rounded-full shadow-lg z-10 pointer-events-none">
               <p class="text-sm font-bold text-blue-900">2024-2025</p>
             </div>
           </div>
@@ -903,7 +898,9 @@ import { ref, onMounted } from 'vue'
 export default {
   name: 'Home',
   setup() {
-      // Image pour la section "Prêt à nous rejoindre ?"
+      // Video URL - importée comme les images
+    const videoUrl = ref(new URL('../assets/videos/video1.mp4', import.meta.url).href)
+    // Image pour la section "Prêt à nous rejoindre ?"
       const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
@@ -972,6 +969,7 @@ export default {
     const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
 
     return { 
+      videoUrl,
       backgroundImageUrl,
       storyImageUrl,
       capImageUrl,
