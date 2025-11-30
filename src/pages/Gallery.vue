@@ -151,7 +151,7 @@
     </transition>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-fade-in-up">
+    <!-- <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-fade-in-up">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Galerie Complète</h2>
         <p class="text-lg text-indigo-100 mb-8 animate-fade-in-up delay-100">
@@ -175,7 +175,7 @@
           </router-link>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

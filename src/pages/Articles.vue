@@ -180,10 +180,10 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <section class="bg-gradient-to-r from-gray-900 to-yellow-500 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Restez Informé</h2>
-        <p class="text-lg text-indigo-100 mb-8">
+        <p class="text-lg text-yellow-100 mb-8">
           Inscrivez-vous à notre newsletter pour recevoir les dernières actualités
         </p>
         <form @submit.prevent="subscribeNewsletter" class="flex gap-3 flex-col sm:flex-row max-w-md mx-auto">
@@ -196,7 +196,7 @@
           />
           <button
             type="submit"
-            class="px-8 py-3 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-colors font-bold whitespace-nowrap hover:scale-105 transform"
+            class="px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:shadow-lg transition-colors font-bold whitespace-nowrap hover:scale-105 transform"
           >
             S'inscrire
           </button>
@@ -216,6 +216,54 @@ export default {
     const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
     const promotionImageUrl = ref(new URL('../assets/images/_DSC4888-1200.jpg', import.meta.url).href)
     const email = ref('')
+    
+    // Social features - Compteurs à 0 pour démarrage frais
+    const likes = ref({ 1: false, 2: false, 3: false, 4: false })
+    const likeCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
+    const commentCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
+    const shareCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
+    const newComments = ref({ 1: '', 2: '', 3: '', 4: '' })
+    const showCommentForm = ref(null)
+
+    const toggleLike = (articleId) => {
+      likes.value[articleId] = !likes.value[articleId]
+      if (likes.value[articleId]) {
+        likeCounts.value[articleId]++
+      } else {
+        likeCounts.value[articleId]--
+      }
+    }
+
+    const addComment = (articleId) => {
+      if (newComments.value[articleId].trim()) {
+        commentCounts.value[articleId]++
+        newComments.value[articleId] = ''
+        showCommentForm.value = null // Fermer le formulaire après l'ajout
+        // Feedback visuel optionnel
+        console.log(`Commentaire ajouté à l'article ${articleId}`)
+      }
+    }
+
+    const shareArticle = (title, articleId) => {
+      shareCounts.value[articleId]++
+      
+      if (navigator.share) {
+        navigator.share({
+          title: 'CREFER - Actualité',
+          text: title,
+          url: window.location.href
+        }).catch(err => console.log('Erreur de partage:', err))
+      } else {
+        // Fallback for browsers that don't support native share
+        const text = `${title} - Découvrez plus sur CREFER: ${window.location.href}`
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text)
+          alert('✅ Lien copié dans le presse-papiers!')
+        } else {
+          alert(`Partagez ceci: ${text}`)
+        }
+      }
+    }
 
     const subscribeNewsletter = () => {
       console.log('Inscription newsletter:', email.value)
@@ -228,8 +276,47 @@ export default {
       subscribeNewsletter,
       backgroundImageUrl,
       soutenanceImageUrl,
-      promotionImageUrl
+      promotionImageUrl,
+      likes,
+      likeCounts,
+      commentCounts,
+      shareCounts,
+      newComments,
+      showCommentForm,
+      toggleLike,
+      addComment,
+      shareArticle
     }
   }
 }
 </script>
+
+<style scoped>
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceHeart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+.animate-bounce-heart {
+  animation: bounceHeart 0.6s ease-in-out;
+}
+</style>

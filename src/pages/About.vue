@@ -599,16 +599,16 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-fade-in-up" v-scroll-animate>
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900 to-yellow-500 text-white animate-fade-in-up" v-scroll-animate>
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif;">Prêt à rejoindre CREFER ?</h2>
-        <p class="text-lg text-indigo-100 mb-8 animate-fade-in-up delay-100">
+        <p class="text-lg text-yellow-100 mb-8 animate-fade-in-up delay-100">
           Découvrez nos programmes et devenez un expert en énergies renouvelables
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
           <router-link
             to="/admissions"
-            class="inline-flex items-center gap-2 px-8 py-3 bg-white text-indigo-600 rounded-lg hover:shadow-lg transition-colors font-bold transform hover:-translate-y-1 hover:scale-105"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:shadow-lg transition-colors font-bold transform hover:-translate-y-1 hover:scale-105"
           >
             Nos Admissions
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -617,7 +617,7 @@
           </router-link>
           <router-link
             to="/contact"
-            class="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-indigo-600 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
+            class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
           >
             Nous Contacter
           </router-link>
