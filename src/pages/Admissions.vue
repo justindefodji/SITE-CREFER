@@ -58,12 +58,12 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-modulaire.pdf')"
-              :disabled="isDownloading"
+              :disabled="downloadingFiles['fiche-inscription-modulaire.pdf']"
               class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span v-if="!isDownloading">Télécharger</span>
+              <span v-if="!downloadingFiles['fiche-inscription-modulaire.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
-              <svg v-if="!isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="!downloadingFiles['fiche-inscription-modulaire.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,12 +84,12 @@
             </div>
             <button
               @click="downloadFile('fiche-inscription-bt-cap.pdf')"
-              :disabled="isDownloading"
+              :disabled="downloadingFiles['fiche-inscription-bt-cap.pdf']"
               class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span v-if="!isDownloading">Télécharger</span>
+              <span v-if="!downloadingFiles['fiche-inscription-bt-cap.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
-              <svg v-if="!isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="!downloadingFiles['fiche-inscription-bt-cap.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,12 +110,12 @@
             </div>
             <button
               @click="downloadFile('liste-outils-tp.pdf')"
-              :disabled="isDownloading"
+              :disabled="downloadingFiles['liste-outils-tp.pdf']"
               class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span v-if="!isDownloading">Télécharger</span>
+              <span v-if="!downloadingFiles['liste-outils-tp.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
-              <svg v-if="!isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="!downloadingFiles['liste-outils-tp.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,12 +136,12 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-modulaire.pdf')"
-              :disabled="isDownloading"
+              :disabled="downloadingFiles['fiche-renseignement-modulaire.pdf']"
               class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span v-if="!isDownloading">Télécharger</span>
+              <span v-if="!downloadingFiles['fiche-renseignement-modulaire.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
-              <svg v-if="!isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="!downloadingFiles['fiche-renseignement-modulaire.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,12 +162,12 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-cap.pdf')"
-              :disabled="isDownloading"
+              :disabled="downloadingFiles['fiche-renseignement-cap.pdf']"
               class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span v-if="!isDownloading">Télécharger</span>
+              <span v-if="!downloadingFiles['fiche-renseignement-cap.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
-              <svg v-if="!isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="!downloadingFiles['fiche-renseignement-cap.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -188,11 +188,16 @@
             </div>
             <button
               @click="downloadFile('fiche-renseignement-bt.pdf')"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1"
+              :disabled="downloadingFiles['fiche-renseignement-bt.pdf']"
+              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
-              <span>Télécharger</span>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span v-if="!downloadingFiles['fiche-renseignement-bt.pdf']">Télécharger</span>
+              <span v-else>Téléchargement...</span>
+              <svg v-if="!downloadingFiles['fiche-renseignement-bt.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
               </svg>
             </button>
           </div>
@@ -338,12 +343,22 @@ export default {
     // URL d'arrière-plan par défaut (modifiable)
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
     const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
-    const isDownloading = ref(false)
+    
+    // État individuel pour chaque fichier en téléchargement
+    const downloadingFiles = ref({
+      'fiche-inscription-modulaire.pdf': false,
+      'fiche-inscription-bt-cap.pdf': false,
+      'liste-outils-tp.pdf': false,
+      'fiche-renseignement-modulaire.pdf': false,
+      'fiche-renseignement-cap.pdf': false,
+      'fiche-renseignement-bt.pdf': false
+    })
 
     const downloadFile = async (filename) => {
-      if (isDownloading.value) return // Empêcher les clics multiples
+      // Empêcher les clics multiples sur le même fichier
+      if (downloadingFiles.value[filename]) return
       
-      isDownloading.value = true
+      downloadingFiles.value[filename] = true
       try {
         // Construire le chemin en tenant compte de la base Vite
         const basePath = import.meta.env.BASE_URL
@@ -390,7 +405,7 @@ export default {
           alert(`Impossible de télécharger ${filename}. Veuillez vérifier votre connexion et réessayer.`)
         }
       } finally {
-        isDownloading.value = false
+        downloadingFiles.value[filename] = false
       }
     }
 
@@ -398,7 +413,7 @@ export default {
       downloadFile,
       backgroundImageUrl,
       ctaImageUrl,
-      isDownloading
+      downloadingFiles
     }
   }
 }

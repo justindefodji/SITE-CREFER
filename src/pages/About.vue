@@ -25,7 +25,7 @@
                 </div>
 
                 <router-link
-                  to="/admissions"
+                  to="/programmes"
                   class="inline-block px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
                   Découvrir nos formations
