@@ -77,6 +77,21 @@ const router = createRouter({
   }
 })
 
+// Gestion de la route depuis la redirection 404
+router.beforeEach((to, from, next) => {
+  // Vérifier s'il y a une route sauvegardée
+  var storedRoute = sessionStorage.githubPagesRoute;
+  if (storedRoute) {
+    delete sessionStorage.githubPagesRoute;
+    // Extraire le chemin de la route
+    var routePath = storedRoute.split('?')[0];
+    if (routePath && routePath !== from.fullPath) {
+      return next(routePath);
+    }
+  }
+  next();
+})
+
 router.afterEach((to) => {
   // Remonte en haut de la page
   window.scrollTo(0, 0)
