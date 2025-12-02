@@ -4,17 +4,6 @@ import router from './router'
 import './assets/index.css'
 import './assets/animations.css'
 
-// Gestion de la redirection GitHub Pages SPA
-(function(){
-  var storedRoute = sessionStorage.githubPagesRoute;
-  if (storedRoute) {
-    delete sessionStorage.githubPagesRoute;
-    // Utiliser replaceState pour remplacer l'URL dans l'historique
-    var newPath = storedRoute.split('?')[0]; // Retirer les query params
-    window.history.replaceState(null, null, newPath);
-  }
-}());
-
 const app = createApp(App)
 
 // Directive personnalisée pour les animations au scroll
