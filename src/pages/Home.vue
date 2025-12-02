@@ -8,25 +8,25 @@
     >
       <div class="absolute inset-0 bg-black/55 z-10"></div>
 
-      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-0 relative z-20">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 md:pt-20 lg:py-0 pb-12 lg:pb-0 relative z-20">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div class="text-white animate-fade-in-up">
             <div class="mb-6 inline-block animate-fade-in-up delay-100">
-              <span class="text-yellow-300 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
+              <span class="text-yellow-500 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-              L'ÉCOLE RÉGIONALE<br />AXÉE SUR <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-200">LES MÉTIERS DE L'ÉNERGIE</span>
+              L'ÉCOLE RÉGIONALE<br />AXÉE SUR <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-400">LES MÉTIERS DE L'ÉNERGIE</span>
             </h1>
 
-            <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed max-w-lg animate-fade-in-up delay-300" style="font-weight: 300; letter-spacing: 0.5px;">
+            <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed max-w-lg animate-fade-in-up delay-300" style="font-weight: 400; letter-spacing: 0.5px;">
               Rejoignez la révolution des énergies renouvelables et devenez un leader reconnu.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up delay-400">
               <router-link
                 to="/admissions"
-                class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
+                class="btn-modern px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
               >
                 Admission
               </router-link>

@@ -3,3 +3,25 @@
 @tailwind utilities;
 
 /* Ajoutez vos styles globaux ici */
+
+/* Couleur jaune CREFER vibrante */
+:root {
+  --color-crefer-yellow: #FCD34D;
+}
+
+/* Utilitaires personnalisés pour le jaune CREFER */
+.btn-crefer {
+  @apply bg-yellow-400 hover:bg-yellow-500 text-white font-bold transition-colors;
+}
+
+.text-crefer-yellow {
+  color: #FCD34D;
+}
+
+.bg-crefer-yellow {
+  background-color: #FCD34D;
+}
+
+.border-crefer-yellow {
+  border-color: #FCD34D;
+}

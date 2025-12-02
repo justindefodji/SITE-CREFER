@@ -50,13 +50,20 @@
                 <span>🕐</span>
                 <span>08h00 - 12h00</span>
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article1" class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  Cette soutenance est un moment important où les étudiants présentent les résultats de leurs recherches et projets finaux. Les jury seront composés de professionnels reconnus dans le secteur de l'énergie solaire.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Tous les membres de la communauté CREFER, familles et partenaires sont cordialement invités à assister à cet événement marquant.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article1')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article1 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -112,13 +119,20 @@
               <div class="text-yellow-500 font-bold mb-6">
                 👏 Bienvenue aux nouveaux apprenants !
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article2" class="mt-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  Ces formations sont spécialement conçues pour les professionnels en activité souhaitant développer leurs compétences ou se reconvertir dans les métiers de l'énergie.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Nous offrons un accompagnement personnalisé avec un suivi régulier et des stages pratiques pour assurer l'employabilité de nos apprenants.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article2')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article2 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -167,13 +181,20 @@
                   👉 La rentrée 2025 marque notre 14ème promotion. Une nouvelle génération prête à relever les défis énergétiques et techniques de l'Afrique !
                 </p>
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article3" class="mt-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  Parmi nos anciens étudiants, nombreux sont ceux qui ont créé leurs propres structures ou travaillent comme techniciens qualifiés dans les entreprises du secteur.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Ces success stories confirment notre mission : former des techniciens compétents, innovants et capables de transformer leur formation en opportunité professionnelle durable.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article3')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article3 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -241,13 +262,20 @@
                 <p class="text-gray-700 mb-2"><strong>🌐</strong> www.crefer.tech/admissions</p>
                 <p class="text-gray-700"><strong>📍 Adresse :</strong> Lomé-TOGO, quartier Totsi</p>
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article4" class="mt-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  Nos stages pratiques sont réalisés en partenariat avec des entreprises locales leaders dans le secteur solaire et électrique. Les étudiants travaillent sur des projets réels et gagnent une expérience terrain inestimable.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Cette approche « learning by doing » garantit une transition en douceur vers le monde professionnel et une employabilité à la sortie de la formation.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article4')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article4 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -321,13 +349,20 @@
                 <p class="mb-2"><strong>📞</strong> +22891204373 🇹🇬</p>
                 <p><strong>📍</strong> Lomé-TOGO, quartier Totsi</p>
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article5" class="mt-6 p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  Cet examen blanc revêt une grande importance car il permet aux étudiants d'évaluer leur niveau de préparation avant l'examen officiel de certification.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Les résultats serviront de base pour les révisions intensives et les séances d'appui pédagogique prévues avant l'examen final.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article5')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article5 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -400,13 +435,20 @@
                 <p><strong>📍 Siège Social :</strong> Totsi Gblenkomé près de la salle de réunion des témoins de Jéhovah</p>
                 <p><strong>📍 Annexe :</strong> Au bord des pavés de Totsi non loin de l'agence TogoCom</p>
               </div>
-              <a
-                href="#"
-                class="inline-flex items-center px-6 py-3 bg-yellow-400 text-white font-bold rounded-lg hover:bg-yellow-500 transition-colors gap-2"
+              <div v-show="expandedArticles.article6" class="mt-6 p-4 bg-red-50 rounded-lg border-l-4 border-red-400 transition-all duration-300">
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                  La soutenance d'EZUKE Yao John est le résultat d'un travail acharné et d'une excellente collaboration avec son encadrant. Ses recherches portent sur des sujets d'actualité en lien avec les défis énergétiques du Togo.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Toutes les soutenances de mémoire à CREFER sont publiques et nous encourageons nos partenaires, familles et la communauté éducative à y assister pour soutenir nos étudiants.
+                </p>
+              </div>
+              <button
+                @click="toggleArticle('article6')"
+                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
               >
-                <span>En savoir plus</span>
-                <span>→</span>
-              </a>
+                {{ expandedArticles.article6 ? '...voir moins' : '...voir plus' }}
+              </button>
             </div>
           </article>
 
@@ -739,6 +781,20 @@ export default {
     const soutenanceImage4Url = ref(new URL('../assets/images/soutenance4article.jpg', import.meta.url).href)
     const email = ref('')
 
+    // Expanded articles state
+    const expandedArticles = ref({
+      article1: false,
+      article2: false,
+      article3: false,
+      article4: false,
+      article5: false,
+      article6: false
+    })
+
+    const toggleArticle = (articleId) => {
+      expandedArticles.value[articleId] = !expandedArticles.value[articleId]
+    }
+
     // Lightbox state
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
@@ -933,6 +989,8 @@ export default {
     return {
       email,
       subscribeNewsletter,
+      expandedArticles,
+      toggleArticle,
       backgroundImageUrl,
       soutenanceImageUrl,
       promotionImage1Url,

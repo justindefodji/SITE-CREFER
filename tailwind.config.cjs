@@ -4,7 +4,12 @@ module.exports = {
     './src/**/*.{js,vue}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'crefer-yellow': '#FCD34D',
+        'crefer-amber': '#FBBF24',
+      }
+    },
   },
   plugins: [],
 }

@@ -16,12 +16,12 @@
           <div class="flex flex-col justify-center animate-fade-in-up">
             <div class="max-w-3xl">
               <div class="text-left mb-6 animate-fade-in-up delay-100">
-                <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">Admission 2025</div>
+                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">Admission 2025</div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-300" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">RENTRÉE ACADÉMIQUE 2025-2026</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-400">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-yellow-300">15 SEPTEMBRE 2025</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-300">13 AVRIL 2026</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-yellow-500">15 SEPTEMBRE 2025</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-500">13 AVRIL 2026</span></p>
                 </div>
 
                 <router-link
@@ -41,12 +41,28 @@
     </section>
 
     <!-- Fiches et Documents Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-cyan-50" v-scroll-animate>
-      <div class="max-w-5xl mx-auto">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-cyan-50">
+      <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Fiches d'Inscription & Documentation</h2>
 
-        <div class="space-y-4">
-          <!-- Fiche d'inscription modulaire -->
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <!-- Left Column: Image Gallery -->
+          <div class="flex flex-col justify-start items-center order-2 lg:order-1 w-full">
+            <!-- Images Stack - Full Width -->
+            <div class="w-full space-y-6">
+              <img 
+                v-for="(image, index) in documentsGallery"
+                :key="index"
+                :src="image"
+                :alt="'Document ' + (index + 1)"
+                class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Right Column: Download Buttons -->
+          <div class="space-y-4 order-1 lg:order-2">
+            <!-- Fiche d'inscription modulaire -->
           <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
@@ -177,7 +193,7 @@
           </div>
 
           <!-- Fiche de renseignement BT -->
-          <div class="flex justify-between items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-500">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-500 gap-4">
             <div class="flex items-center gap-4">
               <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
                 <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,7 +205,7 @@
             <button
               @click="downloadFile('fiche-renseignement-bt.pdf')"
               :disabled="downloadingFiles['fiche-renseignement-bt.pdf']"
-              class="px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center gap-2 hover:shadow-lg transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
+              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
             >
               <span v-if="!downloadingFiles['fiche-renseignement-bt.pdf']">Télécharger</span>
               <span v-else>Téléchargement...</span>
@@ -200,6 +216,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
               </svg>
             </button>
+          </div>
           </div>
         </div>
 
@@ -344,6 +361,16 @@ export default {
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
     const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
     
+    // Galerie d'images des documents PDF convertis en JPG
+    const documentsGallery = ref([
+      `${import.meta.env.BASE_URL}pdfs/fiche-inscription-modulaire.jpg`,
+      `${import.meta.env.BASE_URL}pdfs/fiche-inscription-bt-cap.jpg`,
+      `${import.meta.env.BASE_URL}pdfs/liste-outils-tp.jpg`,
+      `${import.meta.env.BASE_URL}pdfs/fiche-renseignement-modulaire.jpg`,
+      `${import.meta.env.BASE_URL}pdfs/fiche-renseignement-cap.jpg`,
+      `${import.meta.env.BASE_URL}pdfs/fiche-renseignement-bt.jpg`
+    ])
+    
     // État individuel pour chaque fichier en téléchargement
     const downloadingFiles = ref({
       'fiche-inscription-modulaire.pdf': false,
@@ -413,6 +440,7 @@ export default {
       downloadFile,
       backgroundImageUrl,
       ctaImageUrl,
+      documentsGallery,
       downloadingFiles
     }
   }
