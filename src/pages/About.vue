@@ -16,12 +16,12 @@
           <div class="flex flex-col justify-center">
             <div class="max-w-3xl">
               <div class="text-left">
-                <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">À propos</div>
+                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">À propos</div>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CREFER, PREMIÈRE ACADÉMIE RÉGIONALE</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-300">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AXÉE SUR LES MÉTIERS D'<span class="text-yellow-300">ÉNERGIES</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AVEC SON SIÈGE À <span class="text-yellow-300">LOMÉ-TOGO</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AXÉE SUR LES MÉTIERS D'<span class="text-yellow-500">ÉNERGIES</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AVEC SON SIÈGE À <span class="text-yellow-500">LOMÉ-TOGO</span></p>
                 </div>
 
                 <router-link
