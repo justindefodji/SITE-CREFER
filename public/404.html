@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Page non trouvée</title>
+    <script type="text/javascript">
+      // Redirection pour GitHub Pages SPA
+      (function(){
+        var l = window.location;
+        var pathArray = l.pathname.split('/');
+        
+        // Vérifier si on est dans le chemin /SITE-CREFER/
+        var isInRepo = pathArray[1] === 'SITE-CREFER';
+        var pathSegmentsToKeep = isInRepo ? 2 : 1;
+
+        // Construire la redirection
+        var newPath = l.pathname.split('/').slice(0, pathSegmentsToKeep + 1).join('/');
+        var pathPart = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~');
+
+        sessionStorage.redirect = newPath + '/?p=' + pathPart +
+          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+
+        l.href = newPath;
+      }());
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

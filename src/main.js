@@ -4,6 +4,15 @@ import router from './router'
 import './assets/index.css'
 import './assets/animations.css'
 
+// Gestion de la redirection GitHub Pages SPA
+(function(){
+  var redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+  }
+}());
+
 const app = createApp(App)
 
 // Directive personnalisée pour les animations au scroll
