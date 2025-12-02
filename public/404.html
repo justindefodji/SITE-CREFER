@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirection en cours...</title>
+    <script>
+      // GitHub Pages SPA router
+      // Sauvegarde l'URL dans sessionStorage et redirige vers index.html
+      (function() {
+        var l = window.location;
+        var path = l.pathname + l.search + l.hash;
+        
+        // Éviter la boucle infinie : ne pas rediriger si on est déjà sur index.html
+        if (path.includes('index.html')) {
+          return;
+        }
+        
+        // Stocker le chemin complet pour que index.html le récupère
+        sessionStorage.githubPagesRedirectPath = path;
+        
+        // Rediriger vers index.html (racine + index.html)
+        l.href = l.pathname.split('/').slice(0, -1).join('/') + '/index.html';
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

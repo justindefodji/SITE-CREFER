@@ -1,4 +1,4 @@
-import { createRouter, createHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import About from '../pages/About.vue'
 import Contact from '../pages/Contact.vue'
@@ -69,27 +69,12 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // Remonte toujours en haut de la page
     return { top: 0 }
   }
-})
-
-// Gestion de la route depuis la redirection 404
-router.beforeEach((to, from, next) => {
-  // Vérifier s'il y a une route sauvegardée
-  var storedRoute = sessionStorage.githubPagesRoute;
-  if (storedRoute) {
-    delete sessionStorage.githubPagesRoute;
-    // Extraire le chemin de la route
-    var routePath = storedRoute.split('?')[0];
-    if (routePath && routePath !== from.fullPath) {
-      return next(routePath);
-    }
-  }
-  next();
 })
 
 router.afterEach((to) => {
