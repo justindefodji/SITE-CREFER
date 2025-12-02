@@ -140,10 +140,8 @@
               </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/_creferformation_/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-[#FEda75] via-[#fa7e1e] to-[#d92e7f] hover:shadow-lg rounded-lg transition-all transform hover:scale-110" title="Instagram">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.011 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.011 3.584-.07 4.85-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.011-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.011-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
-              </svg>
+            <a href="https://www.instagram.com/_creferformation_/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 hover:shadow-lg rounded-lg transition-all transform hover:scale-110 overflow-hidden" title="Instagram">
+              <img :src="instaLogoUrl" alt="Instagram" class="w-full h-full object-cover rounded-lg" />
             </a>
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/company/crefer-formation/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 bg-[#0A66C2] hover:bg-[#004687] hover:shadow-lg rounded-lg transition-all transform hover:scale-110" title="LinkedIn">
@@ -201,10 +199,12 @@ export default {
   setup() {
     const logoUrl = new URL('../assets/images/crefer Logo1.png', import.meta.url).href
     const threadsLogoUrl = new URL('../assets/images/OIP.webp', import.meta.url).href
+    const instaLogoUrl = new URL('../assets/images/insta.png', import.meta.url).href
     
     return {
       logoUrl,
-      threadsLogoUrl
+      threadsLogoUrl,
+      instaLogoUrl
     }
   }
 }
