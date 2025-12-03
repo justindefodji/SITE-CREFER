@@ -826,28 +826,28 @@
         <!-- Statistics Grid -->
         <div class="grid md:grid-cols-4 gap-6 mb-16">
           <div class="card-modern rounded-2xl p-8 text-center">
-            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-2">
-              5000+
+            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600 mb-2">
+              +1500
             </div>
-            <p class="text-gray-600 font-semibold">Étudiants Formés</p>
+            <p class="text-gray-600 font-semibold">Jeunes Formés</p>
           </div>
           <div class="card-modern rounded-2xl p-8 text-center">
-            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500 mb-2">
-              95%
+            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 mb-2">
+              +1200
             </div>
-            <p class="text-gray-600 font-semibold">Taux de Réussite</p>
+            <p class="text-gray-600 font-semibold">En Emploi</p>
           </div>
           <div class="card-modern rounded-2xl p-8 text-center">
             <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-500 mb-2">
-              50+
+              50
             </div>
             <p class="text-gray-600 font-semibold">Entreprises Partenaires</p>
           </div>
           <div class="card-modern rounded-2xl p-8 text-center">
-            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 mb-2">
-              15+
+            <div class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-600 mb-2">
+              6
             </div>
-            <p class="text-gray-600 font-semibold">Ans d'Excellence</p>
+            <p class="text-gray-600 font-semibold">Programmes Certifiants</p>
           </div>
         </div>
       </div>
