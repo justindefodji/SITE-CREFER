@@ -73,23 +73,24 @@
         <!-- Statistics -->
         <div class="grid md:grid-cols-4 gap-8 mb-20">
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="text-6xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ formesCount }}</div>
+            <div class="text-6xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+{{ formesCount }}</div>
             <p class="text-gray-600 font-semibold text-lg">Jeunes Formés</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-yellow-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.2s;" v-scroll-animate>
-            <div class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+{{ startupsCount }}</div>
-            <p class="text-gray-600 font-semibold text-lg">Start-ups créées</p>
+            <div class="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">+{{ emploiCount }}</div>
+            <p class="text-gray-600 font-semibold text-lg">En emploi</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-blue-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.3s;" v-scroll-animate>
-            <div class="text-6xl font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ emploiCount }}</div>
-            <p class="text-gray-600 font-semibold text-lg">En emploi</p>
+            <div class="text-6xl font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ partnersCount }}</div>
+            <p class="text-gray-600 font-semibold text-lg">Entreprises Partenaires</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-green-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
           <div class="card-modern p-8 text-center group animate-fade-in-up" style="animation-delay: 0.4s;" v-scroll-animate>
-            <div class="text-6xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ projetsCount }}</div>
-            <p class="text-gray-600 font-semibold text-lg">Projets financés</p>
+            <div class="text-6xl font-bold bg-gradient-to-r from-purple-400 to-purple-500 bg-clip-text text-transparent mb-3" style="font-family: 'Montserrat', sans-serif;">{{ certifiesCount }}</div>
+            <p class="text-gray-600 font-semibold text-lg">Programmes Certifiants</p>
+            <p class="text-gray-500 text-sm mt-1">Reconnu par l'État et le secteur</p>
             <div class="mt-3 h-1 w-12 bg-gradient-to-r from-purple-400 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
         </div>
@@ -920,38 +921,38 @@ export default {
     const partnerLogo4 = ref(new URL('../assets/images/télécharger.jpg', import.meta.url).href)
     
     // Compteurs animés
-    const formesCount = ref(560)
-    const startupsCount = ref(20)
-    const emploiCount = ref(280)
-    const projetsCount = ref(10)
+    const formesCount = ref(1500)
+    const emploiCount = ref(1200)
+    const partnersCount = ref(50)
+    const certifiesCount = ref(6)
     
     onMounted(() => {
       // Réinitialiser à 0 pour commencer l'animation
       formesCount.value = 0
-      startupsCount.value = 0
       emploiCount.value = 0
-      projetsCount.value = 0
+      partnersCount.value = 0
+      certifiesCount.value = 0
       
       // Animation des compteurs simultanément avec durée augmentée
       const startTime = Date.now()
-      const duration = 3500
+      const duration = 5000
       
       const animate = () => {
         const elapsed = Date.now() - startTime
         const progress = Math.min(elapsed / duration, 1)
         
-        formesCount.value = Math.floor(560 * progress)
-        startupsCount.value = Math.floor(20 * progress)
-        emploiCount.value = Math.floor(280 * progress)
-        projetsCount.value = Math.floor(10 * progress)
+        formesCount.value = Math.floor(1500 * progress)
+        emploiCount.value = Math.floor(1200 * progress)
+        partnersCount.value = Math.floor(50 * progress)
+        certifiesCount.value = Math.floor(6 * progress)
         
         if (progress < 1) {
           requestAnimationFrame(animate)
         } else {
-          formesCount.value = 560
-          startupsCount.value = 20
-          emploiCount.value = 280
-          projetsCount.value = 10
+          formesCount.value = 1500
+          emploiCount.value = 1200
+          partnersCount.value = 50
+          certifiesCount.value = 6
         }
       }
       
@@ -980,9 +981,9 @@ export default {
       partnerLogo3,
       partnerLogo4,
       formesCount,
-      startupsCount,
       emploiCount,
-      projetsCount,
+      partnersCount,
+      certifiesCount,
       newsImage1,
       newsImage2,
       newsImage3,
