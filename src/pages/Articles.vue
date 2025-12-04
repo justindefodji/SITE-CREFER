@@ -36,9 +36,18 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">31 OCTOBRE 2025</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Soutenance de Mémoire - Promotion 12 SPV
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-soutenance-memoire"
+                  href="#article-soutenance-memoire"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-soutenance-memoire', 'Soutenance de Mémoire - Promotion 12 SPV', soutenanceImageUrl)"
+                >
+                  Soutenance de Mémoire - Promotion 12 SPV
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion pour l'électricité et l'énergie solaire.
               </p>
@@ -107,9 +116,18 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">Rentrée académique</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Lancement de la 14ème Promotion des Formations Modulaires
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-14eme-promotion"
+                  href="#article-14eme-promotion"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-14eme-promotion', 'Lancement de la 14ème Promotion des Formations Modulaires', promotionImage1Url)"
+                >
+                  Lancement de la 14ème Promotion des Formations Modulaires
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois en électricité, plomberie, énergie solaire et froid-climatisation. À travers cette nouvelle promotion, CREFER confirme son engagement à former des techniciens compétents, polyvalents et opérationnels, capables de répondre efficacement aux besoins croissants du marché Togolais et régional.
               </p>
@@ -167,9 +185,18 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">2021 - NOS RÉALISATIONS</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                1500+ Étudiants Formés et Transformés
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-1500-etudiants"
+                  href="#article-1500-etudiants"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-1500-etudiants', '1500+ Étudiants Formés et Transformés', solarImage1Url)"
+                >
+                  1500+ Étudiants Formés et Transformés
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Depuis sa création, CREFER a déjà formé près de <strong>1500 étudiants</strong> venus du Togo et d'ailleurs. Notre engagement reste le même : garantir à chaque étudiant un stage pratique et l'opportunité de transformer sa formation en réelle compétence professionnelle.
               </p>
@@ -247,9 +274,18 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - FORMATION PRATIQUE</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                CREFER, la Garantie d'un Stage Concret !
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-garantie-stage"
+                  href="#article-garantie-stage"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-garantie-stage', 'CREFER, la Garantie d\'un Stage Concret !', installImage1Url)"
+                >
+                  CREFER, la Garantie d'un Stage Concret !
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 👷‍♂️ <strong>Nos étudiants maîtrisent chaque étape</strong> : du dimensionnement à l'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique et directement applicable.
               </p>
@@ -328,9 +364,18 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - ÉVALUATION & EXCELLENCE</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                🎓 Examen Blanc – BT Électrotechnique ⚡
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-examen-blanc"
+                  href="#article-examen-blanc"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-examen-blanc', '🎓 Examen Blanc – BT Électrotechnique ⚡', examImage1Url)"
+                >
+                  🎓 Examen Blanc – BT Électrotechnique ⚡
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Depuis lundi dernier, nos étudiants de troisième année BT Électrotechnique sont en <strong>examen blanc</strong>, une étape cruciale dans leur préparation à l'examen national prévu pour <strong>juillet 2025</strong>.
               </p>
@@ -415,9 +460,18 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - EXCELLENCE ACADÉMIQUE</p>
-              <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-                Zoom sur la Présentation de Mémoire - EZUKE Yao John 
-              </h2>
+              <div class="mb-4">
+                <a 
+                  id="article-soutenance-ezuke"
+                  href="#article-soutenance-ezuke"
+                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
+                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+                  @contextmenu.prevent="showShareMenu($event, 'article-soutenance-ezuke', 'Zoom sur la Présentation de Mémoire - EZUKE Yao John', soutenanceImage1Url)"
+                >
+                  Zoom sur la Présentation de Mémoire - EZUKE Yao John 
+                </a>
+                <p class="text-sm text-gray-500 mt-2 cursor-help" title="Clic droit pour copier le lien ou partager">🔗 Cliquez-droit pour partager ce lien</p>
+              </div>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 C'est avec <strong>assurance et rigueur</strong> que notre étudiant a brillamment soutenu son mémoire sur le thème : <strong>« Étude et dimensionnement d'un système photovoltaïque en milieu urbain : cas de la boutique de M. KOTCHANOU »</strong>.
               </p>
@@ -860,6 +914,73 @@ export default {
       }
     }
 
+    const showShareMenu = (event, articleId, title, imageUrl) => {
+      event.preventDefault()
+      
+      // Construire l'URL avec l'ancre
+      const articleUrl = `${window.location.origin}${window.location.pathname}#${articleId}`
+      
+      // Créer un menu contextuel personnalisé
+      const contextMenu = document.createElement('div')
+      contextMenu.className = 'fixed bg-white border border-gray-300 rounded-lg shadow-lg z-50 py-2'
+      contextMenu.style.left = event.clientX + 'px'
+      contextMenu.style.top = event.clientY + 'px'
+      
+      // Option 1: Copier le lien
+      const copyLink = document.createElement('button')
+      copyLink.textContent = '📋 Copier le lien'
+      copyLink.className = 'w-full px-4 py-2 text-left hover:bg-yellow-50 text-gray-700 text-sm transition-colors'
+      copyLink.onclick = () => {
+        navigator.clipboard.writeText(articleUrl)
+        alert('✅ Lien copié!')
+        contextMenu.remove()
+      }
+      
+      // Option 2: Partager le lien avec image
+      const shareLink = document.createElement('button')
+      shareLink.textContent = '🔗 Partager le lien'
+      shareLink.className = 'w-full px-4 py-2 text-left hover:bg-blue-50 text-gray-700 text-sm transition-colors'
+      shareLink.onclick = () => {
+        if (navigator.share) {
+          navigator.share({
+            title: 'CREFER - ' + title,
+            text: title,
+            url: articleUrl
+          }).catch(err => console.log('Erreur:', err))
+        } else {
+          const shareText = `${title}\n\n${imageUrl}\n\n${articleUrl}`
+          navigator.clipboard.writeText(shareText)
+          alert('✅ Lien avec image copié!')
+        }
+        contextMenu.remove()
+      }
+      
+      // Option 3: Copier le texte complet avec image
+      const copyWithImage = document.createElement('button')
+      copyWithImage.textContent = '🖼️ Copier avec image'
+      copyWithImage.className = 'w-full px-4 py-2 text-left hover:bg-green-50 text-gray-700 text-sm transition-colors'
+      copyWithImage.onclick = () => {
+        const fullText = `${title}\n\nImage: ${imageUrl}\n\nLien: ${articleUrl}`
+        navigator.clipboard.writeText(fullText)
+        alert('✅ Titre + Image + Lien copié!')
+        contextMenu.remove()
+      }
+      
+      contextMenu.appendChild(copyLink)
+      contextMenu.appendChild(shareLink)
+      contextMenu.appendChild(copyWithImage)
+      document.body.appendChild(contextMenu)
+      
+      // Fermer le menu en cliquant ailleurs
+      setTimeout(() => {
+        document.addEventListener('click', () => {
+          if (contextMenu.parentElement) {
+            contextMenu.remove()
+          }
+        }, { once: true })
+      }, 0)
+    }
+
     const subscribeNewsletter = () => {
       console.log('Inscription newsletter:', email.value)
       email.value = ''
@@ -1053,7 +1174,8 @@ export default {
       showCommentForm,
       toggleLike,
       addComment,
-      shareArticle
+      shareArticle,
+      showShareMenu
     }
   }
 }
