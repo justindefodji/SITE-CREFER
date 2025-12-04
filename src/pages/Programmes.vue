@@ -489,7 +489,7 @@
       <div class="max-w-7xl mx-auto text-center">
         <h2 class="text-3xl lg:text-4xl font-bold mb-6" style="font-family: 'Montserrat', sans-serif;">Trouvez le programme qui vous convient</h2>
         <p class="text-lg text-yellow-100 mb-8 max-w-2xl mx-auto">
-          Que vous soyez étudiant cherchant une formation complète ou professionnel voulant développer vos compétences, CREFER a la solution pour vous.
+          Que vous soyez un étudiant à la recherche d’une formation complète, un professionnel souhaitant développer ses compétences, un fonctionnaire en quête de nouvelles aptitudes, ou encore en pleine reconversion, le CREFER a la solution pour vous.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <router-link

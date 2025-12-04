@@ -140,13 +140,13 @@
                 </div>
                 <div>
                   <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide">Démarrage</p>
-                  <p class="text-2xl font-bold text-gray-900">13 AVRIL</p>
+                  <p class="text-2xl font-bold text-gray-900">13 AVRIL 2026</p>
                 </div>
               </div>
             </div>
             <div class="bg-gradient-to-r from-yellow-50 to-blue-50 rounded-2xl p-6 mb-8 border border-yellow-200/50">
               <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Reconnaissance</p>
-              <p class="text-xl font-bold text-blue-900">Meilleur Acteur de Développement</p>
+              <p class="text-xl font-bold text-blue-900">Meilleur acteur de formation en énergie renouvelable</p>
             </div>
             <router-link
               to="/admissions"

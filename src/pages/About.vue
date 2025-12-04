@@ -94,11 +94,8 @@
           <!-- Mission -->
           <div class="animate-fade-in-up delay-100">
             <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MISSION</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              Rendre autonome la jeunesse Africaine au travers d'un métier professionnel pratique pour briser en partie la chaîne du chômage.
-            </p>
             <p class="text-gray-700 leading-relaxed">
-              Former des ambassadeurs qualifiés aux métiers d'énergies qui puissent vulgariser le bon fonctionnement des installations solaires au travers de leur prestation.
+              Offrir une formation de qualité, axée sur les compétences pratiques et les exigences du marché, afin de garantir à chaque apprenant une employabilité durable, une insertion professionnelle réussie et la capacité de créer de la valeur dans son environnement.
             </p>
           </div>
         </div>
@@ -119,6 +116,132 @@
       </div>
     </section>
 
+    <!-- Nos Valeurs Fondamentales Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50" v-scroll-animate>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in-up">
+          <span class="inline-block text-indigo-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-indigo-100 rounded-full mb-4">Nos Principes</span>
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS VALEURS FONDAMENTALES</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-100">
+            Les principes qui guident notre engagement envers l'excellence pédagogique et le succès de nos apprenants
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8 lg:gap-6">
+          <!-- Discipline Card -->
+          <div class="group relative animate-fade-in-up transform hover:scale-105 transition-transform duration-300" style="animation-delay: 0.1s;">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div class="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-full">
+              <!-- Top gradient bar -->
+              <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+              
+              <div class="p-8">
+                <!-- Icon container with animated background -->
+                <div class="relative mb-6">
+                  <div class="absolute inset-0 bg-blue-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                  <div class="relative w-16 h-16 bg-blue-100 group-hover:bg-blue-200 rounded-xl flex items-center justify-center transition-colors duration-300">
+                    <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Discipline</h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  Nous formons des professionnels rigoureux, responsables et respectueux des standards du métier.
+                </p>
+                
+                <!-- Decorative element -->
+                <div class="flex items-center text-blue-500 text-sm font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                  <span>Valeur clé</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excellence Card -->
+          <div class="group relative animate-fade-in-up transform hover:scale-105 transition-transform duration-300" style="animation-delay: 0.2s;">
+            <div class="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div class="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-full">
+              <!-- Top gradient bar -->
+              <div class="h-1 bg-gradient-to-r from-yellow-500 to-yellow-600"></div>
+              
+              <div class="p-8">
+                <!-- Icon container with animated background -->
+                <div class="relative mb-6">
+                  <div class="absolute inset-0 bg-yellow-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                  <div class="relative w-16 h-16 bg-yellow-100 group-hover:bg-yellow-200 rounded-xl flex items-center justify-center transition-colors duration-300">
+                    <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300">Excellence</h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  Nous accompagnons chaque apprenant vers le meilleur de lui-même, avec des formations de haute qualité.
+                </p>
+                
+                <!-- Decorative element -->
+                <div class="flex items-center text-yellow-500 text-sm font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                  <span>Valeur clé</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professionnalisme Card -->
+          <div class="group relative animate-fade-in-up transform hover:scale-105 transition-transform duration-300" style="animation-delay: 0.3s;">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div class="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-full">
+              <!-- Top gradient bar -->
+              <div class="h-1 bg-gradient-to-r from-green-500 to-green-600"></div>
+              
+              <div class="p-8">
+                <!-- Icon container with animated background -->
+                <div class="relative mb-6">
+                  <div class="absolute inset-0 bg-green-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                  <div class="relative w-16 h-16 bg-green-100 group-hover:bg-green-200 rounded-xl flex items-center justify-center transition-colors duration-300">
+                    <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">Professionnalisme</h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed mb-6">
+                  Nous préparons des talents immédiatement opérationnels, capables de répondre efficacement aux exigences du marché.
+                </p>
+                
+                <!-- Decorative element -->
+                <div class="flex items-center text-green-500 text-sm font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                  <span>Valeur clé</span>
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Notre Méthode Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
@@ -131,7 +254,7 @@
               Nous offrons une formation complète regroupant la phase théorique, travaux pratiques puis les stages professionnels en entreprise.
             </p>
             <p class="text-gray-700 leading-relaxed mb-4">
-              Nous disposons d'une division spéciale mise à la disposition des étudiants qui œuvre pour leur insertion professionnelle, égairement à les accompagner sur leur différents projet entrepreneuriales au tour des métiers d'énergies.
+              Nous disposons d’une division spéciale dédiée à l’insertion professionnelle des étudiants. Elle les accompagne également dans le développement de leurs projets entrepreneuriaux liés aux métiers de l’énergie.
             </p>
             <div class="space-y-3">
               <div class="flex items-start">
@@ -183,16 +306,16 @@
     <!-- (Programmes d'Études Section moved below) -->
 
     <!-- Nos Valeurs Fondamentales Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-50" v-scroll-animate>
+    <!-- <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-blue-50 to-indigo-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS VALEURS FONDAMENTALES</h2>
         <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-100">
           Les valeurs qui guident chaque action, chaque décision et chaque interaction au sein de CREFER
-        </p>
+        </p> -->
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <!-- <div class="grid md:grid-cols-3 gap-8"> -->
           <!-- Excellence -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-200 transform hover:scale-105" v-scroll-animate>
+          <!-- <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-200 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
               <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -202,10 +325,10 @@
             <p class="text-gray-600">
               Nous nous engageons à fournir l'enseignement et la formation de la plus haute qualité, en veillant à ce que nos étudiants reçoivent les meilleures instructions et ressources disponibles.
             </p>
-          </div>
+          </div> -->
 
           <!-- Innovation -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-300 transform hover:scale-105" v-scroll-animate>
+          <!-- <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-300 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
               <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
@@ -215,10 +338,10 @@
             <p class="text-gray-600">
               Nous encourageons la pensée créative et l'adoption de nouvelles technologies pour rester à la pointe de l'industrie des énergies renouvelables.
             </p>
-          </div>
+          </div> -->
 
           <!-- Durabilité -->
-          <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-400 transform hover:scale-105" v-scroll-animate>
+          <!-- <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow animate-fade-in-up delay-400 transform hover:scale-105" v-scroll-animate>
             <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-yellow-100 rounded-full group-hover:bg-yellow-200">
               <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -228,10 +351,10 @@
             <p class="text-gray-600">
               Nous sommes dédiés à la promotion de solutions énergétiques durables et respectueuses de l'environnement pour un avenir meilleur.
             </p>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Nos Deux Sites Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50" v-scroll-animate>
@@ -257,10 +380,10 @@
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">Le Siège</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
-                Situé près de la salle de réunion des témoins de Jéhovah à <strong>Totsi Gblenkome</strong>, le siège principal de CREFER accueille nos programmes de formation complets.
+                Le siège principal de <strong>CREFER</strong>, accueille l'administration et les étudiants inscrits en formation modulaire
               </p>
               <div class="pt-4 border-t border-gray-200">
-                <p class="text-sm text-yellow-600 font-semibold">📍 Totsi Gblenkome, Lomé</p>
+                <p class="text-sm text-yellow-600 font-semibold"> Totsi Gblenkome, Lomé</p>
               </div>
             </div>
           </div>
@@ -275,10 +398,10 @@
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">L'Annexe</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
-                Implantée au bord des pavés de Totsi, non loin de l'agence <strong>TogoCom</strong>, l'annexe offre des espaces supplémentaires pour nos programmes pratiques.
+                Non loin de l'agence Yas, l'annexe accueille principalement les apprenants inscrits en<strong>CAP et BT</strong>
               </p>
               <div class="pt-4 border-t border-gray-200">
-                <p class="text-sm text-yellow-600 font-semibold">📍 Près de TogoCom, Totsi</p>
+                <p class="text-sm text-yellow-600 font-semibold"> Près de Yas, Totsi</p>
               </div>
             </div>
           </div>
@@ -354,7 +477,7 @@
               <ul class="space-y-2 text-sm text-gray-700">
                 <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Énergie solaire</li>
                 <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Biogaz</li>
-                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Autres renouvelables</li>
+                <li class="flex items-center gap-2"><span class="text-yellow-600 font-bold">⚡</span> Électricité générale</li>
               </ul>
             </div>
           </div>
@@ -377,11 +500,11 @@
             <div class="mt-6 pt-6 border-t border-blue-100">
               <div class="grid grid-cols-2 gap-4 text-center">
                 <div class="bg-blue-50 rounded-lg p-3">
-                  <p class="text-2xl font-bold text-blue-600">Avril</p>
+                  <p class="text-1xl font-bold text-blue-600">Septembre-Octobre</p>
                   <p class="text-xs text-gray-600">Rentrée 1</p>
                 </div>
                 <div class="bg-blue-50 rounded-lg p-3">
-                  <p class="text-2xl font-bold text-blue-600">Octobre</p>
+                  <p class="text-2xl font-bold text-blue-600">Avril</p>
                   <p class="text-xs text-gray-600">Rentrée 2</p>
                 </div>
               </div>
@@ -421,15 +544,15 @@
               <div class="space-y-4">
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
                   <p class="font-bold text-gray-900 text-lg">Décembre 2020</p>
-                  <p class="text-gray-600 text-sm">Meilleur acteur de formation en énergie renouvelable</p>
+                  <p class="text-gray-600 text-sm">Meilleur acteur de formation au cours du Forum des Énergies Renouvelables & Emploi des Jeunes</p>
                 </div>
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
                   <p class="font-bold text-gray-900 text-lg">Novembre 2023</p>
-                  <p class="text-gray-600 text-sm">Meilleur centre de formation en énergie renouvelable</p>
+                  <p class="text-gray-600 text-sm"> Meilleur Centre de Formation en Énergies Renouvelables au Gala Energy Awards, organisé dans le cadre de la foire des énergies renouvelables au Togo par la Synergie des Acteurs des Énergies Renouvelables (SAER TOGO)</p>
                 </div>
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
                   <p class="font-bold text-gray-900 text-lg">Décembre 2023</p>
-                  <p class="text-gray-600 text-sm">Meilleur acteur de l'éducation à Cotonou au Bénin</p>
+                  <p class="text-gray-600 text-sm"> Meilleur acteur de l'éducation lors de la cérémonie du Grand Prix Général Mathieu KEREKOU à Cotonou</p>
                 </div>
               </div>
               <div class="mt-8 pt-8 border-t border-gray-200">
