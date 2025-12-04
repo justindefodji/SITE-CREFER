@@ -219,7 +219,7 @@
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : BAC ou équivalent</p>
+                    <p class="font-bold text-gray-900">Entrée : Minimum BEPC </p>
                     <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
                   </div>
                 </div>
