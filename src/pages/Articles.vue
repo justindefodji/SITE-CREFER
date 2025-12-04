@@ -922,7 +922,18 @@ export default {
               if (titleElement && imageElement) {
                 const articleId = titleElement.id
                 const title = titleElement.textContent.trim()
-                const image = imageElement.src
+                let imageUrl = imageElement.src
+
+                // Assurer que l'URL de l'image est complète (absolue)
+                if (imageUrl && !imageUrl.startsWith('http')) {
+                  // Si c'est une URL relative ou un blob, la convertir en URL absolue
+                  try {
+                    imageUrl = new URL(imageUrl, window.location.origin).href
+                  } catch (e) {
+                    // Si la conversion échoue, utiliser comme est
+                    console.warn('Erreur conversion URL image:', e)
+                  }
+                }
                 
                 // Trouver la première description valide
                 let description = 'Découvrez cet article sur CREFER'
@@ -940,7 +951,7 @@ export default {
                 setOpenGraph({
                   title: title,
                   description: description.substring(0, 160),
-                  image: image,
+                  image: imageUrl,
                   url: url,
                   type: 'article'
                 })

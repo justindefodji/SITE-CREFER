@@ -9,7 +9,7 @@ export function useOpenGraph() {
    * @param {Object} config - Configuration Open Graph
    * @param {string} config.title - Titre de l'article
    * @param {string} config.description - Description courte
-   * @param {string} config.image - URL de l'image
+   * @param {string} config.image - URL de l'image (doit être une URL absolue)
    * @param {string} config.url - URL complète de l'article
    * @param {string} config.type - Type de contenu (article, website, etc.)
    */
@@ -21,6 +21,17 @@ export function useOpenGraph() {
       url = window.location.href,
       type = 'article'
     } = config
+
+    // Convertir l'image en URL absolue si nécessaire
+    let absoluteImageUrl = image
+    if (image && !image.startsWith('http')) {
+      // Si c'est une URL relative, la convertir en URL absolue
+      try {
+        absoluteImageUrl = new URL(image, window.location.origin).href
+      } catch (e) {
+        absoluteImageUrl = image
+      }
+    }
 
     // Fonction helper pour créer ou mettre à jour une meta tag
     const setMeta = (property, content) => {
@@ -38,7 +49,7 @@ export function useOpenGraph() {
     // Métadonnées Open Graph
     setMeta('og:title', title)
     setMeta('og:description', description)
-    setMeta('og:image', image)
+    setMeta('og:image', absoluteImageUrl)
     setMeta('og:url', url)
     setMeta('og:type', type)
     setMeta('og:site_name', 'CREFER')
@@ -59,7 +70,7 @@ export function useOpenGraph() {
     setTwitterMeta('twitter:card', 'summary_large_image')
     setTwitterMeta('twitter:title', title)
     setTwitterMeta('twitter:description', description)
-    setTwitterMeta('twitter:image', image)
+    setTwitterMeta('twitter:image', absoluteImageUrl)
 
     // Mise à jour du titre de la page
     document.title = title + ' - CREFER'
