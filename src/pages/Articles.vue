@@ -36,23 +36,14 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">31 OCTOBRE 2025</p>
-              <div class="mb-4 flex items-start justify-between gap-4">
-                <a 
-                  id="article-soutenance-memoire"
-                  href="#article-soutenance-memoire"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block flex-1" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                  Soutenance de Mémoire - Promotion 12 SPV
-                </a>
-                <button 
-                  @click="copyToWhatsApp('article-soutenance-memoire', 'Soutenance de Mémoire - Promotion 12 SPV', soutenanceImageUrl)"
-                  class="flex-shrink-0 px-3 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                  title="Copier pour WhatsApp"
-                >
-                   Copier
-                </button>
-              </div>
+              <a 
+                id="article-soutenance-memoire"
+                href="#article-soutenance-memoire"
+                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+              >
+                Soutenance de Mémoire - Promotion 12 SPV
+              </a>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion pour l'électricité et l'énergie solaire.
               </p>
@@ -121,23 +112,14 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">Rentrée académique</p>
-              <div class="mb-4 flex items-start justify-between gap-4">
-                <a 
-                  id="article-14eme-promotion"
-                  href="#article-14eme-promotion"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block flex-1" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                  Lancement de la 14ème Promotion des Formations Modulaires
-                </a>
-                <button 
-                  @click="copyToWhatsApp('article-14eme-promotion', 'Lancement de la 14ème Promotion des Formations Modulaires', promotionImage1Url)"
-                  class="flex-shrink-0 px-3 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                  title="Copier pour WhatsApp"
-                >
-                   Copier
-                </button>
-              </div>
+              <a 
+                id="article-14eme-promotion"
+                href="#article-14eme-promotion"
+                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+              >
+                Lancement de la 14ème Promotion des Formations Modulaires
+              </a>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois en électricité, plomberie, énergie solaire et froid-climatisation. À travers cette nouvelle promotion, CREFER confirme son engagement à former des techniciens compétents, polyvalents et opérationnels, capables de répondre efficacement aux besoins croissants du marché Togolais et régional.
               </p>
@@ -195,23 +177,14 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">2021 - NOS RÉALISATIONS</p>
-              <div class="mb-4 flex items-start justify-between gap-4">
-                <a 
-                  id="article-1500-etudiants"
-                  href="#article-1500-etudiants"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block flex-1" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                  1500+ Étudiants Formés et Transformés
-                </a>
-                <button 
-                  @click="copyToWhatsApp('article-1500-etudiants', '1500+ Étudiants Formés et Transformés', solarImage1Url)"
-                  class="flex-shrink-0 px-3 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                  title="Copier pour WhatsApp"
-                >
-                   Copier
-                </button>
-              </div>
+              <a 
+                id="article-1500-etudiants"
+                href="#article-1500-etudiants"
+                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+              >
+                1500+ Étudiants Formés et Transformés
+              </a>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Depuis sa création, CREFER a déjà formé près de <strong>1500 étudiants</strong> venus du Togo et d'ailleurs. Notre engagement reste le même : garantir à chaque étudiant un stage pratique et l'opportunité de transformer sa formation en réelle compétence professionnelle.
               </p>
@@ -289,23 +262,14 @@
             <!-- Content Left -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - FORMATION PRATIQUE</p>
-              <div class="mb-4 flex items-start justify-between gap-4">
-                <a 
-                  id="article-garantie-stage"
-                  href="#article-garantie-stage"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block flex-1" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                  CREFER, la Garantie d'un Stage Concret !
-                </a>
-                <button 
-                  @click="copyToWhatsApp('article-garantie-stage', 'CREFER, la Garantie d\'un Stage Concret !', installImage1Url)"
-                  class="flex-shrink-0 px-3 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                  title="Copier pour WhatsApp"
-                >
-                  📋 Copier
-                </button>
-              </div>
+              <a 
+                id="article-garantie-stage"
+                href="#article-garantie-stage"
+                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+              >
+                CREFER, la Garantie d'un Stage Concret !
+              </a>
               <p class="text-gray-700 mb-6 leading-relaxed">
                  <strong>Nos étudiants maîtrisent chaque étape</strong> : du dimensionnement à l'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique et directement applicable.
               </p>
@@ -313,10 +277,10 @@
                  <strong>Choisis CREFER et deviens le pro du solaire.</strong> Notre engagement : former des techniciens capables de relever les défis énergétiques de demain.
               </p>
               <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                <p class="text-gray-800 font-semibold mb-3">📍 Nous contacter :</p>
-                <p class="text-gray-700 mb-2"><strong>📞</strong> +22891204373 🇹🇬</p>
-                <p class="text-gray-700 mb-2"><strong>🌐</strong> www.crefer.tech/admissions</p>
-                <p class="text-gray-700"><strong>📍 Adresse :</strong> Lomé-TOGO, quartier Totsi</p>
+                <p class="text-gray-800 font-semibold mb-3"> Nous contacter :</p>
+                <p class="text-gray-700 mb-2"><strong></strong> +22891204373 🇹🇬</p>
+                <p class="text-gray-700 mb-2"><strong></strong> www.crefer.tech/admissions</p>
+                <p class="text-gray-700"><strong> Adresse :</strong> Lomé-TOGO, quartier Totsi</p>
               </div>
               <div v-show="expandedArticles.article4" class="mt-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400 transition-all duration-300">
                 <p class="text-gray-700 mb-4 leading-relaxed">
@@ -384,23 +348,14 @@
             <!-- Content Right -->
             <div class="w-full lg:w-3/5">
               <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - ÉVALUATION & EXCELLENCE</p>
-              <div class="mb-4 flex items-start justify-between gap-4">
-                <a 
-                  id="article-examen-blanc"
-                  href="#article-examen-blanc"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block flex-1" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                   Examen Blanc – BT Électrotechnique 
-                </a>
-                <button 
-                  @click="copyToWhatsApp('article-examen-blanc', '🎓 Examen Blanc – BT Électrotechnique ⚡', examImage1Url)"
-                  class="flex-shrink-0 px-3 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                  title="Copier pour WhatsApp"
-                >
-                   Copier
-                </button>
-              </div>
+              <a 
+                id="article-examen-blanc"
+                href="#article-examen-blanc"
+                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
+              >
+                🎓 Examen Blanc – BT Électrotechnique ⚡
+              </a>
               <p class="text-gray-700 mb-6 leading-relaxed">
                 Depuis lundi dernier, nos étudiants de troisième année BT Électrotechnique sont en <strong>examen blanc</strong>, une étape cruciale dans leur préparation à l'examen national prévu pour <strong>juillet 2025</strong>.
               </p>
@@ -832,11 +787,13 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useOpenGraph } from '../composables/useOpenGraph'
 
 export default {
   name: 'Articles',
   setup() {
+    const { setOpenGraph, resetOpenGraph } = useOpenGraph()
     const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
     const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
     const promotionImage1Url = ref(new URL('../assets/images/image3article2.jpg', import.meta.url).href)
@@ -919,15 +876,17 @@ export default {
     const shareArticle = (title, articleId) => {
       shareCounts.value[articleId]++
       
+      const articleUrl = `${window.location.origin}${window.location.pathname}#${articleId}`
+      
       if (navigator.share) {
         navigator.share({
-          title: 'CREFER - Actualité',
+          title: 'CREFER - ' + title,
           text: title,
-          url: window.location.href
+          url: articleUrl
         }).catch(err => console.log('Erreur de partage:', err))
       } else {
         // Fallback for browsers that don't support native share
-        const text = `${title} - Découvrez plus sur CREFER: ${window.location.href}`
+        const text = `${title}\n\n${articleUrl}`
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text)
           alert('✅ Lien copié dans le presse-papiers!')
@@ -937,116 +896,66 @@ export default {
       }
     }
 
-    const showShareMenu = (event, articleId, title, imageUrl) => {
-      event.preventDefault()
-      
-      // Construire l'URL avec l'ancre - utiliser le domaine complet après déploiement
-      const baseUrl = window.location.origin
-      const articleUrl = `${baseUrl}${window.location.pathname}#${articleId}`
-      
-      // Fonction pour copier l'image depuis une URL
-      const copyImageLink = async () => {
-        try {
-          // Créer un blob de l'image pour la copier
-          const response = await fetch(imageUrl)
-          const blob = await response.blob()
-          
-          // Créer un item pour copier l'image et le texte
-          const items = [
-            new ClipboardItem({
-              'text/plain': new Blob([`${title}\n\n${articleUrl}`], { type: 'text/plain' }),
-              'image/png': blob
-            })
-          ]
-          
-          await navigator.clipboard.write(items)
-          alert('✅ Lien avec image copié! Collez dans WhatsApp')
-        } catch (err) {
-          // Fallback : copier juste le texte et l'URL
-          const fallbackText = `${title}\n\n${imageUrl}\n\n${articleUrl}`
-          navigator.clipboard.writeText(fallbackText)
-          alert('✅ Lien copié! (Image disponible via URL)')
-        }
-      }
-      
-      // Créer un menu contextuel personnalisé
-      const contextMenu = document.createElement('div')
-      contextMenu.className = 'fixed bg-white border border-gray-300 rounded-lg shadow-lg z-50 py-2 min-w-48'
-      contextMenu.style.left = event.clientX + 'px'
-      contextMenu.style.top = event.clientY + 'px'
-      
-      // Option 1: Copier le lien seul
-      const copyLink = document.createElement('button')
-      copyLink.textContent = '🔗 Copier le lien'
-      copyLink.className = 'w-full px-4 py-2 text-left hover:bg-yellow-50 text-gray-700 text-sm transition-colors'
-      copyLink.onclick = () => {
-        navigator.clipboard.writeText(articleUrl)
-        alert('✅ Lien copié!')
-        contextMenu.remove()
-      }
-      
-      // Option 2: Copier lien avec image
-      const copyWithImage = document.createElement('button')
-      copyWithImage.textContent = '🖼️ Copier avec image'
-      copyWithImage.className = 'w-full px-4 py-2 text-left hover:bg-green-50 text-gray-700 text-sm transition-colors'
-      copyWithImage.onclick = () => {
-        copyImageLink()
-        contextMenu.remove()
-      }
-      
-      // Option 3: Partager natif
-      const shareLink = document.createElement('button')
-      shareLink.textContent = '📤 Partager'
-      shareLink.className = 'w-full px-4 py-2 text-left hover:bg-blue-50 text-gray-700 text-sm transition-colors'
-      shareLink.onclick = () => {
-        if (navigator.share) {
-          navigator.share({
-            title: 'CREFER - ' + title,
-            text: title,
-            url: articleUrl
-          }).catch(err => console.log('Erreur:', err))
-        } else {
-          alert('Partage non disponible sur votre navigateur')
-        }
-        contextMenu.remove()
-      }
-      
-      contextMenu.appendChild(copyLink)
-      contextMenu.appendChild(copyWithImage)
-      contextMenu.appendChild(shareLink)
-      document.body.appendChild(contextMenu)
-      
-      // Fermer le menu en cliquant ailleurs
-      setTimeout(() => {
-        document.addEventListener('click', () => {
-          if (contextMenu.parentElement) {
-            contextMenu.remove()
-          }
-        }, { once: true })
-      }, 0)
-    }
-
-    // Fonction simplifiée pour copier le lien dans WhatsApp
-    const copyToWhatsApp = (articleId, title, imageUrl) => {
-      const baseUrl = window.location.origin
-      const articleUrl = `${baseUrl}${window.location.pathname}#${articleId}`
-      
-      // Créer le texte avec l'image et le lien
-      const whatsappText = `${title}\n\n${imageUrl}\n\n${articleUrl}`
-      
-      navigator.clipboard.writeText(whatsappText).then(() => {
-        alert('✅ Copié! Collez le lien dans WhatsApp')
-      }).catch(err => {
-        console.error('Erreur:', err)
-        alert('Erreur de copie')
-      })
-    }
-
     const subscribeNewsletter = () => {
       console.log('Inscription newsletter:', email.value)
       email.value = ''
       alert('Merci! Vérifiez votre email.')
     }
+
+    // Initialiser les métadonnées Open Graph au chargement
+    onMounted(() => {
+      resetOpenGraph()
+
+      // Attendre un peu que le DOM soit complètement rendu
+      setTimeout(() => {
+        // Intersection Observer pour détecter quel article est visible
+        const articleElements = document.querySelectorAll('article')
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+              // Récupérer les infos de l'article visible
+              const titleElement = entry.target.querySelector('a[id^="article-"]')
+              const imageElement = entry.target.querySelector('img')
+              const descriptionElements = entry.target.querySelectorAll('p.text-gray-700')
+
+              if (titleElement && imageElement) {
+                const articleId = titleElement.id
+                const title = titleElement.textContent.trim()
+                const image = imageElement.src
+                
+                // Trouver la première description valide
+                let description = 'Découvrez cet article sur CREFER'
+                for (let elem of descriptionElements) {
+                  const text = elem.textContent.trim()
+                  if (text.length > 20 && !text.startsWith('Ce')) {
+                    description = text
+                    break
+                  }
+                }
+                
+                const url = `${window.location.origin}${window.location.pathname}#${articleId}`
+
+                // Mettre à jour les métadonnées
+                setOpenGraph({
+                  title: title,
+                  description: description.substring(0, 160),
+                  image: image,
+                  url: url,
+                  type: 'article'
+                })
+              }
+            }
+          })
+        }, {
+          threshold: [0.2, 0.5]
+        })
+
+        articleElements.forEach((article) => {
+          observer.observe(article)
+        })
+      }, 500)
+    })
 
     const openLightbox = (index) => {
       lightboxImages.value = [promotionImage1Url.value, promotionImage2Url.value, promotionImage3Url.value]
@@ -1235,8 +1144,7 @@ export default {
       showCommentForm,
       toggleLike,
       addComment,
-      shareArticle,
-      showShareMenu
+      shareArticle
     }
   }
 }
