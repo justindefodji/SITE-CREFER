@@ -81,14 +81,14 @@
                 <p class="text-gray-700 text-base leading-relaxed">Les titulaires peuvent exercer en tant qu'électriciens d'équipement, installateurs ou maintenanciers en électricité et poursuivre les études en Brevet de Technicien en électrotechnique.</p>
               </div>
               <div class="space-y-3">
-                <div class="flex items-start list-item">
+                <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
                     <p class="font-bold text-gray-900">Entrée : Minimun la classe de quatrième (4ème)</p>
                     <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
                   </div>
                 </div>
-                <div class="flex items-start list-item">
+                <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
                     <p class="font-bold text-gray-900">Durée : 3 ans</p>
