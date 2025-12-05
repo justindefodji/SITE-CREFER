@@ -31,10 +31,23 @@
 
           <!-- Post Content -->
           <div class="px-6 py-4">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">Soutenance de Mémoire - Promotion 12 SPV</h2>
+            <router-link to="/articles/1" class="text-xl font-bold text-gray-900 mb-3 hover:text-yellow-600 transition-colors inline-block cursor-pointer">
+              <h2 class="hover:underline">Soutenance de Mémoire - Promotion 12 SPV</h2>
+            </router-link>
             <p class="text-gray-700 mb-4 leading-relaxed">
               Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion !
             </p>
+            <router-link
+              to="/articles/1"
+              class="text-yellow-600 hover:text-yellow-700 font-semibold text-sm transition-colors inline-block"
+            >
+              + Voir plus
+            </router-link>
+            <div v-if="expandedArticles.article1" class="mt-3 pt-3 border-t border-gray-200">
+              <p class="text-gray-700 leading-relaxed">
+                Ces étudiants ont suivi une formation rigoureuse et complète dans le domaine des énergies renouvelables. La soutenance de mémoire est une excellente opportunité pour eux de démontrer leur compréhension approfondie et leurs compétences pratiques.
+              </p>
+            </div>
           </div>
 
           <!-- Post Image -->
@@ -47,56 +60,26 @@
             />
           </div>
 
-          <!-- Link Preview Card -->
-          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
-            <div class="flex">
-              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
-                <img 
-                  :src="soutenanceImageUrl" 
-                  alt="preview" 
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="flex-1 p-4 flex flex-col justify-between">
-                <div>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
-                  <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Soutenance Mémoire SPV 2025</h4>
-                  <p class="text-xs text-gray-600 line-clamp-1 mt-1">Découvrez notre événement académique majeur</p>
-                </div>
+          <!-- Link Card -->
+          <router-link
+            to="/articles/1"
+            class="w-full px-6 py-4 border-t border-gray-100 bg-white hover:bg-gray-50 transition-colors flex items-stretch gap-0 no-underline"
+          >
+            <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden rounded-lg">
+              <img 
+                :src="soutenanceImageUrl" 
+                alt="article link" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex-1 p-4 flex flex-col justify-between text-left">
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Soutenance Mémoire SPV 2025</h4>
+                <p class="text-xs text-gray-600 line-clamp-1 mt-1">Découvrez notre événement académique majeur</p>
               </div>
             </div>
-          </div>
-
-          <!-- Post Actions -->
-          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
-            <button
-              @click="copyPostLink('article-1')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              Copier le lien
-            </button>
-            <button
-              @click="toggleLike('article1')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
-              :class="likes.article1 ? 'text-red-600 bg-red-50' : ''"
-            >
-              <svg class="w-5 h-5" :fill="likes.article1 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>{{ likeCounts.article1 }}</span>
-            </button>
-            <button
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>{{ commentCounts.article1 }}</span>
-            </button>
-          </div>
+          </router-link>
         </article>
 
         <!-- Article 2 Post -->
@@ -112,11 +95,24 @@
 
           <!-- Post Content -->
           <div class="px-6 py-4">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">Lancement de la 14ème Promotion des Formations Modulaires</h2>
+            <router-link to="/articles/2" class="text-xl font-bold text-gray-900 mb-3 hover:text-yellow-600 transition-colors inline-block cursor-pointer">
+              <h2 class="hover:underline">Lancement de la 14ème Promotion des Formations Modulaires</h2>
+            </router-link>
             <p class="text-gray-700 mb-4 leading-relaxed">
               Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois. Bienvenue aux nouveaux apprenants ! CREFER confirme son engagement à former des techniciens compétents et opérationnels.
             </p>
-            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-3 border-l-4 border-yellow-400">
+            <router-link
+              to="/articles/2"
+              class="text-yellow-600 hover:text-yellow-700 font-semibold text-sm transition-colors inline-block"
+            >
+              + Voir plus
+            </router-link>
+            <div v-if="expandedArticles.article2" class="mt-3 pt-3 border-t border-gray-200">
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Les formations modulaires offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins. Cette 14ème promotion accueille des étudiants motivés et déterminés à excellence dans les domaines des énergies renouvelables.
+              </p>
+            </div>
+            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-3 border-l-4 border-yellow-400 mt-3">
               <p class="text-sm font-semibold text-gray-800">Bienvenue aux nouveaux apprenants ! 🚀</p>
             </div>
           </div>
@@ -131,50 +127,22 @@
             </div>
           </div>
 
-          <!-- Link Preview -->
-          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
-            <div class="flex">
-              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
-                <img :src="promotionImage1Url" alt="preview" class="w-full h-full object-cover"/>
-              </div>
-              <div class="flex-1 p-4">
+          <!-- Link Card -->
+          <router-link
+            to="/articles/2"
+            class="w-full px-6 py-4 border-t border-gray-100 bg-white hover:bg-gray-50 transition-colors flex items-stretch gap-0 no-underline"
+          >
+            <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden rounded-lg">
+              <img :src="promotionImage1Url" alt="article link" class="w-full h-full object-cover"/>
+            </div>
+            <div class="flex-1 p-4 flex flex-col justify-between text-left">
+              <div>
                 <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
                 <h4 class="text-sm font-bold text-gray-900 line-clamp-2">14ème Promotion Formations Modulaires</h4>
                 <p class="text-xs text-gray-600 line-clamp-1 mt-1">Rentrée académique 2025 - Formations qualifiantes</p>
               </div>
             </div>
-          </div>
-
-          <!-- Post Actions -->
-          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
-            <button
-              @click="copyPostLink('article-2')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              Copier le lien
-            </button>
-            <button
-              @click="toggleLike('article2')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
-              :class="likes.article2 ? 'text-red-600 bg-red-50' : ''"
-            >
-              <svg class="w-5 h-5" :fill="likes.article2 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>{{ likeCounts.article2 }}</span>
-            </button>
-            <button
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>{{ commentCounts.article2 }}</span>
-            </button>
-          </div>
+          </router-link>
         </article>
 
         <!-- Article 3 Post -->
@@ -190,11 +158,24 @@
 
           <!-- Post Content -->
           <div class="px-6 py-4">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">1500+ Étudiants Formés et Transformés</h2>
+            <router-link to="/articles/3" class="text-xl font-bold text-gray-900 mb-3 hover:text-yellow-600 transition-colors inline-block cursor-pointer">
+              <h2 class="hover:underline">1500+ Étudiants Formés et Transformés</h2>
+            </router-link>
             <p class="text-gray-700 mb-4 leading-relaxed">
               Depuis sa création, CREFER a déjà formé près de 1500 étudiants du Togo et d'ailleurs. Découvrez en images nos anciens étudiants en pleine immersion sur le terrain !
             </p>
-            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border-l-4 border-purple-400">
+            <router-link
+              to="/articles/3"
+              class="text-yellow-600 hover:text-yellow-700 font-semibold text-sm transition-colors inline-block"
+            >
+              + Voir plus
+            </router-link>
+            <div v-if="expandedArticles.article3" class="mt-3 pt-3 border-t border-gray-200">
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Nos anciens étudiants travaillent maintenant dans des entreprises majeures et contribuent au développement des énergies renouvelables en Afrique de l'Ouest. Leurs succès professionnels témoignent de la qualité de nos formations et de notre approche pédagogique axée sur la pratique.
+              </p>
+            </div>
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border-l-4 border-purple-400 mt-3">
               <p class="text-sm font-semibold text-gray-800">Une nouvelle génération prête à relever les défis énergétiques de l'Afrique ! 💡</p>
             </div>
           </div>
@@ -209,50 +190,22 @@
             </div>
           </div>
 
-          <!-- Link Preview -->
-          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
-            <div class="flex">
-              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
-                <img :src="solarImage1Url" alt="preview" class="w-full h-full object-cover"/>
-              </div>
-              <div class="flex-1 p-4">
+          <!-- Link Card -->
+          <router-link
+            to="/articles/3"
+            class="w-full px-6 py-4 border-t border-gray-100 bg-white hover:bg-gray-50 transition-colors flex items-stretch gap-0 no-underline"
+          >
+            <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden rounded-lg">
+              <img :src="solarImage1Url" alt="article link" class="w-full h-full object-cover"/>
+            </div>
+            <div class="flex-1 p-4 flex flex-col justify-between text-left">
+              <div>
                 <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
                 <h4 class="text-sm font-bold text-gray-900 line-clamp-2">1500+ Étudiants Formés</h4>
                 <p class="text-xs text-gray-600 line-clamp-1 mt-1">Découvrez nos success stories et réalisations</p>
               </div>
             </div>
-          </div>
-
-          <!-- Post Actions -->
-          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
-            <button
-              @click="copyPostLink('article-3')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              Copier le lien
-            </button>
-            <button
-              @click="toggleLike('article3')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
-              :class="likes.article3 ? 'text-red-600 bg-red-50' : ''"
-            >
-              <svg class="w-5 h-5" :fill="likes.article3 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>{{ likeCounts.article3 }}</span>
-            </button>
-            <button
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>{{ commentCounts.article3 }}</span>
-            </button>
-          </div>
+          </router-link>
         </article>
 
         <!-- Article 4 Post -->
@@ -268,11 +221,24 @@
 
           <!-- Post Content -->
           <div class="px-6 py-4">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">⚡ CREFER, la Garantie d'un Stage Concret !</h2>
+            <router-link to="/articles/4" class="text-xl font-bold text-gray-900 mb-3 hover:text-yellow-600 transition-colors inline-block cursor-pointer">
+              <h2 class="hover:underline">⚡ CREFER, la Garantie d'un Stage Concret !</h2>
+            </router-link>
             <p class="text-gray-700 mb-4 leading-relaxed">
               Nos étudiants maîtrisent chaque étape : du dimensionnement à l'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique ! 🔧
             </p>
-            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-3 border-l-4 border-orange-400">
+            <router-link
+              to="/articles/4"
+              class="text-yellow-600 hover:text-yellow-700 font-semibold text-sm transition-colors inline-block"
+            >
+              + Voir plus
+            </router-link>
+            <div v-if="expandedArticles.article4" class="mt-3 pt-3 border-t border-gray-200">
+              <p class="text-gray-700 leading-relaxed mb-3">
+                Pendant les stages, nos étudiants travaillent sur des projets réels : installation de systèmes solaires photovoltaïques, pose de panneaux, maintenance et dépannage. Cette approche pédagogique est ce qui différencie CREFER dans le secteur de la formation technique.
+              </p>
+            </div>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-3 border-l-4 border-orange-400 mt-3">
               <p class="text-sm font-semibold text-gray-800">Choisis CREFER et deviens le pro du solaire ! ☀️</p>
             </div>
           </div>
@@ -287,50 +253,22 @@
             </div>
           </div>
 
-          <!-- Link Preview -->
-          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
-            <div class="flex">
-              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
-                <img :src="installImage1Url" alt="preview" class="w-full h-full object-cover"/>
-              </div>
-              <div class="flex-1 p-4">
+          <!-- Link Card -->
+          <router-link
+            to="/articles/4"
+            class="w-full px-6 py-4 border-t border-gray-100 bg-white hover:bg-gray-50 transition-colors flex items-stretch gap-0 no-underline"
+          >
+            <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden rounded-lg">
+              <img :src="installImage1Url" alt="article link" class="w-full h-full object-cover"/>
+            </div>
+            <div class="flex-1 p-4 flex flex-col justify-between text-left">
+              <div>
                 <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
                 <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Formation Pratique - Installation Solaire</h4>
                 <p class="text-xs text-gray-600 line-clamp-1 mt-1">Stage concret et formation professionnelle</p>
               </div>
             </div>
-          </div>
-
-          <!-- Post Actions -->
-          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
-            <button
-              @click="copyPostLink('article-4')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              Copier le lien
-            </button>
-            <button
-              @click="toggleLike('article4')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
-              :class="likes.article4 ? 'text-red-600 bg-red-50' : ''"
-            >
-              <svg class="w-5 h-5" :fill="likes.article4 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>{{ likeCounts.article4 }}</span>
-            </button>
-            <button
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>{{ commentCounts.article4 }}</span>
-            </button>
-          </div>
+          </router-link>
         </article>
 
         <!-- Article 5 Post -->
@@ -346,11 +284,24 @@
 
           <!-- Post Content -->
           <div class="px-6 py-4">
-            <h2 class="text-xl font-bold text-gray-900 mb-3">🎓 Examen Blanc – BT Électrotechnique ⚡</h2>
+            <router-link to="/articles/5" class="text-xl font-bold text-gray-900 mb-3 hover:text-yellow-600 transition-colors inline-block cursor-pointer">
+              <h2 class="hover:underline">🎓 Examen Blanc – BT Électrotechnique ⚡</h2>
+            </router-link>
             <p class="text-gray-700 mb-4 leading-relaxed">
               Nos étudiants de troisième année BT Électrotechnique sont en examen blanc, une étape cruciale dans leur préparation à l'examen national prévu pour juillet 2025. Succès à tous !
             </p>
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3 border-l-4 border-blue-400">
+            <router-link
+              to="/articles/5"
+              class="text-yellow-600 hover:text-yellow-700 font-semibold text-sm transition-colors inline-block"
+            >
+              + Voir plus
+            </router-link>
+            <div v-if="expandedArticles.article5" class="mt-3 pt-3 border-t border-gray-200">
+              <p class="text-gray-700 leading-relaxed mb-3">
+                L'examen blanc permet aux étudiants d'identifier leurs forces et faiblesses avant l'examen national. Nos formateurs fournissent un accompagnement personnalisé et des ressources pédagogiques pour garantir le succès de chaque étudiant. Nous croyons que la persévérance et la pratique régulière sont les clés de l'excellence.
+              </p>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3 border-l-4 border-blue-400 mt-3">
               <p class="text-sm font-semibold text-gray-800">Le chemin vers l'excellence passe par la pratique et la persévérance ! 💪</p>
             </div>
           </div>
@@ -365,50 +316,22 @@
             </div>
           </div>
 
-          <!-- Link Preview -->
-          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
-            <div class="flex">
-              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
-                <img :src="examImage1Url" alt="preview" class="w-full h-full object-cover"/>
-              </div>
-              <div class="flex-1 p-4">
+          <!-- Link Card -->
+          <router-link
+            to="/articles/5"
+            class="w-full px-6 py-4 border-t border-gray-100 bg-white hover:bg-gray-50 transition-colors flex items-stretch gap-0 no-underline"
+          >
+            <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden rounded-lg">
+              <img :src="examImage1Url" alt="article link" class="w-full h-full object-cover"/>
+            </div>
+            <div class="flex-1 p-4 flex flex-col justify-between text-left">
+              <div>
                 <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
                 <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Examen Blanc BT Électrotechnique</h4>
                 <p class="text-xs text-gray-600 line-clamp-1 mt-1">Excellence académique et évaluation 2025</p>
               </div>
             </div>
-          </div>
-
-          <!-- Post Actions -->
-          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
-            <button
-              @click="copyPostLink('article-5')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              Copier le lien
-            </button>
-            <button
-              @click="toggleLike('article5')"
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
-              :class="likes.article5 ? 'text-red-600 bg-red-50' : ''"
-            >
-              <svg class="w-5 h-5" :fill="likes.article5 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-              <span>{{ likeCounts.article5 }}</span>
-            </button>
-            <button
-              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>{{ commentCounts.article5 }}</span>
-            </button>
-          </div>
+          </router-link>
         </article>
       </div>
     </section>
@@ -542,6 +465,19 @@ export default {
     const showExamLightbox = ref(false)
     const currentExamLightboxIndex = ref(0)
     const examLightboxImages = ref([])
+
+    // Expand/collapse states
+    const expandedArticles = ref({
+      article1: false,
+      article2: false,
+      article3: false,
+      article4: false,
+      article5: false,
+    })
+
+    const toggleExpand = (articleId) => {
+      expandedArticles.value[articleId] = !expandedArticles.value[articleId]
+    }
 
     // Social interactions
     const likes = ref({
@@ -689,6 +625,8 @@ export default {
       commentCounts,
       toggleLike,
       copyPostLink,
+      expandedArticles,
+      toggleExpand,
     }
   }
 }

@@ -5,6 +5,7 @@ import Contact from '../pages/Contact.vue'
 import Admissions from '../pages/Admissions.vue'
 import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
+import ArticleDetail from '../pages/ArticleDetail.vue'
 import CapElectricite from '../pages/CapElectricite.vue'
 import FormationModulaire from '../pages/FormationModulaire.vue'
 import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
@@ -35,6 +36,11 @@ const routes = [
     path: '/articles',
     name: 'Articles',
     component: Articles
+  },
+  {
+    path: '/articles/:id',
+    name: 'ArticleDetail',
+    component: ArticleDetail
   },
   {
     path: '/contact',
