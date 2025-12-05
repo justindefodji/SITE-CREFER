@@ -136,6 +136,76 @@ export default {
     const router = useRouter()
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
+
+    // Function to update meta tags for social sharing
+    const updateMetaTags = (article) => {
+      const baseUrl = window.location.origin
+      const imageUrl = article.images && article.images.length > 0 ? article.images[0] : ''
+      const pageUrl = `${baseUrl}/articles/${article.id}`
+
+      // Update or create og:title
+      let ogTitle = document.querySelector('meta[property="og:title"]')
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta')
+        ogTitle.setAttribute('property', 'og:title')
+        document.head.appendChild(ogTitle)
+      }
+      ogTitle.setAttribute('content', article.fullTitle)
+
+      // Update or create og:description
+      let ogDescription = document.querySelector('meta[property="og:description"]')
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta')
+        ogDescription.setAttribute('property', 'og:description')
+        document.head.appendChild(ogDescription)
+      }
+      ogDescription.setAttribute('content', article.description)
+
+      // Update or create og:image
+      let ogImage = document.querySelector('meta[property="og:image"]')
+      if (!ogImage) {
+        ogImage = document.createElement('meta')
+        ogImage.setAttribute('property', 'og:image')
+        document.head.appendChild(ogImage)
+      }
+      ogImage.setAttribute('content', imageUrl)
+
+      // Update or create og:url
+      let ogUrl = document.querySelector('meta[property="og:url"]')
+      if (!ogUrl) {
+        ogUrl = document.createElement('meta')
+        ogUrl.setAttribute('property', 'og:url')
+        document.head.appendChild(ogUrl)
+      }
+      ogUrl.setAttribute('content', pageUrl)
+
+      // Update or create og:type
+      let ogType = document.querySelector('meta[property="og:type"]')
+      if (!ogType) {
+        ogType = document.createElement('meta')
+        ogType.setAttribute('property', 'og:type')
+        document.head.appendChild(ogType)
+      }
+      ogType.setAttribute('content', 'article')
+
+      // Update or create twitter:card
+      let twitterCard = document.querySelector('meta[name="twitter:card"]')
+      if (!twitterCard) {
+        twitterCard = document.createElement('meta')
+        twitterCard.setAttribute('name', 'twitter:card')
+        document.head.appendChild(twitterCard)
+      }
+      twitterCard.setAttribute('content', 'summary_large_image')
+
+      // Update or create twitter:image
+      let twitterImage = document.querySelector('meta[name="twitter:image"]')
+      if (!twitterImage) {
+        twitterImage = document.createElement('meta')
+        twitterImage.setAttribute('name', 'twitter:image')
+        document.head.appendChild(twitterImage)
+      }
+      twitterImage.setAttribute('content', imageUrl)
+    }
     
     const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
     const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
@@ -214,6 +284,15 @@ export default {
     const currentArticle = computed(() => {
       const articleId = route.params.id
       return articles[articleId] || articles['1']
+    })
+
+    // Update meta tags when article changes
+    onMounted(() => {
+      updateMetaTags(currentArticle.value)
+    })
+
+    watch(currentArticle, (newArticle) => {
+      updateMetaTags(newArticle)
     })
 
     const openLightbox = (index) => {
