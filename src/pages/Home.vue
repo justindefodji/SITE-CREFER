@@ -414,7 +414,7 @@
               Choisir le Leader<br/>de la Formation
             </h2>
             <p class="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-              CREFER se consacre à offrir une formation de premeir ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissanceset des compétences nécessaires pour excller dans un secteur de l'énergie en constante évolution.
+              CREFER se consacre à offrir une formation de premeir ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissances et des compétences nécessaires pour exceller dans un secteur de l'énergie en constante évolution.
             </p>
             <router-link
               to="/about"

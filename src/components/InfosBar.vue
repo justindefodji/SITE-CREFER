@@ -10,7 +10,7 @@
 
         <div class="py-2 text-center">
           <span class="font-bold text-gray-900">CAP & BT</span>
-          <span class="text-yellow-500 font-bold ml-1">15 SEPTEMBRE</span>
+          <span class="text-yellow-500 font-bold ml-1">15 SEPTEMBRE 2025</span>
         </div>
 
         <div class="py-2 text-center">

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section
@@ -29,7 +29,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-yellow-400">
           <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Notre Approche Pédagogique</h2>
           <p class="text-gray-700 text-lg leading-relaxed">
-            Chaque formation CREFER suit une structure complète et progressive : <strong>phase théorique avancée</strong>, <strong>travaux pratiques intensifs</strong>, <strong>stages en entreprise</strong> et <strong>accompagnement entrepreneurial</strong>. Cette approche holistique garantit que nos étudiants deviennent des professionnels compétents et des entrepreneurs prêts à relever les défis du secteur énergétique.
+            Le Certificat d’Aptitude Professionnelle (CAP) en Électricité d’Équipement et le Brevet de Technicien (BT) en Électrotechnique sont deux diplômes distincts qui diffèrent par leur niveau de qualification et leurs débouchés professionnels.
           </p>
         </div>
       </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="section-title">
               <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">CAP Électricité d'Équipement</h2>
-              <p class="text-gray-600">Formation complète de 2 ans</p>
+              <p class="text-gray-600">Formation complète de 3 ans</p>
             </div>
           </div>
 
@@ -63,22 +63,35 @@
             </div>
 
             <!-- Description -->
-            <div class="flex flex-col justify-center">
-              <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                Le CAP Électricité d'Équipement prépare les étudiants à maîtriser l'installation, la maintenance et la sécurisation des réseaux électriques pour le bâtiment et l'industrie.
-              </p>
+            <div class="flex flex-col justify-center space-y-4">
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Niveau de Qualification</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Le CAP est un diplôme d'état, attestant une qualification professionnelle de base.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Durée de la Formation</h4>
+                <p class="text-gray-700 text-base leading-relaxed">La formation s'étend sur trois (03) ans avec un niveau d'entrée minimum de la classe de quatrième.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Objectifs</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Former des ouvriers qualifiés capables d'exécuter des travaux d'installation et de maintenance des équipements électriques dans les bâtiments neuves ou en rénovation.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Débouchés Professionnels</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Les titulaires peuvent exercer en tant qu'électriciens d'équipement, installateurs ou maintenanciers en électricité et poursuivre les études en Brevet de Technicien en électrotechnique.</p>
+              </div>
               <div class="space-y-3">
                 <div class="flex items-start list-item">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : BAC ou équivalent</p>
+                    <p class="font-bold text-gray-900">Entrée : Minimun la classe de quatrième (4ème)</p>
                     <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
                   </div>
                 </div>
                 <div class="flex items-start list-item">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : 2 ans</p>
+                    <p class="font-bold text-gray-900">Durée : 3 ans</p>
                     <p class="text-gray-600 text-sm">Rentrée : 15 Septembre 2025</p>
                   </div>
                 </div>
@@ -211,22 +224,35 @@
             </div>
 
             <!-- Description -->
-            <div class="flex flex-col justify-center">
-              <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                Le BT Électrotechnique forme des techniciens supérieurs capables de superviser des projets électrotechniques complexes, d'innover et de gérer des équipes.
-              </p>
+            <div class="flex flex-col justify-center space-y-4">
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Niveau de Qualification</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Le BT est un diplôme d'état équivalent au baccalauréat professionnel, attestant d'une qualification technique approfondie.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Durée de la Formation</h4>
+                <p class="text-gray-700 text-base leading-relaxed">La formation dure deux à trois ans avec un niveau d'entrée minimum de BEPC ou un CAP en électricité d'équipement.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Objectifs</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Former des techniciens capables de concevoir, installer, gérer et maintenir des systèmes électrotechniques complexes, incluant la production, le transport, la distribution et l'utilisation de l'énergie électrique.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Débouchés Professionnels</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Les diplômés peuvent occuper des postes de techniciens en électrotechnique, chefs de chantier en installations électriques, ou poursuivre leurs études vers un Brevet de Technicien Supérieur (BTS), Licence en électrotechnique.</p>
+              </div>
               <div class="space-y-3">
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : Minimum BEPC </p>
+                    <p class="font-bold text-gray-900">Entrée : BEPC ou un CAP en électricité d'équipement </p>
                     <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : 2 ans</p>
+                    <p class="font-bold text-gray-900">Durée : 3 ans</p>
                     <p class="text-gray-600 text-sm">Rentrée : 15 Septembre 2025</p>
                   </div>
                 </div>
@@ -344,7 +370,7 @@
             </div>
             <div>
               <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">Formations Modulaires</h2>
-              <p class="text-gray-600">9 formations à la carte flexibles</p>
+              <p class="text-gray-600">2 formations à la carte flexibles</p>
             </div>
           </div>
 
@@ -358,23 +384,38 @@
               />
             </div>
 
-            <!-- Description -->
-            <div class="flex flex-col justify-center">
-              <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                Les formations modulaires offrent une flexibilité maximale pour les professionnels en activité. Choisissez les modules qui correspondent à vos besoins et progressez à votre rythme.
-              </p>
-              <div class="space-y-3">
+                        <!-- Description -->
+            <div class="flex flex-col justify-center space-y-4">
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Vue d''ensemble</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Nos formations modulaires (06 ou 12 mois) offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins. La formation est sanctionnée par un certificat et une attestation de stage.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Conditions d''Admissions</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Un niveau d''entrée minimum de BEPC ou équivalent.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Option Niveau 1 : 06 mois</h4>
+                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d''Équipement & Énergie Solaire</span></p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est apte à réaliser et entretenir des installations électriques dans les bâtiments résidentiels et commerciaux. Il peut aussi dimensionner et installer des systèmes solaires domestiques. Il peut exercer à son propre compte comme patron électricien/technicien solaire ou être recruté dans une entreprise de BTP ou d''énergie.</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Option Niveau 2 : 12 mois</h4>
+                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d''Équipement & Énergie Solaire</span></p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d''installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l''installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d''onduleurs hybrides. Il peut exercer à son compte ou en entreprise (industrie, BTP, solaire).</p>
+              </div>
+              <div class="space-y-3 pt-2">
                 <div class="flex items-start">
-                  <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
+                  <span class="text-yellow-400 font-bold mr-3 text-xl"></span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : Flexible</p>
-                    <p class="text-gray-600 text-sm">Pour tous niveaux et expériences</p>
+                    <p class="font-bold text-gray-900">Entrée : BEPC ou équivalent</p>
+                    <p class="text-gray-600 text-sm">Flexible selon votre profil et vos objectifs</p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
+                  <span class="text-yellow-400 font-bold mr-3 text-xl"></span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : Flexible</p>
+                    <p class="font-bold text-gray-900">Durée : 6 ou 12 mois</p>
                     <p class="text-gray-600 text-sm">Rentrée : 13 Avril 2026</p>
                   </div>
                 </div>

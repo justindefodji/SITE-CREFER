@@ -398,7 +398,7 @@
             <div class="p-8">
               <h3 class="text-2xl font-bold text-gray-900 mb-3">L'Annexe</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
-                Non loin de l'agence Yas, l'annexe accueille principalement les apprenants inscrits en<strong>CAP et BT</strong>
+                Non loin de l'agence Yas, l'annexe accueille principalement les apprenants inscrits en CAP et BT
               </p>
               <div class="pt-4 border-t border-gray-200">
                 <p class="text-sm text-yellow-600 font-semibold"> Près de Yas, Totsi</p>
