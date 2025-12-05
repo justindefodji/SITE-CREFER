@@ -1,835 +1,535 @@
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
     <!-- Header Section -->
     <section
-      class="relative py-8 px-4 sm:px-6 lg:px-8 border-b overflow-hidden bg-cover bg-center"
+      class="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center"
       :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
     >
       <!-- Dark overlay for contrast -->
-      <div class="absolute inset-0 bg-black/55 z-10"></div>
-      <!-- Gradient noir de bas vers le haut -->
-      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
+      <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 via-black/60 to-transparent z-15"></div>
       
-      <div class="max-w-7xl mx-auto relative z-20 pt-24">
-        <h1 class="text-3xl lg:text-5xl font-bold text-white mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS ACTUALITÉS</h1>
-        <p class="text-lg lg:text-xl text-blue-100">Découvrez les dernières actualités et projets de CREFER</p>
+      <div class="max-w-6xl mx-auto relative z-20 pt-28 pb-8">
+        <h1 class="text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Actualités & Projets</h1>
+        <p class="text-lg lg:text-xl text-slate-200">Découvrez les dernières actualités et projets de CREFER - Partageables et engageants</p>
       </div>
     </section>
 
-    <!-- Articles Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="space-y-12">
-          <!-- Article 1 - Soutenance Mémoire -->
-          <article class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
-            <!-- Image Left -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="rounded-lg overflow-hidden shadow-lg w-full aspect-square">
+    <!-- Articles Section - Social Feed Style -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      <div class="max-w-2xl mx-auto space-y-6">
+        <!-- Article 1 Post - Social Style -->
+        <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+          <!-- Post Header -->
+          <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-gray-900">CREFER 🎓</h3>
+              <span class="text-xs text-gray-500">31 OCT 2025</span>
+            </div>
+            <p class="text-sm text-gray-600">Événement important</p>
+          </div>
+
+          <!-- Post Content -->
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Soutenance de Mémoire - Promotion 12 SPV</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion !
+            </p>
+          </div>
+
+          <!-- Post Image -->
+          <div class="w-full h-72 bg-gray-100 overflow-hidden">
+            <img 
+              :src="soutenanceImageUrl" 
+              alt="Soutenance Mémoire" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+              @click="openLightbox(0)"
+            />
+          </div>
+
+          <!-- Link Preview Card -->
+          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
+            <div class="flex">
+              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
                 <img 
                   :src="soutenanceImageUrl" 
-                  alt="Soutenance Mémoire" 
+                  alt="preview" 
                   class="w-full h-full object-cover"
                 />
               </div>
-            </div>
-
-            <!-- Content Right -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">31 OCTOBRE 2025</p>
-              <a 
-                id="article-soutenance-memoire"
-                href="#article-soutenance-memoire"
-                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
-                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-              >
-                Soutenance de Mémoire - Promotion 12 SPV
-              </a>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts, de rigueur et de passion pour l'électricité et l'énergie solaire.
-              </p>
-              <div class="flex items-center gap-2 text-gray-600 mb-4">
-                <span></span>
-                <span>Annexe CREFER, au bord des pavés de Totsi</span>
-              </div>
-              <div class="flex items-center gap-2 text-gray-600 mb-6">
-                <span></span>
-                <span>08h00 - 12h00</span>
-              </div>
-              <div v-show="expandedArticles.article1" class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  Cette soutenance est un moment important où les étudiants présentent les résultats de leurs recherches et projets finaux. Les jury seront composés de professionnels reconnus dans le secteur de l'énergie solaire.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Tous les membres de la communauté CREFER, familles et partenaires sont cordialement invités à assister à cet événement marquant.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article1')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article1 ? '...voir moins' : '...voir plus' }}
-              </button>
-            </div>
-          </article>
-
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
-
-          <!-- Article 2 - 14ème Promotion Modulaire -->
-          <article class="flex flex-col lg:flex-row-reverse gap-8 items-start">
-            <!-- Images Gallery Right -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Large image top left -->
-                <div class="col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg h-full cursor-pointer hover:shadow-xl transition-shadow" @click="openLightbox(0)">
-                  <img 
-                    :src="promotionImage1Url" 
-                    alt="14ème Promotion Modulaire - Image 1" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Top right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openLightbox(1)">
-                  <img 
-                    :src="promotionImage2Url" 
-                    alt="14ème Promotion Modulaire - Image 2" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openLightbox(2)">
-                  <img 
-                    :src="promotionImage3Url" 
-                    alt="14ème Promotion Modulaire - Image 3" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
+              <div class="flex-1 p-4 flex flex-col justify-between">
+                <div>
+                  <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                  <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Soutenance Mémoire SPV 2025</h4>
+                  <p class="text-xs text-gray-600 line-clamp-1 mt-1">Découvrez notre événement académique majeur</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Content Left -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">Rentrée académique</p>
-              <a 
-                id="article-14eme-promotion"
-                href="#article-14eme-promotion"
-                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
-                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-              >
-                Lancement de la 14ème Promotion des Formations Modulaires
-              </a>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois en électricité, plomberie, énergie solaire et froid-climatisation. À travers cette nouvelle promotion, CREFER confirme son engagement à former des techniciens compétents, polyvalents et opérationnels, capables de répondre efficacement aux besoins croissants du marché Togolais et régional.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Avec un encadrement de qualité et une approche résolument pratique de l'apprentissage, CREFER s'impose aujourd'hui comme une véritable référence de la formation technique et professionnelle au Togo.
-              </p>
-              <div class="text-yellow-500 font-bold mb-6">
-                 Bienvenue aux nouveaux apprenants !
-              </div>
-              <div v-show="expandedArticles.article2" class="mt-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  Ces formations sont spécialement conçues pour les professionnels en activité souhaitant développer leurs compétences ou se reconvertir dans les métiers de l'énergie.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Nous offrons un accompagnement personnalisé avec un suivi régulier et des stages pratiques pour assurer l'employabilité de nos apprenants.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article2')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article2 ? '...voir moins' : '...voir plus' }}
-              </button>
+          <!-- Post Actions -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
+            <button
+              @click="copyPostLink('article-1')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+              Copier le lien
+            </button>
+            <button
+              @click="toggleLike('article1')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
+              :class="likes.article1 ? 'text-red-600 bg-red-50' : ''"
+            >
+              <svg class="w-5 h-5" :fill="likes.article1 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span>{{ likeCounts.article1 }}</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{{ commentCounts.article1 }}</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 2 Post -->
+        <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+          <!-- Post Header -->
+          <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-gray-900">CREFER 🎓</h3>
+              <span class="text-xs text-gray-500">14 OCT 2025</span>
             </div>
-          </article>
+            <p class="text-sm text-gray-600">Rentrée académique</p>
+          </div>
 
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
-
-          <!-- Article 3 - Nos Anciens Étudiants & Engagements -->
-          <article class="flex flex-col lg:flex-row gap-8 items-start">
-            <!-- Images Gallery Left -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Large image left -->
-                <div class="col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg h-full cursor-pointer hover:shadow-xl transition-shadow" @click="openSolarLightbox(0)">
-                  <img 
-                    :src="solarImage1Url" 
-                    alt="Anciens étudiants CREFER - Stage pratique" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Right image -->
-                <div class="col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg h-full cursor-pointer hover:shadow-xl transition-shadow" @click="openSolarLightbox(1)">
-                  <img 
-                    :src="solarImage2Url" 
-                    alt="Formation pratique CREFER - Énergie solaire" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-              </div>
+          <!-- Post Content -->
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Lancement de la 14ème Promotion des Formations Modulaires</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois. Bienvenue aux nouveaux apprenants ! CREFER confirme son engagement à former des techniciens compétents et opérationnels.
+            </p>
+            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-3 border-l-4 border-yellow-400">
+              <p class="text-sm font-semibold text-gray-800">Bienvenue aux nouveaux apprenants ! 🚀</p>
             </div>
+          </div>
 
-            <!-- Content Right -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">2021 - NOS RÉALISATIONS</p>
-              <a 
-                id="article-1500-etudiants"
-                href="#article-1500-etudiants"
-                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
-                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-              >
-                1500+ Étudiants Formés et Transformés
-              </a>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Depuis sa création, CREFER a déjà formé près de <strong>1500 étudiants</strong> venus du Togo et d'ailleurs. Notre engagement reste le même : garantir à chaque étudiant un stage pratique et l'opportunité de transformer sa formation en réelle compétence professionnelle.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Retour en images sur nos anciens étudiants (Promotion 5, 2021) en pleine immersion sur le terrain. Ces moments résument bien l'ADN de CREFER : apprendre par la pratique, pour s'insérer durablement dans le monde professionnel.
-              </p>
-              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                <p class="text-gray-800 font-semibold">
-                   La rentrée 2025 marque notre 14ème promotion. Une nouvelle génération prête à relever les défis énergétiques et techniques de l'Afrique !
-                </p>
-              </div>
-              <div v-show="expandedArticles.article3" class="mt-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  Parmi nos anciens étudiants, nombreux sont ceux qui ont créé leurs propres structures ou travaillent comme techniciens qualifiés dans les entreprises du secteur.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Ces success stories confirment notre mission : former des techniciens compétents, innovants et capables de transformer leur formation en opportunité professionnelle durable.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article3')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article3 ? '...voir moins' : '...voir plus' }}
-              </button>
+          <!-- Post Gallery -->
+          <div class="grid grid-cols-2 gap-1 w-full h-72 bg-gray-100">
+            <div class="overflow-hidden cursor-pointer group" @click="openLightbox(0)">
+              <img :src="promotionImage1Url" alt="Promo 14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
             </div>
-          </article>
+            <div class="overflow-hidden cursor-pointer group" @click="openLightbox(1)">
+              <img :src="promotionImage2Url" alt="Promo 14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+          </div>
 
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
-
-          <!-- Article 4 - CREFER, la garantie d'un stage concret -->
-          <article class="flex flex-col lg:flex-row-reverse gap-8 items-start">
-            <!-- Images Gallery 2x2 Right -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Top left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openInstallLightbox(0)">
-                  <img 
-                    :src="installImage1Url" 
-                    alt="Installation solaire - Image 1" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Top right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openInstallLightbox(1)">
-                  <img 
-                    :src="installImage2Url" 
-                    alt="Installation solaire - Image 2" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openInstallLightbox(2)">
-                  <img 
-                    :src="installImage3Url" 
-                    alt="Installation solaire - Image 3" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openInstallLightbox(3)">
-                  <img 
-                    :src="installImage4Url" 
-                    alt="Installation solaire - Image 4" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
+          <!-- Link Preview -->
+          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
+            <div class="flex">
+              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
+                <img :src="promotionImage1Url" alt="preview" class="w-full h-full object-cover"/>
+              </div>
+              <div class="flex-1 p-4">
+                <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-2">14ème Promotion Formations Modulaires</h4>
+                <p class="text-xs text-gray-600 line-clamp-1 mt-1">Rentrée académique 2025 - Formations qualifiantes</p>
               </div>
             </div>
+          </div>
 
-            <!-- Content Left -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - FORMATION PRATIQUE</p>
-              <a 
-                id="article-garantie-stage"
-                href="#article-garantie-stage"
-                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
-                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-              >
-                CREFER, la Garantie d'un Stage Concret !
-              </a>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                 <strong>Nos étudiants maîtrisent chaque étape</strong> : du dimensionnement à l'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique et directement applicable.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                 <strong>Choisis CREFER et deviens le pro du solaire.</strong> Notre engagement : former des techniciens capables de relever les défis énergétiques de demain.
-              </p>
-              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                <p class="text-gray-800 font-semibold mb-3"> Nous contacter :</p>
-                <p class="text-gray-700 mb-2"><strong></strong> +22891204373 🇹🇬</p>
-                <p class="text-gray-700 mb-2"><strong></strong> www.crefer.tech/admissions</p>
-                <p class="text-gray-700"><strong> Adresse :</strong> Lomé-TOGO, quartier Totsi</p>
-              </div>
-              <div v-show="expandedArticles.article4" class="mt-6 p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  Nos stages pratiques sont réalisés en partenariat avec des entreprises locales leaders dans le secteur solaire et électrique. Les étudiants travaillent sur des projets réels et gagnent une expérience terrain inestimable.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Cette approche « learning by doing » garantit une transition en douceur vers le monde professionnel et une employabilité à la sortie de la formation.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article4')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article4 ? '...voir moins' : '...voir plus' }}
-              </button>
+          <!-- Post Actions -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
+            <button
+              @click="copyPostLink('article-2')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+              Copier le lien
+            </button>
+            <button
+              @click="toggleLike('article2')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
+              :class="likes.article2 ? 'text-red-600 bg-red-50' : ''"
+            >
+              <svg class="w-5 h-5" :fill="likes.article2 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span>{{ likeCounts.article2 }}</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{{ commentCounts.article2 }}</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 3 Post -->
+        <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+          <!-- Post Header -->
+          <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-gray-900">CREFER 🎓</h3>
+              <span class="text-xs text-gray-500">2021 - NOS RÉALISATIONS</span>
             </div>
-          </article>
+            <p class="text-sm text-gray-600">Success Stories</p>
+          </div>
 
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
+          <!-- Post Content -->
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">1500+ Étudiants Formés et Transformés</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Depuis sa création, CREFER a déjà formé près de 1500 étudiants du Togo et d'ailleurs. Découvrez en images nos anciens étudiants en pleine immersion sur le terrain !
+            </p>
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border-l-4 border-purple-400">
+              <p class="text-sm font-semibold text-gray-800">Une nouvelle génération prête à relever les défis énergétiques de l'Afrique ! 💡</p>
+            </div>
+          </div>
 
-          <!-- Article 5 - Examen Blanc BT Électrotechnique -->
-          <article class="flex flex-col lg:flex-row gap-8 items-start">
-            <!-- Images Gallery 2x2 Left -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Top left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openExamLightbox(0)">
-                  <img 
-                    :src="examImage1Url" 
-                    alt="Examen blanc BT - Image 1" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Top right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openExamLightbox(1)">
-                  <img 
-                    :src="examImage2Url" 
-                    alt="Examen blanc BT - Image 2" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openExamLightbox(2)">
-                  <img 
-                    :src="examImage3Url" 
-                    alt="Examen blanc BT - Image 3" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openExamLightbox(3)">
-                  <img 
-                    :src="examImage4Url" 
-                    alt="Examen blanc BT - Image 4" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
+          <!-- Post Gallery -->
+          <div class="grid grid-cols-2 gap-1 w-full h-72 bg-gray-100">
+            <div class="overflow-hidden cursor-pointer group" @click="openSolarLightbox(0)">
+              <img :src="solarImage1Url" alt="Réalisations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+            <div class="overflow-hidden cursor-pointer group" @click="openSolarLightbox(1)">
+              <img :src="solarImage2Url" alt="Réalisations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+          </div>
+
+          <!-- Link Preview -->
+          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
+            <div class="flex">
+              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
+                <img :src="solarImage1Url" alt="preview" class="w-full h-full object-cover"/>
+              </div>
+              <div class="flex-1 p-4">
+                <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-2">1500+ Étudiants Formés</h4>
+                <p class="text-xs text-gray-600 line-clamp-1 mt-1">Découvrez nos success stories et réalisations</p>
               </div>
             </div>
+          </div>
 
-            <!-- Content Right -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - ÉVALUATION & EXCELLENCE</p>
-              <a 
-                id="article-examen-blanc"
-                href="#article-examen-blanc"
-                class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block mb-4" 
-                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-              >
-                🎓 Examen Blanc – BT Électrotechnique ⚡
-              </a>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Depuis lundi dernier, nos étudiants de troisième année BT Électrotechnique sont en <strong>examen blanc</strong>, une étape cruciale dans leur préparation à l'examen national prévu pour <strong>juillet 2025</strong>.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                 <strong>Ce jour, ils étaient en atelier</strong> pour le TP d'électricité industrielle, un exercice pratique chronométré sur 6 heures, mobilisant rigueur, technicité et maîtrise du temps.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Les <strong>résultats de cette première phase</strong> seront proclamés mardi prochain.
-              </p>
-              <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
-                <p class="text-gray-800 font-semibold mb-3">
-                   Nous leur souhaitons beaucoup de courage pour la suite de cet examen blanc. Le chemin vers l'excellence passe par la pratique et la persévérance !
-                </p>
-              </div>
-              <div class="text-gray-700 font-semibold mb-6">
-                <p class="mb-2"><strong></strong> +22891204373 🇹🇬</p>
-                <p><strong></strong> Lomé-TOGO, quartier Totsi</p>
-              </div>
-              <div v-show="expandedArticles.article5" class="mt-6 p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  Cet examen blanc revêt une grande importance car il permet aux étudiants d'évaluer leur niveau de préparation avant l'examen officiel de certification.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Les résultats serviront de base pour les révisions intensives et les séances d'appui pédagogique prévues avant l'examen final.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article5')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article5 ? '...voir moins' : '...voir plus' }}
-              </button>
+          <!-- Post Actions -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
+            <button
+              @click="copyPostLink('article-3')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+              Copier le lien
+            </button>
+            <button
+              @click="toggleLike('article3')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
+              :class="likes.article3 ? 'text-red-600 bg-red-50' : ''"
+            >
+              <svg class="w-5 h-5" :fill="likes.article3 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span>{{ likeCounts.article3 }}</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{{ commentCounts.article3 }}</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 4 Post -->
+        <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+          <!-- Post Header -->
+          <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-gray-900">CREFER 🎓</h3>
+              <span class="text-xs text-gray-500">NOVEMBRE 2025</span>
             </div>
-          </article>
+            <p class="text-sm text-gray-600">Formation Pratique</p>
+          </div>
 
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
+          <!-- Post Content -->
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">⚡ CREFER, la Garantie d'un Stage Concret !</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Nos étudiants maîtrisent chaque étape : du dimensionnement à l'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique ! 🔧
+            </p>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-3 border-l-4 border-orange-400">
+              <p class="text-sm font-semibold text-gray-800">Choisis CREFER et deviens le pro du solaire ! ☀️</p>
+            </div>
+          </div>
 
-          <!-- Article 6 - Soutenance EZUKE Yao John -->
-          <article class="flex flex-col lg:flex-row-reverse gap-8 items-start">
-            <!-- Images Gallery 2x2 Right -->
-            <div class="w-full lg:w-2/5 flex-shrink-0">
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Top left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openSoutenanceLightbox(0)">
-                  <img 
-                    :src="soutenanceImage1Url" 
-                    alt="Soutenance mémoire - Image 1" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Top right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openSoutenanceLightbox(1)">
-                  <img 
-                    :src="soutenanceImage2Url" 
-                    alt="Soutenance mémoire - Image 2" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom left image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openSoutenanceLightbox(2)">
-                  <img 
-                    :src="soutenanceImage3Url" 
-                    alt="Soutenance mémoire - Image 3" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                
-                <!-- Bottom right image -->
-                <div class="col-span-1 rounded-lg overflow-hidden shadow-lg aspect-square cursor-pointer hover:shadow-xl transition-shadow" @click="openSoutenanceLightbox(3)">
-                  <img 
-                    :src="soutenanceImage4Url" 
-                    alt="Soutenance mémoire - Image 4" 
-                    class="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
+          <!-- Post Gallery -->
+          <div class="grid grid-cols-2 gap-1 w-full h-72 bg-gray-100">
+            <div class="overflow-hidden cursor-pointer group" @click="openInstallLightbox(0)">
+              <img :src="installImage1Url" alt="Stage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+            <div class="overflow-hidden cursor-pointer group" @click="openInstallLightbox(1)">
+              <img :src="installImage2Url" alt="Stage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+          </div>
+
+          <!-- Link Preview -->
+          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
+            <div class="flex">
+              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
+                <img :src="installImage1Url" alt="preview" class="w-full h-full object-cover"/>
+              </div>
+              <div class="flex-1 p-4">
+                <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Formation Pratique - Installation Solaire</h4>
+                <p class="text-xs text-gray-600 line-clamp-1 mt-1">Stage concret et formation professionnelle</p>
               </div>
             </div>
+          </div>
 
-            <!-- Content Left -->
-            <div class="w-full lg:w-3/5">
-              <p class="text-yellow-500 font-semibold mb-2">NOVEMBRE 2025 - EXCELLENCE ACADÉMIQUE</p>
-              <div class="mb-4">
-                <a 
-                  id="article-soutenance-ezuke"
-                  href="#article-soutenance-ezuke"
-                  class="text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors inline-block" 
-                  style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;"
-                >
-                  Zoom sur la Présentation de Mémoire - EZUKE Yao John 
-                </a>
-              </div>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                C'est avec <strong>assurance et rigueur</strong> que notre étudiant a brillamment soutenu son mémoire sur le thème : <strong>« Étude et dimensionnement d'un système photovoltaïque en milieu urbain : cas de la boutique de M. KOTCHANOU »</strong>.
-              </p>
-              <p class="text-gray-700 mb-6 leading-relaxed">
-                Entouré de sa famille et de ses amis, il a su démontrer sa <strong>maîtrise du sujet</strong> et la <strong>qualité de son travail</strong>. Une belle démonstration de l'excellence que CREFER cultive chez ses étudiants.
-              </p>
-              <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-                <p class="text-gray-800 font-semibold text-lg">
-                  🎓 Faites le choix de l'excellence, en choisissant CREFER !
-                </p>
-              </div>
-              <div class="text-gray-700 font-semibold mb-6 space-y-2">
-                <p><strong></strong> +22891204373 🇹🇬</p>
-                <!-- <p><strong></strong> www.crefer.tech/admissions</p> -->
-                <p><strong> Siège Social :</strong> Totsi Gblenkomé près de la salle de réunion des témoins de Jéhovah</p>
-                <p><strong> Annexe :</strong> Au bord des pavés de Totsi non loin de l'agence TogoCom</p>
-              </div>
-              <div v-show="expandedArticles.article6" class="mt-6 p-4 bg-red-50 rounded-lg border-l-4 border-red-400 transition-all duration-300">
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                  La soutenance d'EZUKE Yao John est le résultat d'un travail acharné et d'une excellente collaboration avec son encadrant. Ses recherches portent sur des sujets d'actualité en lien avec les défis énergétiques du Togo.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                  Toutes les soutenances de mémoire à CREFER sont publiques et nous encourageons nos partenaires, familles et la communauté éducative à y assister pour soutenir nos étudiants.
-                </p>
-              </div>
-              <button
-                @click="toggleArticle('article6')"
-                class="text-blue-600 hover:text-blue-800 font-semibold underline transition-colors text-sm mt-6"
-              >
-                {{ expandedArticles.article6 ? '...voir moins' : '...voir plus' }}
-              </button>
+          <!-- Post Actions -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
+            <button
+              @click="copyPostLink('article-4')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+              Copier le lien
+            </button>
+            <button
+              @click="toggleLike('article4')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
+              :class="likes.article4 ? 'text-red-600 bg-red-50' : ''"
+            >
+              <svg class="w-5 h-5" :fill="likes.article4 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span>{{ likeCounts.article4 }}</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{{ commentCounts.article4 }}</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 5 Post -->
+        <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
+          <!-- Post Header -->
+          <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-gray-900">CREFER 🎓</h3>
+              <span class="text-xs text-gray-500">NOVEMBRE 2025</span>
             </div>
-          </article>
+            <p class="text-sm text-gray-600">Évaluation & Excellence</p>
+          </div>
 
-          <!-- Divider -->
-          <div class="my-8 border-t border-gray-200"></div>
+          <!-- Post Content -->
+          <div class="px-6 py-4">
+            <h2 class="text-xl font-bold text-gray-900 mb-3">🎓 Examen Blanc – BT Électrotechnique ⚡</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Nos étudiants de troisième année BT Électrotechnique sont en examen blanc, une étape cruciale dans leur préparation à l'examen national prévu pour juillet 2025. Succès à tous !
+            </p>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3 border-l-4 border-blue-400">
+              <p class="text-sm font-semibold text-gray-800">Le chemin vers l'excellence passe par la pratique et la persévérance ! 💪</p>
+            </div>
+          </div>
 
-         
-        </div>
+          <!-- Post Gallery -->
+          <div class="grid grid-cols-2 gap-1 w-full h-72 bg-gray-100">
+            <div class="overflow-hidden cursor-pointer group" @click="openExamLightbox(0)">
+              <img :src="examImage1Url" alt="Examen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+            <div class="overflow-hidden cursor-pointer group" @click="openExamLightbox(1)">
+              <img :src="examImage2Url" alt="Examen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            </div>
+          </div>
 
-        <!-- Load More Button -->
-        <!-- <div class="flex justify-center mt-16">
-          <button class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 font-bold rounded-lg hover:bg-yellow-400 hover:text-white transition-colors hover:shadow-lg transform hover:-translate-y-1">
-            Charger plus d'articles
-          </button>
-        </div> -->
+          <!-- Link Preview -->
+          <div class="mx-6 my-4 border border-gray-200 rounded-lg overflow-hidden hover:border-yellow-400 transition-colors">
+            <div class="flex">
+              <div class="w-32 h-32 bg-gray-100 flex-shrink-0 overflow-hidden">
+                <img :src="examImage1Url" alt="preview" class="w-full h-full object-cover"/>
+              </div>
+              <div class="flex-1 p-4">
+                <p class="text-xs font-semibold text-gray-500 uppercase">crefer.tech</p>
+                <h4 class="text-sm font-bold text-gray-900 line-clamp-2">Examen Blanc BT Électrotechnique</h4>
+                <p class="text-xs text-gray-600 line-clamp-1 mt-1">Excellence académique et évaluation 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Actions -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-2">
+            <button
+              @click="copyPostLink('article-5')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 text-yellow-700 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+              Copier le lien
+            </button>
+            <button
+              @click="toggleLike('article5')"
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-red-50 text-gray-600 hover:text-red-600 font-semibold transition-all duration-200 text-sm"
+              :class="likes.article5 ? 'text-red-600 bg-red-50' : ''"
+            >
+              <svg class="w-5 h-5" :fill="likes.article5 ? 'currentColor' : 'none'" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+              <span>{{ likeCounts.article5 }}</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-blue-50 text-gray-600 hover:text-blue-600 font-semibold transition-all duration-200 text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{{ commentCounts.article5 }}</span>
+            </button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Lightbox Modal for Article 2 Images -->
+    <!-- Lightbox Modal -->
     <div 
       v-if="showLightbox" 
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
       @click="closeLightbox"
     >
       <div class="relative max-w-4xl w-full" @click.stop>
-        <!-- Close button -->
         <button 
           @click="closeLightbox"
-          class="absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors z-10"
+          class="absolute -top-12 right-0 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
-        <!-- Main image -->
-        <img 
-          :src="lightboxImages[currentLightboxIndex]" 
-          :alt="`Image ${currentLightboxIndex + 1}`"
-          class="w-full h-auto rounded-lg"
-        />
-
-        <!-- Navigation arrows -->
+        <img :src="lightboxImages[currentLightboxIndex]" :alt="`Image ${currentLightboxIndex + 1}`" class="w-full h-auto rounded-lg" />
         <button 
           v-if="currentLightboxIndex > 0"
           @click="previousLightboxImage"
           class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-
         <button 
           v-if="currentLightboxIndex < lightboxImages.length - 1"
           @click="nextLightboxImage"
           class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </button>
-
-        <!-- Image counter -->
-        <div class="text-center text-white mt-4 font-semibold">
-          {{ currentLightboxIndex + 1 }} / {{ lightboxImages.length }}
-        </div>
       </div>
     </div>
 
-    <!-- Lightbox Modal for Article 3 (Solar Images) -->
+    <!-- Lightbox pour autres galeries -->
     <div 
       v-if="showSolarLightbox" 
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
       @click="closeSolarLightbox"
     >
       <div class="relative max-w-4xl w-full" @click.stop>
-        <!-- Close button -->
         <button 
           @click="closeSolarLightbox"
-          class="absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors z-10"
+          class="absolute -top-12 right-0 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
-        <!-- Main image -->
-        <img 
-          :src="solarLightboxImages[currentSolarLightboxIndex]" 
-          :alt="`Image ${currentSolarLightboxIndex + 1}`"
-          class="w-full h-auto rounded-lg"
-        />
-
-        <!-- Navigation arrows -->
-        <button 
-          v-if="currentSolarLightboxIndex > 0"
-          @click="previousSolarLightboxImage"
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button 
-          v-if="currentSolarLightboxIndex < solarLightboxImages.length - 1"
-          @click="nextSolarLightboxImage"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- Image counter -->
-        <div class="text-center text-white mt-4 font-semibold">
-          {{ currentSolarLightboxIndex + 1 }} / {{ solarLightboxImages.length }}
-        </div>
+        <img :src="solarLightboxImages[currentSolarLightboxIndex]" :alt="`Image ${currentSolarLightboxIndex + 1}`" class="w-full h-auto rounded-lg" />
       </div>
     </div>
 
-    <!-- Lightbox Modal for Article 4 (Install Images) -->
     <div 
       v-if="showInstallLightbox" 
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
       @click="closeInstallLightbox"
     >
       <div class="relative max-w-4xl w-full" @click.stop>
-        <!-- Close button -->
         <button 
           @click="closeInstallLightbox"
-          class="absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors z-10"
+          class="absolute -top-12 right-0 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
-        <!-- Main image -->
-        <img 
-          :src="installLightboxImages[currentInstallLightboxIndex]" 
-          :alt="`Image ${currentInstallLightboxIndex + 1}`"
-          class="w-full h-auto rounded-lg"
-        />
-
-        <!-- Navigation arrows -->
-        <button 
-          v-if="currentInstallLightboxIndex > 0"
-          @click="previousInstallLightboxImage"
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button 
-          v-if="currentInstallLightboxIndex < installLightboxImages.length - 1"
-          @click="nextInstallLightboxImage"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- Image counter -->
-        <div class="text-center text-white mt-4 font-semibold">
-          {{ currentInstallLightboxIndex + 1 }} / {{ installLightboxImages.length }}
-        </div>
+        <img :src="installLightboxImages[currentInstallLightboxIndex]" :alt="`Image ${currentInstallLightboxIndex + 1}`" class="w-full h-auto rounded-lg" />
       </div>
     </div>
 
-    <!-- Lightbox Modal for Article 5 (Exam Images) -->
     <div 
       v-if="showExamLightbox" 
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
       @click="closeExamLightbox"
     >
       <div class="relative max-w-4xl w-full" @click.stop>
-        <!-- Close button -->
         <button 
           @click="closeExamLightbox"
-          class="absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors z-10"
+          class="absolute -top-12 right-0 text-white hover:text-yellow-400 transition-colors"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
-        <!-- Main image -->
-        <img 
-          :src="examLightboxImages[currentExamLightboxIndex]" 
-          :alt="`Image ${currentExamLightboxIndex + 1}`"
-          class="w-full h-auto rounded-lg"
-        />
-
-        <!-- Navigation arrows -->
-        <button 
-          v-if="currentExamLightboxIndex > 0"
-          @click="previousExamLightboxImage"
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button 
-          v-if="currentExamLightboxIndex < examLightboxImages.length - 1"
-          @click="nextExamLightboxImage"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- Image counter -->
-        <div class="text-center text-white mt-4 font-semibold">
-          {{ currentExamLightboxIndex + 1 }} / {{ examLightboxImages.length }}
-        </div>
+        <img :src="examLightboxImages[currentExamLightboxIndex]" :alt="`Image ${currentExamLightboxIndex + 1}`" class="w-full h-auto rounded-lg" />
       </div>
     </div>
-
-    <!-- Lightbox Modal for Article 6 (Soutenance Images) -->
-    <div 
-      v-if="showSoutenanceLightbox" 
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-      @click="closeSoutenanceLightbox"
-    >
-      <div class="relative max-w-4xl w-full" @click.stop>
-        <!-- Close button -->
-        <button 
-          @click="closeSoutenanceLightbox"
-          class="absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors z-10"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-
-        <!-- Main image -->
-        <img 
-          :src="soutenanceLightboxImages[currentSoutenanceLightboxIndex]" 
-          :alt="`Image ${currentSoutenanceLightboxIndex + 1}`"
-          class="w-full h-auto rounded-lg"
-        />
-
-        <!-- Navigation arrows -->
-        <button 
-          v-if="currentSoutenanceLightboxIndex > 0"
-          @click="previousSoutenanceLightboxImage"
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button 
-          v-if="currentSoutenanceLightboxIndex < soutenanceLightboxImages.length - 1"
-          @click="nextSoutenanceLightboxImage"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-yellow-400 transition-colors"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- Image counter -->
-        <div class="text-center text-white mt-4 font-semibold">
-          {{ currentSoutenanceLightboxIndex + 1 }} / {{ soutenanceLightboxImages.length }}
-        </div>
-      </div>
-    </div>
-
-    <!-- Newsletter Section -->
-    <section class="bg-gradient-to-r from-gray-900 to-yellow-500 text-white py-16 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Restez Informé</h2>
-        <p class="text-lg text-yellow-100 mb-8">
-          Inscrivez-vous à notre newsletter pour recevoir les dernières actualités
-        </p>
-        <form @submit.prevent="subscribeNewsletter" class="flex gap-3 flex-col sm:flex-row max-w-md mx-auto">
-          <input
-            v-model="email"
-            type="email"
-            placeholder="Votre email"
-            required
-            class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 outline-none"
-          />
-          <button
-            type="submit"
-            class="px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:shadow-lg transition-colors font-bold whitespace-nowrap hover:scale-105 transform"
-          >
-            S'inscrire
-          </button>
-        </form>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
-import { ref, onMounted, watch } from 'vue'
-import { useOpenGraph } from '../composables/useOpenGraph'
+import { ref } from 'vue'
 
 export default {
   name: 'Articles',
   setup() {
-    const { setOpenGraph, resetOpenGraph } = useOpenGraph()
-    const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
-    const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
-    const promotionImage1Url = ref(new URL('../assets/images/image3article2.jpg', import.meta.url).href)
-    const promotionImage2Url = ref(new URL('../assets/images/image2article2.jpg', import.meta.url).href)
-    const promotionImage3Url = ref(new URL('../assets/images/image1article2.jpg', import.meta.url).href)
-    const solarImage1Url = ref(new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href)
-    const solarImage2Url = ref(new URL('../assets/images/articlesolaire2.jpg', import.meta.url).href)
-    const installImage1Url = ref(new URL('../assets/images/install1article.jpg', import.meta.url).href)
-    const installImage2Url = ref(new URL('../assets/images/install2article.jpg', import.meta.url).href)
-    const installImage3Url = ref(new URL('../assets/images/install3article.jpg', import.meta.url).href)
-    const installImage4Url = ref(new URL('../assets/images/install4article.jpg', import.meta.url).href)
-    const examImage1Url = ref(new URL('../assets/images/exam1article.jpg', import.meta.url).href)
-    const examImage2Url = ref(new URL('../assets/images/exam2article.jpg', import.meta.url).href)
-    const examImage3Url = ref(new URL('../assets/images/exam3article.jpg', import.meta.url).href)
-    const examImage4Url = ref(new URL('../assets/images/exam4article.jpg', import.meta.url).href)
-    const soutenanceImage1Url = ref(new URL('../assets/images/soutenance1article.jpg', import.meta.url).href)
-    const soutenanceImage2Url = ref(new URL('../assets/images/soutenance2article.jpg', import.meta.url).href)
-    const soutenanceImage3Url = ref(new URL('../assets/images/soutenance3article.jpg', import.meta.url).href)
-    const soutenanceImage4Url = ref(new URL('../assets/images/soutenance4article.jpg', import.meta.url).href)
-    const email = ref('')
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
+    const soutenanceImageUrl = ref(new URL('../assets/images/_DSC4903-1200.jpg', import.meta.url).href)
+    const promotionImage1Url = ref(new URL('../assets/images/_DSC6038-1200.jpg', import.meta.url).href)
+    const promotionImage2Url = ref(new URL('../assets/images/_DSC6039-1200.jpg', import.meta.url).href)
+    const promotionImage3Url = ref(new URL('../assets/images/_DSC6040-1200.jpg', import.meta.url).href)
+    const solarImage1Url = ref(new URL('../assets/images/_DSC5944-1200.jpg', import.meta.url).href)
+    const solarImage2Url = ref(new URL('../assets/images/_DSC5945-1200.jpg', import.meta.url).href)
+    const installImage1Url = ref(new URL('../assets/images/_DSC5968-1200.jpg', import.meta.url).href)
+    const installImage2Url = ref(new URL('../assets/images/_DSC5969-1200.jpg', import.meta.url).href)
+    const installImage3Url = ref(new URL('../assets/images/_DSC5970-1200.jpg', import.meta.url).href)
+    const installImage4Url = ref(new URL('../assets/images/_DSC5971-1200.jpg', import.meta.url).href)
+    const examImage1Url = ref(new URL('../assets/images/_DSC5825-1200.jpg', import.meta.url).href)
+    const examImage2Url = ref(new URL('../assets/images/_DSC5826-1200.jpg', import.meta.url).href)
+    const examImage3Url = ref(new URL('../assets/images/_DSC5827-1200.jpg', import.meta.url).href)
+    const examImage4Url = ref(new URL('../assets/images/_DSC5828-1200.jpg', import.meta.url).href)
 
-    // Expanded articles state
-    const expandedArticles = ref({
-      article1: false,
-      article2: false,
-      article3: false,
-      article4: false,
-      article5: false,
-      article6: false
-    })
-
-    const toggleArticle = (articleId) => {
-      expandedArticles.value[articleId] = !expandedArticles.value[articleId]
-    }
-
-    // Lightbox state
+    // Lightbox states
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
     const lightboxImages = ref([])
@@ -842,17 +542,31 @@ export default {
     const showExamLightbox = ref(false)
     const currentExamLightboxIndex = ref(0)
     const examLightboxImages = ref([])
-    const showSoutenanceLightbox = ref(false)
-    const currentSoutenanceLightboxIndex = ref(0)
-    const soutenanceLightboxImages = ref([])
-    
-    // Social features - Compteurs à 0 pour démarrage frais
-    const likes = ref({ 1: false, 2: false, 3: false, 4: false })
-    const likeCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
-    const commentCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
-    const shareCounts = ref({ 1: 0, 2: 0, 3: 0, 4: 0 })
-    const newComments = ref({ 1: '', 2: '', 3: '', 4: '' })
-    const showCommentForm = ref(null)
+
+    // Social interactions
+    const likes = ref({
+      article1: false,
+      article2: false,
+      article3: false,
+      article4: false,
+      article5: false,
+    })
+
+    const likeCounts = ref({
+      article1: 142,
+      article2: 287,
+      article3: 456,
+      article4: 334,
+      article5: 198,
+    })
+
+    const commentCounts = ref({
+      article1: 23,
+      article2: 45,
+      article3: 67,
+      article4: 38,
+      article5: 28,
+    })
 
     const toggleLike = (articleId) => {
       likes.value[articleId] = !likes.value[articleId]
@@ -863,110 +577,14 @@ export default {
       }
     }
 
-    const addComment = (articleId) => {
-      if (newComments.value[articleId].trim()) {
-        commentCounts.value[articleId]++
-        newComments.value[articleId] = ''
-        showCommentForm.value = null // Fermer le formulaire après l'ajout
-        // Feedback visuel optionnel
-        console.log(`Commentaire ajouté à l'article ${articleId}`)
-      }
+    const copyPostLink = (postId) => {
+      const url = `${window.location.origin}${window.location.pathname}#${postId}`
+      navigator.clipboard.writeText(url).then(() => {
+        alert('✓ Lien copié dans le presse-papiers!')
+      }).catch(() => {
+        alert('Erreur lors de la copie du lien')
+      })
     }
-
-    const shareArticle = (title, articleId) => {
-      shareCounts.value[articleId]++
-      
-      const articleUrl = `${window.location.origin}${window.location.pathname}#${articleId}`
-      
-      if (navigator.share) {
-        navigator.share({
-          title: 'CREFER - ' + title,
-          text: title,
-          url: articleUrl
-        }).catch(err => console.log('Erreur de partage:', err))
-      } else {
-        // Fallback for browsers that don't support native share
-        const text = `${title}\n\n${articleUrl}`
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text)
-          alert('✅ Lien copié dans le presse-papiers!')
-        } else {
-          alert(`Partagez ceci: ${text}`)
-        }
-      }
-    }
-
-    const subscribeNewsletter = () => {
-      console.log('Inscription newsletter:', email.value)
-      email.value = ''
-      alert('Merci! Vérifiez votre email.')
-    }
-
-    // Initialiser les métadonnées Open Graph au chargement
-    onMounted(() => {
-      resetOpenGraph()
-
-      // Attendre un peu que le DOM soit complètement rendu
-      setTimeout(() => {
-        // Intersection Observer pour détecter quel article est visible
-        const articleElements = document.querySelectorAll('article')
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
-              // Récupérer les infos de l'article visible
-              const titleElement = entry.target.querySelector('a[id^="article-"]')
-              const imageElement = entry.target.querySelector('img')
-              const descriptionElements = entry.target.querySelectorAll('p.text-gray-700')
-
-              if (titleElement && imageElement) {
-                const articleId = titleElement.id
-                const title = titleElement.textContent.trim()
-                let imageUrl = imageElement.src
-
-                // Assurer que l'URL de l'image est complète (absolue)
-                if (imageUrl && !imageUrl.startsWith('http')) {
-                  // Si c'est une URL relative ou un blob, la convertir en URL absolue
-                  try {
-                    imageUrl = new URL(imageUrl, window.location.origin).href
-                  } catch (e) {
-                    // Si la conversion échoue, utiliser comme est
-                    console.warn('Erreur conversion URL image:', e)
-                  }
-                }
-                
-                // Trouver la première description valide
-                let description = 'Découvrez cet article sur CREFER'
-                for (let elem of descriptionElements) {
-                  const text = elem.textContent.trim()
-                  if (text.length > 20 && !text.startsWith('Ce')) {
-                    description = text
-                    break
-                  }
-                }
-                
-                const url = `${window.location.origin}${window.location.pathname}#${articleId}`
-
-                // Mettre à jour les métadonnées
-                setOpenGraph({
-                  title: title,
-                  description: description.substring(0, 160),
-                  image: imageUrl,
-                  url: url,
-                  type: 'article'
-                })
-              }
-            }
-          })
-        }, {
-          threshold: [0.2, 0.5]
-        })
-
-        articleElements.forEach((article) => {
-          observer.observe(article)
-        })
-      }, 500)
-    })
 
     const openLightbox = (index) => {
       lightboxImages.value = [promotionImage1Url.value, promotionImage2Url.value, promotionImage3Url.value]
@@ -1004,18 +622,6 @@ export default {
       document.body.style.overflow = 'auto'
     }
 
-    const nextSolarLightboxImage = () => {
-      if (currentSolarLightboxIndex.value < solarLightboxImages.value.length - 1) {
-        currentSolarLightboxIndex.value++
-      }
-    }
-
-    const previousSolarLightboxImage = () => {
-      if (currentSolarLightboxIndex.value > 0) {
-        currentSolarLightboxIndex.value--
-      }
-    }
-
     const openInstallLightbox = (index) => {
       installLightboxImages.value = [installImage1Url.value, installImage2Url.value, installImage3Url.value, installImage4Url.value]
       currentInstallLightboxIndex.value = index
@@ -1026,18 +632,6 @@ export default {
     const closeInstallLightbox = () => {
       showInstallLightbox.value = false
       document.body.style.overflow = 'auto'
-    }
-
-    const nextInstallLightboxImage = () => {
-      if (currentInstallLightboxIndex.value < installLightboxImages.value.length - 1) {
-        currentInstallLightboxIndex.value++
-      }
-    }
-
-    const previousInstallLightboxImage = () => {
-      if (currentInstallLightboxIndex.value > 0) {
-        currentInstallLightboxIndex.value--
-      }
     }
 
     const openExamLightbox = (index) => {
@@ -1052,47 +646,7 @@ export default {
       document.body.style.overflow = 'auto'
     }
 
-    const nextExamLightboxImage = () => {
-      if (currentExamLightboxIndex.value < examLightboxImages.value.length - 1) {
-        currentExamLightboxIndex.value++
-      }
-    }
-
-    const previousExamLightboxImage = () => {
-      if (currentExamLightboxIndex.value > 0) {
-        currentExamLightboxIndex.value--
-      }
-    }
-
-    const openSoutenanceLightbox = (index) => {
-      soutenanceLightboxImages.value = [soutenanceImage1Url.value, soutenanceImage2Url.value, soutenanceImage3Url.value, soutenanceImage4Url.value]
-      currentSoutenanceLightboxIndex.value = index
-      showSoutenanceLightbox.value = true
-      document.body.style.overflow = 'hidden'
-    }
-
-    const closeSoutenanceLightbox = () => {
-      showSoutenanceLightbox.value = false
-      document.body.style.overflow = 'auto'
-    }
-
-    const nextSoutenanceLightboxImage = () => {
-      if (currentSoutenanceLightboxIndex.value < soutenanceLightboxImages.value.length - 1) {
-        currentSoutenanceLightboxIndex.value++
-      }
-    }
-
-    const previousSoutenanceLightboxImage = () => {
-      if (currentSoutenanceLightboxIndex.value > 0) {
-        currentSoutenanceLightboxIndex.value--
-      }
-    }
-
     return {
-      email,
-      subscribeNewsletter,
-      expandedArticles,
-      toggleArticle,
       backgroundImageUrl,
       soutenanceImageUrl,
       promotionImage1Url,
@@ -1108,10 +662,6 @@ export default {
       examImage2Url,
       examImage3Url,
       examImage4Url,
-      soutenanceImage1Url,
-      soutenanceImage2Url,
-      soutenanceImage3Url,
-      soutenanceImage4Url,
       showLightbox,
       currentLightboxIndex,
       lightboxImages,
@@ -1124,48 +674,31 @@ export default {
       solarLightboxImages,
       openSolarLightbox,
       closeSolarLightbox,
-      nextSolarLightboxImage,
-      previousSolarLightboxImage,
       showInstallLightbox,
       currentInstallLightboxIndex,
       installLightboxImages,
       openInstallLightbox,
       closeInstallLightbox,
-      nextInstallLightboxImage,
-      previousInstallLightboxImage,
       showExamLightbox,
       currentExamLightboxIndex,
       examLightboxImages,
       openExamLightbox,
       closeExamLightbox,
-      nextExamLightboxImage,
-      previousExamLightboxImage,
-      showSoutenanceLightbox,
-      currentSoutenanceLightboxIndex,
-      soutenanceLightboxImages,
-      openSoutenanceLightbox,
-      closeSoutenanceLightbox,
-      nextSoutenanceLightboxImage,
-      previousSoutenanceLightboxImage,
       likes,
       likeCounts,
       commentCounts,
-      shareCounts,
-      newComments,
-      showCommentForm,
       toggleLike,
-      addComment,
-      shareArticle
+      copyPostLink,
     }
   }
 }
 </script>
 
 <style scoped>
-@keyframes slideDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -1173,20 +706,7 @@ export default {
   }
 }
 
-@keyframes bounceHeart {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out;
-}
-
-.animate-bounce-heart {
-  animation: bounceHeart 0.6s ease-in-out;
+article {
+  animation: fadeIn 0.3s ease-out;
 }
 </style>

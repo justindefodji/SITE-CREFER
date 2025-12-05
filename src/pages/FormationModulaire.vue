@@ -40,19 +40,26 @@
 
       <!-- FILIÈRE SPV Section -->
       <article class="mb-16">
-        <div class="mb-8">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold text-gray-900">Filière SPV</h2>
+                <p class="text-gray-600">Systèmes Photovoltaïques et Énergies Renouvelables</p>
+              </div>
             </div>
-            <div>
-              <h2 class="text-4xl font-bold text-gray-900">Filière SPV</h2>
-              <p class="text-xl text-gray-600">Systèmes Photovoltaïques et Énergies Renouvelables</p>
+            <div class="bg-amber-50 rounded-lg p-6 border-l-4 border-amber-500">
+              <p class="text-gray-800 font-semibold">
+                 Maîtrisez les technologies des énergies renouvelables : électricité, solaire thermique et photovoltaïque, biogaz, plomberie et climatisation.
+              </p>
             </div>
           </div>
-          <div class="rounded-xl overflow-hidden shadow-lg mb-8">
+          <div class="rounded-xl overflow-hidden shadow-lg">
             <img 
               :src="spvSectionImage"
               alt="Énergie solaire photovoltaïque" 
@@ -62,81 +69,51 @@
         </div>
 
         <!-- SPV Formation 1 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-blue-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center font-bold text-blue-600">1</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Électricité Bâtiment et Industrielle</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Acquisition de compétences complètes pour les installations électriques dans le bâtiment et l'industrie. Maîtrisez les techniques essentielles, les normes de sécurité, et les meilleures pratiques du secteur.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-blue-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Électricité Bâtiment et Industrielle</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Acquisition de compétences complètes pour les installations électriques dans le bâtiment et l'industrie. Maîtrisez les techniques essentielles, les normes de sécurité, et les meilleures pratiques du secteur.
+          </p>
         </div>
 
         <!-- SPV Formation 2 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-green-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center font-bold text-green-600">2</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Efficacité Énergétique</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Formation pour devenir expert en réduction de la consommation d'énergie. Apprenez à optimiser les installations, réaliser des audits énergétiques, et mettre en place des solutions durables.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-green-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Efficacité Énergétique</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Formation pour devenir expert en réduction de la consommation d'énergie. Apprenez à optimiser les installations, réaliser des audits énergétiques, et mettre en place des solutions durables.
+          </p>
         </div>
 
         <!-- SPV Formation 3 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-yellow-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center font-bold text-yellow-600">3</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Énergie Solaire Photovoltaïque</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Apprentissage complet des techniques d'installation des systèmes solaires photovoltaïques et thermiques. Formation pratique couvrant la conception, l'installation, et la maintenance des systèmes solaires.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-yellow-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Énergie Solaire Photovoltaïque</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Apprentissage complet des techniques d'installation des systèmes solaires photovoltaïques et thermiques. Formation pratique couvrant la conception, l'installation, et la maintenance des systèmes solaires.
+          </p>
         </div>
 
         <!-- SPV Formation 4 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-emerald-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center font-bold text-emerald-600">4</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Biogaz</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Maîtrise du processus de transformation des déchets organiques en énergie verte. Formation axée sur la conception, la construction, l'exploitation et la maintenance des digesteurs biogaz pour applications domestiques et agricoles.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-emerald-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Biogaz</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Maîtrise du processus de transformation des déchets organiques en énergie verte. Formation axée sur la conception, la construction, l'exploitation et la maintenance des digesteurs biogaz pour applications domestiques et agricoles.
+          </p>
         </div>
 
         <!-- SPV Formation 5 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-cyan-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center font-bold text-cyan-600">5</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Plomberie</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Formation pratique sur l'installation et l'entretien des réseaux d'eau (froide et chaude), des équipements sanitaires, et des systèmes de distribution. Idéal pour les chantiers résidentiels, industriels et les énergies renouvelables intégrées (chauffe-eau solaire, etc.).
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-cyan-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Plomberie</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Formation pratique sur l'installation et l'entretien des réseaux d'eau (froide et chaude), des équipements sanitaires, et des systèmes de distribution. Idéal pour les chantiers résidentiels, industriels et les énergies renouvelables intégrées (chauffe-eau solaire, etc.).
+          </p>
         </div>
 
         <!-- SPV Formation 6 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-sky-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center font-bold text-sky-600">6</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Froid & Climatisation</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Développement de compétences techniques dans l'installation, le dépannage et l'entretien des systèmes de réfrigération et de climatisation, avec une sensibilisation à l'efficacité énergétique et aux normes environnementales.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-sky-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Froid & Climatisation</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Développement de compétences techniques dans l'installation, le dépannage et l'entretien des systèmes de réfrigération et de climatisation, avec une sensibilisation à l'efficacité énergétique et aux normes environnementales.
+          </p>
         </div>
       </article>
 
@@ -145,19 +122,26 @@
 
       <!-- FILIÈRE SST Section -->
       <article class="mb-16">
-        <div class="mb-8">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-red-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
+          <div class="flex flex-col justify-center space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-red-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold text-gray-900">Filière SST</h2>
+                <p class="text-gray-600">Systèmes de Sécurité et Télécommunications</p>
+              </div>
             </div>
-            <div>
-              <h2 class="text-4xl font-bold text-gray-900">Filière SST</h2>
-              <p class="text-xl text-gray-600">Systèmes de Sécurité et Télécommunications</p>
+            <div class="bg-red-50 rounded-lg p-6 border-l-4 border-red-500">
+              <p class="text-gray-800 font-semibold">
+                🔒 Devenez expert en sécurité et télécommunications : réseaux, alarmes, éclairage de sécurité, caméras et antennes paraboliques.
+              </p>
             </div>
           </div>
-          <div class="rounded-xl overflow-hidden shadow-lg mb-8">
+          <div class="rounded-xl overflow-hidden shadow-lg">
             <img 
               :src="sstSectionImage"
               alt="Systèmes de sécurité et télécommunications" 
@@ -167,42 +151,27 @@
         </div>
 
         <!-- SST Formation 1 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-indigo-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center font-bold text-indigo-600">1</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Réseau et Télécommunication</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Conception, déploiement et gestion des infrastructures et services de réseaux et de télécommunications. Maîtrisez les technologies modernes et les meilleures pratiques du secteur.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-indigo-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Réseau et Télécommunication</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Conception, déploiement et gestion des infrastructures et services de réseaux et de télécommunications. Maîtrisez les technologies modernes et les meilleures pratiques du secteur.
+          </p>
         </div>
 
         <!-- SST Formation 2 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-orange-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center font-bold text-orange-600">2</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Système d'Alarme et Éclairage de Sécurité</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Maîtrise de l'installation de systèmes d'éclairage pour la sécurité des bâtiments. Apprenez à mettre en place des solutions fiables et conformes aux normes de sécurité.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-orange-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Système d'Alarme et Éclairage de Sécurité</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Maîtrise de l'installation de systèmes d'éclairage pour la sécurité des bâtiments. Apprenez à mettre en place des solutions fiables et conformes aux normes de sécurité.
+          </p>
         </div>
 
         <!-- SST Formation 3 -->
-        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-teal-500">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center font-bold text-teal-600">3</div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Installation et Configuration de Caméras et Antennes Paraboliques</h3>
-              <p class="text-gray-700 text-lg leading-relaxed">
-                Formation à l'installation et à la configuration de caméras et d'antennes paraboliques, avec des solutions alimentées par des panneaux solaires. Devenez expert en surveillance et télécommunications modernes.
-              </p>
-            </div>
-          </div>
+        <div class="mb-12 bg-gray-50 rounded-xl p-8 border-l-4 border-teal-500 flex flex-col justify-center space-y-4">
+          <h4 class="font-bold text-gray-900">Installation et Configuration de Caméras et Antennes Paraboliques</h4>
+          <p class="text-gray-700 text-base leading-relaxed">
+            Formation à l'installation et à la configuration de caméras et d'antennes paraboliques, avec des solutions alimentées par des panneaux solaires. Devenez expert en surveillance et télécommunications modernes.
+          </p>
         </div>
       </article>
 

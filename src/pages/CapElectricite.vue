@@ -44,18 +44,11 @@
       <!-- Section 1: Niveau de Qualification with Image -->
       <article class="mb-16 scroll-mt-20" id="qualification">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h2 class="text-3xl font-bold text-gray-900">Niveau de Qualification</h2>
+          <div class="flex flex-col justify-center space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Niveau de Qualification</h4>
+              <p class="text-gray-700 text-base leading-relaxed">Le CAP est un diplôme d'état, attestant une qualification professionnelle de base.</p>
             </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-              Le CAP est un diplôme d'état, attestant une qualification professionnelle de base. Il certifie vos compétences et vous prépare à l'exercice d'un métier reconnu dans le secteur de l'électricité.
-            </p>
             <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500">
               <p class="text-gray-800 font-semibold">
                 💡 Reconnu nationalement, ce diplôme vous permet d'accéder directement au marché de l'emploi ou de poursuivre vos études.
@@ -82,38 +75,27 @@
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="order-1 md:order-2">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h2 class="text-3xl font-bold text-gray-900">Durée de la Formation</h2>
+          <div class="order-1 md:order-2 flex flex-col justify-center space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Durée de la Formation</h4>
+              <p class="text-gray-700 text-base leading-relaxed">La formation s'étend sur trois (03) ans avec un niveau d'entrée minimum de la classe de quatrième.</p>
             </div>
-            <div class="space-y-4">
-              <div class="bg-yellow-50 rounded-lg p-6 border-l-4 border-yellow-500">
-                <p class="text-3xl font-bold text-yellow-600 mb-2">3 ans</p>
-                <p class="text-gray-700">Parcours complet avec alternance théorie et pratique</p>
+            <div class="bg-yellow-50 rounded-lg p-6 border-l-4 border-yellow-500">
+              <p class="text-3xl font-bold text-yellow-600 mb-2">3 ans</p>
+              <p class="text-gray-700">Parcours complet avec alternance théorie et pratique</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 mt-2">
+              <div class="text-center p-4 bg-blue-50 rounded-lg">
+                <p class="text-2xl font-bold text-blue-600">Année 1</p>
+                <p class="text-xs text-gray-600 mt-1">Bases fondamentales</p>
               </div>
-              <div>
-                <p class="text-gray-700 text-lg leading-relaxed">
-                  La formation s'étend sur <strong>trois (03) ans</strong> avec un <strong>niveau d'entrée minimum de la classe de quatrième</strong>.
-                </p>
+              <div class="text-center p-4 bg-blue-50 rounded-lg">
+                <p class="text-2xl font-bold text-blue-600">Année 2</p>
+                <p class="text-xs text-gray-600 mt-1">Pratique approfondie</p>
               </div>
-              <div class="grid grid-cols-3 gap-4 mt-6">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                  <p class="text-2xl font-bold text-blue-600">Année 1</p>
-                  <p class="text-xs text-gray-600 mt-1">Bases fondamentales</p>
-                </div>
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                  <p class="text-2xl font-bold text-blue-600">Année 2</p>
-                  <p class="text-xs text-gray-600 mt-1">Pratique approfondie</p>
-                </div>
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                  <p class="text-2xl font-bold text-blue-600">Année 3</p>
-                  <p class="text-xs text-gray-600 mt-1">Spécialisation</p>
-                </div>
+              <div class="text-center p-4 bg-blue-50 rounded-lg">
+                <p class="text-2xl font-bold text-blue-600">Année 3</p>
+                <p class="text-xs text-gray-600 mt-1">Spécialisation</p>
               </div>
             </div>
           </div>
@@ -123,18 +105,11 @@
       <!-- Section 3: Objectifs with Image -->
       <article class="mb-16 scroll-mt-20" id="objectifs">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h2 class="text-3xl font-bold text-gray-900">Objectifs de la Formation</h2>
+          <div class="flex flex-col justify-center space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Objectifs</h4>
+              <p class="text-gray-700 text-base leading-relaxed">Former des ouvriers qualifiés capables d'exécuter des travaux d'installation et de maintenance des équipements électriques dans les bâtiments neufs ou en rénovation.</p>
             </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6">
-              Former des ouvriers qualifiés capables d'exécuter des travaux d'installation et de maintenance des équipements électriques dans les bâtiments neufs ou en rénovation.
-            </p>
             <div class="space-y-3">
               <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
                 <span class="text-green-600 font-bold mt-1">✓</span>
@@ -174,16 +149,12 @@
               class="w-full h-64 object-cover"
             />
           </div>
-          <div class="order-1 md:order-2">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m0 0h4m-6 8h6m0 0a2 2 0 100-4m0 4a2 2 0 110-4m0 0h-4" />
-                </svg>
-              </div>
-              <h2 class="text-3xl font-bold text-gray-900">Débouchés Professionnels</h2>
+          <div class="order-1 md:order-2 flex flex-col justify-center space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Débouchés Professionnels</h4>
+              <p class="text-gray-700 text-base leading-relaxed">Les titulaires peuvent exercer en tant qu'électriciens d'équipement, installateurs ou maintenanciers en électricité et poursuivre les études en Brevet de Technicien en électrotechnique.</p>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-3">
               <div class="bg-purple-50 rounded-lg p-5 border-l-4 border-purple-500">
                 <p class="font-bold text-gray-900 mb-1">Électricien d'équipement</p>
                 <p class="text-gray-700 text-sm">Installer et maintenir les équipements électriques dans les bâtiments</p>
