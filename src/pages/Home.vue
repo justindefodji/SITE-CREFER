@@ -31,10 +31,10 @@
                 Admission
               </router-link>
               <router-link
-                to="/articles"
+                to="/Programmes"
                 class="btn-modern px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white/10 backdrop-blur font-bold text-lg text-center transition-all"
               >
-                Actualités
+                Découvrir nos formations
               </router-link>
             </div>
 
@@ -191,7 +191,7 @@
 
             <div class="space-y-6 mb-8">
               <p class="text-lg text-gray-700 leading-relaxed font-light">
-                CREFER est née en 2019 d'une vision claire : former des jeunes Africains aux métiers des énergies renouvelables. Fondée par EGENT TOGO, leader en solutions solaires, notre académie répond au besoin urgent de techniciens qualifiés.
+                CREFER est née en 2019 d'une vision claire, former des jeunes Africains aux métiers des énergies renouvelables. Fondée par EGENT TOGO, leader en solutions solaires, notre académie répond au besoin urgent de techniciens qualifiés.
               </p>
               <div class="pl-6 border-l-4 border-yellow-400">
                 <p class="text-lg text-gray-700 leading-relaxed font-light">
@@ -246,7 +246,7 @@
                 <path d="M13 10V3L4 14h6l-1 7 9-11h-6z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">CAP Électricité</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Électricité d’Équipement</h3>
             <p class="text-gray-600 mb-6 leading-relaxed text-sm">
               Maîtrisez les techniques essentielles de l'électricité et devenez un professionnel reconnu dans le domaine des équipements électriques.
             </p>
@@ -370,7 +370,7 @@
               </div>
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-green-500 font-bold">📊</span>
-                <span>Certificat/Attestation</span>
+                <span>Certificat & Attestation</span>
               </div>
             </div>
             <ul class="space-y-2 mb-6">
@@ -414,7 +414,7 @@
               Choisir le Leader<br/>de la Formation
             </h2>
             <p class="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-              CREFER se consacre à offrir une formation de premeir ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissances et des compétences nécessaires pour exceller dans un secteur de l'énergie en constante évolution.
+              CREFER se consacre à offrir une formation de premier ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissances et des compétences nécessaires pour exceller dans un secteur de l'énergie en constante évolution.
             </p>
             <router-link
               to="/about"
@@ -548,7 +548,7 @@
               <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Dernières actualités</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Notre<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Actualités</span>
+              Nos<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Actualités</span>
             </h2>
           </div>
           <router-link to="/articles" class="btn-modern px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white rounded-2xl font-bold text-lg inline-flex items-center gap-3 hover:shadow-lg transition-all">
@@ -562,67 +562,64 @@
           <!-- Article 1 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
-              <img :src="newsImage1" alt="Actualité 1" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 left-4 px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full">26 SET 2025</div>
+              <img :src="newsImage1" alt="Soutenance Mémoire" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                Électricité bâtiment et industrielle
+                Soutenance de Mémoire - Promotion 12 SPV
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Découvrez nos dernières innovations dans le domaine de l'électricité pour les bâtiments et applications industrielles.
+                12 étudiants de la filière SPV soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts.
               </p>
-              <a href="#" class="text-yellow-500 font-bold text-sm hover:text-yellow-600 flex items-center gap-2">
-                Lire plus
+              <router-link to="/articles/1" class="text-yellow-600 font-bold text-sm hover:text-yellow-700 flex items-center gap-2">
+                Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
                 </svg>
-              </a>
+              </router-link>
             </div>
           </div>
           <!-- Article 2 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
-              <img :src="newsImage2" alt="Actualité 2" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 left-4 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">20 SET 2025</div>
+              <img :src="newsImage2" alt="14ème Promotion" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                Formation Énergies Renouvelables
+                Lancement de la 14ème Promotion des Formations Modulaires
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                CREFER annonce une nouvelle formation complète sur les énergies renouvelables avec certification internationale.
+                Ce lundi marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois. Bienvenue aux nouveaux apprenants !
               </p>
-              <a href="#" class="text-blue-500 font-bold text-sm hover:text-blue-600 flex items-center gap-2">
-                Lire plus
+              <router-link to="/articles/2" class="text-blue-600 font-bold text-sm hover:text-blue-700 flex items-center gap-2">
+                Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
                 </svg>
-              </a>
+              </router-link>
             </div>
           </div>
           <!-- Article 3 -->
           <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
-              <img :src="newsImage3" alt="Actualité 3" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 left-4 px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full">15 SET 2025</div>
+              <img :src="newsImage3" alt="1500+ Étudiants" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                Partenariat avec l'Université
+                1500+ Étudiants Formés et Transformés
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                CREFER et l'université signent un accord de collaboration pour la recherche en énergies durables.
+                Depuis sa création, CREFER a déjà formé près de 1500 étudiants du Togo et d'ailleurs. Découvrez nos success stories !
               </p>
-              <a href="#" class="text-green-500 font-bold text-sm hover:text-green-600 flex items-center gap-2">
-                Lire plus
+              <router-link to="/articles/3" class="text-green-600 font-bold text-sm hover:text-green-700 flex items-center gap-2">
+                Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
                 </svg>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -780,7 +777,7 @@
             Leader en Formation<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Énergies Durables</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Depuis plus de 10 ans, CREFER forme les experts de demain dans les énergies renouvelables avec des programmes innovants et reconnus internationalement.
+            Bientôt 10 ans, CREFER forme les experts de demain dans les énergies renouvelables avec des programmes innovants et reconnus internationalement.
           </p>
         </div>
         
@@ -960,9 +957,9 @@ export default {
     })
     
     // Images pour la section Actualités (remplacées par les nouvelles images fournies)
-    const newsImage1 = ref(new URL('../assets/images/20220114_081950.jpg', import.meta.url).href)
-    const newsImage2 = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
-    const newsImage3 = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
+    const newsImage1 = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
+    const newsImage2 = ref(new URL('../assets/images/image1article2.jpg', import.meta.url).href)
+    const newsImage3 = ref(new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href)
     
     // Images pour les cartes de témoignage
     const testimonial1Image = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)

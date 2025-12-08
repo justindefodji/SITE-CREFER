@@ -14,7 +14,7 @@
         <div>
           <div class="mb-6">
             <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4" style="font-family: 'Montserrat', sans-serif;">Nos Formations</div>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">TOUS NOS PROGRAMMES</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS PROGRAMMES DE FORMATIONS</h1>
             <p class="text-lg md:text-xl text-blue-100 max-w-2xl">
               Découvrez l'ensemble de nos formations complètes : théorie, travaux pratiques, stages et accompagnement entrepreneurial.
             </p>
@@ -29,7 +29,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-yellow-400">
           <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Notre Approche Pédagogique</h2>
           <p class="text-gray-700 text-lg leading-relaxed">
-            Le Certificat d’Aptitude Professionnelle (CAP) en Électricité d’Équipement et le Brevet de Technicien (BT) en Électrotechnique sont deux diplômes distincts qui diffèrent par leur niveau de qualification et leurs débouchés professionnels.
+            Au CREFER, nous bâtissons des professionnels grâce à la discipline, la rigueur et un accompagnement constant.
           </p>
         </div>
       </div>
@@ -370,7 +370,7 @@
             </div>
             <div>
               <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">Formations Modulaires</h2>
-              <p class="text-gray-600">2 formations à la carte flexibles</p>
+              <p class="text-gray-600">2 filières à la carte flexibles</p>
             </div>
           </div>
 
@@ -387,33 +387,34 @@
                         <!-- Description -->
             <div class="flex flex-col justify-center space-y-4">
               <div>
-                <h4 class="font-bold text-gray-900 mb-2">Vue d''ensemble</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Nos formations modulaires (06 ou 12 mois) offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins. La formation est sanctionnée par un certificat et une attestation de stage.</p>
+                <h4 class="font-bold text-gray-900 mb-2">Vue d'ensemble</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Nos formations modulaires (06 ou 12 mois) offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins.<br> La formation est sanctionnée par un certificat et une attestation de stage.<br>le choix se fait selon les moyens financiers de l'apprenant et sa disponibilité</p>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 mb-2">Conditions d''Admissions</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Un niveau d''entrée minimum de BEPC ou équivalent.</p>
+                <h4 class="font-bold text-gray-900 mb-2">Conditions d'Admissions</h4>
+                <p class="text-gray-700 text-base leading-relaxed">Un niveau d'entrée minimum de BEPC ou équivalent.</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Option Niveau 1 : 06 mois</h4>
-                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d''Équipement & Énergie Solaire</span></p>
-                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est apte à réaliser et entretenir des installations électriques dans les bâtiments résidentiels et commerciaux. Il peut aussi dimensionner et installer des systèmes solaires domestiques. Il peut exercer à son propre compte comme patron électricien/technicien solaire ou être recruté dans une entreprise de BTP ou d''énergie.</p>
+                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d'Équipement & Énergie Solaire</span></p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est apte à réaliser et entretenir des installations électriques dans les bâtiments résidentiels et commerciaux. Il peut aussi dimensionner et installer des systèmes solaires domestiques. Il peut exercer à son propre compte comme patron électricien/technicien solaire ou être recruté dans une entreprise de BTP ou d'énergie.</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Option Niveau 2 : 12 mois</h4>
-                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d''Équipement & Énergie Solaire</span></p>
-                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d''installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l''installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d''onduleurs hybrides. Il peut exercer à son compte ou en entreprise (industrie, BTP, solaire).</p>
+                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d'Équipement & Énergie Solaire</span></p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d'installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l''installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d'onduleurs hybrides. Il peut exercer à son compte ou en entreprise (industrie, BTP, solaire).</p>
               </div>
               <div class="space-y-3 pt-2">
                 <div class="flex items-start">
-                  <span class="text-yellow-400 font-bold mr-3 text-xl"></span>
+                  <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
+                  
                   <div>
                     <p class="font-bold text-gray-900">Entrée : BEPC ou équivalent</p>
                     <p class="text-gray-600 text-sm">Flexible selon votre profil et vos objectifs</p>
                   </div>
                 </div>
                 <div class="flex items-start">
-                  <span class="text-yellow-400 font-bold mr-3 text-xl"></span>
+                  <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
                     <p class="font-bold text-gray-900">Durée : 6 ou 12 mois</p>
                     <p class="text-gray-600 text-sm">Rentrée : 13 Avril 2026</p>

@@ -16,8 +16,8 @@
     </section>
 
     <!-- Article Detail Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div class="max-w-2xl mx-auto">
+    <section class="py-16 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <!-- Article Card -->
         <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
           <!-- Post Header -->
@@ -289,6 +289,7 @@ export default {
     // Update meta tags when article changes
     onMounted(() => {
       updateMetaTags(currentArticle.value)
+      window.addEventListener('keydown', handleKeydown)
     })
 
     watch(currentArticle, (newArticle) => {
@@ -315,6 +316,19 @@ export default {
     const previousImage = () => {
       if (currentLightboxIndex.value > 0) {
         currentLightboxIndex.value--
+      }
+    }
+
+    // Handle keyboard events for lightbox navigation
+    const handleKeydown = (event) => {
+      if (!showLightbox.value) return
+
+      if (event.key === 'Escape') {
+        closeLightbox()
+      } else if (event.key === 'ArrowRight') {
+        nextImage()
+      } else if (event.key === 'ArrowLeft') {
+        previousImage()
       }
     }
 
