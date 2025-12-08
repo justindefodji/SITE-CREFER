@@ -270,6 +270,11 @@ export default {
     })
 
     onUnmounted(() => {
+      // Close lightbox if open
+      lightboxOpen.value = false
+      document.body.style.overflow = 'auto'
+      currentLightboxIndex.value = 0
+      // Remove keyboard listener
       window.removeEventListener('keydown', handleKeyboard)
     })
 

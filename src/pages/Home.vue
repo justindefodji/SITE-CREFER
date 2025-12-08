@@ -559,20 +559,20 @@
           </router-link>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Article 1 -->
-          <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
+          <!-- Actualité 1 -->
+          <div v-if="newsArticles[0]" class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
-              <img :src="newsImage1" alt="Soutenance Mémoire" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="getArticleImage(newsArticles[0])" :alt="newsArticles[0].fullTitle" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                Soutenance de Mémoire - Promotion 12 SPV
+                {{ newsArticles[0].fullTitle }}
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                12 étudiants de la filière SPV soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l'aboutissement de plusieurs mois d'efforts.
+                {{ newsArticles[0].description }}
               </p>
-              <router-link to="/articles/1" class="text-yellow-600 font-bold text-sm hover:text-yellow-700 flex items-center gap-2">
+              <router-link :to="`/articles/${newsArticles[0].id}`" class="text-yellow-600 font-bold text-sm hover:text-yellow-700 flex items-center gap-2">
                 Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
@@ -580,20 +580,20 @@
               </router-link>
             </div>
           </div>
-          <!-- Article 2 -->
-          <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+          <!-- Actualité 2 -->
+          <div v-if="newsArticles[1]" class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
-              <img :src="newsImage2" alt="14ème Promotion" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="getArticleImage(newsArticles[1])" :alt="newsArticles[1].fullTitle" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                Lancement de la 14ème Promotion des Formations Modulaires
+                {{ newsArticles[1].fullTitle }}
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Ce lundi marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois. Bienvenue aux nouveaux apprenants !
+                {{ newsArticles[1].description }}
               </p>
-              <router-link to="/articles/2" class="text-blue-600 font-bold text-sm hover:text-blue-700 flex items-center gap-2">
+              <router-link :to="`/articles/${newsArticles[1].id}`" class="text-blue-600 font-bold text-sm hover:text-blue-700 flex items-center gap-2">
                 Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
@@ -601,20 +601,20 @@
               </router-link>
             </div>
           </div>
-          <!-- Article 3 -->
-          <div class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.3s;">
+          <!-- Actualité 3 -->
+          <div v-if="newsArticles[2]" class="card-modern rounded-3xl overflow-hidden animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
-              <img :src="newsImage3" alt="1500+ Étudiants" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
+              <img :src="getArticleImage(newsArticles[2])" :alt="newsArticles[2].fullTitle" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
-                1500+ Étudiants Formés et Transformés
+                {{ newsArticles[2].fullTitle }}
               </h3>
               <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Depuis sa création, CREFER a déjà formé près de 1500 étudiants du Togo et d'ailleurs. Découvrez nos success stories !
+                {{ newsArticles[2].description }}
               </p>
-              <router-link to="/articles/3" class="text-green-600 font-bold text-sm hover:text-green-700 flex items-center gap-2">
+              <router-link :to="`/articles/${newsArticles[2].id}`" class="text-green-600 font-bold text-sm hover:text-green-700 flex items-center gap-2">
                 Lire l'article »
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" />
@@ -891,15 +891,22 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useArticles } from '../services/articlesService'
 
 export default {
   name: 'Home',
   setup() {
-      // Video URL - importée comme les images
+    // Load articles from service
+    const { articles } = useArticles()
+
+    // Get first 3 articles for the Actualités section
+    const newsArticles = computed(() => articles.value.slice(0, 3))
+
+    // Video URL - importée comme les images
     const videoUrl = ref(new URL('../assets/videos/video1.mp4', import.meta.url).href)
     // Image pour la section "Prêt à nous rejoindre ?"
-      const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
+    const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href)
@@ -955,18 +962,29 @@ export default {
       
       requestAnimationFrame(animate)
     })
-    
-    // Images pour la section Actualités (remplacées par les nouvelles images fournies)
-    const newsImage1 = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
-    const newsImage2 = ref(new URL('../assets/images/image1article2.jpg', import.meta.url).href)
-    const newsImage3 = ref(new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href)
+
+    onUnmounted(() => {
+      // Reset counters when leaving the page
+      formesCount.value = 1500
+      emploiCount.value = 1200
+      partnersCount.value = 50
+      certifiesCount.value = 6
+    })
     
     // Images pour les cartes de témoignage
     const testimonial1Image = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
     const testimonial2Image = ref(new URL('../assets/images/IMG_3217.jpg', import.meta.url).href)
     const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
 
+    // Helper to get article preview image
+    const getArticleImage = (article) => {
+      return article.images && article.images.length > 0 ? article.images[0] : backgroundImageUrl.value
+    }
+
     return { 
+      articles,
+      newsArticles,
+      getArticleImage,
       videoUrl,
       backgroundImageUrl,
       storyImageUrl,
@@ -981,9 +999,6 @@ export default {
       emploiCount,
       partnersCount,
       certifiesCount,
-      newsImage1,
-      newsImage2,
-      newsImage3,
       joinUsImage,
       testimonial1Image,
       testimonial2Image,

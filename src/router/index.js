@@ -6,6 +6,7 @@ import Admissions from '../pages/Admissions.vue'
 import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
 import ArticleDetail from '../pages/ArticleDetail.vue'
+import AdminArticles from '../pages/AdminArticles.vue'
 import CapElectricite from '../pages/CapElectricite.vue'
 import FormationModulaire from '../pages/FormationModulaire.vue'
 import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
@@ -41,6 +42,11 @@ const routes = [
     path: '/articles/:id',
     name: 'ArticleDetail',
     component: ArticleDetail
+  },
+  {
+    path: '/admin/articles',
+    name: 'AdminArticles',
+    component: AdminArticles
   },
   {
     path: '/contact',
