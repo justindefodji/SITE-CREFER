@@ -978,7 +978,22 @@ export default {
 
     // Helper to get article preview image
     const getArticleImage = (article) => {
-      return article.images && article.images.length > 0 ? article.images[0] : backgroundImageUrl.value
+      if (article.images && article.images.length > 0) {
+        const firstImage = article.images[0]
+        // Check if it's a valid data URI or URL (not corrupted/empty)
+        if (firstImage && (firstImage.startsWith('data:') || firstImage.startsWith('http') || firstImage.startsWith('blob:'))) {
+          return firstImage
+        }
+      }
+      // Fallback to default images based on article ID
+      const fallbackImages = {
+        '1': new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href,
+        '2': new URL('../assets/images/image1article2.jpg', import.meta.url).href,
+        '3': new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+        '4': new URL('../assets/images/install1article.jpg', import.meta.url).href,
+        '5': new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+      }
+      return fallbackImages[article.id] || backgroundImageUrl.value
     }
 
     return { 
