@@ -7,11 +7,11 @@ const VIDEOS_STORAGE_KEY = 'crefer_videos'
 const defaultVideos = [
   {
     id: '1',
-    title: 'Fin d\'année sous tension : Le Togo agit avant qu\'il ne soit trop tard',
-    description: 'Le 9e congrès panafricain s\'est ouvert à Lomé le 8 décembre 2025. Découvrez les enjeux majeurs.',
+    title: 'De CREFER vers l\'excellence – L\'école des métiers de l\'énergie',
+    description: 'Découvrez comment CREFER forme les professionnels de demain dans les métiers de l\'énergie solaire, électrique et renouvelable. Avec des formations modulaires et diplômantes, alliant théorie, pratique et discipline, nous préparons nos étudiants à devenir des acteurs compétents et recherchés sur le marché de l\'emploi, au Togo et dans toute la sous-région.',
     youtubeId: 'NWOT2EqrOHM',
     date: '08 décembre 2025',
-    category: 'Conférence',
+    category: 'Présentation',
     thumbnail: 'https://img.youtube.com/vi/NWOT2EqrOHM/maxresdefault.jpg'
   },
   {
