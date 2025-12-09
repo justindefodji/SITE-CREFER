@@ -55,7 +55,7 @@
               "DEPUIS 2019, NOUS FORMONS DES JEUNES PRÊTS À RELEVER LES DÉFIS ÉNERGÉTIQUES DE L'AFRIQUE."
             </p>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Créé en 2019, CREFER doit son existence à EGENT TOGO, entreprise solaire expert près des cours et tribunaux du TOGO œuvrant dans la fourniture et la pose du système photovoltaïque et dans l'électricité générale.
+              , CREFER doit son existence à EGENT TOGO, entreprise solaire expert près les cours et tribunaux du TOGO œuvrant dans la fourniture et la pose du système photovoltaïque et dans l'électricité générale.
             </p>
             <p class="text-gray-600 leading-relaxed">
               Le manque des techniciens qualifiés spécialistes en système photovoltaïque est au centre de l'ouverture dudit centre.
@@ -95,7 +95,7 @@
           <div class="animate-fade-in-up delay-100">
             <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MISSION</h2>
             <p class="text-gray-700 leading-relaxed">
-              Offrir une formation de qualité, axée sur les compétences pratiques et les exigences du marché, afin de garantir à chaque apprenant une employabilité durable, une insertion professionnelle réussie et la capacité de créer de la valeur dans son environnement.
+              Offrir une formation de qualité, axée sur les compétences pratiques et les exigences du marché, afin de garantir à chaque apprenant une employabilité durable, une insertion professionnelle réussie et la capacité de d'de la valeur dans son environnement.
             </p>
           </div>
         </div>

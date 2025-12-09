@@ -402,7 +402,7 @@
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Option Niveau 2 : 12 mois</h4>
                 <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d'Équipement & Énergie Solaire</span></p>
-                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d'installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l''installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d'onduleurs hybrides. Il peut exercer à son compte ou en entreprise (industrie, BTP, solaire).</p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d'installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l'installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d'onduleurs hybrides. Il peut exercer à son compte ou en entreprise (Industrie, BTP, solaire).</p>
               </div>
               <div class="space-y-3 pt-2">
                 <div class="flex items-start">

@@ -20,7 +20,7 @@
       <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <!-- Section Title -->
         <div class="mb-12">
-          <h2 class="inline-block px-4 py-2 bg-red-600 text-white text-2xl font-bold rounded" style="font-family: 'Montserrat', sans-serif;">La revue</h2>
+          <h2 class="inline-block px-4 py-2 bg-yellow-400 from-black text-2xl font-bold rounded" style="font-family: 'Montserrat', sans-serif;">La revue</h2>
         </div>
 
         <!-- Videos Grid -->
@@ -56,6 +56,52 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 py-2 px-4 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-semibold transition-all duration-200"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.343a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM16.364 15.364a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM12 18a1 1 0 101-2 1 1 0 00-1 2zM5.343 15.657a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1-1V8a1 1 0 012 0v1a1 1 0 01-1 1zM4.929 4.929a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707z" />
+                </svg>
+                Voir sur YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Shorts Section -->
+    <section class="py-16 bg-gradient-to-b from-slate-50 via-red-50 to-slate-50">
+      <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Section Title -->
+        <div class="mb-12">
+          <h2 class="inline-block px-4 py-2 bg-yellow-400 text-black text-2xl font-bold rounded" style="font-family: 'Montserrat', sans-serif;">Dernières vidéos</h2>
+        </div>
+
+        <!-- Shorts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div v-for="short in shorts" :key="short.id" class="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-white">
+            <!-- Short Container -->
+            <div class="w-full aspect-[9/16] bg-black overflow-hidden rounded-t-xl">
+              <iframe
+                :src="`https://www.youtube.com/embed/${short.youtubeId}?fs=0`"
+                :title="short.title"
+                class="w-full h-full"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <!-- Short Info Container -->
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2" style="font-family: 'Montserrat', sans-serif;">
+                {{ short.title }}
+              </h3>
+              <a
+                :href="`https://www.youtube.com/shorts/${short.youtubeId}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 py-2 px-4 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-semibold transition-all duration-200 text-sm"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.343a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM16.364 15.364a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM12 18a1 1 0 101-2 1 1 0 00-1 2zM5.343 15.657a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1-1V8a1 1 0 012 0v1a1 1 0 01-1 1zM4.929 4.929a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707z" />
@@ -241,6 +287,26 @@ export default {
   name: 'Articles',
   setup() {
     const { videos } = useVideos()
+    
+    // Shorts data
+    const shorts = ref([
+      {
+        id: 1,
+        youtubeId: 'QCx-BY9Ciz8',
+        title: 'Regardez la vidéo et dites-nous ce que vous en pensez en commentaires ⬇️ #Apprentissage #Continue'
+      },
+      {
+        id: 2,
+        youtubeId: 'gcjje_T9suM',
+        title: 'Chaque réussite est le fruit d\'un rêve nourri par la discipline et l\'effort. #CREFER 🇹🇬'
+      },
+      {
+        id: 3,
+        youtubeId: 'J1xR0FdaOBw',
+        title: 'De la salle de cours à l’atelier !'
+      }
+    ])
+    
     const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
     const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
     const promotionImage1Url = ref(new URL('../assets/images/image1article2.jpg', import.meta.url).href)
@@ -370,6 +436,7 @@ export default {
       openExamLightbox,
       closeExamLightbox,
       videos,
+      shorts,
       getEmbedUrl,
     }
   }
