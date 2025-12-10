@@ -647,12 +647,12 @@
             <div class="flex gap-4 items-start mb-6">
               <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-yellow-400" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">ANA Stéphanie</h3>
-                <p class="text-sm text-yellow-600 font-semibold">Experte Énergie Solaire</p>
+                <h3 class="text-lg font-bold text-gray-900">MELA D'Kigma Solmba</h3>
+                <p class="text-sm text-yellow-600 font-semibold">Ancien Étudiant Promotion 12 - SPV</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "CREFER m'a donné les compétences et la confiance pour lancer ma propre entreprise solaire. Une transformation réelle."
+              "C'est pas du fake, CREFER c'est du vrai et du lourd. Je suis étudiant en formation modulaire, filière SPV et nous sommes en phase de stage actuellement."
             </p>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -667,12 +667,12 @@
             <div class="flex gap-4 items-start mb-6">
               <img :src="testimonial2Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">Marie Laurent</h3>
-                <p class="text-sm text-blue-600 font-semibold">Ingénieure Électricité</p>
+                <h3 class="text-lg font-bold text-gray-900">YAO Amivi Emefa</h3>
+                <p class="text-sm text-blue-600 font-semibold">Ancienne Promotion 8 - Centrale Solaire Blitta</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "Grâce à CREFER, j'ai obtenu un CDI dans une grande entreprise énergétique. Merci pour la qualité de formation."
+              "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta. Je voudrais lancer un appel à toutes les jeunes filles : inscrivez-vous à CREFER, surtout en cette période où beaucoup se demandent « Que vais-je faire ? Où m'inscrire ? » Si j'ai pu trouver ma voie grâce à CREFER, vous le pouvez aussi. Je vous encourage vivement à rejoindre le programme Énergies Renouvelables et Électricité, une formation qui ouvre de réelles opportunités."
             </p>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -910,7 +910,7 @@ export default {
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
     const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href)
-    const storyImageUrl = ref(new URL('../assets/images/_DSC3482.png', import.meta.url).href)
+    const storyImageUrl = ref(new URL('../assets/images/histoire.jpg', import.meta.url).href)
     // Images pour les 3 cards "Programmes d'étude"
     const capImageUrl = ref(new URL('../assets/images/_DSC4674.jpg', import.meta.url).href)
     const efficaciteImageUrl = ref(new URL('../assets/images/_DSC4676.jpg', import.meta.url).href)
@@ -972,8 +972,8 @@ export default {
     })
     
     // Images pour les cartes de témoignage
-    const testimonial1Image = ref(new URL('../assets/images/IMG_0450.jpg', import.meta.url).href)
-    const testimonial2Image = ref(new URL('../assets/images/IMG_3217.jpg', import.meta.url).href)
+    const testimonial1Image = ref(new URL('../assets/images/temoins01.jpg', import.meta.url).href)
+    const testimonial2Image = ref(new URL('../assets/images/temoins02.jpg', import.meta.url).href)
     const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
 
     // Helper to get article preview image

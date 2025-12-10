@@ -182,15 +182,9 @@
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import backgroundImg from '../assets/images/_DSC4869-1200.jpg'
-import img1 from '../assets/images/_DSC4853-1200.jpg'
-import img2 from '../assets/images/_DSC4854-1200.jpg'
-import img3 from '../assets/images/_DSC4855-1200.jpg'
-import img4 from '../assets/images/_DSC4856-1200.jpg'
-import img5 from '../assets/images/_DSC4855-1200.jpg'
-import img6 from '../assets/images/_DSC4854-1200.jpg'
-import img7 from '../assets/images/_DSC4859-1200.jpg'
-import img8 from '../assets/images/_DSC4860-1200.jpg'
-import img9 from '../assets/images/_DSC4863-1200.jpg'
+import img1 from '../assets/images/_DSC0294.JPG'
+import img2 from '../assets/images/_DSC0332.jpg'
+import img3 from '../assets/images/_DSC0335.jpg'
 
 export default {
   name: 'Gallery',
@@ -199,18 +193,12 @@ export default {
     const selectedCategory = ref('Tous')
     const lightboxOpen = ref(false)
     const currentLightboxIndex = ref(0)
-    const categories = ['Tous', 'Formation', 'Étudiants', 'Installations', 'Pratique', 'Projets']
+    const categories = ['Tous', 'Théorie', 'Travaux pratiques', 'Stage', 'Sortie pédagogique', 'Autres']
     
     const galleryItems = [
-      { id: 1, title: 'Travaux Pratiques', description: 'Électricité en atelier', category: 'Pratique', image: img1 },
-      { id: 2, title: 'Formation', description: 'Cours avec instructeurs', category: 'Formation', image: img2 },
-      { id: 3, title: 'Étudiants', description: 'Groupe de formation', category: 'Étudiants', image: img3 },
-      { id: 4, title: 'Électricité', description: 'Travaux pratiques', category: 'Pratique', image: img4 },
-      { id: 5, title: 'Experts', description: 'Formateurs qualifiés', category: 'Formation', image: img5 },
-      { id: 6, title: 'Projet Solaire', description: 'Installation panneaux', category: 'Installations', image: img6 },
-      { id: 7, title: 'Équipe', description: 'Sur chantier', category: 'Étudiants', image: img7 },
-      { id: 8, title: 'Installation', description: 'Système photovoltaïque', category: 'Installations', image: img8 },
-      { id: 9, title: 'Projet', description: 'Travail en équipe', category: 'Projets', image: img9 },
+      { id: 1, title: 'Atelier Électronique 1', description: 'Travaux pratiques en électronique', category: 'Travaux pratiques', image: img1 },
+      { id: 2, title: 'Atelier Électronique 2', description: 'Manipulation de circuits électroniques', category: 'Travaux pratiques', image: img2 },
+      { id: 3, title: 'Atelier Électricité', description: 'Travaux pratiques en électricité', category: 'Travaux pratiques', image: img3 },
     ]
 
     const filteredItems = computed(() => {

@@ -758,18 +758,18 @@ export default {
       // Image de fond du hero section
       backgroundImageUrl: new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href,
       // images des cartes programmess sorties du template
-      elecImage: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href,
-      efficaciteImage: new URL('../assets/images/_DSC4864-1200.jpg', import.meta.url).href,
-      expertImage: new URL('../assets/images/_DSC4865-1200.jpg', import.meta.url).href,
+      elecImage: new URL('../assets/images/pe4.jpg', import.meta.url).href,
+      efficaciteImage: new URL('../assets/images/pe2.jpg', import.meta.url).href,
+      expertImage: new URL('../assets/images/pe3.jpg', import.meta.url).href,
       batiment1Image: new URL('../assets/images/batiment1-1200.jpg', import.meta.url).href,
       batiment2Image: new URL('../assets/images/batiment2-1200.jpg', import.meta.url).href,
       distinction3Image: new URL('../assets/images/distinction3-1200.jpg', import.meta.url).href,
-      mission1Image: new URL('../assets/images/mission1-1200.jpg', import.meta.url).href,
-      vision2Image: new URL('../assets/images/vision2-1200.jpg', import.meta.url).href,
+      mission1Image: new URL('../assets/images/stage-58.jpg', import.meta.url).href,
+      vision2Image: new URL('../assets/images/demons.jpg', import.meta.url).href,
       theoryImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href,
       practicalImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
-      stageImage: new URL('../assets/images/stage-1200.jpg', import.meta.url).href,
-      entrepreneurshipImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
+      stageImage: new URL('../assets/images/stage01.jpg', import.meta.url).href,
+      entrepreneurshipImage: new URL('../assets/images/cfr.jpg', import.meta.url).href,
       distinction1Image: new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href,
       distinction2Image: new URL('../assets/images/distinction2-1200.jpg', import.meta.url).href
       
