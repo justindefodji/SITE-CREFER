@@ -645,10 +645,10 @@
           <!-- Témoignage 1 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="flex gap-4 items-start mb-6">
-              <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-yellow-400" />
+              <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-yellow-400 cursor-pointer hover:ring-yellow-600 transition-all" @click="openTestimonialLightbox(testimonial1Image)" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">MELA D'Kigma Solmba</h3>
-                <p class="text-sm text-yellow-600 font-semibold">Ancien Étudiant Promotion 12 - SPV</p>
+                <p class="text-sm text-yellow-600 font-semibold">Alumni promotion 12</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
@@ -665,10 +665,10 @@
           <!-- Témoignage 2 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.2s;">
             <div class="flex gap-4 items-start mb-6">
-              <img :src="testimonial2Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400" />
+              <img :src="testimonial2Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400 cursor-pointer hover:ring-blue-600 transition-all" @click="openTestimonialLightbox(testimonial2Image)" />
               <div class="flex-1">
                 <h3 class="text-lg font-bold text-gray-900">YAO Amivi Emefa</h3>
-                <p class="text-sm text-blue-600 font-semibold">Ancienne Promotion 8 - Centrale Solaire Blitta</p>
+                <p class="text-sm text-blue-600 font-semibold">Alumni promotion 8/Social Specialist centrale solaire Blitta</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
@@ -688,15 +688,18 @@
           <!-- Témoignage 3 -->
           <div class="card-modern rounded-2xl p-8 flex flex-col animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="flex gap-4 items-start mb-6">
-              <img :src="testimonial3Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-green-400" />
+              <img :src="testimonial3Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-green-400 cursor-pointer hover:ring-green-600 transition-all" @click="openTestimonialLightbox(testimonial3Image)" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">Kofi Mensah</h3>
-                <p class="text-sm text-green-600 font-semibold">Technicien Solaire</p>
+                <h3 class="text-lg font-bold text-gray-900">SOW Kerfala</h3>
+                <p class="text-sm text-green-600 font-semibold">Étudiant Promotion 13</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "La meilleure décision de ma vie. CREFER m'a permis de devenir un expert reconnu dans mon domaine."
+              "{{ showFullTestimonial3 ? testimonial3FullText : testimonial3Preview }}"
             </p>
+            <button @click="showFullTestimonial3 = !showFullTestimonial3" class="text-blue-600 hover:text-blue-800 font-semibold text-sm mb-4 transition-colors">
+              {{ showFullTestimonial3 ? 'Voir moins' : 'Voir plus' }}
+            </button>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -708,6 +711,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Lightbox Modal pour les photos des témoins -->
+    <transition name="fade">
+      <div v-if="lightboxOpen" class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" @click="closeTestimonialLightbox">
+        <!-- Close Button -->
+        <button
+          @click="closeTestimonialLightbox"
+          class="absolute top-6 right-6 text-white hover:text-yellow-400 transition-colors z-60"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative max-w-2xl w-full h-auto flex flex-col justify-center items-center" @click.stop>
+          <img :src="lightboxImage" alt="Témoignage" class="w-full h-auto rounded-lg object-contain" />
+          <p class="text-white text-center mt-4 text-sm">Appuyez sur ESC pour fermer</p>
+        </div>
+      </div>
+    </transition>
 
     <!-- Section Prêt à nous rejoindre ? -->
     <section class="section-spacing bg-gradient-to-r from-yellow-600 to-white relative overflow-hidden" v-scroll-animate>
@@ -933,7 +957,31 @@ export default {
     const partnersCount = ref(50)
     const certifiesCount = ref(6)
     
+    // Lightbox pour les photos des témoins
+    const lightboxOpen = ref(false)
+    const lightboxImage = ref('')
+    
+    const openTestimonialLightbox = (imageUrl) => {
+      lightboxImage.value = imageUrl
+      lightboxOpen.value = true
+      document.body.style.overflow = 'hidden'
+    }
+    
+    const closeTestimonialLightbox = () => {
+      lightboxOpen.value = false
+      document.body.style.overflow = 'auto'
+    }
+    
+    const handleKeydown = (e) => {
+      if (e.key === 'Escape' && lightboxOpen.value) {
+        closeTestimonialLightbox()
+      }
+    }
+    
     onMounted(() => {
+      // Ajouter le listener pour la touche Escape
+      window.addEventListener('keydown', handleKeydown)
+      
       // Réinitialiser à 0 pour commencer l'animation
       formesCount.value = 0
       emploiCount.value = 0
@@ -967,6 +1015,12 @@ export default {
     })
 
     onUnmounted(() => {
+      // Nettoyer le listener du clavier et la lightbox
+      window.removeEventListener('keydown', handleKeydown)
+      closeTestimonialLightbox()
+    })
+
+    onUnmounted(() => {
       // Reset counters when leaving the page
       formesCount.value = 1500
       emploiCount.value = 1200
@@ -975,14 +1029,19 @@ export default {
     })
     
     // Images pour les cartes de témoignage
-    const testimonial1Image = ref(new URL('../assets/images/temoins01.jpg', import.meta.url).href)
+    const testimonial1Image = ref(new URL('../assets/images/temois1.jpg', import.meta.url).href)
     const testimonial2Image = ref(new URL('../assets/images/temoins02.jpg', import.meta.url).href)
-    const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
+    const testimonial3Image = ref(new URL('../assets/images/temoins3.jpg', import.meta.url).href)
     
     // État pour le "voir plus" du témoignage 2
     const showFullTestimonial2 = ref(false)
     const testimonial2FullText = "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta. Je voudrais lancer un appel à toutes les jeunes filles : inscrivez-vous à CREFER, surtout en cette période où beaucoup se demandent « Que vais-je faire ? Où m'inscrire ? » Si j'ai pu trouver ma voie grâce à CREFER, vous le pouvez aussi. Je vous encourage vivement à rejoindre le programme Énergies Renouvelables et Électricité, une formation qui ouvre de réelles opportunités."
     const testimonial2Preview = "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta..."
+    
+    // État pour le "voir plus" du témoignage 3
+    const showFullTestimonial3 = ref(false)
+    const testimonial3FullText = "Je suis Guinéen, au départ, j'étais venu simplement pour suivre les cours en énergie renouvelable et me former dans ce domaine. Mais ce que j'ai réussi à accomplir aujourd'hui me donne une véritable perception de mon potentiel. Ce que j'apprends ici ne se limite plus seulement au énergie renouvelable: je veux suivre l'exemple de mes encadreurs, m'inspirer de leurs parcours et élargir mes compétences."
+    const testimonial3Preview = "Je suis Guinéen, au départ, j'étais venu simplement pour suivre les cours en énergie renouvelable..."
 
     // Helper to get article preview image
     const getArticleImage = (article) => {
@@ -1028,7 +1087,14 @@ export default {
       testimonial3Image,
       showFullTestimonial2,
       testimonial2FullText,
-      testimonial2Preview
+      testimonial2Preview,
+      showFullTestimonial3,
+      testimonial3FullText,
+      testimonial3Preview,
+      lightboxOpen,
+      lightboxImage,
+      openTestimonialLightbox,
+      closeTestimonialLightbox
     }
   }
 }
