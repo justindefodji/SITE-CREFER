@@ -187,6 +187,7 @@ import img2 from '../assets/images/_DSC0332.jpg'
 import img3 from '../assets/images/_DSC0335.jpg'
 import img4 from '../assets/images/_DSC0343.jpg'
 import img5 from '../assets/images/_DSC0350.jpg'
+import img6 from '../assets/images/_DSC4869-1200.jpg'
 
 export default {
   name: 'Gallery',
@@ -202,7 +203,9 @@ export default {
       { id: 2, title: 'Atelier Électronique 2', description: 'Manipulation de circuits électroniques', category: 'Travaux pratiques', image: img2 },
       { id: 3, title: 'Atelier Électricité', description: 'Travaux pratiques en électricité', category: 'Travaux pratiques', image: img3 },
       { id: 4, title: 'Cours Théorique', description: 'Session de cours théorique en classe', category: 'Théorie', image: img4 },
-      { id: 5, title: 'Sortie Pédagogique', description: 'Visite d\'une installation industrielle', category: 'Sortie pédagogique', image: img5 }
+      { id: 5, title: 'Sortie Pédagogique', description: 'Visite d\'une installation industrielle', category: 'Sortie pédagogique', image: img5 },
+      { id: 6, title: 'Projet de Stage', description: 'Présentation d\'un projet réalisé en stage', category: 'Stage', image: img6 }
+
     ]
 
     const filteredItems = computed(() => {
