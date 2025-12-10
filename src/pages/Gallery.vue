@@ -182,11 +182,11 @@
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import backgroundImg from '../assets/images/_DSC4869-1200.jpg'
-import img1 from '../assets/images/_DSC0294.JPG'
+import img1 from '../assets/images/_DSC0294.jpg'
 import img2 from '../assets/images/_DSC0332.jpg'
 import img3 from '../assets/images/_DSC0335.jpg'
-import img4 from '../assets/images/_DSC0343.jpg'
-import img5 from '../assets/images/_DSC0350.jpg'
+import img4 from '../assets/images/_DSC4674-1200.jpg'
+import img5 from '../assets/images/_DSC4350-1200.jpg'
 import img6 from '../assets/images/_DSC4869-1200.jpg'
 
 export default {
