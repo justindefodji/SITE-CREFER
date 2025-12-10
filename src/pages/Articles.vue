@@ -20,7 +20,7 @@
       <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <!-- Section Title -->
         <div class="mb-12">
-          <h2 class="inline-block px-4 py-2 bg-yellow-400 from-black text-2xl font-bold rounded" style="font-family: 'Montserrat', sans-serif;">La revue</h2>
+          <h2 class="inline-block px-4 py-2 bg-yellow-400 from-black text-2xl font-bold rounded" style="font-family: 'Montserrat', sans-serif;">Echo du CREFER</h2>
         </div>
 
         <!-- Videos Grid -->

@@ -185,9 +185,25 @@ import backgroundImg from '../assets/images/_DSC4869-1200.jpg'
 import img1 from '../assets/images/_DSC0294.jpg'
 import img2 from '../assets/images/_DSC0332.jpg'
 import img3 from '../assets/images/_DSC0335.jpg'
-import img4 from '../assets/images/_DSC4674-1200.jpg'
-import img5 from '../assets/images/_DSC4350-1200.jpg'
-import img6 from '../assets/images/_DSC4869-1200.jpg'
+import img4 from '../assets/images/CHANTIER.jpg'
+import img5 from '../assets/images/CHANTIER2.jpg'
+import img6 from '../assets/images/CHANTIER3.jpg'
+import img7 from '../assets/images/CHANTIER4.jpg'
+import img8 from '../assets/images/theorie1.jpg'
+import img9 from '../assets/images/theorie2.jpg'
+import img10 from '../assets/images/theorie3.jpg'
+import img11 from '../assets/images/autres.jpg'
+import img12 from '../assets/images/autres1.jpg'
+import img13 from '../assets/images/sortie1.jpg'
+import img14 from '../assets/images/sortie2.jpg'
+import img15 from '../assets/images/sortie3.jpg'
+import img16 from '../assets/images/sortie4.jpg'
+import img17 from '../assets/images/sortie5.jpg'
+import img18 from '../assets/images/sortie6.jpg'
+import img19 from '../assets/images/sortie7.jpg'
+import img20 from '../assets/images/sortie8.jpg'
+import img21 from '../assets/images/sortie9.jpg'
+import img22 from '../assets/images/sortie10.jpg'
 
 export default {
   name: 'Gallery',
@@ -202,9 +218,26 @@ export default {
       { id: 1, title: 'Atelier Électronique 1', description: 'Travaux pratiques en électronique', category: 'Travaux pratiques', image: img1 },
       { id: 2, title: 'Atelier Électronique 2', description: 'Manipulation de circuits électroniques', category: 'Travaux pratiques', image: img2 },
       { id: 3, title: 'Atelier Électricité', description: 'Travaux pratiques en électricité', category: 'Travaux pratiques', image: img3 },
-      { id: 4, title: 'Cours Théorique', description: 'Session de cours théorique en classe', category: 'Théorie', image: img4 },
-      { id: 5, title: 'Sortie Pédagogique', description: 'Visite d\'une installation industrielle', category: 'Sortie pédagogique', image: img5 },
-      { id: 6, title: 'Projet de Stage', description: 'Présentation d\'un projet réalisé en stage', category: 'Stage', image: img6 }
+      { id: 4, title: 'en chantier solaire', description: 'Session de cours théorique en classe', category: 'Stage', image: img4 },
+      { id: 5, title: 'montage des panneaux solaire', description: 'une installation solaire', category: 'Stage', image: img5 },
+      { id: 6, title: 'Projet de Stage', description: ' projet réalisé en stage', category: 'Stage', image: img6 },
+      { id: 7, title: 'Atelier de montage solaire', description: 'Apprentissage sur un chatier solaire', category: 'Stage', image: img7 },
+      { id: 8, title: 'théorie à CREFER', description: 'en cours théorique', category: 'Théorie', image: img8 },
+      { id: 9, title: 'Cours Théorique Avancé', description: 'Session avancée de cours théorique', category: 'Théorie', image: img9 },
+      { id: 10, title: 'en plein cours théorique', description: 'Théorie', category: 'Théorie', image: img10 },
+      { id: 11, title: 'Activité Extra-scolaire', description: 'Activité en dehors des cours', category: 'Autres', image: img11 },
+      { id: 12, title: 'Événement Spécial', description: 'Participation à un événement spécial', category: 'Autres', image: img12 }
+      ,
+      { id: 13, title: 'Visite Pédagogique 1', description: 'Sortie pédagogique au site solaire', category: 'Sortie pédagogique', image: img13 },
+      { id: 14, title: 'Visite Pédagogique 2', description: 'Découverte des installations solaires', category: 'Sortie pédagogique', image: img14 },
+      { id: 15, title: 'Excursion Étudiante 1', description: 'Sortie éducative avec les étudiants', category: 'Sortie pédagogique', image: img15 },
+      { id: 16, title: 'Excursion Étudiante 2', description: 'Exploration des technologies renouvelables', category: 'Sortie pédagogique', image: img16 },
+      { id: 17, title: 'Visite de Site 1', description: 'Observation des installations en fonctionnement', category: 'Sortie pédagogique', image: img17 },
+      { id: 18, title: 'Visite de Site 2', description: 'Apprentissage sur le terrain', category: 'Sortie pédagogique', image: img18 },
+      { id: 19, title: 'Sortie Technique 1', description: 'Analyse des systèmes énergétiques sur site', category: 'Sortie pédagogique', image: img19 },
+      { id: 20, title: 'Sortie Technique 2', description: 'Étude des performances des installations', category: 'Sortie pédagogique', image: img20 },
+      { id: 21, title: 'Journée d\'Étude 1', description: 'Journée dédiée à l\'étude des énergies renouvelables', category: 'Sortie pédagogique', image: img21 },
+      { id: 22, title: 'Journée d\'Étude 2', description: 'Immersion dans les technologies vertes', category: 'Sortie pédagogique', image: img22 }
 
     ]
 

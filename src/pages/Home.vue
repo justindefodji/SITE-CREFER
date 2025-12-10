@@ -652,7 +652,7 @@
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "C'est pas du fake, CREFER c'est du vrai et du lourd. Je suis étudiant en formation modulaire, filière SPV et nous sommes en phase de stage actuellement."
+              "C’est pas du fake, CREFER c’est du vrai et du lourd. Je suis étudiant en formation modulaire, filière SPV et nous sommes en phase de stage actuellement. *Quand bien même que je n'ai pas encore terminé ma formation, j'ai déjà gagné des chantiers pour moi même."
             </p>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -672,8 +672,11 @@
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta. Je voudrais lancer un appel à toutes les jeunes filles : inscrivez-vous à CREFER, surtout en cette période où beaucoup se demandent « Que vais-je faire ? Où m'inscrire ? » Si j'ai pu trouver ma voie grâce à CREFER, vous le pouvez aussi. Je vous encourage vivement à rejoindre le programme Énergies Renouvelables et Électricité, une formation qui ouvre de réelles opportunités."
+              "{{ showFullTestimonial2 ? testimonial2FullText : testimonial2Preview }}"
             </p>
+            <button @click="showFullTestimonial2 = !showFullTestimonial2" class="text-blue-600 hover:text-blue-800 font-semibold text-sm mb-4 transition-colors">
+              {{ showFullTestimonial2 ? 'Voir moins' : 'Voir plus' }}
+            </button>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -975,6 +978,11 @@ export default {
     const testimonial1Image = ref(new URL('../assets/images/temoins01.jpg', import.meta.url).href)
     const testimonial2Image = ref(new URL('../assets/images/temoins02.jpg', import.meta.url).href)
     const testimonial3Image = ref(new URL('../assets/images/IMG-20200824-WA0048.jpg', import.meta.url).href)
+    
+    // État pour le "voir plus" du témoignage 2
+    const showFullTestimonial2 = ref(false)
+    const testimonial2FullText = "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta. Je voudrais lancer un appel à toutes les jeunes filles : inscrivez-vous à CREFER, surtout en cette période où beaucoup se demandent « Que vais-je faire ? Où m'inscrire ? » Si j'ai pu trouver ma voie grâce à CREFER, vous le pouvez aussi. Je vous encourage vivement à rejoindre le programme Énergies Renouvelables et Électricité, une formation qui ouvre de réelles opportunités."
+    const testimonial2Preview = "Je suis YAO Amivi Emefa, ancienne étudiante de la Promotion 8 de CREFER. Je travaille actuellement à la centrale solaire de Blitta..."
 
     // Helper to get article preview image
     const getArticleImage = (article) => {
@@ -1017,7 +1025,10 @@ export default {
       joinUsImage,
       testimonial1Image,
       testimonial2Image,
-      testimonial3Image
+      testimonial3Image,
+      showFullTestimonial2,
+      testimonial2FullText,
+      testimonial2Preview
     }
   }
 }
