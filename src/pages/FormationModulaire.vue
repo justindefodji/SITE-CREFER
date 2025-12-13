@@ -300,8 +300,28 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'FormationModulaire',
+  setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Formations Modulaires - SPV & SST à CREFER',
+        description: 'Formations modulaires flexibles à CREFER. SPV (Énergies Renouvelables) et SST (Sécurité & Télécommunications). Certificats professionnels reconnus.',
+        keywords: 'formation modulaire, SPV énergie renouvelable, SST sécurité, formation flexible, CREFER',
+        canonical: 'https://crefer.tech/formation-modulaire'
+      })
+    })
+
+    return {
+      seo
+    }
+  },
   data() {
     return {
       heroBannerImage: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href,
@@ -309,18 +329,6 @@ export default {
       sstSectionImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
       capElectriciteImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
       btElectrotechniqueImage: new URL('../assets/images/distinction2-1200.jpg', import.meta.url).href
-    }
-  },
-  head() {
-    return {
-      title: 'Formations Modulaires | CREFER',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Formations modulaires CREFER - SPV (Énergies Renouvelables) et SST (Sécurité & Télécommunications)'
-        }
-      ]
     }
   }
 }

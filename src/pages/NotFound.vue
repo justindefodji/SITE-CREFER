@@ -95,15 +95,32 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'NotFound',
-  data() {
-    return {
-      currentDate: new Date().toLocaleDateString('fr-FR', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+  setup() {
+    const seo = useSEO()
+    const currentDate = ref(new Date().toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }))
+    
+    onMounted(() => {
+      // Configurer le SEO pour la page 404
+      seo.setSEO({
+        title: 'Page non trouvée (404) - CREFER',
+        description: 'Page non trouvée. La page que vous cherchez n\'existe pas ou a été déplacée. Retournez à l\'accueil ou explorez nos formations.',
+        keywords: '404, page non trouvée, erreur',
+        canonical: 'https://crefer.tech/404'
       })
+    })
+
+    return {
+      currentDate,
+      seo
     }
   }
 }

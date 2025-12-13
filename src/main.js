@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './assets/index.css'
 import './assets/animations.css'
+import { initializeGoogleAnalytics } from './composables/useGoogleAnalytics'
 
 const app = createApp(App)
 
@@ -55,6 +56,9 @@ app.directive('scroll-animate', (el, binding) => {
 })
 
 app.use(router)
+
+// Initialiser Google Analytics
+initializeGoogleAnalytics()
 
 // Naviguer vers la route sauvegardée après que le routeur soit ready
 router.isReady().then(() => {

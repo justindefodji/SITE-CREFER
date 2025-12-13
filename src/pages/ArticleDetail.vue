@@ -128,12 +128,14 @@
 <script>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useSEO } from '@/composables/useSEO'
 
 export default {
   name: 'ArticleDetail',
   setup() {
     const route = useRoute()
     const router = useRouter()
+    const seo = useSEO()
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
 
@@ -289,6 +291,15 @@ export default {
     // Update meta tags when article changes
     onMounted(() => {
       updateMetaTags(currentArticle.value)
+      
+      // Configurer le SEO
+      seo.setSEO({
+        title: `${currentArticle.value.fullTitle} - CREFER`,
+        description: currentArticle.value.description,
+        keywords: `${currentArticle.value.category}, CREFER, actualités, articles`,
+        canonical: `https://crefer.tech/articles/${currentArticle.value.id}`
+      })
+      
       window.addEventListener('keydown', handleKeydown)
     })
 

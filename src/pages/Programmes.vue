@@ -559,45 +559,53 @@
 </template>
 
 <script>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'Programmes',
+  setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Tous nos Programmes de Formation - CREFER',
+        description: 'Découvrez tous les programmes de formation CREFER : CAP Électricité, BT Électrotechnique et Formations Modulaires avec théorie, travaux pratiques, stages.',
+        keywords: 'programmes formation, CAP, BT, formations modulaires, électricité, CREFER, école technique',
+        canonical: 'https://crefer.tech/programmes'
+      })
+      
+      handleScroll()
+      window.addEventListener('scroll', handleScroll)
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('scroll', handleScroll)
+    })
+
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.scroll-reveal')
+      elements.forEach(element => {
+        const rect = element.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0
+        if (isVisible) {
+          element.classList.add('revealed')
+        }
+      })
+    }
+
+    return {
+      seo,
+      handleScroll
+    }
+  },
   data() {
     return {
       backgroundImageUrl: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
       capHeroImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href,
       btHeroImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
       modulaireHeroImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
-    }
-  },
-  mounted() {
-    this.handleScroll();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      const elements = document.querySelectorAll('.scroll-reveal');
-      elements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0;
-        if (isVisible) {
-          element.classList.add('revealed');
-        }
-      });
-    }
-  },
-  head() {
-    return {
-      title: 'Tous nos Programmes | CREFER',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Découvrez tous les programmes de formation de CREFER : CAP, BT et formations modulaires avec théorie, travaux pratiques, stages et accompagnement'
-        }
-      ]
     }
   }
 }

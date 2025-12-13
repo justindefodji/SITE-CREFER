@@ -225,13 +225,16 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useSEO } from '../composables/useSEO'
 
 export default {
   name: 'Contact',
   setup() {
+    const seo = useSEO()
+    
     // Image pour la section Header
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
     
     const form = ref({
       name: '',
@@ -241,6 +244,16 @@ export default {
       message: ''
     })
     const submitted = ref(false)
+
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Nous Contacter - CREFER | Formation Électricité & Énergies Renouvelables',
+        description: 'Contactez CREFER pour plus d\'informations sur nos formations CAP, BT et modulaires. Nous sommes à Lomé-Togo. Email, téléphone et formulaire de contact.',
+        keywords: 'contact CREFER, formulaire contact, numéro téléphone, email CREFER, formation électricité',
+        canonical: 'https://crefer.tech/contact'
+      })
+    })
 
     const handleSubmit = () => {
       console.log('Formulaire soumis:', form.value)

@@ -280,14 +280,26 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useVideos, getEmbedUrl } from '../services/videosService'
+import { useSEO } from '@/composables/useSEO'
 
 export default {
   name: 'Articles',
   setup() {
+    const seo = useSEO()
     const { videos } = useVideos()
     
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Actualités et Projets - CREFER',
+        description: 'Consultez les dernières actualités, vidéos et projets du CREFER. Restez informé de la vie de notre école d\'énergies renouvelables.',
+        keywords: 'actualités CREFER, projets école, événements formation, news CREFER, vidéos CREFER',
+        canonical: 'https://crefer.tech/articles'
+      })
+    })
+
     // Shorts data
     const shorts = ref([
       {

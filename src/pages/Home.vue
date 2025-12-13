@@ -920,15 +920,28 @@
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useArticles } from '../services/articlesService'
+import { useSEO } from '@/composables/useSEO'
 
 export default {
   name: 'Home',
   setup() {
+    const seo = useSEO()
+    
     // Load articles from service
     const { articles } = useArticles()
 
     // Get first 3 articles for the Actualités section
     const newsArticles = computed(() => articles.value.slice(0, 3))
+
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'CREFER - Académie d\'Énergies Renouvelables et Électricité au Togo',
+        description: 'CREFER est la première académie régionale axée sur les métiers d\'énergies renouvelables. Formations CAP, BT et modulaires en électricité et énergie solaire à Lomé-Togo.',
+        keywords: 'formation électricité, énergie solaire, CAP, BT, école technique, Togo, énergies renouvelables, CREFER',
+        canonical: 'https://crefer.tech'
+      })
+    })
 
     // Video URL - importée comme les images
     const videoUrl = ref(new URL('../assets/videos/video1.mp4', import.meta.url).href)
@@ -936,7 +949,7 @@ export default {
     const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
     // Utilise des images locales placées dans `src/assets/images/`.
     // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4859.jpg', import.meta.url).href)
     const storyImageUrl = ref(new URL('../assets/images/histoire.jpg', import.meta.url).href)
     // Images pour les 3 cards "Programmes d'étude"
     const capImageUrl = ref(new URL('../assets/images/_DSC4674.jpg', import.meta.url).href)
