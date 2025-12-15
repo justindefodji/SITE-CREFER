@@ -10,8 +10,19 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable'
+    }
+  },
   build: {
     assetsInlineLimit: 4096,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true
+      }
+    },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {

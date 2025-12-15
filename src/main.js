@@ -4,8 +4,12 @@ import router from './router'
 import './assets/index.css'
 import './assets/animations.css'
 import { initializeGoogleAnalytics } from './composables/useGoogleAnalytics'
+import imagePreloadPlugin from './plugins/imagePreload'
 
 const app = createApp(App)
+
+// Installer le plugin de préchargement d'images
+app.use(imagePreloadPlugin)
 
 // Traiter la redirection du 404.html
 if (sessionStorage.routePath) {
