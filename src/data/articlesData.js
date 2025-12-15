@@ -1,0 +1,96 @@
+export const articlesData = [
+  {
+    id: 1,
+    title: 'Soutenance de Mémoire - Promotion 12 SPV',
+    subtitle: 'Un moment important pour nos étudiants',
+    slug: 'soutenance-memoire',
+    category: 'Événement',
+    date: '15 Décembre 2025',
+    description: 'Découvrez les moments forts de la soutenance de mémoire de la Promotion 12 SPV.',
+    fullTitle: 'Soutenance de Mémoire - Promotion 12 SPV',
+    fullContent: 'Nos étudiants ont brillamment présenté leurs travaux de recherche et mémoires lors de cette importante cérémonie. Un événement marquant qui témoigne de leur engagement et de leur dévouement à l\'excellence académique.',
+    mainImage: new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href,
+    images: [
+      new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href,
+    ],
+    ogImage: new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href,
+    ogDescription: 'Soutenance de Mémoire - Promotion 12 SPV. Un moment important pour nos étudiants du CREFER.'
+  },
+  {
+    id: 2,
+    title: 'Lancement de la 14ème Promotion des Formations Modulaires',
+    subtitle: 'Une nouvelle aventure commence',
+    slug: 'lancement-14e-promotion',
+    category: 'Formation',
+    date: '10 Décembre 2025',
+    description: 'Accueil chaleureux de la 14ème promotion des formations modulaires du CREFER.',
+    fullTitle: 'Lancement de la 14ème Promotion des Formations Modulaires',
+    fullContent: 'Nous sommes ravis d\'accueillir la 14ème promotion des formations modulaires. Cette nouvelle cohorte d\'étudiants apportera une énergie nouvelle et dynamisera notre communauté. Bienvenue à tous nos nouveaux apprenants !',
+    mainImage: new URL('../assets/images/image1article2.jpg', import.meta.url).href,
+    images: [
+      new URL('../assets/images/image1article2.jpg', import.meta.url).href,
+      new URL('../assets/images/image2article2.jpg', import.meta.url).href,
+      new URL('../assets/images/image3article2.jpg', import.meta.url).href,
+    ],
+    ogImage: new URL('../assets/images/image1article2.jpg', import.meta.url).href,
+    ogDescription: 'Lancement de la 14ème Promotion des Formations Modulaires au CREFER.'
+  },
+  {
+    id: 3,
+    title: '1500+ Étudiants Formés et Transformés',
+    subtitle: 'Un accomplissement remarquable',
+    slug: 'etudiants-formes',
+    category: 'Réussite',
+    date: '05 Décembre 2025',
+    description: 'CREFER a franchi le cap impressionnant de 1500+ étudiants formés et transformés.',
+    fullTitle: '1500+ Étudiants Formés et Transformés',
+    fullContent: 'C\'est avec fierté que nous annonçons que CREFER a dépassé le seuil des 1500 étudiants formés et transformés. Ce jalon témoigne de notre engagement envers l\'excellence dans l\'enseignement des énergies renouvelables et du développement durable.',
+    mainImage: new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+    images: [
+      new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+      new URL('../assets/images/articlesolaire2.jpg', import.meta.url).href,
+    ],
+    ogImage: new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+    ogDescription: '1500+ Étudiants Formés et Transformés au CREFER - Un accomplissement remarquable.'
+  },
+  {
+    id: 4,
+    title: 'CREFER, la Garantie d\'un Stage Concret !',
+    subtitle: 'Formation pratique et emploi',
+    slug: 'stage-concret',
+    category: 'Stage',
+    date: '01 Décembre 2025',
+    description: 'CREFER garantit une formation pratique avec des stages concrets dans les entreprises.',
+    fullTitle: 'CREFER, la Garantie d\'un Stage Concret !',
+    fullContent: 'Au CREFER, nous croyons à l\'apprentissage par la pratique. Chaque étudiant bénéficie d\'un stage professionnel concret dans des entreprises du secteur des énergies renouvelables. Cette expérience pratique prépare nos apprenants aux défis du marché du travail.',
+    mainImage: new URL('../assets/images/install1article.jpg', import.meta.url).href,
+    images: [
+      new URL('../assets/images/install1article.jpg', import.meta.url).href,
+      new URL('../assets/images/install2article.jpg', import.meta.url).href,
+      new URL('../assets/images/install3article.jpg', import.meta.url).href,
+      new URL('../assets/images/install4article.jpg', import.meta.url).href,
+    ],
+    ogImage: new URL('../assets/images/install1article.jpg', import.meta.url).href,
+    ogDescription: 'CREFER - la garantie d\'un stage concret dans les énergies renouvelables.'
+  },
+  {
+    id: 5,
+    title: 'Examen Blanc – BT Électrotechnique',
+    subtitle: 'Préparation à l\'excellence',
+    slug: 'examen-blanc-bt',
+    category: 'Examen',
+    date: '20 Novembre 2025',
+    description: 'Examen blanc pour la préparation au BT Électrotechnique.',
+    fullTitle: 'Examen Blanc – BT Électrotechnique',
+    fullContent: 'Nos étudiants en BT Électrotechnique se sont soumis à un examen blanc complet pour parfaire leur préparation. Ces examens blancs sont essentiels pour identifier les points forts et les domaines à améliorer avant l\'examen officiel.',
+    mainImage: new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+    images: [
+      new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+      new URL('../assets/images/exam2article.jpg', import.meta.url).href,
+      new URL('../assets/images/exam3article.jpg', import.meta.url).href,
+      new URL('../assets/images/exam4article.jpg', import.meta.url).href,
+    ],
+    ogImage: new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+    ogDescription: 'Examen Blanc – BT Électrotechnique au CREFER.'
+  }
+]

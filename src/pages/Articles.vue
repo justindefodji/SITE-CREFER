@@ -144,13 +144,25 @@
                 Soutenance de Mémoire - Promotion 12 SPV
               </router-link>
 
-              <!-- Link -->
-              <router-link
-                to="/articles/1"
-                class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
-              >
-                Lire l'article »
-              </router-link>
+              <!-- Links Container -->
+              <div class="flex gap-3 items-center justify-between">
+                <router-link
+                  to="/articles/1"
+                  class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
+                >
+                  Lire l'article »
+                </router-link>
+                <button
+                  @click="shareArticle('Soutenance de Mémoire - Promotion 12 SPV', 1)"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs transition-all duration-200 hover:shadow-md hover:scale-105"
+                  title="Partager cet article"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                  </svg>
+                  Partager
+                </button>
+              </div>
             </div>
           </div>
 
@@ -174,13 +186,25 @@
                 Lancement de la 14ème Promotion des Formations Modulaires
               </router-link>
 
-              <!-- Link -->
-              <router-link
-                to="/articles/2"
-                class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
-              >
-                Lire l'article »
-              </router-link>
+              <!-- Links Container -->
+              <div class="flex gap-3 items-center justify-between">
+                <router-link
+                  to="/articles/2"
+                  class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
+                >
+                  Lire l'article »
+                </router-link>
+                <button
+                  @click="shareArticle('Lancement de la 14ème Promotion des Formations Modulaires', 2)"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs transition-all duration-200 hover:shadow-md hover:scale-105"
+                  title="Partager cet article"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                  </svg>
+                  Partager
+                </button>
+              </div>
             </div>
           </div>
 
@@ -204,13 +228,25 @@
                 1500+ Étudiants Formés et Transformés
               </router-link>
 
-              <!-- Link -->
-              <router-link
-                to="/articles/3"
-                class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
-              >
-                Lire l'article »
-              </router-link>
+              <!-- Links Container -->
+              <div class="flex gap-3 items-center justify-between">
+                <router-link
+                  to="/articles/3"
+                  class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
+                >
+                  Lire l'article »
+                </router-link>
+                <button
+                  @click="shareArticle('1500+ Étudiants Formés et Transformés', 3)"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs transition-all duration-200 hover:shadow-md hover:scale-105"
+                  title="Partager cet article"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                  </svg>
+                  Partager
+                </button>
+              </div>
             </div>
           </div>
 
@@ -234,13 +270,25 @@
                  CREFER, la Garantie d'un Stage Concret !
               </router-link>
 
-              <!-- Link -->
-              <router-link
-                to="/articles/4"
-                class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
-              >
-                Lire l'article »
-              </router-link>
+              <!-- Links Container -->
+              <div class="flex gap-3 items-center justify-between">
+                <router-link
+                  to="/articles/4"
+                  class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
+                >
+                  Lire l'article »
+                </router-link>
+                <button
+                  @click="shareArticle('CREFER, la Garantie d\'un Stage Concret !', 4)"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs transition-all duration-200 hover:shadow-md hover:scale-105"
+                  title="Partager cet article"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                  </svg>
+                  Partager
+                </button>
+              </div>
             </div>
           </div>
 
@@ -264,13 +312,25 @@
                 Examen Blanc – BT Électrotechnique 
               </router-link>
 
-              <!-- Link -->
-              <router-link
-                to="/articles/5"
-                class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
-              >
-                Lire l'article »
-              </router-link>
+              <!-- Links Container -->
+              <div class="flex gap-3 items-center justify-between">
+                <router-link
+                  to="/articles/5"
+                  class="text-yellow-600 hover:text-yellow-700 font-semibold text-xs transition-colors inline-block"
+                >
+                  Lire l'article »
+                </router-link>
+                <button
+                  @click="shareArticle('Examen Blanc – BT Électrotechnique', 5)"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs transition-all duration-200 hover:shadow-md hover:scale-105"
+                  title="Partager cet article"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                  </svg>
+                  Partager
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -283,6 +343,7 @@
 import { ref, onMounted } from 'vue'
 import { useVideos, getEmbedUrl } from '../services/videosService'
 import { useSEO } from '@/composables/useSEO'
+import { articlesData } from '@/data/articlesData'
 
 export default {
   name: 'Articles',
@@ -409,6 +470,35 @@ export default {
       document.body.style.overflow = 'auto'
     }
 
+    const shareArticle = (title, articleId) => {
+      const article = articlesData.find(a => a.id === articleId)
+      const url = window.location.origin + `/articles/${articleId}`
+      const shareText = `${title} - CREFER`
+
+      // Créer les données de partage structurées
+      const shareData = {
+        title: shareText,
+        text: article.ogDescription || article.description,
+        url: url
+      }
+
+      // Utiliser l'API Web Share si disponible
+      if (navigator.share) {
+        navigator.share(shareData).catch(err => {
+          if (err.name !== 'AbortError') {
+            console.error('Erreur lors du partage:', err)
+          }
+        })
+      } else {
+        // Fallback: copier l'URL dans le presse-papiers
+        navigator.clipboard.writeText(url).then(() => {
+          alert('Lien copié dans le presse-papiers!')
+        }).catch(err => {
+          console.error('Erreur lors de la copie:', err)
+        })
+      }
+    }
+
     return {
       backgroundImageUrl,
       soutenanceImageUrl,
@@ -450,6 +540,7 @@ export default {
       videos,
       shorts,
       getEmbedUrl,
+      shareArticle,
     }
   }
 }
