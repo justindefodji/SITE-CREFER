@@ -1,5 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white">
+    <!-- Préchargement des images critiques -->
+    <ImagePreloader />
+    
     <InfosBar />
     <Navigation />
     <main class="flex-1 pt-16">
@@ -15,13 +18,15 @@ import { onMounted, onUnmounted } from 'vue'
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import InfosBar from './components/InfosBar.vue'
+import ImagePreloader from './components/ImagePreloader.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
     Footer,
-    InfosBar
+    InfosBar,
+    ImagePreloader
   },
   setup() {
     const router = useRouter()
@@ -47,6 +52,13 @@ export default {
     }
 
     onMounted(() => {
+      // Enregistrer le service worker pour le cache des images
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/SITE-CREFER/sw.js').catch(err => {
+          console.log('SW registration failed:', err)
+        })
+      }
+
       // Remonte en haut au chargement initial
       window.scrollTo(0, 0)
       

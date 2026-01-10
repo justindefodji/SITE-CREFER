@@ -352,13 +352,26 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
 
 export default {
   name: 'Admissions',
   setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Admissions CREFER 2025-2026 - Formations CAP, BT & Modulaires',
+        description: 'Découvrez les conditions d\'admission et les périodes de rentrée pour CAP, BT et formations modulaires. Téléchargez les fiches d\'inscription et rejoignez CREFER.',
+        keywords: 'admissions CREFER, inscription CAP, inscription BT, formation modulaire, rentrée 2025, conditions admission',
+        canonical: 'https://crefer.tech/admissions'
+      })
+    })
+    
     // URL d'arrière-plan par défaut (modifiable)
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4916-1200.jpg', import.meta.url).href)
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4826.jpg', import.meta.url).href)
     const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
     
     // Galerie d'images des documents PDF convertis en JPG

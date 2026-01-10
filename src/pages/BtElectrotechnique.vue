@@ -264,8 +264,28 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'BtElectrotechnique',
+  setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'BT Électrotechnique - Formation Technicien Supérieur à CREFER',
+        description: 'Formation BT Électrotechnique de 3 ans à CREFER. Devenez technicien supérieur en électrotechnique avec qualification professionnelle reconnue au Togo.',
+        keywords: 'BT électrotechnique, formation technicien, école technique, CREFER, électricité',
+        canonical: 'https://crefer.tech/bt-electrotechnique'
+      })
+    })
+
+    return {
+      seo
+    }
+  },
   data() {
     return {
       heroBannerImage: new URL('../assets/images/_DSC4863-1200.jpg', import.meta.url).href,
@@ -275,18 +295,6 @@ export default {
       debouchesImage: new URL('../assets/images/vision2-1200.jpg', import.meta.url).href,
       capElectriciteImage: new URL('../assets/images/entreprenariat-1200.jpg', import.meta.url).href,
       formationModulaireImage: new URL('../assets/images/mission1-1200.jpg', import.meta.url).href
-    }
-  },
-  head() {
-    return {
-      title: 'BT Électrotechnique | CREFER',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Formation BT Électrotechnique à CREFER - Formation de technicien supérieur en électrotechnique'
-        }
-      ]
     }
   }
 }

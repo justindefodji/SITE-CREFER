@@ -176,13 +176,25 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { useArticles, mergeArticleImages } from '../services/articlesService'
+import { useSEO } from '@/composables/useSEO'
 
 export default {
   name: 'AdminArticles',
   setup() {
+    const seo = useSEO()
     const { articles, saveArticles, getArticleById } = useArticles()
     const showModal = ref(false)
     const editingArticle = ref(null)
+
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Admin Articles - Gestion du Contenu - CREFER',
+        description: 'Panel d\'administration pour gérer les articles et actualités de CREFER. Créez, éditez et publiez du contenu facilement.',
+        keywords: 'admin articles, gestion contenu, actualités CREFER, panel administration',
+        canonical: 'https://crefer.tech/admin/articles'
+      })
+    })
 
     const newArticle = () => {
       editingArticle.value = {

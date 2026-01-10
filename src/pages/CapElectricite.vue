@@ -245,8 +245,28 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'CapElectricite',
+  setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'CAP Électricité d\'Équipement - Formation Professionnelle à CREFER',
+        description: 'Formation CAP Électricité d\'Équipement de 2 ans à CREFER. Installation, maintenance et réparation des équipements électriques. Certification reconnue au Togo.',
+        keywords: 'CAP électricité, formation électricien, équipement électrique, école technique, CREFER',
+        canonical: 'https://crefer.tech/cap-electricite'
+      })
+    })
+
+    return {
+      seo
+    }
+  },
   data() {
     return {
       heroBannerImage: new URL('../assets/images/_DSC4865-1200.jpg', import.meta.url).href,
@@ -256,18 +276,6 @@ export default {
       debouchesImage: new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href,
       btElectrotechniqueImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
       formationModulaireImage: new URL('../assets/images/mission1-1200.jpg', import.meta.url).href
-    }
-  },
-  head() {
-    return {
-      title: 'CAP Électricité d\'Équipement | CREFER',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Formation CAP Électricité d\'Équipement à CREFER - Formation d\'installation et maintenance des équipements électriques'
-        }
-      ]
     }
   }
 }

@@ -181,7 +181,8 @@
 
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import backgroundImg from '../assets/images/_DSC4869-1200.jpg'
+import { useSEO } from '@/composables/useSEO'
+import backgroundImg from '../assets/images/_DSC8015.jpg'
 import img1 from '../assets/images/_DSC0294.jpg'
 import img2 from '../assets/images/_DSC0332.jpg'
 import img3 from '../assets/images/_DSC0335.jpg'
@@ -208,11 +209,22 @@ import img22 from '../assets/images/sortie10.jpg'
 export default {
   name: 'Gallery',
   setup() {
+    const seo = useSEO()
     const backgroundImageUrl = ref(backgroundImg)
     const selectedCategory = ref('Tous')
     const lightboxOpen = ref(false)
     const currentLightboxIndex = ref(0)
     const categories = ['Tous', 'Théorie', 'Travaux pratiques', 'Stage', 'Sortie pédagogique', 'Autres']
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'Galerie Photos - CREFER | Vie Scolaire et Activités',
+        description: 'Découvrez la galerie photos de CREFER avec nos activités, travaux pratiques, stages, sorties pédagogiques et moments de vie scolaire.',
+        keywords: 'galerie CREFER, photos école, vie scolaire, travaux pratiques, stages, sorties pédagogiques',
+        canonical: 'https://crefer.tech/gallery'
+      })
+    })
     
     const galleryItems = [
       { id: 1, title: 'Atelier Électronique 1', description: 'Travaux pratiques en électronique', category: 'Travaux pratiques', image: img1 },

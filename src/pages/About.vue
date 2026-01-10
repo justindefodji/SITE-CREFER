@@ -751,12 +751,32 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
+import { useSEO } from '@/composables/useSEO'
+
 export default {
   name: 'About',
+  setup() {
+    const seo = useSEO()
+    
+    onMounted(() => {
+      // Configurer le SEO
+      seo.setSEO({
+        title: 'À Propos de CREFER - Académie d\'Énergies Renouvelables au Togo',
+        description: 'Découvrez CREFER, la première académie régionale axée sur les métiers d\'énergies renouvelables. Basée à Lomé-Togo, nous formons depuis 2019 des experts en électricité et énergie solaire.',
+        keywords: 'CREFER, académie énergies renouvelables, formation électricité, formation solaire, Togo, école technique',
+        canonical: 'https://crefer.tech/about'
+      })
+    })
+
+    return {
+      seo
+    }
+  },
   data() {
     return {
       // Image de fond du hero section
-      backgroundImageUrl: new URL('../assets/images/_DSC4860-1200.jpg', import.meta.url).href,
+      backgroundImageUrl: new URL('../assets/images/_DSC4828.jpg', import.meta.url).href,
       // images des cartes programmess sorties du template
       elecImage: new URL('../assets/images/pe4.jpg', import.meta.url).href,
       efficaciteImage: new URL('../assets/images/pe2.jpg', import.meta.url).href,

@@ -126,170 +126,119 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useSEO } from '@/composables/useSEO'
+import { articlesData } from '@/data/articlesData'
 
 export default {
   name: 'ArticleDetail',
   setup() {
     const route = useRoute()
     const router = useRouter()
+    const seo = useSEO()
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
 
-    // Function to update meta tags for social sharing
+    // Function to update meta tags for social sharing (Facebook-like structure)
     const updateMetaTags = (article) => {
       const baseUrl = window.location.origin
-      const imageUrl = article.images && article.images.length > 0 ? article.images[0] : ''
+      const imageUrl = article.ogImage || (article.images && article.images.length > 0 ? article.images[0] : '')
       const pageUrl = `${baseUrl}/articles/${article.id}`
 
-      // Update or create og:title
-      let ogTitle = document.querySelector('meta[property="og:title"]')
-      if (!ogTitle) {
-        ogTitle = document.createElement('meta')
-        ogTitle.setAttribute('property', 'og:title')
-        document.head.appendChild(ogTitle)
-      }
-      ogTitle.setAttribute('content', article.fullTitle)
+      // Métadonnées Open Graph (protocole Facebook)
+      const metaTags = [
+        { property: 'og:title', content: article.title },
+        { property: 'og:description', content: article.ogDescription || article.description },
+        { property: 'og:image', content: imageUrl },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:url', content: pageUrl },
+        { property: 'og:site_name', content: 'CREFER' },
+        { property: 'article:published_time', content: new Date().toISOString() },
+        { property: 'article:author', content: 'CREFER' },
+        { property: 'article:section', content: article.category },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: article.title },
+        { name: 'twitter:description', content: article.ogDescription || article.description },
+        { name: 'twitter:image', content: imageUrl },
+        { name: 'description', content: article.ogDescription || article.description }
+      ]
 
-      // Update or create og:description
-      let ogDescription = document.querySelector('meta[property="og:description"]')
-      if (!ogDescription) {
-        ogDescription = document.createElement('meta')
-        ogDescription.setAttribute('property', 'og:description')
-        document.head.appendChild(ogDescription)
-      }
-      ogDescription.setAttribute('content', article.description)
+      // Supprimer les anciennes métadonnées
+      const oldMetaSelectors = [
+        'meta[property="og:title"]',
+        'meta[property="og:description"]',
+        'meta[property="og:image"]',
+        'meta[property="og:image:width"]',
+        'meta[property="og:image:height"]',
+        'meta[property="og:type"]',
+        'meta[property="og:url"]',
+        'meta[property="og:site_name"]',
+        'meta[property="article:published_time"]',
+        'meta[property="article:author"]',
+        'meta[property="article:section"]',
+        'meta[name="twitter:card"]',
+        'meta[name="twitter:title"]',
+        'meta[name="twitter:description"]',
+        'meta[name="twitter:image"]'
+      ]
 
-      // Update or create og:image
-      let ogImage = document.querySelector('meta[property="og:image"]')
-      if (!ogImage) {
-        ogImage = document.createElement('meta')
-        ogImage.setAttribute('property', 'og:image')
-        document.head.appendChild(ogImage)
-      }
-      ogImage.setAttribute('content', imageUrl)
+      oldMetaSelectors.forEach(selector => {
+        const element = document.querySelector(selector)
+        if (element) {
+          element.remove()
+        }
+      })
 
-      // Update or create og:url
-      let ogUrl = document.querySelector('meta[property="og:url"]')
-      if (!ogUrl) {
-        ogUrl = document.createElement('meta')
-        ogUrl.setAttribute('property', 'og:url')
-        document.head.appendChild(ogUrl)
-      }
-      ogUrl.setAttribute('content', pageUrl)
+      // Ajouter les nouvelles métadonnées
+      metaTags.forEach(tag => {
+        const meta = document.createElement('meta')
+        if (tag.property) {
+          meta.setAttribute('property', tag.property)
+        } else {
+          meta.setAttribute('name', tag.name)
+        }
+        meta.setAttribute('content', tag.content)
+        document.head.appendChild(meta)
+      })
 
-      // Update or create og:type
-      let ogType = document.querySelector('meta[property="og:type"]')
-      if (!ogType) {
-        ogType = document.createElement('meta')
-        ogType.setAttribute('property', 'og:type')
-        document.head.appendChild(ogType)
+      // Ajouter le lien canonique
+      let canonicalLink = document.querySelector('link[rel="canonical"]')
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link')
+        canonicalLink.rel = 'canonical'
+        document.head.appendChild(canonicalLink)
       }
-      ogType.setAttribute('content', 'article')
-
-      // Update or create twitter:card
-      let twitterCard = document.querySelector('meta[name="twitter:card"]')
-      if (!twitterCard) {
-        twitterCard = document.createElement('meta')
-        twitterCard.setAttribute('name', 'twitter:card')
-        document.head.appendChild(twitterCard)
-      }
-      twitterCard.setAttribute('content', 'summary_large_image')
-
-      // Update or create twitter:image
-      let twitterImage = document.querySelector('meta[name="twitter:image"]')
-      if (!twitterImage) {
-        twitterImage = document.createElement('meta')
-        twitterImage.setAttribute('name', 'twitter:image')
-        document.head.appendChild(twitterImage)
-      }
-      twitterImage.setAttribute('content', imageUrl)
+      canonicalLink.href = pageUrl
     }
     
     const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
-    const soutenanceImageUrl = ref(new URL('../assets/images/soutenance-1200.jpg', import.meta.url).href)
-    const promotionImage1Url = ref(new URL('../assets/images/image1article2.jpg', import.meta.url).href)
-    const promotionImage2Url = ref(new URL('../assets/images/image2article2.jpg', import.meta.url).href)
-    const promotionImage3Url = ref(new URL('../assets/images/image3article2.jpg', import.meta.url).href)
-    const solarImage1Url = ref(new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href)
-    const solarImage2Url = ref(new URL('../assets/images/articlesolaire2.jpg', import.meta.url).href)
-    const installImage1Url = ref(new URL('../assets/images/install1article.jpg', import.meta.url).href)
-    const installImage2Url = ref(new URL('../assets/images/install2article.jpg', import.meta.url).href)
-    const installImage3Url = ref(new URL('../assets/images/install3article.jpg', import.meta.url).href)
-    const installImage4Url = ref(new URL('../assets/images/install4article.jpg', import.meta.url).href)
-    const examImage1Url = ref(new URL('../assets/images/exam1article.jpg', import.meta.url).href)
-    const examImage2Url = ref(new URL('../assets/images/exam2article.jpg', import.meta.url).href)
-    const examImage3Url = ref(new URL('../assets/images/exam3article.jpg', import.meta.url).href)
-    const examImage4Url = ref(new URL('../assets/images/exam4article.jpg', import.meta.url).href)
-
-    const articles = {
-      '1': {
-        id: '1',
-        title: 'Soutenance de Mémoire',
-        fullTitle: 'Soutenance de Mémoire - Promotion 12 SPV',
-        subtitle: 'Une étape décisive vers le succès',
-        date: '31 OCT 2025',
-        category: 'Événement important',
-        description: 'Ce vendredi 31 octobre, 12 étudiants de la filière SPV (Solaire Photovoltaïque) soutiendront leur mémoire de fin de formation. Une étape décisive qui marque l\'aboutissement de plusieurs mois d\'efforts, de rigueur et de passion !',
-        fullContent: 'Ces étudiants ont suivi une formation rigoureuse et complète dans le domaine des énergies renouvelables. La soutenance de mémoire est une excellente opportunité pour eux de démontrer leur compréhension approfondie et leurs compétences pratiques. Chaque soutenance est un moment crucial où les étudiants présentent leurs recherches et leurs conclusions devant un jury d\'experts.',
-        images: [soutenanceImageUrl.value]
-      },
-      '2': {
-        id: '2',
-        title: 'Lancement de la 14ème Promotion',
-        fullTitle: 'Lancement de la 14ème Promotion des Formations Modulaires',
-        subtitle: 'Bienvenue aux nouveaux apprenants',
-        date: '14 OCT 2025',
-        category: 'Rentrée académique',
-        description: 'Ce lundi 14 octobre marque le lancement de la 14ème promotion des formations modulaires de 06 et 12 mois. Bienvenue aux nouveaux apprenants ! CREFER confirme son engagement à former des techniciens compétents et opérationnels.',
-        fullContent: 'Les formations modulaires offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins. Cette 14ème promotion accueille des étudiants motivés et déterminés à l\'excellence dans les domaines des énergies renouvelables. Notre pédagogie innovante combine la théorie et la pratique pour assurer une formation de qualité.',
-        images: [promotionImage1Url.value, promotionImage2Url.value, promotionImage3Url.value]
-      },
-      '3': {
-        id: '3',
-        title: '1500+ Étudiants Formés',
-        fullTitle: '1500+ Étudiants Formés et Transformés',
-        subtitle: 'Nos success stories et réalisations',
-        date: '2021 - NOS RÉALISATIONS',
-        category: 'Success Stories',
-        description: 'Depuis sa création, CREFER a déjà formé près de 1500 étudiants du Togo et d\'ailleurs. Découvrez en images nos anciens étudiants en pleine immersion sur le terrain !',
-        fullContent: 'Nos anciens étudiants travaillent maintenant dans des entreprises majeures et contribuent au développement des énergies renouvelables en Afrique de l\'Ouest. Leurs succès professionnels témoignent de la qualité de nos formations et de notre approche pédagogique axée sur la pratique. Chaque année, de nouveaux techniciens qualifiés sortent de CREFER et font la différence dans l\'industrie.',
-        images: [solarImage1Url.value, solarImage2Url.value]
-      },
-      '4': {
-        id: '4',
-        title: 'Stage Concret',
-        fullTitle: 'CREFER, la Garantie d\'un Stage Concret !',
-        subtitle: 'Formation pratique et immersion professionnelle',
-        date: 'NOVEMBRE 2025',
-        category: 'Formation Pratique',
-        description: 'Nos étudiants maîtrisent chaque étape : du dimensionnement à l\'installation. Chaque formation est ancrée dans la réalité du terrain, garantissant une expérience pratique authentique !',
-        fullContent: 'Pendant les stages, nos étudiants travaillent sur des projets réels : installation de systèmes solaires photovoltaïques, pose de panneaux, maintenance et dépannage. Cette approche pédagogique est ce qui différencie CREFER dans le secteur de la formation technique. Les apprenants acquièrent une expérience pratique inestimable qui leur permet de commencer à travailler immédiatement après leur formation.',
-        images: [installImage1Url.value, installImage2Url.value, installImage3Url.value, installImage4Url.value]
-      },
-      '5': {
-        id: '5',
-        title: 'Examen Blanc BT',
-        fullTitle: 'Examen Blanc – BT Électrotechnique',
-        subtitle: 'Excellence académique et préparation à l\'examen',
-        date: 'NOVEMBRE 2025',
-        category: 'Évaluation & Excellence',
-        description: 'Nos étudiants de troisième année BT Électrotechnique sont en examen blanc, une étape cruciale dans leur préparation à l\'examen national prévu pour juillet 2025. Succès à tous !',
-        fullContent: 'L\'examen blanc permet aux étudiants d\'identifier leurs forces et faiblesses avant l\'examen national. Nos formateurs fournissent un accompagnement personnalisé et des ressources pédagogiques pour garantir le succès de chaque étudiant. Nous croyons que la persévérance et la pratique régulière sont les clés de l\'excellence académique.',
-        images: [examImage1Url.value, examImage2Url.value, examImage3Url.value, examImage4Url.value]
-      }
-    }
 
     const currentArticle = computed(() => {
-      const articleId = route.params.id
-      return articles[articleId] || articles['1']
+      const articleId = parseInt(route.params.id)
+      const article = articlesData.find(a => a.id === articleId)
+      return article || articlesData[0]
     })
 
     // Update meta tags when article changes
     onMounted(() => {
       updateMetaTags(currentArticle.value)
+      
+      // Configurer le SEO
+      seo.setSEO({
+        title: `${currentArticle.value.title} - CREFER`,
+        description: currentArticle.value.ogDescription || currentArticle.value.description,
+        keywords: `${currentArticle.value.category}, CREFER, actualités, articles`,
+        canonical: `https://crefer.tech/articles/${currentArticle.value.id}`
+      })
+      
       window.addEventListener('keydown', handleKeydown)
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('keydown', handleKeydown)
     })
 
     watch(currentArticle, (newArticle) => {

@@ -3,8 +3,13 @@ import App from './App.vue'
 import router from './router'
 import './assets/index.css'
 import './assets/animations.css'
+import { initializeGoogleAnalytics } from './composables/useGoogleAnalytics'
+import imagePreloadPlugin from './plugins/imagePreload'
 
 const app = createApp(App)
+
+// Installer le plugin de préchargement d'images
+app.use(imagePreloadPlugin)
 
 // Traiter la redirection du 404.html
 if (sessionStorage.routePath) {
@@ -55,6 +60,9 @@ app.directive('scroll-animate', (el, binding) => {
 })
 
 app.use(router)
+
+// Initialiser Google Analytics
+initializeGoogleAnalytics()
 
 // Naviguer vers la route sauvegardée après que le routeur soit ready
 router.isReady().then(() => {
