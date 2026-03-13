@@ -130,6 +130,7 @@ import { ref, computed, onMounted, watch, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useSEO } from '@/composables/useSEO'
 import { articlesData } from '@/data/articlesData'
+import { getArticleById } from '@/services/articlesService'
 
 export default {
   name: 'ArticleDetail',
@@ -139,12 +140,16 @@ export default {
     const seo = useSEO()
     const showLightbox = ref(false)
     const currentLightboxIndex = ref(0)
+    const article = ref(null)
+    const loading = ref(true)
 
     // Function to update meta tags for social sharing (Facebook-like structure)
-    const updateMetaTags = (article) => {
+    const updateMetaTags = (articleData) => {
+      if (!articleData) return
+      
       const baseUrl = window.location.origin
-      const imageUrl = article.ogImage || (article.images && article.images.length > 0 ? article.images[0] : '')
-      const pageUrl = `${baseUrl}/articles/${article.id}`
+      const imageUrl = articleData.mainImage || ''
+      const pageUrl = `${baseUrl}/articles/${articleData.id}`
 
       // Supprimer les anciennes métadonnées
       const oldMetaSelectors = [
@@ -175,8 +180,8 @@ export default {
 
       // Métadonnées Open Graph (protocole Facebook)
       const metaTags = [
-        { property: 'og:title', content: article.title },
-        { property: 'og:description', content: article.ogDescription || article.description },
+        { property: 'og:title', content: articleData.title },
+        { property: 'og:description', content: articleData.description },
         { property: 'og:image', content: imageUrl },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -185,12 +190,12 @@ export default {
         { property: 'og:site_name', content: 'CREFER' },
         { property: 'article:published_time', content: new Date().toISOString() },
         { property: 'article:author', content: 'CREFER' },
-        { property: 'article:section', content: article.category },
+        { property: 'article:section', content: articleData.category },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: article.title },
-        { name: 'twitter:description', content: article.ogDescription || article.description },
+        { name: 'twitter:title', content: articleData.title },
+        { name: 'twitter:description', content: articleData.description },
         { name: 'twitter:image', content: imageUrl },
-        { name: 'description', content: article.ogDescription || article.description }
+        { name: 'description', content: articleData.description }
       ]
 
       // Ajouter les nouvelles métadonnées
@@ -215,28 +220,71 @@ export default {
       canonicalLink.href = pageUrl
 
       // Mettre à jour le title du document
-      document.title = `${article.title} - CREFER`
+      document.title = `${articleData.title} - CREFER`
     }
     
     const backgroundImageUrl = ref(new URL('../assets/images/imageback.jpg', import.meta.url).href)
 
     const currentArticle = computed(() => {
-      const articleId = parseInt(route.params.id)
-      const article = articlesData.find(a => a.id === articleId)
-      return article || articlesData[0]
+      if (article.value) {
+        // Convertir les chemins d'images locaux en URLs publiques
+        const convertImagePath = (path) => {
+          if (!path) return null
+          // Garder les images base64 telles quelles
+          if (path.startsWith('data:image/')) return path
+          // Garder les URLs absolues
+          if (path.startsWith('http')) return path
+          // Convertir les chemins relatifs de développement
+          if (path.startsWith('/src/assets/images/')) {
+            return path.replace('/src/assets/images/', '/assets/images/')
+          }
+          return path
+        }
+
+        const images = Array.isArray(article.value.images) ? article.value.images.map(convertImagePath) : []
+        const mainImage = convertImagePath(article.value.mainImage)
+        
+        return {
+          ...article.value,
+          subtitle: article.value.category,
+          fullTitle: article.value.title,
+          mainImage: mainImage,
+          images: images && images.length > 0 ? images : (mainImage ? [mainImage] : [])
+        }
+      }
+      return null
     })
 
-    // Update meta tags when article changes
-    onMounted(() => {
-      updateMetaTags(currentArticle.value)
-      
-      // Configurer le SEO
-      seo.setSEO({
-        title: `${currentArticle.value.title} - CREFER`,
-        description: currentArticle.value.ogDescription || currentArticle.value.description,
-        keywords: `${currentArticle.value.category}, CREFER, actualités, articles`,
-        canonical: `https://crefer.tech/articles/${currentArticle.value.id}`
-      })
+    // Load article from Firebase
+    onMounted(async () => {
+      try {
+        const articleId = route.params.id
+        const loadedArticle = await getArticleById(articleId)
+        article.value = loadedArticle
+        
+        updateMetaTags(loadedArticle)
+        
+        // Configurer le SEO
+        seo.setSEO({
+          title: `${loadedArticle.title} - CREFER`,
+          description: loadedArticle.description,
+          keywords: `${loadedArticle.category}, CREFER, actualités, articles`,
+          canonical: `https://crefer.tech/articles/${loadedArticle.id}`
+        })
+      } catch (error) {
+        console.error('Erreur lors du chargement de l\'article:', error)
+        // Fallback: chercher dans articlesData
+        const articleId = parseInt(route.params.id)
+        const fallbackArticle = articlesData.find(a => a.id === articleId)
+        if (fallbackArticle) {
+          article.value = fallbackArticle
+          updateMetaTags(fallbackArticle)
+        } else {
+          router.push('/articles')
+        }
+      } finally {
+        loading.value = false
+      }
       
       window.addEventListener('keydown', handleKeydown)
     })
@@ -246,7 +294,9 @@ export default {
     })
 
     watch(currentArticle, (newArticle) => {
-      updateMetaTags(newArticle)
+      if (newArticle) {
+        updateMetaTags(newArticle)
+      }
     })
 
     const openLightbox = (index) => {
@@ -261,7 +311,8 @@ export default {
     }
 
     const nextImage = () => {
-      if (currentLightboxIndex.value < currentArticle.value.images.length - 1) {
+      const imagesCount = currentArticle.value?.images?.length || 0
+      if (currentLightboxIndex.value < imagesCount - 1) {
         currentLightboxIndex.value++
       }
     }
@@ -293,7 +344,8 @@ export default {
       openLightbox,
       closeLightbox,
       nextImage,
-      previousImage
+      previousImage,
+      loading
     }
   }
 }

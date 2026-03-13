@@ -7,13 +7,20 @@ import Gallery from '../pages/Gallery.vue'
 import Articles from '../pages/Articles.vue'
 import ArticleDetail from '../pages/ArticleDetail.vue'
 import AdminArticles from '../pages/AdminArticles.vue'
+import AdminVideos from '../pages/AdminVideos.vue'
 import CapElectricite from '../pages/CapElectricite.vue'
 import FormationModulaire from '../pages/FormationModulaire.vue'
 import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
 import Programmes from '../pages/Programmes.vue'
 import Blog from '../pages/Blog.vue'
 import BlogArticle1 from '../pages/BlogArticle1.vue'
+import AdminLogin from '../pages/AdminLogin.vue'
+import AdminDashboard from '../pages/AdminDashboard.vue'
+import AdminPages from '../pages/AdminPages.vue'
+import AdminPageEditor from '../pages/AdminPageEditor.vue'
 import { useSEO } from '../composables/useSEO'
+import { adminAuthGuard } from './adminAuthGuard'
+import { initializeAuth } from '../services/authService'
 
 const routes = [
   {
@@ -89,9 +96,50 @@ const routes = [
     }
   },
   {
+    path: '/admin/login',
+    name: 'AdminLogin',
+    component: AdminLogin,
+    meta: {
+      title: 'Connexion Admin - CREFER',
+      description: 'Page de connexion administrateur'
+    }
+  },
+  {
+    path: '/admin/dashboard',
+    name: 'AdminDashboard',
+    component: AdminDashboard,
+    meta: {
+      title: 'Tableau de bord Admin - CREFER',
+      description: 'Tableau de bord administrateur CREFER'
+    }
+  },
+  {
+    path: '/admin/pages',
+    name: 'AdminPages',
+    component: AdminPages,
+    meta: {
+      title: 'Gestion des Pages - CREFER',
+      description: 'Gestion des pages et sections'
+    }
+  },
+  {
+    path: '/admin/pages/:pageId',
+    name: 'AdminPageEditor',
+    component: AdminPageEditor,
+    meta: {
+      title: 'Édition de Page - CREFER',
+      description: 'Éditeur de page'
+    }
+  },
+  {
     path: '/admin/articles',
     name: 'AdminArticles',
     component: AdminArticles
+  },
+  {
+    path: '/admin/videos',
+    name: 'AdminVideos',
+    component: AdminVideos
   },
   {
     path: '/contact',
@@ -156,6 +204,16 @@ const router = createRouter({
     // Remonte toujours en haut de la page
     return { top: 0 }
   }
+})
+
+// Initialize Firebase authentication and apply auth guard
+initializeAuth().then(() => {
+  // Apply auth guard after Firebase is ready
+  router.beforeEach(adminAuthGuard)
+}).catch(error => {
+  console.error('Failed to initialize auth:', error)
+  // Still apply the guard even if init fails
+  router.beforeEach(adminAuthGuard)
 })
 
 router.afterEach((to) => {
