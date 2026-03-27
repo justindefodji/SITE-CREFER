@@ -20,12 +20,15 @@ export default {
     images: {
       type: Array,
       default: () => [
-        'assets/images/soutenance-1200.jpg',
-        'assets/images/image1article2.jpg',
+        // Supprimer les images de galerie (chargées depuis Firestore en base64)
+        // 'assets/images/soutenance-1200.jpg',
+        // 'assets/images/image1article2.jpg',
+        // 'assets/images/imageback.jpg',
+        
+        // Garder uniquement les images d'articles critiques
         'assets/images/articlesolaire1.jpg',
         'assets/images/install1article.jpg',
-        'assets/images/exam1article.jpg',
-        'assets/images/imageback.jpg'
+        'assets/images/exam1article.jpg'
       ]
     }
   },

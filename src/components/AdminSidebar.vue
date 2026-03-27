@@ -84,6 +84,36 @@
             <span class="font-medium">Vidéos YouTube</span>
           </div>
         </router-link>
+
+        <router-link
+          to="/admin/gallery"
+          class="block px-4 py-3 rounded-lg transition-all"
+          :class="
+            $route.path === '/admin/gallery'
+              ? 'bg-yellow-400 text-black shadow-lg font-bold'
+              : 'text-gray-300 hover:bg-gray-800 hover:text-yellow-400'
+          "
+        >
+          <div class="flex items-center gap-3">
+            <span class="text-lg">🖼️</span>
+            <span class="font-medium">Galerie Photos</span>
+          </div>
+        </router-link>
+
+        <router-link
+          to="/admin/admissions"
+          class="block px-4 py-3 rounded-lg transition-all"
+          :class="
+            $route.path === '/admin/admissions'
+              ? 'bg-yellow-400 text-black shadow-lg font-bold'
+              : 'text-gray-300 hover:bg-gray-800 hover:text-yellow-400'
+          "
+        >
+          <div class="flex items-center gap-3">
+            <span class="text-lg">📝</span>
+            <span class="font-medium">Admissions</span>
+          </div>
+        </router-link>
       </div>
 
       <!-- Other Sections -->

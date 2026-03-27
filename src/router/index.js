@@ -8,6 +8,8 @@ import Articles from '../pages/Articles.vue'
 import ArticleDetail from '../pages/ArticleDetail.vue'
 import AdminArticles from '../pages/AdminArticles.vue'
 import AdminVideos from '../pages/AdminVideos.vue'
+import AdminGallery from '../pages/AdminGallery.vue'
+import AdminAdmissions from '../pages/AdminAdmissions.vue'
 import CapElectricite from '../pages/CapElectricite.vue'
 import FormationModulaire from '../pages/FormationModulaire.vue'
 import BtElectrotechnique from '../pages/BtElectrotechnique.vue'
@@ -96,6 +98,10 @@ const routes = [
     }
   },
   {
+    path: '/admin',
+    redirect: '/admin/login'
+  },
+  {
     path: '/admin/login',
     name: 'AdminLogin',
     component: AdminLogin,
@@ -140,6 +146,16 @@ const routes = [
     path: '/admin/videos',
     name: 'AdminVideos',
     component: AdminVideos
+  },
+  {
+    path: '/admin/gallery',
+    name: 'AdminGallery',
+    component: AdminGallery
+  },
+  {
+    path: '/admin/admissions',
+    name: 'AdminAdmissions',
+    component: AdminAdmissions
   },
   {
     path: '/contact',

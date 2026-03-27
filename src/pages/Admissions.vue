@@ -48,175 +48,78 @@
         <div class="grid lg:grid-cols-2 gap-12 items-start">
           <!-- Left Column: Image Gallery -->
           <div class="flex flex-col justify-start items-center order-2 lg:order-1 w-full">
+            <!-- Loading -->
+            <div v-if="loadingImages" class="w-full text-center py-12">
+              <div class="inline-block w-8 h-8 border-4 border-blue-400 border-t-blue-600 rounded-full animate-spin"></div>
+            </div>
+            
             <!-- Images Stack - Full Width -->
-            <div class="w-full space-y-6">
+            <div v-else-if="documentsGallery.length > 0" class="w-full space-y-6">
               <img 
                 v-for="(image, index) in documentsGallery"
                 :key="index"
                 :src="image"
-                :alt="'Document ' + (index + 1)"
+                :alt="'Image admission ' + (index + 1)"
                 class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
               />
+            </div>
+            
+            <!-- No Data -->
+            <div v-else class="w-full text-center py-12 text-gray-500">
+              <p>Aucune image disponible</p>
             </div>
           </div>
 
           <!-- Right Column: Download Buttons -->
           <div class="space-y-4 order-1 lg:order-2">
-            <!-- Fiche d'inscription modulaire -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
-                <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
+            <!-- Loading State -->
+            <div v-if="loadingDocuments" class="flex justify-center items-center py-12">
+              <div class="flex flex-col items-center gap-4">
+                <div class="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                <p class="text-gray-600">Chargement des documents...</p>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900">Fiche d'inscription modulaire</h3>
             </div>
-            <button
-              @click="downloadFile('fiche-inscription-modulaire.pdf')"
-              :disabled="downloadingFiles['fiche-inscription-modulaire.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['fiche-inscription-modulaire.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['fiche-inscription-modulaire.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
 
-          <!-- Fiche d'inscription BT & CAP -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-100 gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                </svg>
+            <!-- Documents List -->
+            <template v-else-if="documentsWithState.length > 0">
+              <div
+                v-for="(doc, index) in documentsWithState"
+                :key="doc.id"
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up gap-4"
+                :style="{ animationDelay: `${index * 100}ms` }"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="text-lg font-semibold text-gray-900">{{ doc.title }}</h3>
+                    <p v-if="doc.description" class="text-sm text-gray-600 mt-1">{{ doc.description }}</p>
+                  </div>
+                </div>
+                <button
+                  @click="downloadFile(doc)"
+                  :disabled="doc.isDownloading"
+                  class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
+                >
+                  <span v-if="!doc.isDownloading">Télécharger</span>
+                  <span v-else>Téléchargement...</span>
+                  <svg v-if="!doc.isDownloading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                  </svg>
+                </button>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900">Fiche d'inscription BT & CAP</h3>
-            </div>
-            <button
-              @click="downloadFile('fiche-inscription-bt-cap.pdf')"
-              :disabled="downloadingFiles['fiche-inscription-bt-cap.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['fiche-inscription-bt-cap.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['fiche-inscription-bt-cap.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
+            </template>
 
-          <!-- Liste des outils TP et stage -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-200 gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
-                <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-900">Liste des outils de TP et pour le stage</h3>
+            <!-- No Documents -->
+            <div v-else class="text-center py-12">
+              <p class="text-gray-600">Aucun document disponible pour le moment.</p>
             </div>
-            <button
-              @click="downloadFile('liste-outils-tp.pdf')"
-              :disabled="downloadingFiles['liste-outils-tp.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['liste-outils-tp.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['liste-outils-tp.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Flyer Formation Modulaire 2026 -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-300 gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
-                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-900">Flyer Formation Modulaire 2026</h3>
-            </div>
-            <button
-              @click="downloadFile('flyermodul2026.pdf')"
-              :disabled="downloadingFiles['flyermodul2026.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['flyermodul2026.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['flyermodul2026.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Fiche de renseignement CAP -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-400 gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-red-100 rounded-lg group-hover:bg-red-200 transition-colors">
-                <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-900">Fiche de renseignement CAP</h3>
-            </div>
-            <button
-              @click="downloadFile('fiche-renseignement-cap.pdf')"
-              :disabled="downloadingFiles['fiche-renseignement-cap.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['fiche-renseignement-cap.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['fiche-renseignement-cap.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Fiche de renseignement BT -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300 transform hover:scale-102 group animate-fade-in-up delay-500 gap-4">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-yellow-100 rounded-lg group-hover:bg-yellow-200 transition-colors">
-                <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-900">Fiche de renseignement BT</h3>
-            </div>
-            <button
-              @click="downloadFile('fiche-renseignement-bt.pdf')"
-              :disabled="downloadingFiles['fiche-renseignement-bt.pdf']"
-              class="w-full sm:w-auto px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold flex items-center justify-center gap-2 hover:shadow-lg transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-yellow-400"
-            >
-              <span v-if="!downloadingFiles['fiche-renseignement-bt.pdf']">Télécharger</span>
-              <span v-else>Téléchargement...</span>
-              <svg v-if="!downloadingFiles['fiche-renseignement-bt.pdf']" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <svg v-else class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </button>
-          </div>
           </div>
         </div>
 
@@ -268,9 +171,9 @@
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-blue-200">
-              <p class="text-sm text-blue-900 font-semibold">
+              <!-- <p class="text-sm text-blue-900 font-semibold">
                  Rentrée : <span class="text-yellow-400">15 SEPTEMBRE 2025</span>
-              </p>
+              </p> -->
             </div>
           </div>
 
@@ -305,9 +208,9 @@
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-green-200">
-              <p class="text-sm text-green-900 font-semibold">
+              <!-- <p class="text-sm text-green-900 font-semibold">
                  Rentrée : <span class="text-yellow-400">13 AVRIL 2026</span>
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
@@ -352,15 +255,57 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useSEO } from '@/composables/useSEO'
+import { useAdmissionImages } from '@/services/admissionsImagesService'
+import { useAdmissionDocuments } from '@/services/admissionsDocumentsService'
 
 export default {
   name: 'Admissions',
   setup() {
     const seo = useSEO()
     
-    onMounted(() => {
+    // URL d'arrière-plan par défaut
+    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4826.jpg', import.meta.url).href)
+    const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
+    
+    // Composables Firestore
+    const { images: admissionImages, fetchAdmissionImages } = useAdmissionImages()
+    const { documents: admissionDocuments, fetchAdmissionDocuments, downloadDocument } = useAdmissionDocuments()
+    
+    // État de chargement et téléchargement
+    const loadingImages = ref(false)
+    const loadingDocuments = ref(false)
+    const downloadingFiles = ref({})
+
+    // Galerie d'images depuis Firestore
+    const documentsGallery = computed(() => {
+      return admissionImages.value.map(img => img.image).slice(0, 4)
+    })
+
+    // Documents avec état de téléchargement
+    const documentsWithState = computed(() => {
+      return admissionDocuments.value.map(doc => ({
+        ...doc,
+        isDownloading: downloadingFiles.value[doc.id] || false
+      }))
+    })
+
+    const downloadFile = async (document) => {
+      if (downloadingFiles.value[document.id]) return
+      
+      downloadingFiles.value[document.id] = true
+      try {
+        await downloadDocument(document)
+      } catch (error) {
+        console.error('Erreur téléchargement:', error)
+        alert('Erreur lors du téléchargement du fichier')
+      } finally {
+        downloadingFiles.value[document.id] = false
+      }
+    }
+
+    onMounted(async () => {
       // Configurer le SEO
       seo.setSEO({
         title: 'Admissions CREFER 2025-2026 - Formations CAP, BT & Modulaires',
@@ -368,93 +313,35 @@ export default {
         keywords: 'admissions CREFER, inscription CAP, inscription BT, formation modulaire, rentrée 2025, conditions admission',
         canonical: 'https://crefer.tech/admissions'
       })
-    })
-    
-    // URL d'arrière-plan par défaut (modifiable)
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4826.jpg', import.meta.url).href)
-    const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
-    
-    // Galerie d'images des documents PDF convertis en JPG
-    const documentsGallery = ref([
-      // `${import.meta.env.BASE_URL}pdfs/fiche-inscription-modulaire.jpg`,
-      // `${import.meta.env.BASE_URL}pdfs/fiche-inscription-bt-cap.jpg`,
-      `${import.meta.env.BASE_URL}pdfs/liste-outils-tp.jpg`,
-      `${import.meta.env.BASE_URL}pdfs/flyermodul2026.jpg`,
-      `${import.meta.env.BASE_URL}pdfs/fiche-renseignement-cap.jpg`,
-      `${import.meta.env.BASE_URL}pdfs/fiche-renseignement-bt.jpg`
-    ])
-    
-    // État individuel pour chaque fichier en téléchargement
-    const downloadingFiles = ref({
-      'fiche-inscription-modulaire.pdf': false,
-      'fiche-inscription-bt-cap.pdf': false,
-      'liste-outils-tp.pdf': false,
-      'flyermodul2026.pdf': false,
-      'fiche-renseignement-cap.pdf': false,
-      'fiche-renseignement-bt.pdf': false
-    })
 
-    const downloadFile = async (filename) => {
-      // Empêcher les clics multiples sur le même fichier
-      if (downloadingFiles.value[filename]) return
+      // Charger les données depuis Firestore
+      loadingImages.value = true
+      loadingDocuments.value = true
       
-      downloadingFiles.value[filename] = true
       try {
-        // Construire le chemin en tenant compte de la base Vite
-        const basePath = import.meta.env.BASE_URL
-        const filePath = `${basePath}pdfs/${filename}`
-        
-        // Timeout de 30 secondes pour éviter les téléchargements qui traînent
-        const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 30000)
-        
-        const response = await fetch(filePath, {
-          signal: controller.signal,
-          method: 'GET',
-          priority: 'high' // Priorité haute pour les requêtes de téléchargement
-        })
-        
-        clearTimeout(timeoutId)
-        
-        if (!response.ok) {
-          throw new Error(`Erreur ${response.status}: ${response.statusText}`)
-        }
-        
-        const blob = await response.blob()
-        
-        // Créer et déclencher le téléchargement directement
-        const link = document.createElement('a')
-        link.href = URL.createObjectURL(blob)
-        link.download = filename
-        link.style.display = 'none'
-        document.body.appendChild(link)
-        
-        // Utiliser setTimeout pour s'assurer que le lien est ajouté au DOM
-        setTimeout(() => {
-          link.click()
-          setTimeout(() => {
-            document.body.removeChild(link)
-            URL.revokeObjectURL(link.href)
-          }, 100)
-        }, 10)
+        await Promise.all([
+          fetchAdmissionImages(),
+          fetchAdmissionDocuments()
+        ])
       } catch (error) {
-        console.error('Erreur de téléchargement:', error)
-        if (error.name === 'AbortError') {
-          alert('Le téléchargement a expiré. Vérifiez votre connexion et réessayez.')
-        } else {
-          alert(`Impossible de télécharger ${filename}. Veuillez vérifier votre connexion et réessayer.`)
-        }
+        console.error('Erreur lors du chargement des données:', error)
       } finally {
-        downloadingFiles.value[filename] = false
+        loadingImages.value = false
+        loadingDocuments.value = false
       }
-    }
+    })
 
     return {
-      downloadFile,
       backgroundImageUrl,
       ctaImageUrl,
       documentsGallery,
-      downloadingFiles
+      documentsWithState,
+      downloadingFiles,
+      downloadFile,
+      loadingImages,
+      loadingDocuments,
+      admissionImages,
+      admissionDocuments
     }
   }
 }

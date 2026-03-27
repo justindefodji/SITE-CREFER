@@ -47,10 +47,30 @@
           <div class="bg-white rounded-lg p-6 border-2 border-yellow-400 hover:shadow-lg transition-all">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-gray-600 text-sm font-semibold">Statut</p>
-                <p class="text-xl font-bold text-green-600 mt-2">✓ Actif</p>
+                <p class="text-gray-600 text-sm font-semibold">Galerie</p>
+                <p class="text-3xl font-bold text-black mt-2">{{ galleryStats.total }}</p>
               </div>
-              <span class="text-4xl">✅</span>
+              <span class="text-4xl">🖼️</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 border-2 border-yellow-400 hover:shadow-lg transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-600 text-sm font-semibold">Images Admissions</p>
+                <p class="text-3xl font-bold text-black mt-2">{{ admissionsStats.totalImages }}</p>
+              </div>
+              <span class="text-4xl">📷</span>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 border-2 border-yellow-400 hover:shadow-lg transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-600 text-sm font-semibold">Documents PDF</p>
+                <p class="text-3xl font-bold text-black mt-2">{{ admissionsStats.totalDocuments }}</p>
+              </div>
+              <span class="text-4xl">📄</span>
             </div>
           </div>
         </div>
@@ -93,7 +113,7 @@
         </div>
 
         <!-- Initialize Firebase Section -->
-        <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black">
+        <!-- <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black">
           <h3 class="text-xl font-bold mb-2">Initialiser les pages par défaut</h3>
           <p class="text-gray-800 mb-4">
             Cliquez ci-dessous pour créer la structure de base des pages (home, about, articles, etc.)
@@ -105,10 +125,10 @@
           >
             {{ initializing ? '⏳ Initialisation en cours...' : '🚀 Initialiser Firebase' }}
           </button>
-        </div>
+        </div> -->
 
         <!-- Import Articles Section -->
-        <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black mt-8">
+        <!-- <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black mt-8">
           <h3 class="text-xl font-bold mb-2">Importer les articles par défaut</h3>
           <p class="text-gray-800 mb-4">
             Importez les 5 articles historiques (Soutenance, Promotion, Étudiants, Stage, Examen) dans Firebase
@@ -120,10 +140,10 @@
           >
             {{ importingArticles ? '⏳ Import en cours...' : '📰 Importer les articles' }}
           </button>
-        </div>
+        </div> -->
 
         <!-- Import Videos Section -->
-        <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black mt-8">
+        <!-- <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg p-6 text-black border-2 border-black mt-8">
           <h3 class="text-xl font-bold mb-2">Importer les vidéos par défaut</h3>
           <p class="text-gray-800 mb-4">
             Importez les 2 vidéos YouTube (Excellence et Formation) dans Firebase
@@ -135,7 +155,7 @@
           >
             {{ importingVideos ? '⏳ Import en cours...' : '🎥 Importer les vidéos' }}
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -147,6 +167,9 @@ import AdminSidebar from '../components/AdminSidebar.vue';
 import { getAllPages, initializeDefaultPages } from '../services/contentService';
 import { importDefaultArticles, useArticles } from '../services/articlesService';
 import { useVideosCRUD, importDefaultVideos } from '../services/videosServiceCRUD';
+import { useGallery } from '../services/galleryService';
+import { useAdmissionImages } from '../services/admissionsImagesService';
+import { useAdmissionDocuments } from '../services/admissionsDocumentsService';
 
 export default {
   name: 'AdminDashboard',
@@ -162,6 +185,9 @@ export default {
 
     const { articles, fetchArticles } = useArticles();
     const { videos, fetchVideos } = useVideosCRUD();
+    const { images, fetchGalleryImages } = useGallery();
+    const { images: admissionImages, fetchAdmissionImages } = useAdmissionImages();
+    const { documents: admissionDocuments, fetchAdmissionDocuments } = useAdmissionDocuments();
 
     const pageStats = computed(() => {
       let totalSections = 0;
@@ -187,6 +213,19 @@ export default {
       };
     });
 
+    const galleryStats = computed(() => {
+      return {
+        total: images.value.length,
+      };
+    });
+
+    const admissionsStats = computed(() => {
+      return {
+        totalImages: admissionImages.value.length,
+        totalDocuments: admissionDocuments.value.length,
+      };
+    });
+
     const loadPages = async () => {
       try {
         pages.value = await getAllPages();
@@ -208,6 +247,30 @@ export default {
         await fetchVideos();
       } catch (error) {
         console.error('Error loading videos:', error);
+      }
+    };
+
+    const loadGalleryImages = async () => {
+      try {
+        await fetchGalleryImages();
+      } catch (error) {
+        console.error('Error loading gallery images:', error);
+      }
+    };
+
+    const loadAdmissionImages = async () => {
+      try {
+        await fetchAdmissionImages();
+      } catch (error) {
+        console.error('Error loading admission images:', error);
+      }
+    };
+
+    const loadAdmissionDocuments = async () => {
+      try {
+        await fetchAdmissionDocuments();
+      } catch (error) {
+        console.error('Error loading admission documents:', error);
       }
     };
 
@@ -263,6 +326,9 @@ export default {
       await loadPages();
       await loadArticles();
       await loadVideos();
+      await loadGalleryImages();
+      await loadAdmissionImages();
+      await loadAdmissionDocuments();
       loading.value = false;
     });
 
@@ -270,6 +336,8 @@ export default {
       pageStats,
       articleStats,
       videoStats,
+      galleryStats,
+      admissionsStats,
       loading,
       initializing,
       importingArticles,

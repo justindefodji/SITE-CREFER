@@ -1,5 +1,11 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <!-- Loading State -->
+    <div v-if="loading" class="flex justify-center items-center py-32">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+    </div>
+
+    <template v-else-if="currentArticle">
     <!-- Header Section -->
     <section
       class="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center"
@@ -121,6 +127,22 @@
           </svg>
         </button>
       </div>
+    </div>
+    </template>
+
+    <!-- Error State -->
+    <div v-else class="flex flex-col justify-center items-center py-32">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Article non trouvé</h2>
+      <p class="text-gray-600 mb-6">Désolé, cet article n'existe pas.</p>
+      <router-link
+        to="/articles"
+        class="inline-flex items-center gap-2 py-2 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Retour aux articles
+      </router-link>
     </div>
   </div>
 </template>
@@ -259,29 +281,49 @@ export default {
     onMounted(async () => {
       try {
         const articleId = route.params.id
-        const loadedArticle = await getArticleById(articleId)
-        article.value = loadedArticle
         
-        updateMetaTags(loadedArticle)
+        // D'abord, essayer de charger depuis Firebase (UUID)
+        try {
+          const loadedArticle = await getArticleById(articleId)
+          article.value = loadedArticle
+          updateMetaTags(loadedArticle)
+          
+          // Configurer le SEO
+          seo.setSEO({
+            title: `${loadedArticle.title} - CREFER`,
+            description: loadedArticle.description,
+            keywords: `${loadedArticle.category}, CREFER, actualités, articles`,
+            canonical: `https://crefer.tech/articles/${loadedArticle.id}`
+          })
+          return // Succès, sortir
+        } catch (firebaseError) {
+          console.log('Article non trouvé en Firebase, essai dans articlesData...')
+        }
         
-        // Configurer le SEO
-        seo.setSEO({
-          title: `${loadedArticle.title} - CREFER`,
-          description: loadedArticle.description,
-          keywords: `${loadedArticle.category}, CREFER, actualités, articles`,
-          canonical: `https://crefer.tech/articles/${loadedArticle.id}`
-        })
+        // Fallback: chercher dans articlesData (par numéro d'ID)
+        const numericId = parseInt(articleId)
+        if (!isNaN(numericId)) {
+          const fallbackArticle = articlesData.find(a => a.id === numericId)
+          if (fallbackArticle) {
+            article.value = fallbackArticle
+            updateMetaTags(fallbackArticle)
+            
+            seo.setSEO({
+              title: `${fallbackArticle.title} - CREFER`,
+              description: fallbackArticle.description,
+              keywords: `${fallbackArticle.category}, CREFER, actualités, articles`,
+              canonical: `https://crefer.tech/articles/${fallbackArticle.id}`
+            })
+            return // Succès
+          }
+        }
+        
+        // Si on arrive ici, l'article n'a pas été trouvé
+        console.error('Article non trouvé:', articleId)
+        // article.value reste null, ce qui affichera le message d'erreur
+        
       } catch (error) {
         console.error('Erreur lors du chargement de l\'article:', error)
-        // Fallback: chercher dans articlesData
-        const articleId = parseInt(route.params.id)
-        const fallbackArticle = articlesData.find(a => a.id === articleId)
-        if (fallbackArticle) {
-          article.value = fallbackArticle
-          updateMetaTags(fallbackArticle)
-        } else {
-          router.push('/articles')
-        }
       } finally {
         loading.value = false
       }
