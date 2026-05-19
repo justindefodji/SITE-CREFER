@@ -20,6 +20,7 @@ import AdminLogin from '../pages/AdminLogin.vue'
 import AdminDashboard from '../pages/AdminDashboard.vue'
 import AdminPages from '../pages/AdminPages.vue'
 import AdminPageEditor from '../pages/AdminPageEditor.vue'
+import AdminSiteEditor from '../pages/AdminSiteEditor.vue'
 import { useSEO } from '../composables/useSEO'
 import { adminAuthGuard } from './adminAuthGuard'
 import { initializeAuth } from '../services/authService'
@@ -156,6 +157,15 @@ const routes = [
     path: '/admin/admissions',
     name: 'AdminAdmissions',
     component: AdminAdmissions
+  },
+  {
+    path: '/admin/site-editor',
+    name: 'AdminSiteEditor',
+    component: AdminSiteEditor,
+    meta: {
+      title: 'Éditeur du site - CREFER',
+      description: 'Édition des contenus des pages publiques'
+    }
   },
   {
     path: '/contact',

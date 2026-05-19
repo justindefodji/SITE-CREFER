@@ -16,19 +16,19 @@
           <div class="flex flex-col justify-center">
             <div class="max-w-3xl">
               <div class="text-left">
-                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">À propos</div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">CREFER, PREMIÈRE ACADÉMIE RÉGIONALE</h1>
+                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-100" style="font-family: 'Montserrat', sans-serif;">{{ heroData.badge }}</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ heroData.title }}</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-300">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AXÉE SUR LES MÉTIERS D'<span class="text-yellow-500">ÉNERGIES</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">AVEC SON SIÈGE À <span class="text-yellow-500">LOMÉ-TOGO</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ heroData.line1 }}<span class="text-yellow-500">{{ heroData.line1Highlight }}</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ heroData.line2 }}<span class="text-yellow-500">{{ heroData.line2Highlight }}</span></p>
                 </div>
 
                 <router-link
                   to="/programmes"
                   class="inline-block px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors font-bold text-lg animate-fade-in-up delay-400 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
-                  Découvrir nos formations
+                  {{ heroData.ctaText }}
                 </router-link>
               </div>
             </div>
@@ -50,23 +50,23 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
           <div>
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE HISTOIRE</h2>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ histoireData.heading }}</h2>
             <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-              "DEPUIS 2019, NOUS FORMONS DES JEUNES PRÊTS À RELEVER LES DÉFIS ÉNERGÉTIQUES DE L'AFRIQUE."
+              {{ histoireData.quote }}
             </p>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              , CREFER doit son existence à EGENT TOGO, entreprise solaire expert près les cours et tribunaux du TOGO œuvrant dans la fourniture et la pose du système photovoltaïque et dans l'électricité générale.
+              {{ histoireData.text1 }}
             </p>
             <p class="text-gray-600 leading-relaxed">
-              Le manque des techniciens qualifiés spécialistes en système photovoltaïque est au centre de l'ouverture dudit centre.
+              {{ histoireData.text2 }}
             </p>
           </div>
 
           <!-- Right Image Placeholder -->
           <div class="flex justify-center animate-fade-in-up delay-200">
-            <img 
-              :src="distinction3Image" 
-              alt="Histoire de CREFER" 
+            <img
+              :src="histoireImage"
+              alt="Histoire de CREFER"
               class="w-full max-w-md rounded-lg shadow-lg h-96 object-cover hover:shadow-xl transition-shadow transform hover:scale-105"
             />
           </div>
@@ -82,34 +82,34 @@
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Vision -->
           <div class="animate-fade-in-up">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE VISION</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ visionMissionData.visionTitle }}</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
-              Rendre autonome la jeunesse Africaine au travers d'un métier professionnel pratique pour briser en partie la chaîne du chômage.
+              {{ visionMissionData.visionText1 }}
             </p>
             <p class="text-gray-700 leading-relaxed">
-              Former des ambassadeurs qualifiés aux métiers d'énergies qui puissent vulgariser le bon fonctionnement des installations solaires au travers de leur prestation.
+              {{ visionMissionData.visionText2 }}
             </p>
           </div>
 
           <!-- Mission -->
           <div class="animate-fade-in-up delay-100">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MISSION</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ visionMissionData.missionTitle }}</h2>
             <p class="text-gray-700 leading-relaxed">
-              Offrir une formation de qualité, axée sur les compétences pratiques et les exigences du marché, afin de garantir à chaque apprenant une employabilité durable, une insertion professionnelle réussie et la capacité de d'de la valeur dans son environnement.
+              {{ visionMissionData.missionText }}
             </p>
           </div>
         </div>
 
         <!-- Vision & Mission Images -->
         <div class="grid lg:grid-cols-2 gap-8 mt-12">
-          <img 
-            :src="mission1Image" 
-            alt="Vision CREFER" 
+          <img
+            :src="visionImage1"
+            alt="Vision CREFER"
             class="rounded-lg shadow-lg h-64 object-cover animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105 w-full"
           />
-          <img 
-            :src="vision2Image" 
-            alt="Mission CREFER" 
+          <img
+            :src="visionImage2"
+            alt="Mission CREFER"
             class="rounded-lg shadow-lg h-64 object-cover animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105 w-full"
           />
         </div>
@@ -121,9 +121,9 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up">
           <span class="inline-block text-indigo-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-indigo-100 rounded-full mb-4">Nos Principes</span>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS VALEURS FONDAMENTALES</h2>
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ valeursData.heading }}</h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-100">
-            Les principes qui guident notre engagement envers l'excellence pédagogique et le succès de nos apprenants
+            {{ valeursData.description }}
           </p>
         </div>
         
@@ -147,11 +147,11 @@
                 </div>
                 
                 <!-- Title -->
-                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Discipline</h3>
-                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">{{ valeursData.val1Title }}</h3>
+
                 <!-- Description -->
                 <p class="text-gray-600 leading-relaxed mb-6">
-                  Nous formons des professionnels rigoureux, responsables et respectueux des standards du métier.
+                  {{ valeursData.val1Desc }}
                 </p>
                 
                 <!-- Decorative element -->
@@ -184,11 +184,11 @@
                 </div>
                 
                 <!-- Title -->
-                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300">Excellence</h3>
-                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300">{{ valeursData.val2Title }}</h3>
+
                 <!-- Description -->
                 <p class="text-gray-600 leading-relaxed mb-6">
-                  Nous accompagnons chaque apprenant vers le meilleur de lui-même, avec des formations de haute qualité.
+                  {{ valeursData.val2Desc }}
                 </p>
                 
                 <!-- Decorative element -->
@@ -221,11 +221,11 @@
                 </div>
                 
                 <!-- Title -->
-                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">Professionnalisme</h3>
-                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">{{ valeursData.val3Title }}</h3>
+
                 <!-- Description -->
                 <p class="text-gray-600 leading-relaxed mb-6">
-                  Nous préparons des talents immédiatement opérationnels, capables de répondre efficacement aux exigences du marché.
+                  {{ valeursData.val3Desc }}
                 </p>
                 
                 <!-- Decorative element -->
@@ -245,13 +245,13 @@
     <!-- Notre Méthode Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOTRE MÉTHODE</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center animate-fade-in-up" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ methodeData.heading }}</h2>
         
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-12 animate-fade-in-up delay-100">
           <!-- Left Content -->
           <div>
             <p class="text-lg text-gray-700 leading-relaxed mb-4">
-              Nous offrons une formation complète regroupant la phase théorique, travaux pratiques puis les stages professionnels en entreprise.
+              {{ methodeData.text1 }}
             </p>
             <p class="text-gray-700 leading-relaxed mb-4">
               Nous disposons d’une division spéciale dédiée à l’insertion professionnelle des étudiants. Elle les accompagne également dans le développement de leurs projets entrepreneuriaux liés aux métiers de l’énergie.
@@ -259,19 +259,19 @@
             <div class="space-y-3">
               <div class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Phase théorique avancée</span>
+                <span class="text-gray-700">{{ methodeData.point1 }}</span>
               </div>
               <div class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Travaux pratiques intensifs</span>
+                <span class="text-gray-700">{{ methodeData.point2 }}</span>
               </div>
               <div class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Stages en entreprise</span>
+                <span class="text-gray-700">{{ methodeData.point3 }}</span>
               </div>
               <div class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Accompagnement entrepreneurial</span>
+                <span class="text-gray-700">{{ methodeData.point4 }}</span>
               </div>
             </div>
           </div>
@@ -279,22 +279,22 @@
           <!-- Right Images Placeholder -->
           <div class="grid grid-cols-2 gap-4">
             <img
-              :src="theoryImage"
+              :src="methodeImage1"
               alt="Théorie"
               class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up hover:shadow-xl transition-shadow transform hover:scale-105"
             />
             <img
-              :src="practicalImage"
+              :src="methodeImage2"
               alt="Travaux pratique"
               class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-100 hover:shadow-xl transition-shadow transform hover:scale-105"
             />
             <img
-              :src="stageImage"
+              :src="methodeImage3"
               alt="Stages"
               class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-200 hover:shadow-xl transition-shadow transform hover:scale-105"
             />
             <img
-              :src="entrepreneurshipImage"
+              :src="methodeImage4"
               alt="Entrepreneuriat"
               class="rounded-lg shadow-lg h-40 w-full object-cover animate-fade-in-up delay-300 hover:shadow-xl transition-shadow transform hover:scale-105"
             />
@@ -362,7 +362,7 @@
         <div class="text-center mb-16 animate-fade-in-up">
           <span class="inline-block text-yellow-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-yellow-100 rounded-full mb-4">Nos Infrastructures</span>
           <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
-            NOS DEUX SITES DE FORMATION
+            {{ deuxSitesData.heading }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             CREFER dispose de deux sites de formations distants de 800 mètres pour une meilleure accessibilité
@@ -373,17 +373,17 @@
           <!-- Site 1: Siège -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
             <img 
-              :src="batiment1Image" 
+              :src="site1Image"
               alt="Siège CREFER à Totsi Gblenkome" 
               class="w-full h-64 object-cover"
             />
             <div class="p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Le Siège</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ deuxSitesData.site1Name }}</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
-                Le siège principal de <strong>CREFER</strong>, accueille l'administration et les étudiants inscrits en formation modulaire
+                {{ deuxSitesData.site1Desc }}
               </p>
               <div class="pt-4 border-t border-gray-200">
-                <p class="text-sm text-yellow-600 font-semibold"> Totsi Gblenkome, Lomé</p>
+                <p class="text-sm text-yellow-600 font-semibold">{{ deuxSitesData.site1Addr }}</p>
               </div>
             </div>
           </div>
@@ -391,17 +391,17 @@
           <!-- Site 2: Annexe -->
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
             <img 
-              :src="batiment2Image" 
+              :src="site2Image"
               alt="Annexe CREFER à Totsi" 
               class="w-full h-64 object-cover"
             />
             <div class="p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">L'Annexe</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ deuxSitesData.site2Name }}</h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
                 Non loin de l'agence Yas, l'annexe accueille principalement les apprenants inscrits en CAP et BT
               </p>
               <div class="pt-4 border-t border-gray-200">
-                <p class="text-sm text-yellow-600 font-semibold"> Près de Yas, Totsi</p>
+                <p class="text-sm text-yellow-600 font-semibold">{{ deuxSitesData.site2Addr }}</p>
               </div>
             </div>
           </div>
@@ -415,7 +415,7 @@
             </svg>
           </div>
           <p class="text-2xl font-bold mb-2">Distance entre les deux sites</p>
-          <p class="text-3xl font-extrabold text-yellow-300">800 mètres</p>
+          <p class="text-3xl font-extrabold text-yellow-300">{{ deuxSitesData.distance }}</p>
         </div>
       </div>
     </section>
@@ -426,7 +426,7 @@
         <div class="text-center mb-16 animate-fade-in-up">
           <span class="inline-block text-green-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-green-100 rounded-full mb-4">Approche Pédagogique</span>
           <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
-            UNE FORMATION COMPLÈTE ET DIVERSIFIÉE
+            {{ formationData.heading }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Au-delà de la technique, nous formons des entrepreneurs et des leaders
@@ -442,12 +442,12 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Formation Complète</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ formationData.card1Title }}</h3>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Outre les cours techniques, nos étudiants bénéficient de sessions sur le <strong>leadership</strong> et la <strong>création d'entreprise</strong>.
+              {{ formationData.card1Desc }}
             </p>
             <p class="text-gray-600 text-sm italic">
-              Cette approche holistique vise à former des professionnels compétents et entrepreneurs.
+              
             </p>
             <div class="mt-6 pt-6 border-t border-green-100">
               <ul class="space-y-2 text-sm text-gray-700">
@@ -466,12 +466,12 @@
                 <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Diversité Énergétique</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ formationData.card2Title }}</h3>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Nos cours couvrent diverses <strong>énergies renouvelables</strong>, y compris le <strong>biogaz</strong>, avec des expériences pratiques de cuisson.
+              {{ formationData.card2Desc }}
             </p>
             <p class="text-gray-600 text-sm italic">
-              Expériences basées sur des déchets organiques et cas réels.
+              
             </p>
             <div class="mt-6 pt-6 border-t border-yellow-100">
               <ul class="space-y-2 text-sm text-gray-700">
@@ -490,12 +490,12 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Deux Rentrées par an</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ formationData.card3Title }}</h3>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Nous offrons deux rentrées (<strong>Avril et Octobre</strong>) chaque année depuis plus de 5 ans.
+              {{ formationData.card3Desc }}
             </p>
             <p class="text-gray-600 text-sm italic">
-              Une flexibilité accrue pour les étudiants avec diverses opportunités d'admission.
+              
             </p>
             <div class="mt-6 pt-6 border-t border-blue-100">
               <div class="grid grid-cols-2 gap-4 text-center">
@@ -520,7 +520,7 @@
         <div class="text-center mb-16 animate-fade-in-up">
           <span class="inline-block text-purple-600 text-sm font-bold tracking-widest uppercase px-4 py-2 bg-purple-100 rounded-full mb-4">Reconnaissances</span>
           <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-6" style="font-family: 'Montserrat', sans-serif;">
-            DISTINCTIONS ET COLLABORATIONS
+            {{ distinctionsData.heading }}
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto">
             CREFER est honoré d'avoir reçu plusieurs distinctions au Togo et à l'international
@@ -532,7 +532,7 @@
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.1s;">
             <!-- Image Section -->
             <img
-              :src="distinction1Image"
+              :src="distinctImage1"
               alt="Distinctions Honorifiques"
               class="w-full h-80 object-cover"
             />
@@ -543,22 +543,22 @@
               </h3>
               <div class="space-y-4">
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
-                  <p class="font-bold text-gray-900 text-lg">Décembre 2020</p>
-                  <p class="text-gray-600 text-sm">Meilleur acteur de formation au cours du Forum des Énergies Renouvelables & Emploi des Jeunes</p>
+                  <p class="font-bold text-gray-900 text-lg">{{ distinctionsData.d1Year }}</p>
+                  <p class="text-gray-600 text-sm">{{ distinctionsData.d1Text }}</p>
                 </div>
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
-                  <p class="font-bold text-gray-900 text-lg">Novembre 2023</p>
-                  <p class="text-gray-600 text-sm"> Meilleur Centre de Formation en Énergies Renouvelables au Gala Energy Awards, organisé dans le cadre de la foire des énergies renouvelables au Togo par la Synergie des Acteurs des Énergies Renouvelables (SAER TOGO)</p>
+                  <p class="font-bold text-gray-900 text-lg">{{ distinctionsData.d2Year }}</p>
+                  <p class="text-gray-600 text-sm">{{ distinctionsData.d2Text }}</p>
                 </div>
                 <div class="border-l-4 border-yellow-500 pl-4 py-2">
-                  <p class="font-bold text-gray-900 text-lg">Décembre 2023</p>
+                  <p class="font-bold text-gray-900 text-lg">{{ distinctionsData.d3Year }}</p>
                   <p class="text-gray-600 text-sm"> Meilleur acteur de l'éducation lors de la cérémonie du Grand Prix Général Mathieu KEREKOU à Cotonou</p>
                 </div>
               </div>
               <div class="mt-8 pt-8 border-t border-gray-200">
                 <p class="text-sm text-gray-600 flex items-center gap-2">
                   <span class="text-lg"></span>
-                  <strong>Membre actif de SAER-TOGO</strong>
+                  {{ distinctionsData.memberText }}
                 </p>
                 <p class="text-xs text-gray-500 mt-2">  Synergie des acteurs des énergies renouvelables au Togo</p>
               </div>
@@ -569,7 +569,7 @@
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all animate-fade-in-up" style="animation-delay: 0.2s;">
             <!-- Image Section -->
             <img
-              :src="distinction2Image"
+              :src="distinctImage2"
               alt="Collaborations Académiques"
               class="w-full h-80 object-cover"
             />
@@ -580,9 +580,9 @@
               </h3>
               <div class="space-y-6">
                 <div>
-                  <p class="font-bold text-gray-900 mb-2 text-lg">Commission Consultation Sectorielle (CCS)</p>
+                  <p class="font-bold text-gray-900 mb-2 text-lg">{{ distinctionsData.collab1Title }}</p>
                   <p class="text-gray-600 leading-relaxed text-sm">
-                    CREFER est fière d'être <strong>membre de la CCS du CERME</strong> de l'université de Lomé. Nous collaborons étroitement pour garantir des programmes de qualité et actualisés.
+                    {{ distinctionsData.collab1Text }}
                   </p>
                 </div>
                 <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border border-purple-200">
@@ -724,7 +724,7 @@
     <!-- CTA Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900 to-yellow-500 text-white animate-fade-in-up" v-scroll-animate>
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif;">Prêt à rejoindre CREFER ?</h2>
+        <h2 class="text-3xl font-bold mb-4 animate-slide-in-left" style="font-family: 'Montserrat', sans-serif;">{{ ctaAboutData.heading }}</h2>
         <p class="text-lg text-yellow-100 mb-8 animate-fade-in-up delay-100">
           Découvrez nos programmes et devenez un expert en énergies renouvelables
         </p>
@@ -733,7 +733,7 @@
             to="/admissions"
             class="inline-flex items-center gap-2 px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:shadow-lg transition-colors font-bold transform hover:-translate-y-1 hover:scale-105"
           >
-            Nos Admissions
+            {{ ctaAboutData.btn1Text }}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
@@ -742,7 +742,7 @@
             to="/contact"
             class="px-8 py-3 border-2 border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors font-bold hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
           >
-            Nous Contacter
+            {{ ctaAboutData.btn2Text }}
           </router-link>
         </div>
       </div>
@@ -751,56 +751,167 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useSEO } from '@/composables/useSEO'
+import { usePageContent } from '@/composables/usePageContent'
+
+const _localBg        = new URL('../assets/images/_DSC4828.jpg', import.meta.url).href
+const _localHistImg   = new URL('../assets/images/distinction3-1200.jpg', import.meta.url).href
+const _localVision1   = new URL('../assets/images/stage-58.jpg', import.meta.url).href
+const _localVision2   = new URL('../assets/images/demons.jpg', import.meta.url).href
+const _localTheory    = new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
+const _localPractical = new URL('../assets/images/pratique-1200.jpg', import.meta.url).href
+const _localStage     = new URL('../assets/images/stage01.jpg', import.meta.url).href
+const _localEntrepren = new URL('../assets/images/cfr.jpg', import.meta.url).href
+const _localBat1      = new URL('../assets/images/batiment1-1200.jpg', import.meta.url).href
+const _localBat2      = new URL('../assets/images/batiment2-1200.jpg', import.meta.url).href
+const _localDistinc1  = new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href
+const _localDistinc2  = new URL('../assets/images/distinction2-1200.jpg', import.meta.url).href
 
 export default {
   name: 'About',
   setup() {
     const seo = useSEO()
-    
+    const { get: getContent } = usePageContent('about')
+
     onMounted(() => {
-      // Configurer le SEO
       seo.setSEO({
-        title: 'À Propos de CREFER - Académie d\'Énergies Renouvelables au Togo',
-        description: 'Découvrez CREFER, la première académie régionale axée sur les métiers d\'énergies renouvelables. Basée à Lomé-Togo, nous formons depuis 2019 des experts en électricité et énergie solaire.',
+        title: "À Propos de CREFER - Académie d'Énergies Renouvelables au Togo",
+        description: "Découvrez CREFER, la première académie régionale axée sur les métiers d'énergies renouvelables. Basée à Lomé-Togo, nous formons depuis 2019 des experts en électricité et énergie solaire.",
         keywords: 'CREFER, académie énergies renouvelables, formation électricité, formation solaire, Togo, école technique',
         canonical: 'https://crefer.tech/about'
       })
     })
 
+    // ── Hero ─────────────────────────────────────────────────────────────────
+    const backgroundImageUrl = computed(() => getContent('hero', 'backgroundImage', '') || _localBg)
+    const heroData = computed(() => ({
+      badge:         getContent('hero', 'badge',         'À propos'),
+      title:         getContent('hero', 'title',         'CREFER, PREMIÈRE ACADÉMIE RÉGIONALE'),
+      line1:         getContent('hero', 'line1',         "AXÉE SUR LES MÉTIERS D'"),
+      line1Highlight:getContent('hero', 'line1Highlight','ÉNERGIES'),
+      line2:         getContent('hero', 'line2',         'AVEC SON SIÈGE À '),
+      line2Highlight:getContent('hero', 'line2Highlight','LOMÉ-TOGO'),
+      ctaText:       getContent('hero', 'ctaText',       'Découvrir nos formations'),
+    }))
+
+    // ── Histoire ─────────────────────────────────────────────────────────────
+    const histoireImage = computed(() => getContent('histoire', 'image', '') || _localHistImg)
+    const histoireData = computed(() => ({
+      heading: getContent('histoire', 'heading', 'NOTRE HISTOIRE'),
+      quote:   getContent('histoire', 'quote',   "\"DEPUIS 2019, NOUS FORMONS DES JEUNES PRÊTS À RELEVER LES DÉFIS ÉNERGÉTIQUES DE L'AFRIQUE.\""),
+      text1:   getContent('histoire', 'text1',   ''),
+      text2:   getContent('histoire', 'text2',   ''),
+    }))
+
+    // ── Vision / Mission ─────────────────────────────────────────────────────
+    const visionImage1 = computed(() => getContent('vision_mission', 'image1', '') || _localVision1)
+    const visionImage2 = computed(() => getContent('vision_mission', 'image2', '') || _localVision2)
+    const visionMissionData = computed(() => ({
+      visionTitle: getContent('vision_mission', 'visionTitle', 'NOTRE VISION'),
+      visionText1: getContent('vision_mission', 'visionText1', ''),
+      visionText2: getContent('vision_mission', 'visionText2', ''),
+      missionTitle:getContent('vision_mission', 'missionTitle','NOTRE MISSION'),
+      missionText: getContent('vision_mission', 'missionText', ''),
+    }))
+
+    // ── Valeurs ───────────────────────────────────────────────────────────────
+    const valeursData = computed(() => ({
+      heading:     getContent('valeurs', 'heading',     'NOS VALEURS FONDAMENTALES'),
+      description: getContent('valeurs', 'description', ''),
+      val1Title:   getContent('valeurs', 'val1Title',   'Discipline'),
+      val1Desc:    getContent('valeurs', 'val1Desc',    ''),
+      val2Title:   getContent('valeurs', 'val2Title',   'Excellence'),
+      val2Desc:    getContent('valeurs', 'val2Desc',    ''),
+      val3Title:   getContent('valeurs', 'val3Title',   'Professionnalisme'),
+      val3Desc:    getContent('valeurs', 'val3Desc',    ''),
+    }))
+
+    // ── Méthode ───────────────────────────────────────────────────────────────
+    const methodeImage1 = computed(() => getContent('methode', 'image1', '') || _localTheory)
+    const methodeImage2 = computed(() => getContent('methode', 'image2', '') || _localPractical)
+    const methodeImage3 = computed(() => getContent('methode', 'image3', '') || _localStage)
+    const methodeImage4 = computed(() => getContent('methode', 'image4', '') || _localEntrepren)
+    const methodeData = computed(() => ({
+      heading: getContent('methode', 'heading', 'NOTRE MÉTHODE'),
+      text1:   getContent('methode', 'text1',   ''),
+      text2:   getContent('methode', 'text2',   ''),
+      point1:  getContent('methode', 'point1',  'Phase théorique avancée'),
+      point2:  getContent('methode', 'point2',  'Travaux pratiques intensifs'),
+      point3:  getContent('methode', 'point3',  'Stages en entreprise'),
+      point4:  getContent('methode', 'point4',  'Accompagnement entrepreneurial'),
+    }))
+
+    // ── Deux Sites ────────────────────────────────────────────────────────────
+    const site1Image = computed(() => getContent('deux_sites', 'site1Image', '') || _localBat1)
+    const site2Image = computed(() => getContent('deux_sites', 'site2Image', '') || _localBat2)
+    const deuxSitesData = computed(() => ({
+      heading:     getContent('deux_sites', 'heading',     'NOS DEUX SITES DE FORMATION'),
+      description: getContent('deux_sites', 'description', ''),
+      site1Name:   getContent('deux_sites', 'site1Name',   'Le Siège'),
+      site1Desc:   getContent('deux_sites', 'site1Desc',   ''),
+      site1Addr:   getContent('deux_sites', 'site1Addr',   'Totsi Gblenkome, Lomé'),
+      site2Name:   getContent('deux_sites', 'site2Name',   "L'Annexe"),
+      site2Desc:   getContent('deux_sites', 'site2Desc',   ''),
+      site2Addr:   getContent('deux_sites', 'site2Addr',   'Près de Yas, Totsi'),
+      distance:    getContent('deux_sites', 'distance',    '800 mètres'),
+    }))
+
+    // ── Formation ─────────────────────────────────────────────────────────────
+    const formationData = computed(() => ({
+      heading:    getContent('formation', 'heading',    'UNE FORMATION COMPLÈTE ET DIVERSIFIÉE'),
+      description:getContent('formation', 'description',''),
+      card1Title: getContent('formation', 'card1Title', 'Formation Complète'),
+      card1Desc:  getContent('formation', 'card1Desc',  ''),
+      card2Title: getContent('formation', 'card2Title', 'Diversité Énergétique'),
+      card2Desc:  getContent('formation', 'card2Desc',  ''),
+      card3Title: getContent('formation', 'card3Title', 'Deux Rentrées par an'),
+      card3Desc:  getContent('formation', 'card3Desc',  ''),
+    }))
+
+    // ── Distinctions ──────────────────────────────────────────────────────────
+    const distinctImage1 = computed(() => getContent('distinctions', 'image1', '') || _localDistinc1)
+    const distinctImage2 = computed(() => getContent('distinctions', 'image2', '') || _localDistinc2)
+    const distinctionsData = computed(() => ({
+      heading:     getContent('distinctions', 'heading',     'DISTINCTIONS ET COLLABORATIONS'),
+      description: getContent('distinctions', 'description', ''),
+      d1Year:      getContent('distinctions', 'd1Year',      'Décembre 2020'),
+      d1Text:      getContent('distinctions', 'd1Text',      ''),
+      d2Year:      getContent('distinctions', 'd2Year',      'Novembre 2023'),
+      d2Text:      getContent('distinctions', 'd2Text',      ''),
+      d3Year:      getContent('distinctions', 'd3Year',      'Décembre 2023'),
+      d3Text:      getContent('distinctions', 'd3Text',      ''),
+      memberText:  getContent('distinctions', 'memberText',  'Membre actif de SAER-TOGO'),
+      collab1Title:getContent('distinctions', 'collab1Title','Commission Consultation Sectorielle (CCS)'),
+      collab1Text: getContent('distinctions', 'collab1Text', ''),
+    }))
+
+    // ── CTA ───────────────────────────────────────────────────────────────────
+    const ctaAboutData = computed(() => ({
+      heading:     getContent('cta', 'heading',     'Prêt à rejoindre CREFER ?'),
+      description: getContent('cta', 'description', ''),
+      btn1Text:    getContent('cta', 'btn1Text',    'Nos Admissions'),
+      btn2Text:    getContent('cta', 'btn2Text',    'Nous Contacter'),
+    }))
+
+    // ── Static programme card images (not CMS-managed) ────────────────────────
+    const elecImage         = new URL('../assets/images/pe4.jpg', import.meta.url).href
+    const efficaciteImage   = new URL('../assets/images/pe2.jpg', import.meta.url).href
+    const expertImage       = new URL('../assets/images/pe3.jpg', import.meta.url).href
+
     return {
-      seo
+      backgroundImageUrl,
+      heroData,
+      histoireImage, histoireData,
+      visionImage1, visionImage2, visionMissionData,
+      valeursData,
+      methodeImage1, methodeImage2, methodeImage3, methodeImage4, methodeData,
+      site1Image, site2Image, deuxSitesData,
+      formationData,
+      distinctImage1, distinctImage2, distinctionsData,
+      ctaAboutData,
+      elecImage, efficaciteImage, expertImage,
     }
   },
-  data() {
-    return {
-      // Image de fond du hero section
-      backgroundImageUrl: new URL('../assets/images/_DSC4828.jpg', import.meta.url).href,
-      // images des cartes programmess sorties du template
-      elecImage: new URL('../assets/images/pe4.jpg', import.meta.url).href,
-      efficaciteImage: new URL('../assets/images/pe2.jpg', import.meta.url).href,
-      expertImage: new URL('../assets/images/pe3.jpg', import.meta.url).href,
-      batiment1Image: new URL('../assets/images/batiment1-1200.jpg', import.meta.url).href,
-      batiment2Image: new URL('../assets/images/batiment2-1200.jpg', import.meta.url).href,
-      distinction3Image: new URL('../assets/images/distinction3-1200.jpg', import.meta.url).href,
-      mission1Image: new URL('../assets/images/stage-58.jpg', import.meta.url).href,
-      vision2Image: new URL('../assets/images/demons.jpg', import.meta.url).href,
-      theoryImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href,
-      practicalImage: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
-      stageImage: new URL('../assets/images/stage01.jpg', import.meta.url).href,
-      entrepreneurshipImage: new URL('../assets/images/cfr.jpg', import.meta.url).href,
-      distinction1Image: new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href,
-      distinction2Image: new URL('../assets/images/distinction2-1200.jpg', import.meta.url).href
-      
-    }
-  },
-  methods: {
-    webpSrcset(original) {
-      if (!original) return '';
-      const base = original.replace(/\.jpg$/i, '').replace(/\.jpeg$/i, '');
-      return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`;
-    }
-  }
 }
 </script>

@@ -4,18 +4,16 @@
       <!-- Desktop / Tablet: regular grid -->
       <div class="hidden sm:grid grid-cols-3 gap-4 md:gap-8 text-[12px] sm:text-sm leading-snug text-gray-700 items-center justify-center">
         <div class="py-2 text-center">
-          <span class="font-bold text-gray-900">ANNÉE</span>
-          <span class="text-yellow-500 font-bold ml-1">2025-2026</span>
+          <span class="font-bold text-gray-900">{{ bar.item1Label }}</span>
+          <span class="text-yellow-500 font-bold ml-1">{{ bar.item1Value }}</span>
         </div>
-
         <div class="py-2 text-center">
-          <span class="font-bold text-gray-900">CAP & BT</span>
-          <span class="text-yellow-500 font-bold ml-1">15 SEPTEMBRE 2025</span>
+          <span class="font-bold text-gray-900">{{ bar.item2Label }}</span>
+          <span class="text-yellow-500 font-bold ml-1">{{ bar.item2Value }}</span>
         </div>
-
         <div class="py-2 text-center">
-          <span class="font-bold text-gray-900">MODULAIRE</span>
-          <span class="text-yellow-500 font-bold ml-1">13 AVRIL 2026</span>
+          <span class="font-bold text-gray-900">{{ bar.item3Label }}</span>
+          <span class="text-yellow-500 font-bold ml-1">{{ bar.item3Value }}</span>
         </div>
       </div>
 
@@ -23,15 +21,13 @@
       <div class="sm:hidden">
         <div class="marquee-wrapper overflow-hidden">
           <div class="marquee-track text-gray-700 font-bold">
-            <span class="marquee-item">ANNÉE <span class="text-yellow-500">2025-2026</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEPTEMBRE 2025</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">MODULAIRE <span class="text-yellow-500">13 AVRIL 2026</span></span>
-
+            <span class="marquee-item">{{ bar.item1Label }} <span class="text-yellow-500">{{ bar.item1Value }}</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">{{ bar.item2Label }} <span class="text-yellow-500">{{ bar.item2Value }}</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">{{ bar.item3Label }} <span class="text-yellow-500">{{ bar.item3Value }}</span></span>
             <!-- répéter pour boucle fluide -->
-            <span class="marquee-item">&nbsp;&nbsp;ANNÉE <span class="text-yellow-500">2025-2026</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">CAP & BT <span class="text-yellow-500">15 SEPTEMBRE 2025</span> &nbsp; • &nbsp; </span>
-            <span class="marquee-item">MODULAIRE <span class="text-yellow-500">13 AVRIL 2026</span></span>
-            
+            <span class="marquee-item">&nbsp;&nbsp;{{ bar.item1Label }} <span class="text-yellow-500">{{ bar.item1Value }}</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">{{ bar.item2Label }} <span class="text-yellow-500">{{ bar.item2Value }}</span> &nbsp; • &nbsp; </span>
+            <span class="marquee-item">{{ bar.item3Label }} <span class="text-yellow-500">{{ bar.item3Value }}</span></span>
           </div>
         </div>
       </div>
@@ -40,13 +36,29 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { usePageContent } from '@/composables/usePageContent'
+
 export default {
-  name: 'InfosBar'
+  name: 'InfosBar',
+  setup() {
+    const { get } = usePageContent('global')
+
+    const bar = computed(() => ({
+      item1Label: get('infobar', 'item1Label', 'ANNÉE'),
+      item1Value: get('infobar', 'item1Value', '2025-2026'),
+      item2Label: get('infobar', 'item2Label', 'CAP & BT'),
+      item2Value: get('infobar', 'item2Value', '15 SEPTEMBRE 2025'),
+      item3Label: get('infobar', 'item3Label', 'MODULAIRE'),
+      item3Value: get('infobar', 'item3Value', '13 AVRIL 2026'),
+    }))
+
+    return { bar }
+  },
 }
 </script>
 
 <style scoped>
-/* Mobile marquee animation: translate from right to left */
 .marquee-wrapper {
   width: 100%;
 }
@@ -54,7 +66,6 @@ export default {
   display: inline-block;
   white-space: nowrap;
   will-change: transform;
-  /* durée allongée pour ralentir le défilement (boucle continue) */
   animation: marquee-scroll 50s linear infinite;
   font-weight: 600;
   font-size: 13px;
@@ -69,7 +80,6 @@ export default {
   100% { transform: translateX(-100%); }
 }
 
-/* Reduce animation speed if user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }

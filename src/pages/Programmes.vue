@@ -13,10 +13,10 @@
       <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20 py-20">
         <div>
           <div class="mb-6">
-            <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4" style="font-family: 'Montserrat', sans-serif;">Nos Formations</div>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">NOS PROGRAMMES DE FORMATIONS</h1>
+            <div class="text-yellow-300 text-sm font-semibold tracking-widest uppercase mb-4" style="font-family: 'Montserrat', sans-serif;">{{ heroData.badge }}</div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ heroData.title }}</h1>
             <p class="text-lg md:text-xl text-blue-100 max-w-2xl">
-              Découvrez l'ensemble de nos formations complètes : théorie, travaux pratiques, stages et accompagnement entrepreneurial.
+              {{ heroData.description }}
             </p>
           </div>
         </div>
@@ -27,9 +27,9 @@
     <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white scroll-reveal">
       <div class="max-w-7xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-yellow-400">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Notre Approche Pédagogique</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">{{ introData.heading }}</h2>
           <p class="text-gray-700 text-lg leading-relaxed">
-            Au CREFER, nous bâtissons des professionnels grâce à la discipline, la rigueur et un accompagnement constant.
+            {{ introData.text }}
           </p>
         </div>
       </div>
@@ -47,8 +47,8 @@
               </svg>
             </div>
             <div class="section-title">
-              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">CAP Électricité d'Équipement</h2>
-              <p class="text-gray-600">Formation complète de 3 ans</p>
+              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">{{ capData.heading }}</h2>
+              <p class="text-gray-600">{{ capData.subtitle }}</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@
             <!-- Hero Image -->
             <div class="rounded-xl overflow-hidden shadow-lg h-96">
               <img 
-                :src="capHeroImage"
+                :src="capImage"
                 alt="CAP Électricité"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -66,33 +66,33 @@
             <div class="flex flex-col justify-center space-y-4">
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Niveau de Qualification</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Le CAP est un diplôme d'état, attestant une qualification professionnelle de base.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ capData.qualifText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Durée de la Formation</h4>
-                <p class="text-gray-700 text-base leading-relaxed">La formation s'étend sur trois (03) ans avec un niveau d'entrée minimum de la classe de quatrième.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ capData.dureeText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Objectifs</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Former des ouvriers qualifiés capables d'exécuter des travaux d'installation et de maintenance des équipements électriques dans les bâtiments neuves ou en rénovation.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ capData.objectifsText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Débouchés Professionnels</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Les titulaires peuvent exercer en tant qu'électriciens d'équipement, installateurs ou maintenanciers en électricité et poursuivre les études en Brevet de Technicien en électrotechnique.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ capData.debouchesText }}</p>
               </div>
               <div class="space-y-3">
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : Minimun la classe de quatrième (4ème)</p>
-                    <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
+                    <p class="font-bold text-gray-900">{{ capData.entreeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ capData.entreeSub }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : 3 ans</p>
-                    <p class="text-gray-600 text-sm">Rentrée : 15 Septembre 2025</p>
+                    <p class="font-bold text-gray-900">{{ capData.dureeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ capData.dureeSub }}</p>
                   </div>
                 </div>
               </div>
@@ -208,8 +208,8 @@
               </svg>
             </div>
             <div>
-              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">BT Électrotechnique</h2>
-              <p class="text-gray-600">Formation de technicien supérieur</p>
+              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">{{ btData.heading }}</h2>
+              <p class="text-gray-600">{{ btData.subtitle }}</p>
             </div>
           </div>
 
@@ -227,33 +227,33 @@
             <div class="flex flex-col justify-center space-y-4">
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Niveau de Qualification</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Le BT est un diplôme d'état équivalent au baccalauréat professionnel, attestant d'une qualification technique approfondie.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ btData.qualifText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Durée de la Formation</h4>
-                <p class="text-gray-700 text-base leading-relaxed">La formation dure deux à trois ans avec un niveau d'entrée minimum de BEPC ou un CAP en électricité d'équipement.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ btData.dureeText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Objectifs</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Former des techniciens capables de concevoir, installer, gérer et maintenir des systèmes électrotechniques complexes, incluant la production, le transport, la distribution et l'utilisation de l'énergie électrique.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ btData.objectifsText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Débouchés Professionnels</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Les diplômés peuvent occuper des postes de techniciens en électrotechnique, chefs de chantier en installations électriques, ou poursuivre leurs études vers un Brevet de Technicien Supérieur (BTS), Licence en électrotechnique.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ btData.debouchesText }}</p>
               </div>
               <div class="space-y-3">
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : BEPC ou un CAP en électricité d'équipement </p>
-                    <p class="text-gray-600 text-sm">Avec excellente motivation et connaissances scientifiques</p>
+                    <p class="font-bold text-gray-900">{{ btData.entreeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ btData.entreeSub }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : 3 ans</p>
-                    <p class="text-gray-600 text-sm">Rentrée : 15 Septembre 2025</p>
+                    <p class="font-bold text-gray-900">{{ btData.dureeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ btData.dureeSub }}</p>
                   </div>
                 </div>
               </div>
@@ -369,8 +369,8 @@
               </svg>
             </div>
             <div>
-              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">Formations Modulaires</h2>
-              <p class="text-gray-600">2 filières à la carte flexibles</p>
+              <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Montserrat', sans-serif;">{{ modulaireData.heading }}</h2>
+              <p class="text-gray-600">{{ modulaireData.subtitle }}</p>
             </div>
           </div>
 
@@ -378,7 +378,7 @@
             <!-- Hero Image -->
             <div class="rounded-xl overflow-hidden shadow-lg h-96">
               <img 
-                :src="modulaireHeroImage"
+                :src="modulaireImage"
                 alt="Formations Modulaires"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -388,36 +388,36 @@
             <div class="flex flex-col justify-center space-y-4">
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Vue d'ensemble</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Nos formations modulaires (06 ou 12 mois) offrent une grande flexibilité et permettent aux apprenants de développer des compétences spécifiques de manière progressive et adaptée à leurs besoins.<br> La formation est sanctionnée par un certificat et une attestation de stage.<br>le choix se fait selon les moyens financiers de l'apprenant et sa disponibilité</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ modulaireData.overviewText }}</p>
               </div>
               <div>
                 <h4 class="font-bold text-gray-900 mb-2">Conditions d'Admissions</h4>
-                <p class="text-gray-700 text-base leading-relaxed">Un niveau d'entrée minimum de BEPC ou équivalent.</p>
+                <p class="text-gray-700 text-base leading-relaxed">{{ modulaireData.conditionsText }}</p>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 mb-2">Option Niveau 1 : 06 mois</h4>
-                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d'Équipement & Énergie Solaire</span></p>
-                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est apte à réaliser et entretenir des installations électriques dans les bâtiments résidentiels et commerciaux. Il peut aussi dimensionner et installer des systèmes solaires domestiques. Il peut exercer à son propre compte comme patron électricien/technicien solaire ou être recruté dans une entreprise de BTP ou d'énergie.</p>
+                <h4 class="font-bold text-gray-900 mb-2">{{ modulaireData.niveau1Title }}</h4>
+                <p class="text-gray-700 text-base leading-relaxed">{{ modulaireData.niveau1Label }}</p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">{{ modulaireData.niveau1Text }}</p>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 mb-2">Option Niveau 2 : 12 mois</h4>
-                <p class="text-gray-700 text-base leading-relaxed"><span class="font-semibold">Électricité d'Équipement & Énergie Solaire</span></p>
-                <p class="text-gray-700 text-sm leading-relaxed mt-1">Le diplômé est capable d'installer et de dépanner des systèmes électriques dans les bâtiments et les usines. Il maîtrise aussi l'installation de systèmes solaires de plus grande capacité, le pompage solaire et la programmation d'onduleurs hybrides. Il peut exercer à son compte ou en entreprise (Industrie, BTP, solaire).</p>
+                <h4 class="font-bold text-gray-900 mb-2">{{ modulaireData.niveau2Title }}</h4>
+                <p class="text-gray-700 text-base leading-relaxed">{{ modulaireData.niveau2Label }}</p>
+                <p class="text-gray-700 text-sm leading-relaxed mt-1">{{ modulaireData.niveau2Text }}</p>
               </div>
               <div class="space-y-3 pt-2">
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   
                   <div>
-                    <p class="font-bold text-gray-900">Entrée : BEPC ou équivalent</p>
-                    <p class="text-gray-600 text-sm">Flexible selon votre profil et vos objectifs</p>
+                    <p class="font-bold text-gray-900">{{ modulaireData.entreeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ modulaireData.entreeSub }}</p>
                   </div>
                 </div>
                 <div class="flex items-start">
                   <span class="text-yellow-400 font-bold mr-3 text-xl">✓</span>
                   <div>
-                    <p class="font-bold text-gray-900">Durée : 6 ou 12 mois</p>
-                    <p class="text-gray-600 text-sm">Rentrée : 13 Avril 2026</p>
+                    <p class="font-bold text-gray-900">{{ modulaireData.dureeLabel }}</p>
+                    <p class="text-gray-600 text-sm">{{ modulaireData.dureeSub }}</p>
                   </div>
                 </div>
               </div>
@@ -529,16 +529,15 @@
     <!-- CTA Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-yellow-600 to-amber-600 text-white">
       <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-6" style="font-family: 'Montserrat', sans-serif;">Trouvez le programme qui vous convient</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-6" style="font-family: 'Montserrat', sans-serif;">{{ ctaData.heading }}</h2>
         <p class="text-lg text-yellow-100 mb-8 max-w-2xl mx-auto">
-          Que vous soyez un étudiant à la recherche d’une formation complète, un professionnel souhaitant développer ses compétences, un fonctionnaire en quête de nouvelles aptitudes, ou encore en pleine reconversion, le CREFER a la solution pour vous.
-        </p>
+          {{ ctaData.text }}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <router-link
             to="/admissions"
             class="inline-flex items-center gap-2 px-8 py-4 bg-white text-yellow-600 rounded-lg hover:shadow-lg transition-all font-bold transform hover:-translate-y-1 hover:scale-105"
           >
-            S'inscrire
+            {{ ctaData.btn1Text }}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -547,7 +546,7 @@
             to="/contact"
             class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-yellow-600 transition-all font-bold transform hover:-translate-y-1 hover:scale-105"
           >
-            Plus d'infos
+            {{ ctaData.btn2Text }}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -559,23 +558,28 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { computed, onMounted, onBeforeUnmount } from 'vue'
 import { useSEO } from '@/composables/useSEO'
+import { usePageContent } from '@/composables/usePageContent'
+
+const _localBg        = new URL('../assets/images/pratique-1200.jpg', import.meta.url).href
+const _localCapImg    = new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
+const _localBtImg     = new URL('../assets/images/_DSC4864.jpg', import.meta.url).href
+const _localModImg    = new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
 
 export default {
   name: 'Programmes',
   setup() {
     const seo = useSEO()
-    
+    const { get: getContent } = usePageContent('programmes')
+
     onMounted(() => {
-      // Configurer le SEO
       seo.setSEO({
         title: 'Tous nos Programmes de Formation - CREFER',
         description: 'Découvrez tous les programmes de formation CREFER : CAP Électricité, BT Électrotechnique et Formations Modulaires avec théorie, travaux pratiques, stages.',
         keywords: 'programmes formation, CAP, BT, formations modulaires, électricité, CREFER, école technique',
         canonical: 'https://crefer.tech/programmes'
       })
-      
       handleScroll()
       window.addEventListener('scroll', handleScroll)
     })
@@ -585,29 +589,93 @@ export default {
     })
 
     const handleScroll = () => {
-      const elements = document.querySelectorAll('.scroll-reveal')
-      elements.forEach(element => {
-        const rect = element.getBoundingClientRect()
-        const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0
-        if (isVisible) {
-          element.classList.add('revealed')
-        }
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) el.classList.add('revealed')
       })
     }
 
+    // ── Hero ─────────────────────────────────────────────────────────────────
+    const backgroundImageUrl = computed(() => getContent('hero', 'backgroundImage', '') || _localBg)
+    const heroData = computed(() => ({
+      badge:       getContent('hero', 'badge',       'Nos Formations'),
+      title:       getContent('hero', 'title',       'NOS PROGRAMMES DE FORMATIONS'),
+      description: getContent('hero', 'description', ''),
+    }))
+
+    // ── Intro ─────────────────────────────────────────────────────────────────
+    const introData = computed(() => ({
+      heading: getContent('intro', 'heading', 'Notre Approche Pédagogique'),
+      text:    getContent('intro', 'text',    ''),
+    }))
+
+    // ── CAP ───────────────────────────────────────────────────────────────────
+    const capImage = computed(() => getContent('cap', 'image', '') || _localCapImg)
+    const capData = computed(() => ({
+      heading:      getContent('cap', 'heading',      "CAP Électricité d'Équipement"),
+      subtitle:     getContent('cap', 'subtitle',     'Formation complète de 3 ans'),
+      qualifText:   getContent('cap', 'qualifText',   ''),
+      dureeText:    getContent('cap', 'dureeText',    ''),
+      objectifsText:getContent('cap', 'objectifsText',''),
+      debouchesText:getContent('cap', 'debouchesText',''),
+      entreeLabel:  getContent('cap', 'entreeLabel',  'Entrée : Minimun la classe de quatrième (4ème)'),
+      entreeSub:    getContent('cap', 'entreeSub',    'Avec excellente motivation et connaissances scientifiques'),
+      dureeLabel:   getContent('cap', 'dureeLabel',   'Durée : 3 ans'),
+      dureeSub:     getContent('cap', 'dureeSub',     'Rentrée : 15 Septembre 2025'),
+    }))
+
+    // ── BT ────────────────────────────────────────────────────────────────────
+    const btImage = computed(() => getContent('bt', 'image', '') || _localBtImg)
+    const btData = computed(() => ({
+      heading:      getContent('bt', 'heading',      'BT Électrotechnique'),
+      subtitle:     getContent('bt', 'subtitle',     'Formation de technicien supérieur'),
+      qualifText:   getContent('bt', 'qualifText',   ''),
+      dureeText:    getContent('bt', 'dureeText',    ''),
+      objectifsText:getContent('bt', 'objectifsText',''),
+      debouchesText:getContent('bt', 'debouchesText',''),
+      entreeLabel:  getContent('bt', 'entreeLabel',  "Entrée : BEPC ou un CAP en électricité d'équipement"),
+      entreeSub:    getContent('bt', 'entreeSub',    'Avec excellente motivation et connaissances scientifiques'),
+      dureeLabel:   getContent('bt', 'dureeLabel',   'Durée : 3 ans'),
+      dureeSub:     getContent('bt', 'dureeSub',     'Rentrée : 15 Septembre 2025'),
+    }))
+
+    // ── Modulaire ─────────────────────────────────────────────────────────────
+    const modulaireImage = computed(() => getContent('modulaire', 'image', '') || _localModImg)
+    const modulaireData = computed(() => ({
+      heading:       getContent('modulaire', 'heading',       'Formations Modulaires'),
+      subtitle:      getContent('modulaire', 'subtitle',      '2 filières à la carte flexibles'),
+      overviewText:  getContent('modulaire', 'overviewText',  ''),
+      conditionsText:getContent('modulaire', 'conditionsText',''),
+      niveau1Title:  getContent('modulaire', 'niveau1Title',  'Option Niveau 1 : 06 mois'),
+      niveau1Label:  getContent('modulaire', 'niveau1Label',  "Électricité d'Équipement & Énergie Solaire"),
+      niveau1Text:   getContent('modulaire', 'niveau1Text',   ''),
+      niveau2Title:  getContent('modulaire', 'niveau2Title',  'Option Niveau 2 : 12 mois'),
+      niveau2Label:  getContent('modulaire', 'niveau2Label',  "Électricité d'Équipement & Énergie Solaire"),
+      niveau2Text:   getContent('modulaire', 'niveau2Text',   ''),
+      entreeLabel:   getContent('modulaire', 'entreeLabel',   'Entrée : BEPC ou équivalent'),
+      entreeSub:     getContent('modulaire', 'entreeSub',     'Flexible selon votre profil et vos objectifs'),
+      dureeLabel:    getContent('modulaire', 'dureeLabel',    'Durée : 6 ou 12 mois'),
+      dureeSub:      getContent('modulaire', 'dureeSub',      'Rentrée : 13 Avril 2026'),
+    }))
+
+    // ── CTA ───────────────────────────────────────────────────────────────────
+    const ctaData = computed(() => ({
+      heading:  getContent('cta', 'heading',  'Trouvez le programme qui vous convient'),
+      text:     getContent('cta', 'text',     ''),
+      btn1Text: getContent('cta', 'btn1Text', "S'inscrire"),
+      btn2Text: getContent('cta', 'btn2Text', "Plus d'infos"),
+    }))
+
     return {
-      seo,
-      handleScroll
+      backgroundImageUrl,
+      heroData, introData,
+      capImage, capData,
+      btImage, btData,
+      modulaireImage, modulaireData,
+      ctaData,
+      handleScroll,
     }
   },
-  data() {
-    return {
-      backgroundImageUrl: new URL('../assets/images/pratique-1200.jpg', import.meta.url).href,
-      capHeroImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href,
-      btHeroImage: new URL('../assets/images/_DSC4864.jpg', import.meta.url).href,
-      modulaireHeroImage: new URL('../assets/images/théorie-1200.jpg', import.meta.url).href
-    }
-  }
 }
 </script>
 

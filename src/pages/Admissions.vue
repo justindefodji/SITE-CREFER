@@ -16,19 +16,19 @@
           <div class="flex flex-col justify-center animate-fade-in-up">
             <div class="max-w-3xl">
               <div class="text-left mb-6 animate-fade-in-up delay-100">
-                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">Admission 2025</div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-300" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">RENTRÉE ACADÉMIQUE 2025-2026</h1>
+                <div class="text-yellow-500 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif;">{{ heroData.badge }}</div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up delay-300" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ heroData.title }}</h1>
 
                 <div class="space-y-3 mb-8 animate-fade-in-up delay-400">
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT : <span class="text-yellow-500">15 SEPTEMBRE 2025</span></p>
-                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">MODULAIRE : <span class="text-yellow-500">13 AVRIL 2026</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ heroData.capBtLabel }} <span class="text-yellow-500">{{ heroData.capBtDate }}</span></p>
+                  <p class="text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-tight text-blue-100" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ heroData.modulaireLabel }} <span class="text-yellow-500">{{ heroData.modulaireDate }}</span></p>
                 </div>
 
                 <router-link
                   to="/contact"
                   class="inline-block px-10 md:px-12 py-4 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-all duration-300 font-bold text-lg animate-fade-in-up delay-500 hover:shadow-lg transform hover:-translate-y-1" style="font-family: 'Montserrat', sans-serif;"
                 >
-                  Nous contacter
+                  {{ heroData.ctaText }}
                 </router-link>
               </div>
             </div>
@@ -43,7 +43,7 @@
     <!-- Fiches et Documents Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-cyan-50">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Fiches d'Inscription & Documentation</h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ fichesData.heading }}</h2>
 
         <div class="grid lg:grid-cols-2 gap-12 items-start">
           <!-- Left Column: Image Gallery -->
@@ -126,8 +126,7 @@
         <!-- Info Text -->
         <div class="mt-12 bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
           <p class="text-gray-700 text-center">
-            <strong>Important :</strong> La fiche d'inscription peut être imprimée, remplie et déposée au secrétariat de CREFER.
-            <br />(Fiches d'inscription à télécharger ci-dessus)
+            <strong>Important :</strong> {{ fichesData.infoText }}
           </p>
         </div>
       </div>
@@ -137,7 +136,7 @@
         <!-- Conditions d'Admission Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-amber-50" v-scroll-animate>
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">Conditions d'Admission</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-12" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">{{ conditionsData.heading }}</h2>
 
         <div class="grid md:grid-cols-2 gap-8">
           <!-- CAP & BT -->
@@ -146,35 +145,14 @@
               <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
               </svg>
-              <h3 class="text-2xl font-bold text-blue-900" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">CAP & BT</h3>
+              <h3 class="text-2xl font-bold text-blue-900" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ conditionsData.capBtTitle }}</h3>
             </div>
             <ul class="space-y-4">
-              <li class="flex items-start">
+              <li v-for="n in 5" :key="'cap'+n" class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Être titulaire d'un diplôme BAC ou équivalent</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Avoir une excellente motivation</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Bonnes connaissances scientifiques</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Entretien d'admission requis</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Frais de scolarité applicables</span>
+                <span class="text-gray-700">{{ conditionsData['cap'+n] }}</span>
               </li>
             </ul>
-            <div class="mt-6 pt-6 border-t border-blue-200">
-              <!-- <p class="text-sm text-blue-900 font-semibold">
-                 Rentrée : <span class="text-yellow-400">15 SEPTEMBRE 2025</span>
-              </p> -->
-            </div>
           </div>
 
           <!-- Formation Modulaire -->
@@ -183,35 +161,14 @@
               <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-              <h3 class="text-2xl font-bold text-green-900" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">Formation Modulaire</h3>
+              <h3 class="text-2xl font-bold text-green-900" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.3px;">{{ conditionsData.modulaireTitle }}</h3>
             </div>
             <ul class="space-y-4">
-              <li class="flex items-start">
+              <li v-for="n in 5" :key="'mod'+n" class="flex items-start">
                 <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Modules à la carte</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Flexible et adaptatif</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Pour professionnels en activité</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Certifications partielles possibles</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-yellow-400 font-bold mr-3">✓</span>
-                <span class="text-gray-700">Tarifs réduits</span>
+                <span class="text-gray-700">{{ conditionsData['mod'+n] }}</span>
               </li>
             </ul>
-            <div class="mt-6 pt-6 border-t border-green-200">
-              <!-- <p class="text-sm text-green-900 font-semibold">
-                 Rentrée : <span class="text-yellow-400">13 AVRIL 2026</span>
-              </p> -->
-            </div>
           </div>
         </div>
       </div>
@@ -224,16 +181,16 @@
           <!-- Left Content -->
           <div class="animate-fade-in-up">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-in-left drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-              PRÊT À NOUS REJOINDRE ?
+              {{ ctaData.heading }}
             </h2>
             <p class="text-lg text-gray-800 mb-8 animate-fade-in-up delay-200 drop-shadow-md">
-              Faites un pas de plus vers votre carrière dans l'énergie solaire et l'électricité ! Découvrez nos programmes et postulez dès aujourd'hui.
+              {{ ctaData.description }}
             </p>
             <router-link
               to="/contact"
               class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white rounded-lg hover:shadow-lg transition-all duration-300 font-bold text-lg transform hover:-translate-y-1 animate-fade-in-up delay-300 hover:scale-105 drop-shadow-lg"
             >
-              <span>Inscrivez-vous</span>
+              <span>{{ ctaData.buttonText }}</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
               </svg>
@@ -257,6 +214,7 @@
 <script>
 import { ref, computed, onMounted } from 'vue'
 import { useSEO } from '@/composables/useSEO'
+import { usePageContent } from '@/composables/usePageContent'
 import { useAdmissionImages } from '@/services/admissionsImagesService'
 import { useAdmissionDocuments } from '@/services/admissionsDocumentsService'
 
@@ -264,36 +222,69 @@ export default {
   name: 'Admissions',
   setup() {
     const seo = useSEO()
-    
-    // URL d'arrière-plan par défaut
-    const backgroundImageUrl = ref(new URL('../assets/images/_DSC4826.jpg', import.meta.url).href)
-    const ctaImageUrl = ref(new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href)
-    
-    // Composables Firestore
+    const { get: getContent } = usePageContent('admissions')
+
+    // Images locales par défaut (fallback si rien dans Firestore)
+    const _localBg = new URL('../assets/images/_DSC4826.jpg', import.meta.url).href
+    const _localCta = new URL('../assets/images/distinction1-1200.jpg', import.meta.url).href
+
+    const backgroundImageUrl = computed(() => getContent('hero', 'backgroundImage', '') || _localBg)
+    const ctaImageUrl = computed(() => getContent('cta', 'image', '') || _localCta)
+
+    // Données textuelles dynamiques
+    const heroData = computed(() => ({
+      badge: getContent('hero', 'badge', 'Admission 2025'),
+      title: getContent('hero', 'title', 'RENTRÉE ACADÉMIQUE 2025-2026'),
+      capBtLabel: getContent('hero', 'capBtLabel', 'CAP & BT :'),
+      capBtDate: getContent('hero', 'capBtDate', '15 SEPTEMBRE 2025'),
+      modulaireLabel: getContent('hero', 'modulaireLabel', 'MODULAIRE :'),
+      modulaireDate: getContent('hero', 'modulaireDate', '13 AVRIL 2026'),
+      ctaText: getContent('hero', 'ctaText', 'Nous contacter'),
+    }))
+
+    const conditionsData = computed(() => ({
+      heading: getContent('conditions', 'heading', "Conditions d'Admission"),
+      capBtTitle: getContent('conditions', 'capBtTitle', 'CAP & BT'),
+      cap1: getContent('conditions', 'cap1', "Être titulaire d'un diplôme BAC ou équivalent"),
+      cap2: getContent('conditions', 'cap2', 'Avoir une excellente motivation'),
+      cap3: getContent('conditions', 'cap3', 'Bonnes connaissances scientifiques'),
+      cap4: getContent('conditions', 'cap4', "Entretien d'admission requis"),
+      cap5: getContent('conditions', 'cap5', 'Frais de scolarité applicables'),
+      modulaireTitle: getContent('conditions', 'modulaireTitle', 'Formation Modulaire'),
+      mod1: getContent('conditions', 'mod1', 'Modules à la carte'),
+      mod2: getContent('conditions', 'mod2', 'Flexible et adaptatif'),
+      mod3: getContent('conditions', 'mod3', 'Pour professionnels en activité'),
+      mod4: getContent('conditions', 'mod4', 'Certifications partielles possibles'),
+      mod5: getContent('conditions', 'mod5', 'Tarifs réduits'),
+    }))
+
+    const fichesData = computed(() => ({
+      heading: getContent('fiches', 'heading', "Fiches d'Inscription & Documentation"),
+      infoText: getContent('fiches', 'infoText', "La fiche d'inscription peut être imprimée, remplie et déposée au secrétariat de CREFER."),
+    }))
+
+    const ctaData = computed(() => ({
+      heading: getContent('cta', 'heading', 'PRÊT À NOUS REJOINDRE ?'),
+      description: getContent('cta', 'description', "Faites un pas de plus vers votre carrière dans l'énergie solaire et l'électricité !"),
+      buttonText: getContent('cta', 'buttonText', 'Inscrivez-vous'),
+    }))
+
+    // Composables Firestore pour images/documents d'admission
     const { images: admissionImages, fetchAdmissionImages } = useAdmissionImages()
     const { documents: admissionDocuments, fetchAdmissionDocuments, downloadDocument } = useAdmissionDocuments()
-    
-    // État de chargement et téléchargement
+
     const loadingImages = ref(false)
     const loadingDocuments = ref(false)
     const downloadingFiles = ref({})
 
-    // Galerie d'images depuis Firestore
-    const documentsGallery = computed(() => {
-      return admissionImages.value.map(img => img.image).slice(0, 4)
-    })
+    const documentsGallery = computed(() => admissionImages.value.map(img => img.image).slice(0, 4))
 
-    // Documents avec état de téléchargement
-    const documentsWithState = computed(() => {
-      return admissionDocuments.value.map(doc => ({
-        ...doc,
-        isDownloading: downloadingFiles.value[doc.id] || false
-      }))
-    })
+    const documentsWithState = computed(() =>
+      admissionDocuments.value.map(doc => ({ ...doc, isDownloading: downloadingFiles.value[doc.id] || false }))
+    )
 
     const downloadFile = async (document) => {
       if (downloadingFiles.value[document.id]) return
-      
       downloadingFiles.value[document.id] = true
       try {
         await downloadDocument(document)
@@ -306,23 +297,16 @@ export default {
     }
 
     onMounted(async () => {
-      // Configurer le SEO
       seo.setSEO({
         title: 'Admissions CREFER 2025-2026 - Formations CAP, BT & Modulaires',
-        description: 'Découvrez les conditions d\'admission et les périodes de rentrée pour CAP, BT et formations modulaires. Téléchargez les fiches d\'inscription et rejoignez CREFER.',
+        description: "Découvrez les conditions d'admission et les périodes de rentrée pour CAP, BT et formations modulaires.",
         keywords: 'admissions CREFER, inscription CAP, inscription BT, formation modulaire, rentrée 2025, conditions admission',
         canonical: 'https://crefer.tech/admissions'
       })
-
-      // Charger les données depuis Firestore
       loadingImages.value = true
       loadingDocuments.value = true
-      
       try {
-        await Promise.all([
-          fetchAdmissionImages(),
-          fetchAdmissionDocuments()
-        ])
+        await Promise.all([fetchAdmissionImages(), fetchAdmissionDocuments()])
       } catch (error) {
         console.error('Erreur lors du chargement des données:', error)
       } finally {
@@ -332,16 +316,11 @@ export default {
     })
 
     return {
-      backgroundImageUrl,
-      ctaImageUrl,
-      documentsGallery,
-      documentsWithState,
-      downloadingFiles,
-      downloadFile,
-      loadingImages,
-      loadingDocuments,
-      admissionImages,
-      admissionDocuments
+      backgroundImageUrl, ctaImageUrl,
+      heroData, conditionsData, fichesData, ctaData,
+      documentsGallery, documentsWithState, downloadingFiles, downloadFile,
+      loadingImages, loadingDocuments,
+      admissionImages, admissionDocuments,
     }
   }
 }

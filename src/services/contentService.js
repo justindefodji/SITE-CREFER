@@ -68,21 +68,16 @@ export const getPageWithSections = async (pageId) => {
  * Get a specific section from a page
  */
 export const getSection = async (pageId, sectionId) => {
-  try {
-    const sectionDoc = await getDoc(
-      doc(db, 'pages', pageId, 'sections', sectionId)
-    );
-    if (!sectionDoc.exists()) {
-      throw new Error('Section not found');
-    }
-    return {
-      id: sectionDoc.id,
-      ...sectionDoc.data(),
-    };
-  } catch (error) {
-    console.error('Error getting section:', error);
-    throw error;
+  const sectionDoc = await getDoc(
+    doc(db, 'pages', pageId, 'sections', sectionId)
+  );
+  if (!sectionDoc.exists()) {
+    throw new Error('Section not found');
   }
+  return {
+    id: sectionDoc.id,
+    ...sectionDoc.data(),
+  };
 };
 
 /**

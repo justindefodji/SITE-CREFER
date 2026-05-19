@@ -16,11 +16,11 @@
               <span class="text-yellow-500 text-sm font-semibold tracking-widest uppercase">Bienvenue à CREFER</span>
             </div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-200" style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
-              L'ÉCOLE RÉGIONALE<br />AXÉE SUR <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-400">LES MÉTIERS DE L'ÉNERGIE</span>
+              {{ heroData.titleMain }}<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-400">{{ heroData.titleHighlight }}</span>
             </h1>
 
             <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed max-w-lg animate-fade-in-up delay-300" style="font-weight: 400; letter-spacing: 0.5px;">
-              Rejoignez la révolution des énergies renouvelables et devenez un leader reconnu.
+              {{ heroData.subtitle }}
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up delay-400">
@@ -28,13 +28,13 @@
                 to="/admissions"
                 class="btn-modern px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-full hover:shadow-2xl font-bold text-lg text-center"
               >
-                Admission
+                {{ heroData.cta1 }}
               </router-link>
               <router-link
                 to="/Programmes"
                 class="btn-modern px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white/10 backdrop-blur font-bold text-lg text-center transition-all"
               >
-                Découvrir nos formations
+                {{ heroData.cta2 }}
               </router-link>
             </div>
 
@@ -44,19 +44,19 @@
                 <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-white font-medium">Accrédité</span>
+                <span class="text-white font-medium">{{ heroData.badge1 }}</span>
               </div>
               <div class="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-3 rounded-full">
                 <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-white font-medium">Experts</span>
+                <span class="text-white font-medium">{{ heroData.badge2 }}</span>
               </div>
               <div class="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-3 rounded-full">
                 <svg class="w-5 h-5 text-yellow-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-white font-medium">Modernes</span>
+                <span class="text-white font-medium">{{ heroData.badge3 }}</span>
               </div>
             </div>
           </div>
@@ -99,7 +99,16 @@
         <div class="grid lg:grid-cols-2 gap-8">
           <!-- Video Section -->
           <div class="relative bg-white rounded-3xl overflow-hidden shadow-2xl card-modern group animate-scale-up">
-            <video 
+            <iframe
+              v-if="isYoutubeUrl"
+              :src="youtubeEmbedUrl"
+              class="w-full h-96"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <video
+              v-else
               controls
               preload="metadata"
               class="w-full h-96 object-cover"
@@ -118,7 +127,7 @@
               <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Nouvelle session</span>
             </div>
             <h3 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1px;">
-              FORMATIONS MODULAIRES
+              {{ infoBoxData.title }}
             </h3>
             <div class="space-y-6 mb-10">
               <div class="flex items-start gap-4">
@@ -129,7 +138,7 @@
                 </div>
                 <div>
                   <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide">Durée du programme</p>
-                  <p class="text-2xl font-bold text-gray-900">6 à 12 mois</p>
+                  <p class="text-2xl font-bold text-gray-900">{{ infoBoxData.duration }}</p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
@@ -140,13 +149,13 @@
                 </div>
                 <div>
                   <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide">Démarrage</p>
-                  <p class="text-2xl font-bold text-gray-900">13 AVRIL 2026</p>
+                  <p class="text-2xl font-bold text-gray-900">{{ infoBoxData.startDate }}</p>
                 </div>
               </div>
             </div>
             <div class="bg-gradient-to-r from-yellow-50 to-blue-50 rounded-2xl p-6 mb-8 border border-yellow-200/50">
               <p class="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-2">Reconnaissance</p>
-              <p class="text-xl font-bold text-blue-900">Meilleur acteur de formation en énergie renouvelable</p>
+              <p class="text-xl font-bold text-blue-900">{{ infoBoxData.recognition }}</p>
             </div>
             <router-link
               to="/admissions"
@@ -182,20 +191,20 @@
               <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Notre Histoire</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Une <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500">Vision</span><br/>pour l'Afrique
+              {{ storyData.title }}
             </h2>
             
             <p class="text-2xl lg:text-3xl font-bold text-yellow-600 mb-6 leading-tight">
-              "Depuis 2019, formant les experts énergétiques africains."
+              "{{ storyData.quote }}"
             </p>
 
             <div class="space-y-6 mb-8">
               <p class="text-lg text-gray-700 leading-relaxed font-light">
-                CREFER est née en 2019 d'une vision claire, former des jeunes Africains aux métiers des énergies renouvelables. Fondée par EGENT TOGO, leader en solutions solaires, notre académie répond au besoin urgent de techniciens qualifiés.
+                {{ storyData.text1 }}
               </p>
               <div class="pl-6 border-l-4 border-yellow-400">
                 <p class="text-lg text-gray-700 leading-relaxed font-light">
-                  Le manque de spécialistes en photovoltaïque a motivé notre création. Aujourd'hui, nous sommes la référence régionale, formant des leaders de l'énergie solaire et de l'électricité.
+                  {{ storyData.text2 }}
                 </p>
               </div>
             </div>
@@ -246,18 +255,18 @@
                 <path d="M13 10V3L4 14h6l-1 7 9-11h-6z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Électricité d’Équipement</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ programsData.p1.title }}</h3>
             <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-              Maîtrisez les techniques essentielles de l'électricité et devenez un professionnel reconnu dans le domaine des équipements électriques.
-            </p>
+
+              {{ programsData.p1.desc }}</p>
             <div class="space-y-2 mb-6 pb-6 border-b-2 border-blue-100">
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-blue-500 font-bold">⏱</span>
-                <span>Durée: 3 ans</span>
+                <span>Durée: {{ programsData.p1.duration }}</span>
               </div>
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-blue-500 font-bold">📊</span>
-                <span>Diplôme d'État</span>
+                <span>{{ programsData.p1.diploma }}</span>
               </div>
             </div>
             <ul class="space-y-2 mb-6">
@@ -265,19 +274,19 @@
                 <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Formations pratiques intensives</span>
+                <span>{{ programsData.p1.feat1 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Matériel moderne et équipé</span>
+                <span>{{ programsData.p1.feat2 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Stages professionnels inclus</span>
+                <span>{{ programsData.p1.feat3 }}</span>
               </li>
             </ul>
             <router-link to="/cap-electricite" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
@@ -298,18 +307,18 @@
                 <path d="M2 11h4v7H2v-7zm6-4h4v11H8V7zm6-6h4v17h-4V1z" />
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">BT Électrotechnique</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ programsData.p2.title }}</h3>
             <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-              Accédez à une formation de haut niveau en électrotechnique avec approche théorique et pratique pour les futurs techniciens supérieurs.
-            </p>
+
+              {{ programsData.p2.desc }}</p>
             <div class="space-y-2 mb-6 pb-6 border-b-2 border-yellow-100">
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-yellow-500 font-bold">⏱</span>
-                <span>Durée: 2-3 ans</span>
+                <span>Durée: {{ programsData.p2.duration }}</span>
               </div>
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-yellow-500 font-bold">📊</span>
-                <span>Diplôme d'État</span>
+                <span>{{ programsData.p2.diploma }}</span>
               </div>
             </div>
             <ul class="space-y-2 mb-6">
@@ -317,19 +326,19 @@
                 <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Enseignement avancé</span>
+                <span>{{ programsData.p2.feat1 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Projets de fin d'études</span>
+                <span>{{ programsData.p2.feat2 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Reconnaissance nationale</span>
+                <span>{{ programsData.p2.feat3 }}</span>
               </li>
             </ul>
             <router-link to="/bt-electrotechnique" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
@@ -359,18 +368,18 @@
                 </g>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Formation Modulaire</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">{{ programsData.p3.title }}</h3>
             <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-              Flexibilité totale pour les professionnels en activité. Acquérez des compétences spécifiques à votre rythme.
-            </p>
+
+              {{ programsData.p3.desc }}</p>
             <div class="space-y-2 mb-6 pb-6 border-b-2 border-green-100">
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-green-500 font-bold">⏱</span>
-                <span>Durée: 6-12 mois</span>
+                <span>Durée: {{ programsData.p3.duration }}</span>
               </div>
               <div class="flex items-center gap-2 text-gray-700 text-sm">
                 <span class="text-green-500 font-bold">📊</span>
-                <span>Certificat & Attestation</span>
+                <span>{{ programsData.p3.diploma }}</span>
               </div>
             </div>
             <ul class="space-y-2 mb-6">
@@ -378,19 +387,19 @@
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Horaires flexibles</span>
+                <span>{{ programsData.p3.feat1 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Modules personnalisés</span>
+                <span>{{ programsData.p3.feat2 }}</span>
               </li>
               <li class="flex items-start gap-2 text-gray-700 text-sm">
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span>Certifications reconnues</span>
+                <span>{{ programsData.p3.feat3 }}</span>
               </li>
             </ul>
             <router-link to="/formation-modulaire" class="w-full block text-center px-6 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all group-hover:scale-105">
@@ -411,10 +420,10 @@
               <span class="text-sm font-bold text-yellow-600 uppercase tracking-wide">Pourquoi choisir CREFER?</span>
             </div>
             <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Choisir le Leader<br/>de la Formation
+              {{ whyUsData.heading }}
             </h2>
             <p class="text-xl text-gray-600 leading-relaxed mb-8 font-light">
-              CREFER se consacre à offrir une formation de premier ordre en énergie solaire et en électricité. Nos programmes sont conçus pour doter les étudiants des connaissances et des compétences nécessaires pour exceller dans un secteur de l'énergie en constante évolution.
+              {{ whyUsData.description }}
             </p>
             <router-link
               to="/about"
@@ -436,8 +445,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Programme Innovant</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Constamment mis à jour pour refléter les dernières avancées technologiques du secteur énergétique.</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{{ whyUsData.feat1Title }}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{{ whyUsData.feat1Text }}</p>
             </div>
 
             <!-- Card 2 -->
@@ -447,8 +456,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Experts Reconnus</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Apprenez des meilleurs spécialistes du secteur, passionnés par l'excellence éducative.</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{{ whyUsData.feat2Title }}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{{ whyUsData.feat2Text }}</p>
             </div>
 
             <!-- Card 3 -->
@@ -458,8 +467,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Recherche Active</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Participez à des projets innovants répondant à des défis énergétiques concrets.</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{{ whyUsData.feat3Title }}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{{ whyUsData.feat3Text }}</p>
             </div>
 
             <!-- Card 4 -->
@@ -469,8 +478,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20H19a2 2 0 002-2v-2a2 2 0 00-2-2h-2.5a2 2 0 01-1-3.8A6 6 0 006 9" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Impact Global</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">Contribuez à la transition énergétique mondiale et façonnez un avenir durable.</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{{ whyUsData.feat4Title }}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{{ whyUsData.feat4Text }}</p>
             </div>
           </div>
         </div>
@@ -633,7 +642,7 @@
           <!-- Contenu Texte -->
           <div class="animate-fade-in-up order-2 lg:order-1">
 <div class="inline-block mb-4 px-4 py-2 bg-yellow-100 rounded-full mb-6">
-            <span class="text-sm font-bold text-yellow-700 uppercase tracking-wide">📅 13 Avril 2026</span>
+            <span class="text-sm font-bold text-yellow-700 uppercase tracking-wide">📅 {{ portesOuvertesData.dateBadge }}</span>
           </div>
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
               Portes Ouvertes<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">CREFER 2026</span>
@@ -655,24 +664,17 @@
               <div class="space-y-5">
                 <!-- SPV -->
                 <div class="bg-white/70 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400 hover:shadow-lg transition-all">
-                  <h4 class="font-bold text-lg text-gray-900 mb-3">SPV (Système Photovoltaïque)</h4>
+                  <h4 class="font-bold text-lg text-gray-900 mb-3">{{ portesOuvertesData.spvTitle }}</h4>
                   <div class="flex flex-wrap gap-2">
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Électricité</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Énergie solaire</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Biogaz</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Plomberie*</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Froid climatisation*</span>
+                    <span v-for="tag in spvTagsArray" :key="tag" class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">{{ tag }}</span>
                   </div>
                 </div>
 
                 <!-- SST -->
                 <div class="bg-white/70 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-600 hover:shadow-lg transition-all">
-                  <h4 class="font-bold text-lg text-gray-900 mb-3">SST (Système de Sécurité & Télécom)</h4>
+                  <h4 class="font-bold text-lg text-gray-900 mb-3">{{ portesOuvertesData.sstTitle }}</h4>
                   <div class="flex flex-wrap gap-2">
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Réseau</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Alarmes</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Caméras surveillance</span>
-                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Antennes paraboliques</span>
+                    <span v-for="tag in sstTagsArray" :key="tag" class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">{{ tag }}</span>
                   </div>
                 </div>
               </div>
@@ -686,7 +688,7 @@
                 </svg>
                 <div>
                   <p class="font-bold text-gray-900">Lieu</p>
-                  <p class="text-gray-700">L'annexe, situé au bord des pavés de Totsi non loin de l'agence Yas</p>
+                  <p class="text-gray-700">{{ portesOuvertesData.location }}</p>
                 </div>
               </div>
               <div class="flex gap-4 items-start">
@@ -695,7 +697,7 @@
                 </svg>
                 <div>
                   <p class="font-bold text-gray-900">Horaires</p>
-                  <p class="text-gray-700">Cours du jour et du soir disponibles</p>
+                  <p class="text-gray-700">{{ portesOuvertesData.hours }}</p>
                 </div>
               </div>
               <div class="flex gap-4 items-start">
@@ -704,7 +706,7 @@
                 </svg>
                 <div>
                   <p class="font-bold text-gray-900">Durée</p>
-                  <p class="text-gray-700">06 ou 12 mois</p>
+                  <p class="text-gray-700">{{ portesOuvertesData.duration }}</p>
                 </div>
               </div>
             </div>
@@ -759,12 +761,12 @@
             <div class="flex gap-4 items-start mb-6">
               <img :src="testimonial1Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-yellow-400 cursor-pointer hover:ring-yellow-600 transition-all" @click="openTestimonialLightbox(testimonial1Image)" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">MELA D'Kigma Solmba</h3>
-                <p class="text-sm text-yellow-600 font-semibold">Alumni promotion 12</p>
+              <h3 class="text-lg font-bold text-gray-900">{{ testimonialsData.t1.name }}</h3>
+              <p class="text-sm text-yellow-600 font-semibold">{{ testimonialsData.t1.role }}</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "C’est pas du fake, CREFER c’est du vrai et du lourd. Je suis étudiant en formation modulaire, filière SPV et nous sommes en phase de stage actuellement. *Quand bien même que je n'ai pas encore terminé ma formation, j'ai déjà gagné des chantiers pour moi même."
+              "{{ testimonialsData.t1.quote }}"
             </p>
             <div class="flex gap-1 text-yellow-400">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -779,12 +781,12 @@
             <div class="flex gap-4 items-start mb-6">
               <img :src="testimonial2Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-400 cursor-pointer hover:ring-blue-600 transition-all" @click="openTestimonialLightbox(testimonial2Image)" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">YAO Amivi Emefa</h3>
-                <p class="text-sm text-blue-600 font-semibold">Alumni promotion 8/Social Specialist centrale solaire Blitta</p>
+              <h3 class="text-lg font-bold text-gray-900">{{ testimonialsData.t2.name }}</h3>
+              <p class="text-sm text-blue-600 font-semibold">{{ testimonialsData.t2.role }}</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "{{ showFullTestimonial2 ? testimonial2FullText : testimonial2Preview }}"
+              "{{ testimonialsData.t2.quote }}"
             </p>
             <button @click="showFullTestimonial2 = !showFullTestimonial2" class="text-blue-600 hover:text-blue-800 font-semibold text-sm mb-4 transition-colors">
               {{ showFullTestimonial2 ? 'Voir moins' : 'Voir plus' }}
@@ -802,12 +804,12 @@
             <div class="flex gap-4 items-start mb-6">
               <img :src="testimonial3Image" alt="Profil" class="w-16 h-16 rounded-full object-cover ring-2 ring-green-400 cursor-pointer hover:ring-green-600 transition-all" @click="openTestimonialLightbox(testimonial3Image)" />
               <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900">SOW Kerfala</h3>
-                <p class="text-sm text-green-600 font-semibold">Étudiant Promotion 13</p>
+              <h3 class="text-lg font-bold text-gray-900">{{ testimonialsData.t3.name }}</h3>
+              <p class="text-sm text-green-600 font-semibold">{{ testimonialsData.t3.role }}</p>
               </div>
             </div>
             <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
-              "{{ showFullTestimonial3 ? testimonial3FullText : testimonial3Preview }}"
+              "{{ testimonialsData.t3.quote }}"
             </p>
             <button @click="showFullTestimonial3 = !showFullTestimonial3" class="text-blue-600 hover:text-blue-800 font-semibold text-sm mb-4 transition-colors">
               {{ showFullTestimonial3 ? 'Voir moins' : 'Voir plus' }}
@@ -880,10 +882,10 @@
               <span class="text-sm font-bold text-gray-900 uppercase tracking-wide">Ton Avenir Démarre Ici</span>
             </div>
             <h2 class="text-6xl lg:text-7xl font-bold text-gray-900 mb-8 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-              Prêt à nous<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">Rejoindre ?</span>
+              {{ joinCtaData.heading }}
             </h2>
             <p class="text-xl text-gray-800 mb-10 leading-relaxed font-light drop-shadow-md">
-              Transforme ta carrière avec CREFER. Rejoins une communauté de plus de 5000 experts en énergies renouvelables qui façonnent l'avenir durable.
+              {{ joinCtaData.description }}
             </p>
             <div class="flex flex-col sm:flex-row gap-6 items-start">
               <router-link
@@ -917,8 +919,8 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <!-- Floating stats over image -->
               <div class="absolute bottom-6 left-6 card-modern p-4 max-w-xs">
-                <p class="text-black/80 text-sm font-light mb-1">Taux de réussite</p>
-                <p class="text-black/80 text-3xl font-bold">95%</p>
+                <p class="text-black/80 text-sm font-light mb-1">{{ joinCtaData.successLabel }}</p>
+                <p class="text-black/80 text-3xl font-bold">{{ joinCtaData.successRate }}</p>
               </div>
             </div>
           </div>
@@ -942,11 +944,10 @@
             <span class="text-sm font-bold text-purple-600 uppercase tracking-wide">À propos de CREFER</span>
           </div>
           <h2 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-6" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-            Leader en Formation<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">Énergies Durables</span>
+            {{ aboutSectionData.heading }}
           </h2>
           <p class="text-lg text-gray-700 max-w-3xl mx-auto font-light leading-relaxed">
-            Depuis bientôt 10 ans, CREFER forme les experts de demain dans les énergies renouvelables avec des programmes innovants, reconnus internationalement et adaptés aux besoins du marché.
+            {{ aboutSectionData.description }}
           </p>
         </div>
         
@@ -962,9 +963,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747 0-6.002-4.5-10.747-10-10.747z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Formation Qualifiante</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">{{ aboutSectionData.feat1Title }}</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
-                Programmes CAP, BT et modules spécialisés reconnus par l'État et les entreprises du secteur énergétique.
+                {{ aboutSectionData.feat1Text }}
               </p>
               <div class="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-4 transition-all duration-300">
                 <span>En savoir plus</span>
@@ -985,9 +986,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Expertise Reconnue</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">{{ aboutSectionData.feat2Title }}</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
-                Formateurs experts du secteur avec une expérience combinée de plus de 200 ans dans l'industrie énergétique.
+                {{ aboutSectionData.feat2Text }}
               </p>
               <div class="flex items-center gap-2 text-yellow-600 font-semibold group-hover:gap-4 transition-all duration-300">
                 <span>En savoir plus</span>
@@ -1008,9 +1009,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">Placement Assuré</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: 'Montserrat', sans-serif;">{{ aboutSectionData.feat3Title }}</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
-                95% de nos diplômés trouvent un emploi dans les 3 mois suivant leur graduation, avec un salaire compétitif.
+                {{ aboutSectionData.feat3Text }}
               </p>
               <div class="flex items-center gap-2 text-green-600 font-semibold group-hover:gap-4 transition-all duration-300">
                 <span>En savoir plus</span>
@@ -1101,10 +1102,10 @@
       
       <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
         <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg" style="font-family: 'Montserrat', sans-serif; letter-spacing: -1.5px;">
-          Commence Ton Voyage<br/>Vers <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-yellow-700">l'excellence</span>
+          {{ ctaFinalData.heading }}
         </h2>
         <p class="text-xl text-gray-800 mb-12 font-light drop-shadow-md">
-          Les places pour les sessions 2025-2026 sont limitées. Inscris-toi maintenant et rejoins la révolution des énergies durables.
+          {{ ctaFinalData.description }}
         </p>
         <div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
           <router-link
@@ -1117,13 +1118,13 @@
             </svg>
           </router-link>
           <a
-            href="tel:+22822XXXXXX"
+            :href="ctaFinalData.phone"
             class="px-10 py-4 border-2 border-gray-900 text-gray-900 font-bold text-lg rounded-2xl hover:bg-gray-900/10 transition-all inline-flex items-center gap-3 bg-white/70 drop-shadow-md"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.26 1.043 1.1 2.863 2.513 4.276s3.233 2.253 4.276 2.513l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.57c-8.835 0-16-7.165-16-16V3z" />
             </svg>
-            Appelle-Nous
+            {{ ctaFinalData.phoneLinkText }}
           </a>
         </div>
       </div>
@@ -1132,20 +1133,139 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useArticles } from '../services/articlesService'
 import { useSEO } from '@/composables/useSEO'
+import { usePageContent } from '../composables/usePageContent'
 
 export default {
   name: 'Home',
   setup() {
     const seo = useSEO()
-    
+
     // Load articles from service
     const { articles } = useArticles()
 
     // Get first 3 articles for the Actualités section
     const newsArticles = computed(() => articles.value.slice(0, 3))
+
+    // Dynamic site content from Firebase
+    const { get: getContent, loading: contentLoading } = usePageContent('home')
+
+    const heroData = computed(() => ({
+      titleMain: getContent('hero', 'titleMain', "L'ÉCOLE RÉGIONALE AXÉE SUR"),
+      titleHighlight: getContent('hero', 'titleHighlight', "LES MÉTIERS DE L'ÉNERGIE"),
+      subtitle: getContent('hero', 'subtitle', "Rejoignez la révolution des énergies renouvelables et devenez un leader reconnu."),
+      badge1: getContent('hero', 'badge1', 'Accrédité'),
+      badge2: getContent('hero', 'badge2', 'Experts'),
+      badge3: getContent('hero', 'badge3', 'Modernes'),
+      cta1: getContent('hero', 'cta1', 'Admission'),
+      cta2: getContent('hero', 'cta2', 'Découvrir nos formations'),
+    }))
+
+    const infoBoxData = computed(() => ({
+      title: getContent('info_box', 'title', 'FORMATIONS MODULAIRES'),
+      startDate: getContent('info_box', 'startDate', '13 AVRIL 2026'),
+      duration: getContent('info_box', 'duration', '6 à 12 mois'),
+      recognition: getContent('info_box', 'recognition', 'Meilleur acteur de formation en énergie renouvelable'),
+    }))
+
+    const storyData = computed(() => ({
+      title: getContent('story', 'title', "Une Vision pour l'Afrique"),
+      quote: getContent('story', 'quote', "Depuis 2019, formant les experts énergétiques africains."),
+      text1: getContent('story', 'text1', "CREFER est née en 2019 d'une vision claire, former des jeunes Africains aux métiers des énergies renouvelables. Fondée par EGENT TOGO, leader en solutions solaires, notre académie répond au besoin urgent de techniciens qualifiés."),
+      text2: getContent('story', 'text2', "Le manque de spécialistes en photovoltaïque a motivé notre création. Aujourd'hui, nous sommes la référence régionale, formant des leaders de l'énergie solaire et de l'électricité."),
+    }))
+
+    const programsData = computed(() => ({
+      p1: {
+        title: getContent('programs', 'p1Title', "Électricité d'Équipement"),
+        desc: getContent('programs', 'p1Desc', ''),
+        duration: getContent('programs', 'p1Duration', '3 ans'),
+        diploma: getContent('programs', 'p1Diploma', "Diplôme d'État"),
+        badge: getContent('programs', 'p1Badge', 'Niveau 1'),
+        feat1: getContent('programs', 'p1Feat1', 'Formations pratiques intensives'),
+        feat2: getContent('programs', 'p1Feat2', 'Matériel moderne et équipé'),
+        feat3: getContent('programs', 'p1Feat3', 'Stages professionnels inclus'),
+      },
+      p2: {
+        title: getContent('programs', 'p2Title', 'BT Électrotechnique'),
+        desc: getContent('programs', 'p2Desc', ''),
+        duration: getContent('programs', 'p2Duration', '2-3 ans'),
+        diploma: getContent('programs', 'p2Diploma', "Diplôme d'État"),
+        badge: getContent('programs', 'p2Badge', 'Niveau 2'),
+        feat1: getContent('programs', 'p2Feat1', 'Enseignement avancé'),
+        feat2: getContent('programs', 'p2Feat2', "Projets de fin d'études"),
+        feat3: getContent('programs', 'p2Feat3', 'Reconnaissance nationale'),
+      },
+      p3: {
+        title: getContent('programs', 'p3Title', 'Formation Modulaire'),
+        desc: getContent('programs', 'p3Desc', ''),
+        duration: getContent('programs', 'p3Duration', '6-12 mois'),
+        diploma: getContent('programs', 'p3Diploma', 'Certificat & Attestation'),
+        badge: getContent('programs', 'p3Badge', 'Flexible'),
+        feat1: getContent('programs', 'p3Feat1', 'Horaires flexibles'),
+        feat2: getContent('programs', 'p3Feat2', 'Modules personnalisés'),
+        feat3: getContent('programs', 'p3Feat3', 'Certifications reconnues'),
+      },
+    }))
+
+    const whyUsData = computed(() => ({
+      heading: getContent('why_us', 'heading', 'Choisir le Leader de la Formation'),
+      description: getContent('why_us', 'description', "CREFER se consacre à offrir une formation de premier ordre en énergie solaire et en électricité."),
+      feat1Title: getContent('why_us', 'feat1Title', 'Programme Innovant'),
+      feat1Text: getContent('why_us', 'feat1Text', "Constamment mis à jour pour refléter les dernières avancées technologiques du secteur énergétique."),
+      feat2Title: getContent('why_us', 'feat2Title', 'Experts Reconnus'),
+      feat2Text: getContent('why_us', 'feat2Text', "Apprenez des meilleurs spécialistes du secteur, passionnés par l'excellence éducative."),
+      feat3Title: getContent('why_us', 'feat3Title', 'Recherche Active'),
+      feat3Text: getContent('why_us', 'feat3Text', "Participez à des projets innovants répondant à des défis énergétiques concrets."),
+      feat4Title: getContent('why_us', 'feat4Title', 'Impact Global'),
+      feat4Text: getContent('why_us', 'feat4Text', "Contribuez à la transition énergétique mondiale et façonnez un avenir durable."),
+    }))
+
+    const portesOuvertesData = computed(() => ({
+      dateBadge: getContent('portes_ouvertes', 'dateBadge', '13 Avril 2026'),
+      location: getContent('portes_ouvertes', 'location', "L'annexe, situé au bord des pavés de Totsi non loin de l'agence Yas"),
+      hours: getContent('portes_ouvertes', 'hours', 'Cours du jour et du soir disponibles'),
+      duration: getContent('portes_ouvertes', 'duration', '06 ou 12 mois'),
+      spvTitle: getContent('portes_ouvertes', 'spvTitle', 'SPV (Système Photovoltaïque)'),
+      spvTags: getContent('portes_ouvertes', 'spvTags', 'Électricité,Énergie solaire,Biogaz,Plomberie*,Froid climatisation*'),
+      sstTitle: getContent('portes_ouvertes', 'sstTitle', 'SST (Système de Sécurité & Télécom)'),
+      sstTags: getContent('portes_ouvertes', 'sstTags', 'Réseau,Alarmes,Caméras surveillance,Antennes paraboliques'),
+    }))
+    const spvTagsArray = computed(() => String(portesOuvertesData.value.spvTags || '').split(',').map(t => t.trim()).filter(Boolean))
+    const sstTagsArray = computed(() => String(portesOuvertesData.value.sstTags || '').split(',').map(t => t.trim()).filter(Boolean))
+
+    const testimonialsData = computed(() => ({
+      t1: { name: getContent('testimonials', 't1Name', "MELA D'Kigma Solmba"), role: getContent('testimonials', 't1Role', 'Alumni promotion 12'), quote: getContent('testimonials', 't1Quote', ''), photo: getContent('testimonials', 't1Photo', '') },
+      t2: { name: getContent('testimonials', 't2Name', 'YAO Amivi Emefa'), role: getContent('testimonials', 't2Role', 'Alumni promotion 8'), quote: getContent('testimonials', 't2Quote', ''), photo: getContent('testimonials', 't2Photo', '') },
+      t3: { name: getContent('testimonials', 't3Name', 'SOW Kerfala'), role: getContent('testimonials', 't3Role', 'Étudiant Promotion 13'), quote: getContent('testimonials', 't3Quote', ''), photo: getContent('testimonials', 't3Photo', '') },
+    }))
+
+    const joinCtaData = computed(() => ({
+      heading: getContent('join_cta', 'heading', 'Prêt à nous Rejoindre ?'),
+      description: getContent('join_cta', 'description', 'Transforme ta carrière avec CREFER. Rejoins une communauté de plus de 5000 experts formés et propulse ton avenir dans les énergies renouvelables.'),
+      successRate: getContent('join_cta', 'successRate', '95%'),
+      successLabel: getContent('join_cta', 'successLabel', 'Taux de réussite'),
+    }))
+
+    const aboutSectionData = computed(() => ({
+      heading: getContent('about_section', 'heading', 'Leader en Formation Énergies Durables'),
+      description: getContent('about_section', 'description', "Depuis bientôt 10 ans, CREFER forme les experts en énergies renouvelables qui façonnent l'avenir de l'Afrique."),
+      feat1Title: getContent('about_section', 'feat1Title', 'Formation Qualifiante'),
+      feat1Text: getContent('about_section', 'feat1Text', "Programmes CAP, BT et modules spécialisés reconnus par l'État et les professionnels du secteur."),
+      feat2Title: getContent('about_section', 'feat2Title', 'Expertise Reconnue'),
+      feat2Text: getContent('about_section', 'feat2Text', "Formateurs experts du secteur avec une expérience combinée de plus de 200 ans dans l'électricité et les énergies renouvelables."),
+      feat3Title: getContent('about_section', 'feat3Title', 'Placement Assuré'),
+      feat3Text: getContent('about_section', 'feat3Text', "95% de nos diplômés trouvent un emploi dans les 3 mois suivant leur formation grâce à notre réseau de partenaires."),
+    }))
+
+    const ctaFinalData = computed(() => ({
+      heading: getContent('cta_final', 'heading', "Commence Ton Voyage Vers l'excellence"),
+      description: getContent('cta_final', 'description', "Les places pour les sessions 2025-2026 sont limitées. Inscris-toi maintenant et rejoins la révolution des énergies durables."),
+      phone: getContent('cta_final', 'phone', 'tel:+22822XXXXXX'),
+      phoneLinkText: getContent('cta_final', 'phoneLinkText', 'Appelle-Nous'),
+    }))
 
     onMounted(() => {
       // Configurer le SEO
@@ -1165,47 +1285,109 @@ export default {
       window.slideshowInterval = slideshowInterval
     })
 
-    // Video URL - importée comme les images
-    const videoUrl = ref(new URL('../assets/videos/video1.mp4', import.meta.url).href)
-    // Image pour la section "Prêt à nous rejoindre ?"
-    const joinUsImage = ref(new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href)
+    // Video URL — Firebase ou fallback local
+    const _localVideoUrl = new URL('../assets/videos/video1.mp4', import.meta.url).href
+    const videoUrl = computed(() => getContent('hero_media', 'videoUrl', '') || _localVideoUrl)
+    const isYoutubeUrl = computed(() => {
+      const url = videoUrl.value
+      return url.includes('youtube.com') || url.includes('youtu.be')
+    })
+    const youtubeEmbedUrl = computed(() => {
+      const url = videoUrl.value
+      const shortMatch = url.match(/youtu\.be\/([^?&]+)/)
+      if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+      const longMatch = url.match(/[?&]v=([^&]+)/)
+      if (longMatch) return `https://www.youtube.com/embed/${longMatch[1]}`
+      if (url.includes('/embed/')) return url
+      return ''
+    })
+    // Image section Rejoindre — Firebase ou fallback local
+    const _localJoinUsImage = new URL('../assets/images/_DSC4676-1200.jpg', import.meta.url).href
+    const joinUsImage = computed(() => getContent('story_media', 'joinUsImageUrl', '') || _localJoinUsImage)
     
-    // Diaporama - Images pour le hero section
-    const slideshowImages = ref([
+    // Diaporama — Firebase ou fallback local
+    const _localSlides = [
       new URL('../assets/images/_DSC4881-1200.webp', import.meta.url).href,
       new URL('../assets/images/hero1.jpg', import.meta.url).href,
-      new URL('../assets/images/exam4article.jpg', import.meta.url).href
-    ])
+      new URL('../assets/images/exam4article.jpg', import.meta.url).href,
+    ]
     const currentSlideIndex = ref(0)
-    
-    // Utilise des images locales placées dans `src/assets/images/`.
-    // Remplacez les fichiers si nécessaire. Vite résout les chemins via `new URL(..., import.meta.url)`.
+    const slideshowImages = computed(() => {
+      const s1 = getContent('hero_media', 'slideshowImage1', '')
+      const s2 = getContent('hero_media', 'slideshowImage2', '')
+      const s3 = getContent('hero_media', 'slideshowImage3', '')
+      const fb = [s1, s2, s3].filter(Boolean)
+      return fb.length === 3 ? fb : _localSlides
+    })
     const backgroundImageUrl = computed(() => slideshowImages.value[currentSlideIndex.value])
-    const storyImageUrl = ref(new URL('../assets/images/histoire.jpg', import.meta.url).href)
-    // Images pour les 3 cards "Programmes d'étude"
+    const _localStoryImage = new URL('../assets/images/histoire.jpg', import.meta.url).href
+    const storyImageUrl = computed(() => getContent('story_media', 'storyImageUrl', '') || _localStoryImage)
+    // Images locales programmes
     const capImageUrl = ref(new URL('../assets/images/_DSC4674.jpg', import.meta.url).href)
     const efficaciteImageUrl = ref(new URL('../assets/images/_DSC4676.jpg', import.meta.url).href)
     const solaireImageUrl = ref(new URL('../assets/images/_DSC4677.jpg', import.meta.url).href)
-    // Logos partenaires (placeholders SVG créés localement)
-    // Vous pouvez remplacer ces fichiers par vos images fournies ultérieurement.
-    // Utiliser les fichiers JPG fournis — placez vos fichiers dans `src/assets/images/` avec ces noms :
-    // partner-cerme.jpg, partner-ucrm.jpg, partner-compassion.jpg, partner-egent.jpg
-    const partnerLogo1 = ref(new URL('../assets/images/egent-logo.0384ff91.jpg', import.meta.url).href)
-    const partnerLogo2 = ref(new URL('../assets/images/part2.e6602420.png', import.meta.url).href)
-    const partnerLogo3 = ref(new URL('../assets/images/part3.fe0f87cf.jpg', import.meta.url).href)
-    const partnerLogo4 = ref(new URL('../assets/images/télécharger.jpg', import.meta.url).href)
+    // Logos partenaires — Firebase ou fallback local
+    const _localLogos = [
+      new URL('../assets/images/egent-logo.0384ff91.jpg', import.meta.url).href,
+      new URL('../assets/images/part2.e6602420.png', import.meta.url).href,
+      new URL('../assets/images/part3.fe0f87cf.jpg', import.meta.url).href,
+      new URL('../assets/images/télécharger.jpg', import.meta.url).href,
+    ]
+    const partnerLogo1 = computed(() => getContent('partners', 'logo1', '') || _localLogos[0])
+    const partnerLogo2 = computed(() => getContent('partners', 'logo2', '') || _localLogos[1])
+    const partnerLogo3 = computed(() => getContent('partners', 'logo3', '') || _localLogos[2])
+    const partnerLogo4 = computed(() => getContent('partners', 'logo4', '') || _localLogos[3])
     
-    // Images pour la section Portes Ouvertes
-    const portesOuvertesImagePrin = ref(new URL('../assets/images/imageprin01.jpeg', import.meta.url).href)
+    // Portes Ouvertes images — Firebase ou fallback local
+    const _localPortesMain = new URL('../assets/images/imageprin01.jpeg', import.meta.url).href
+    const portesOuvertesImagePrin = computed(() => getContent('portes_ouvertes', 'mainImage', '') || _localPortesMain)
     const portesOuvertesImage01 = ref(new URL('../assets/images/image01.jpeg', import.meta.url).href)
     const portesOuvertesImage02 = ref(new URL('../assets/images/image02.jpeg', import.meta.url).href)
     const portesOuvertesImage03 = ref(new URL('../assets/images/image03.jpeg', import.meta.url).href)
     
-    // Compteurs animés
-    const formesCount = ref(1500)
-    const emploiCount = ref(1200)
-    const partnersCount = ref(50)
-    const certifiesCount = ref(6)
+    // Compteurs animés (cibles dynamiques depuis Firebase)
+    const formesCount = ref(0)
+    const emploiCount = ref(0)
+    const partnersCount = ref(0)
+    const certifiesCount = ref(0)
+
+    const animateCounters = (targets) => {
+      formesCount.value = 0
+      emploiCount.value = 0
+      partnersCount.value = 0
+      certifiesCount.value = 0
+      const startTime = Date.now()
+      const duration = 5000
+      const tick = () => {
+        const elapsed = Date.now() - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        formesCount.value = Math.floor(targets.formes * progress)
+        emploiCount.value = Math.floor(targets.emploi * progress)
+        partnersCount.value = Math.floor(targets.partners * progress)
+        certifiesCount.value = Math.floor(targets.certifies * progress)
+        if (progress < 1) {
+          requestAnimationFrame(tick)
+        } else {
+          formesCount.value = targets.formes
+          emploiCount.value = targets.emploi
+          partnersCount.value = targets.partners
+          certifiesCount.value = targets.certifies
+        }
+      }
+      requestAnimationFrame(tick)
+    }
+
+    // When Firebase content loads, animate to actual values
+    watch(contentLoading, (isLoading) => {
+      if (!isLoading) {
+        animateCounters({
+          formes: Number(getContent('stats', 'formes', 1500)),
+          emploi: Number(getContent('stats', 'emploi', 1200)),
+          partners: Number(getContent('stats', 'partners', 50)),
+          certifies: Number(getContent('stats', 'certifies', 6)),
+        })
+      }
+    })
     
     // Lightbox pour les photos des témoins
     const lightboxOpen = ref(false)
@@ -1247,62 +1429,24 @@ export default {
     }
     
     onMounted(() => {
-      // Ajouter le listener pour la touche Escape
       window.addEventListener('keydown', handleKeydown)
-      
-      // Réinitialiser à 0 pour commencer l'animation
-      formesCount.value = 0
-      emploiCount.value = 0
-      partnersCount.value = 0
-      certifiesCount.value = 0
-      
-      // Animation des compteurs simultanément avec durée augmentée
-      const startTime = Date.now()
-      const duration = 5000
-      
-      const animate = () => {
-        const elapsed = Date.now() - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        
-        formesCount.value = Math.floor(1500 * progress)
-        emploiCount.value = Math.floor(1200 * progress)
-        partnersCount.value = Math.floor(50 * progress)
-        certifiesCount.value = Math.floor(6 * progress)
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        } else {
-          formesCount.value = 1500
-          emploiCount.value = 1200
-          partnersCount.value = 50
-          certifiesCount.value = 6
-        }
-      }
-      
-      requestAnimationFrame(animate)
     })
 
     onUnmounted(() => {
-      // Nettoyer le listener du clavier, la lightbox et l'intervalle du diaporama
       window.removeEventListener('keydown', handleKeydown)
       if (window.slideshowInterval) {
         clearInterval(window.slideshowInterval)
       }
       closeTestimonialLightbox()
     })
-
-    onUnmounted(() => {
-      // Reset counters when leaving the page
-      formesCount.value = 1500
-      emploiCount.value = 1200
-      partnersCount.value = 50
-      certifiesCount.value = 6
-    })
     
     // Images pour les cartes de témoignage
-    const testimonial1Image = ref(new URL('../assets/images/temois1.jpg', import.meta.url).href)
-    const testimonial2Image = ref(new URL('../assets/images/temoins02.jpg', import.meta.url).href)
-    const testimonial3Image = ref(new URL('../assets/images/temoins3.jpg', import.meta.url).href)
+    const _localT1 = new URL('../assets/images/temois1.jpg', import.meta.url).href
+    const _localT2 = new URL('../assets/images/temoins02.jpg', import.meta.url).href
+    const _localT3 = new URL('../assets/images/temoins3.jpg', import.meta.url).href
+    const testimonial1Image = computed(() => getContent('testimonials', 't1Photo', '') || _localT1)
+    const testimonial2Image = computed(() => getContent('testimonials', 't2Photo', '') || _localT2)
+    const testimonial3Image = computed(() => getContent('testimonials', 't3Photo', '') || _localT3)
     
     // État pour le "voir plus" du témoignage 2
     const showFullTestimonial2 = ref(false)
@@ -1334,11 +1478,25 @@ export default {
       return fallbackImages[article.id] || backgroundImageUrl.value
     }
 
-    return { 
+    return {
+      heroData,
+      infoBoxData,
+      storyData,
+      programsData,
+      whyUsData,
+      portesOuvertesData,
+      spvTagsArray,
+      sstTagsArray,
+      testimonialsData,
+      joinCtaData,
+      aboutSectionData,
+      ctaFinalData,
       articles,
       newsArticles,
       getArticleImage,
       videoUrl,
+      isYoutubeUrl,
+      youtubeEmbedUrl,
       backgroundImageUrl,
       slideshowImages,
       currentSlideIndex,
