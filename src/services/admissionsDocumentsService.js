@@ -1,57 +1,64 @@
-import { db } from './firebase'
-import { 
-  collection, 
-  addDoc, 
-  updateDoc, 
-  deleteDoc, 
-  doc, 
-  getDocs, 
+import { db, storage } from './firebase'
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  getDocs,
   getDoc,
   query,
   orderBy,
   serverTimestamp
 } from 'firebase/firestore'
+import {
+  ref as storageRef,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject
+} from 'firebase/storage'
 import { ref } from 'vue'
 
 const DOCUMENTS_COLLECTION = 'admissions_documents'
+const STORAGE_PATH = 'admissions_documents'
 
-/**
- * Convertir un fichier en base64
- */
-async function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.onload = () => resolve(reader.result)
-    reader.onerror = reject
-    reader.readAsDataURL(file)
-  })
+async function uploadPdfToStorage(file, docId) {
+  const fileRef = storageRef(storage, `${STORAGE_PATH}/${docId}/${file.name}`)
+  await uploadBytes(fileRef, file)
+  return { url: await getDownloadURL(fileRef), storagePath: fileRef.fullPath }
 }
 
-/**
- * Créer un nouveau document d'admission (PDF en base64 Firestore)
- */
+async function deletePdfFromStorage(storagePath) {
+  if (!storagePath) return
+  try {
+    await deleteObject(storageRef(storage, storagePath))
+  } catch {
+    // Fichier déjà supprimé ou inexistant
+  }
+}
+
 export const createAdmissionDocument = async (documentData) => {
   try {
-    let documentBase64 = null
-    
-    // Si on a un fichier, le convertir en base64
-    if (documentData.file) {
-      documentBase64 = await fileToBase64(documentData.file)
-    }
-
-    // Créer l'enregistrement Firestore
+    // Créer d'abord le document Firestore pour obtenir l'ID
     const docRef = await addDoc(collection(db, DOCUMENTS_COLLECTION), {
       title: documentData.title,
       description: documentData.description,
       type: documentData.type || 'other',
       fileName: documentData.file?.name || '',
-      document: documentBase64,
+      fileUrl: null,
+      storagePath: null,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp()
     })
-    
-    return { 
-      id: docRef.id, 
+
+    // Uploader le PDF dans Storage avec l'ID du doc
+    if (documentData.file) {
+      const { url, storagePath } = await uploadPdfToStorage(documentData.file, docRef.id)
+      await updateDoc(docRef, { fileUrl: url, storagePath })
+    }
+
+    return {
+      id: docRef.id,
       title: documentData.title,
       description: documentData.description,
       type: documentData.type,
@@ -63,18 +70,15 @@ export const createAdmissionDocument = async (documentData) => {
   }
 }
 
-/**
- * Récupérer tous les documents d'admission
- */
 export const getAllAdmissionDocuments = async () => {
   try {
     const q = query(collection(db, DOCUMENTS_COLLECTION), orderBy('createdAt', 'desc'))
     const snapshot = await getDocs(q)
-    return snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      createdAt: doc.data().createdAt?.toDate?.() || new Date(),
-      updatedAt: doc.data().updatedAt?.toDate?.() || new Date()
+    return snapshot.docs.map(d => ({
+      id: d.id,
+      ...d.data(),
+      createdAt: d.data().createdAt?.toDate?.() || new Date(),
+      updatedAt: d.data().updatedAt?.toDate?.() || new Date()
     }))
   } catch (error) {
     console.error('Erreur getAllAdmissionDocuments:', error)
@@ -82,16 +86,12 @@ export const getAllAdmissionDocuments = async () => {
   }
 }
 
-/**
- * Récupérer un document par ID
- */
 export const getAdmissionDocumentById = async (id) => {
   try {
-    const docRef = doc(db, DOCUMENTS_COLLECTION, id)
-    const docSnap = await getDoc(docRef)
+    const docSnap = await getDoc(doc(db, DOCUMENTS_COLLECTION, id))
     if (docSnap.exists()) {
-      return { 
-        id: docSnap.id, 
+      return {
+        id: docSnap.id,
         ...docSnap.data(),
         createdAt: docSnap.data().createdAt?.toDate?.() || new Date(),
         updatedAt: docSnap.data().updatedAt?.toDate?.() || new Date()
@@ -104,26 +104,27 @@ export const getAdmissionDocumentById = async (id) => {
   }
 }
 
-/**
- * Mettre à jour un document d'admission
- */
 export const updateAdmissionDocument = async (id, documentData) => {
   try {
-    let updateData = {
+    const updateData = {
       title: documentData.title,
       description: documentData.description,
       type: documentData.type,
       updatedAt: serverTimestamp()
     }
 
-    // Si on a un nouveau fichier, le convertir en base64
     if (documentData.file) {
-      updateData.document = await fileToBase64(documentData.file)
+      // Supprimer l'ancien fichier si présent
+      if (documentData.storagePath) {
+        await deletePdfFromStorage(documentData.storagePath)
+      }
+      const { url, storagePath } = await uploadPdfToStorage(documentData.file, id)
+      updateData.fileUrl = url
+      updateData.storagePath = storagePath
       updateData.fileName = documentData.file.name
     }
 
-    const docRef = doc(db, DOCUMENTS_COLLECTION, id)
-    await updateDoc(docRef, updateData)
+    await updateDoc(doc(db, DOCUMENTS_COLLECTION, id), updateData)
     return { id, ...documentData }
   } catch (error) {
     console.error('Erreur updateAdmissionDocument:', error)
@@ -131,11 +132,9 @@ export const updateAdmissionDocument = async (id, documentData) => {
   }
 }
 
-/**
- * Supprimer un document d'admission
- */
-export const deleteAdmissionDocument = async (id) => {
+export const deleteAdmissionDocument = async (id, storagePath) => {
   try {
+    await deletePdfFromStorage(storagePath)
     await deleteDoc(doc(db, DOCUMENTS_COLLECTION, id))
     return id
   } catch (error) {
@@ -144,36 +143,28 @@ export const deleteAdmissionDocument = async (id) => {
   }
 }
 
-/**
- * Télécharger un document (récupérer le base64)
- */
-export const downloadAdmissionDocument = async (documentBase64, fileName) => {
+export const downloadAdmissionDocument = async (fileUrl, fileName) => {
   try {
-    if (!documentBase64) throw new Error('Document introuvable')
-
-    // Créer un lien de téléchargement
+    if (!fileUrl) throw new Error('Document introuvable')
+    const response = await fetch(fileUrl)
+    const blob = await response.blob()
+    const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
-    link.href = documentBase64
+    link.href = url
     link.download = fileName || 'document.pdf'
     link.style.display = 'none'
     document.body.appendChild(link)
-
-    // Déclencher le téléchargement
+    link.click()
     setTimeout(() => {
-      link.click()
-      setTimeout(() => {
-        document.body.removeChild(link)
-      }, 100)
-    }, 10)
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    }, 100)
   } catch (error) {
     console.error('Erreur downloadAdmissionDocument:', error)
     throw error
   }
 }
 
-/**
- * Hook Vue pour gérer les documents d'admission de manière réactive
- */
 export const useAdmissionDocuments = () => {
   const documents = ref([])
   const loading = ref(false)
@@ -213,9 +204,9 @@ export const useAdmissionDocuments = () => {
     }
   }
 
-  const removeAdmissionDocument = async (id) => {
+  const removeAdmissionDocument = async (id, storagePath) => {
     try {
-      await deleteAdmissionDocument(id)
+      await deleteAdmissionDocument(id, storagePath)
       await fetchAdmissionDocuments()
     } catch (err) {
       error.value = err.message
@@ -225,7 +216,7 @@ export const useAdmissionDocuments = () => {
 
   const downloadDocument = async (item) => {
     try {
-      await downloadAdmissionDocument(item.document, item.fileName)
+      await downloadAdmissionDocument(item.fileUrl, item.fileName)
     } catch (err) {
       error.value = err.message
       throw err
