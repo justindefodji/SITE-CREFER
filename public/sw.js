@@ -1,21 +1,9 @@
 // Service Worker pour mettre en cache les images
-const CACHE_NAME = 'crefer-images-v1'
-const IMAGE_ASSETS = [
-  'assets/images/soutenance-1200.jpg',
-  'assets/images/image1article2.jpg',
-  'assets/images/articlesolaire1.jpg',
-  'assets/images/install1article.jpg',
-  'assets/images/exam1article.jpg',
-  'assets/images/imageback.jpg'
-]
+const CACHE_NAME = 'crefer-images-v2'
 
-// Installation et mise en cache des images
+// Installation sans pré-cache (les noms de fichiers Vite contiennent des hashes)
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(IMAGE_ASSETS)
-    })
-  )
+  self.skipWaiting()
 })
 
 // Stratégie de cache-first pour les images

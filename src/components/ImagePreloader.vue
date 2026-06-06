@@ -25,10 +25,10 @@ export default {
         // 'assets/images/image1article2.jpg',
         // 'assets/images/imageback.jpg',
         
-        // Garder uniquement les images d'articles critiques
-        'assets/images/articlesolaire1.jpg',
-        'assets/images/install1article.jpg',
-        'assets/images/exam1article.jpg'
+        // Images d'articles — à ajouter dans src/assets/images/
+        // 'assets/images/articlesolaire1.jpg',
+        // 'assets/images/install1article.jpg',
+        // 'assets/images/exam1article.jpg'
       ]
     }
   },

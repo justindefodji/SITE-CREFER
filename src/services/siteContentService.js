@@ -353,12 +353,21 @@ export const SITE_DEFAULTS = {
 
 // ─── Fetch a section, merge with defaults ────────────────────────────────────
 export const getSiteSection = async (pageId, sectionId) => {
+  const defaults = SITE_DEFAULTS[pageId]?.[sectionId] || {};
   try {
     const section = await getSection(pageId, sectionId);
-    const defaults = SITE_DEFAULTS[pageId]?.[sectionId] || {};
+    if (!section) {
+      // Section does not exist yet in Firebase — expected on first use
+      return { ...defaults };
+    }
     return { ...defaults, ...(section.content || {}) };
-  } catch {
-    return { ...(SITE_DEFAULTS[pageId]?.[sectionId] || {}) };
+  } catch (error) {
+    // Firebase read failed (permission-denied, network, etc.) — data will appear reset
+    console.warn(
+      `[CMS] Échec lecture Firebase ${pageId}/${sectionId} (code: ${error?.code ?? error?.message}). ` +
+      'Vérifiez les règles Firestore (lecture publique requise).'
+    );
+    return { ...defaults };
   }
 };
 

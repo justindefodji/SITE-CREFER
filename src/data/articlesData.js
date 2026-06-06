@@ -45,12 +45,12 @@ export const articlesData = [
     description: 'CREFER a franchi le cap impressionnant de 1500+ étudiants formés et transformés.',
     fullTitle: '1500+ Étudiants Formés et Transformés',
     fullContent: 'C\'est avec fierté que nous annonçons que CREFER a dépassé le seuil des 1500 étudiants formés et transformés. Ce jalon témoigne de notre engagement envers l\'excellence dans l\'enseignement des énergies renouvelables et du développement durable.',
-    mainImage: new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+    mainImage: new URL('../assets/images/CHANTIER.jpg', import.meta.url).href,
     images: [
-      new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
-      new URL('../assets/images/articlesolaire2.jpg', import.meta.url).href,
+      new URL('../assets/images/CHANTIER.jpg', import.meta.url).href,
+      new URL('../assets/images/CHANTIER2.jpg', import.meta.url).href,
     ],
-    ogImage: new URL('../assets/images/articlesolaire1.jpg', import.meta.url).href,
+    ogImage: new URL('../assets/images/CHANTIER.jpg', import.meta.url).href,
     ogDescription: '1500+ Étudiants Formés et Transformés au CREFER - Un accomplissement remarquable.'
   },
   {
@@ -63,14 +63,13 @@ export const articlesData = [
     description: 'CREFER garantit une formation pratique avec des stages concrets dans les entreprises.',
     fullTitle: 'CREFER, la Garantie d\'un Stage Concret !',
     fullContent: 'Au CREFER, nous croyons à l\'apprentissage par la pratique. Chaque étudiant bénéficie d\'un stage professionnel concret dans des entreprises du secteur des énergies renouvelables. Cette expérience pratique prépare nos apprenants aux défis du marché du travail.',
-    mainImage: new URL('../assets/images/install1article.jpg', import.meta.url).href,
+    mainImage: new URL('../assets/images/IMG_0450.jpg', import.meta.url).href,
     images: [
-      new URL('../assets/images/install1article.jpg', import.meta.url).href,
-      new URL('../assets/images/install2article.jpg', import.meta.url).href,
-      new URL('../assets/images/install3article.jpg', import.meta.url).href,
-      new URL('../assets/images/install4article.jpg', import.meta.url).href,
+      new URL('../assets/images/IMG_0450.jpg', import.meta.url).href,
+      new URL('../assets/images/CHANTIER3.jpg', import.meta.url).href,
+      new URL('../assets/images/CHANTIER4.jpg', import.meta.url).href,
     ],
-    ogImage: new URL('../assets/images/install1article.jpg', import.meta.url).href,
+    ogImage: new URL('../assets/images/IMG_0450.jpg', import.meta.url).href,
     ogDescription: 'CREFER - la garantie d\'un stage concret dans les énergies renouvelables.'
   },
   {
@@ -83,14 +82,13 @@ export const articlesData = [
     description: 'Examen blanc pour la préparation au BT Électrotechnique.',
     fullTitle: 'Examen Blanc – BT Électrotechnique',
     fullContent: 'Nos étudiants en BT Électrotechnique se sont soumis à un examen blanc complet pour parfaire leur préparation. Ces examens blancs sont essentiels pour identifier les points forts et les domaines à améliorer avant l\'examen officiel.',
-    mainImage: new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+    mainImage: new URL('../assets/images/_DSC0294.jpg', import.meta.url).href,
     images: [
-      new URL('../assets/images/exam1article.jpg', import.meta.url).href,
-      new URL('../assets/images/exam2article.jpg', import.meta.url).href,
-      new URL('../assets/images/exam3article.jpg', import.meta.url).href,
-      new URL('../assets/images/exam4article.jpg', import.meta.url).href,
+      new URL('../assets/images/_DSC0294.jpg', import.meta.url).href,
+      new URL('../assets/images/_DSC0332.jpg', import.meta.url).href,
+      new URL('../assets/images/_DSC0335.jpg', import.meta.url).href,
     ],
-    ogImage: new URL('../assets/images/exam1article.jpg', import.meta.url).href,
+    ogImage: new URL('../assets/images/_DSC0294.jpg', import.meta.url).href,
     ogDescription: 'Examen Blanc – BT Électrotechnique au CREFER.'
   }
 ]
@@ -124,8 +122,8 @@ export const defaultArticles = [
     date: '05 Décembre 2025',
     description: 'CREFER a franchi le cap impressionnant de 1500+ étudiants formés et transformés.',
     fullContent: 'C\'est avec fierté que nous annonçons que CREFER a dépassé le seuil des 1500 étudiants formés et transformés. Ce jalon témoigne de notre engagement envers l\'excellence dans l\'enseignement des énergies renouvelables et du développement durable.',
-    mainImage: '/src/assets/images/articlesolaire1.jpg',
-    images: ['/src/assets/images/articlesolaire1.jpg', '/src/assets/images/articlesolaire2.jpg']
+    mainImage: '/src/assets/images/CHANTIER.jpg',
+    images: ['/src/assets/images/CHANTIER.jpg', '/src/assets/images/CHANTIER2.jpg']
   },
   {
     id: 4,
@@ -134,8 +132,8 @@ export const defaultArticles = [
     date: '01 Décembre 2025',
     description: 'CREFER garantit une formation pratique avec des stages concrets dans les entreprises.',
     fullContent: 'Au CREFER, nous croyons à l\'apprentissage par la pratique. Chaque étudiant bénéficie d\'un stage professionnel concret dans des entreprises du secteur des énergies renouvelables. Cette expérience pratique prépare nos apprenants aux défis du marché du travail.',
-    mainImage: '/src/assets/images/install1article.jpg',
-    images: ['/src/assets/images/install1article.jpg', '/src/assets/images/install2article.jpg', '/src/assets/images/install3article.jpg', '/src/assets/images/install4article.jpg']
+    mainImage: '/src/assets/images/IMG_0450.jpg',
+    images: ['/src/assets/images/IMG_0450.jpg', '/src/assets/images/CHANTIER3.jpg', '/src/assets/images/CHANTIER4.jpg']
   },
   {
     id: 5,
@@ -144,7 +142,7 @@ export const defaultArticles = [
     date: '20 Novembre 2025',
     description: 'Examen blanc pour la préparation au BT Électrotechnique.',
     fullContent: 'Nos étudiants en BT Électrotechnique se sont soumis à un examen blanc complet pour parfaire leur préparation. Ces examens blancs sont essentiels pour identifier les points forts et les domaines à améliorer avant l\'examen officiel.',
-    mainImage: '/src/assets/images/exam1article.jpg',
-    images: ['/src/assets/images/exam1article.jpg', '/src/assets/images/exam2article.jpg', '/src/assets/images/exam3article.jpg', '/src/assets/images/exam4article.jpg']
+    mainImage: '/src/assets/images/_DSC0294.jpg',
+    images: ['/src/assets/images/_DSC0294.jpg', '/src/assets/images/_DSC0332.jpg', '/src/assets/images/_DSC0335.jpg']
   }
 ]

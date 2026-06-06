@@ -72,7 +72,7 @@ export const getSection = async (pageId, sectionId) => {
     doc(db, 'pages', pageId, 'sections', sectionId)
   );
   if (!sectionDoc.exists()) {
-    throw new Error('Section not found');
+    return null;
   }
   return {
     id: sectionDoc.id,

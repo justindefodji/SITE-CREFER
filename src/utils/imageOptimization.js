@@ -24,9 +24,9 @@ export const imageOptimizationConfig = {
   preloadCritical: [
     'assets/images/soutenance-1200.jpg',
     'assets/images/image1article2.jpg',
-    'assets/images/articlesolaire1.jpg',
-    'assets/images/install1article.jpg',
-    'assets/images/exam1article.jpg',
+    'assets/images/CHANTIER.jpg',
+    'assets/images/IMG_0450.jpg',
+    'assets/images/_DSC0294.jpg',
     'assets/images/imageback.jpg'
   ]
 }

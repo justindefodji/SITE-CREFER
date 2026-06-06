@@ -14,12 +14,15 @@ export function usePageContent(pageId) {
   onMounted(async () => {
     try {
       const pageSections = SITE_DEFAULTS[pageId] || {};
-      const entries = await Promise.all(
+      const results = await Promise.allSettled(
         Object.keys(pageSections).map(async (sectionId) => [
           sectionId,
           await getSiteSection(pageId, sectionId),
         ])
       );
+      const entries = results
+        .filter((r) => r.status === 'fulfilled')
+        .map((r) => r.value);
       content.value = Object.fromEntries(entries);
     } catch (error) {
       console.error(`Error loading site content for ${pageId}:`, error);
